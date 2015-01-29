@@ -1,5 +1,5 @@
-url: http://localhost:4000
-baseurl: 
+url: http://web.ics.purdue.edu/~csusb/
+baseurl: http://web.ics.purdue.edu/~csusb/
 
 # Site settings
 title: CS Undergraduate Student Board

@@ -9,12 +9,13 @@
             <div class="row">
             {% for post in site.posts %}
                 <div class="col-md-4 col-sm-6 initiative-item">
-                    <a href="#{{ post.modal-id }}" class="initiative-link" data-toggle="modal">
-                        <div class="initiative-hover">
-                            <div class="initiative-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
+                    <a class="initiative-link" data-toggle="modal">
+                    <!-- <a href="#{{ post.modal&#45;id }}" class="initiative&#45;link" data&#45;toggle="modal"> -->
+                        <!-- <div class="initiative&#45;hover"> -->
+                        <!--     <div class="initiative&#45;hover&#45;content"> -->
+                        <!--         <i class="fa fa&#45;plus fa&#45;3x"></i> -->
+                        <!--     </div> -->
+                        <!-- </div> -->
                         <img src="img/initiatives/{{ post.thumbnail }}" class="img-responsive" alt="">
                     </a>
                     <div class="initiative-caption">
