@@ -283,6 +283,10 @@ header .intro-text {
     padding-bottom: 50px;
 }
 
+header .intro-text img {
+    width: 80%;
+}
+
 header .intro-text .intro-lead-in {
     margin-bottom: 25px;
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -298,6 +302,16 @@ header .intro-text .intro-heading {
     font-size: 50px;
     font-weight: 700;
     line-height: 50px;
+}
+
+@media(max-width:768px) {
+  header {
+    height: 400px;
+  }
+    header .intro-text {
+        padding-top: 170px;
+        padding-bottom: 200px;
+    }
 }
 
 @media(min-width:768px) {
@@ -434,6 +448,18 @@ section h3.section-subheading {
 /* make the columns 7 */
 #team .col-sm-2 {
   width: 14.285714286% !important;
+}
+
+@media(max-width:1200px) {
+  #team .col-sm-2 {
+    width: 25% !important;
+  }
+}
+
+@media(max-width:767px) {
+  #team .col-sm-2 {
+    width: 100% !important;
+  }
 }
 
 .team-member {
