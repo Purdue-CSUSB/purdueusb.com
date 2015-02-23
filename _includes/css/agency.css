@@ -367,6 +367,22 @@ section h3.section-subheading {
     text-transform: none;
 }
 
+section#apply {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  /*padding: 40px 0;*/
+  margin: 0;
+  border: 0;
+}
+section#apply .apply-undertext {
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    padding-top: 10px;
+
+}
+
+
 #initiatives .initiative-item {
     right: 0;
     margin: 0 0 15px;
