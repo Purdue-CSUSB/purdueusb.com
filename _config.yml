@@ -1,7 +1,7 @@
-# url: http://web.ics.purdue.edu/~csusb/
-url: localhost
-# baseurl: http://web.ics.purdue.edu/~csusb/
-baseurl: 
+url: http://web.ics.purdue.edu/~csusb/
+#url: localhost
+baseurl: http://web.ics.purdue.edu/~csusb/
+#baseurl: 
 
 # Site settings
 title: CS Undergraduate Student Board
