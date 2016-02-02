@@ -14,7 +14,7 @@ var cbpAnimatedHeader = (function() {
 		header = document.querySelector( '.navbar-fixed-top' ),
 		didScroll = false,
 		changeHeaderOn = 40;
-		//change ^^ to make the nav bar appear closer to the top
+		// ^^ makes the nav bar appear closer to the top
 
 	function init() {
 		window.addEventListener( 'scroll', function( event ) {
