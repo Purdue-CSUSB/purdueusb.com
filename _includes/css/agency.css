@@ -462,7 +462,7 @@ section#apply .apply-undertext {
 }
 
 /* make the columns 7 */
-#team .col-sm-2 {
+#team .col-sm-seventh {
   width: 14.285714286% !important;
 }
 

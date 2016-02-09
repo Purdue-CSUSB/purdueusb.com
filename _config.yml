@@ -22,29 +22,25 @@ people:
   pic: andrew
   position: Vice President
 
-- name: Scott Opell
-  pic: scott
+- name: Ivan Zhang
+  pic: ivan
   position: Treasurer
-
-- name: Clyde Byrd
-  pic: clyde
-  position: Interview Workshop
 
 - name: Emma Wynne
   pic: emma
   position: Science Fair
 
-- name: Ivan Zhang
-  pic: ivan
-  position: Help Room
+- name: Scott Opell
+  pic: scott
+  position: Server Project
 
 - name: Levi Starrett
   pic: levi
   position: CS 190
 
-- name: Bryan Duffy
-  pic: duffy
-  position: PM Course
+- name: Ben Aldefer
+  pic: ben
+  position: BoilerMake
 
 - name: Evan Walsh
   pic: evan
@@ -54,21 +50,41 @@ people:
   pic: mason
   position: Hardware Lab
 
+- name: Spencer Brown
+  pic: spencer
+  position: CS 190
+
 - name: Rhys Howell
   pic: rhys
   position: Science Fair
 
-- name: Richard Wei
-  pic: richard
+- name: Bryan Duffy
+  pic: duffy
+  position: PM Course
+
+- name: Jay Hankins
+  pic: jay
   position: Design
 
-- name: Spencer Brown
-  pic: spencer
-  position: BoilerMake
+- name: Matt Ess
+  pic: matt
+  position: Help Room
 
-- name: Ben Aldefer
-  pic: ben
-  position: BoilerMake
+- name: Shane DeWael
+  pic: shane
+  position: CPP Mixer
+
+- name: Caitlin Kennedy
+  pic: caitlin
+  position: USB Labs
+
+- name: Marty Von Kausas
+  pic: marty
+  position: Special Projects
+
+- name: Adam Loeb
+  pic: adam
+  position: Server Project
 
 # Postal address (add as many lines as necessary)
 address:
