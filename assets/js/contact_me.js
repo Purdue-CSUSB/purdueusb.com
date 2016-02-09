@@ -18,14 +18,15 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "//formspree.io/usb@cs.purdue.edu",
                 type: "POST",
                 data: {
-                    name: name,
-                    subject: subject,
-                    email: email,
-                    message: message
+                  name: name,
+                  _subject: subject,
+                  _replyto: email,
+                  message: message
                 },
+                dataType: "json",
                 cache: false,
                 success: function() {
                     // Success message
