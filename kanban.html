@@ -1,0 +1,176 @@
+---
+layout: default
+permalink: /kanban
+---
+<style>
+  @font-face {
+      font-family: Gill-Sans-Light;
+      src: url("./fonts/GillSans-Light.ttf");
+  }
+  html,body {
+  	margin:0;
+  	padding:0;
+  	height:100%;
+    width: 100%;
+  }
+  body {
+    background-image: url("img/header-bg.jpg");
+    color: #fff;
+    font-family: Gill-Sans-Light;
+    letter-spacing: 1px;
+  }
+  h2{
+    font-size: 23px;
+    line-height: 25px;
+  }
+  #wrapper {
+  	min-height: 100%;
+  	position: relative;
+  }
+  #header {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  	padding: 10px;
+  }
+  #title{
+    font-size: 50px;
+    margin: 70px 0 0 0;
+    color: #dd6c01;
+  }
+  #content {
+    display: flex;
+    flex-wrap: wrap;
+  	padding-bottom: 120px;
+  }
+  .column-left, .column-right{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: column;
+    text-align: center;
+  }
+  .eventDescription{
+    text-align: center;
+    width: 60%;
+    font-size: 20px;
+    line-height: 25px;
+    padding: 0 20% 0 20%;
+  }
+  #kanban-info{
+    text-decoration: none;
+    color: #dd6c01;
+  }
+  #perks {
+    font-size: 20px;
+    text-align: center;
+    margin: 10px 0 10px 0;
+  }
+  .sponsors{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .usb-logo, .msft-logo{
+    max-width: 300px;
+    height: auto;
+    margin: 0 10px 0 10px;
+  }
+  #footer {
+  	background: #dd6c01;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding: 0;
+    margin: 0;
+  	width: 100%;
+  	height: 100px;
+  	position: absolute;
+  	bottom: 0;
+  	left: 0;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+  }
+  #footer:hover {
+    background: #fff;
+    color: #dd6c01;
+  }
+  #signUp, #signUpDescription {
+    text-align: center;
+    padding: 10px;
+  }
+  #signUp {
+    font-size: 32px;
+  }
+  @media screen and (max-width: 620px) {
+      .column-left, .column-right {
+          width:100%;
+      }
+  }
+</style>
+
+<body>
+  <div id="wrapper">
+    <div id="header">
+      <h1 id="title">THE KANBAN CHALLENGE</h1>
+      <h2>NOVEMBER 11, 2016 | 6:30 PM to 8:30 PM | The Anvil</h2>
+    </div>
+
+    <div id="content">
+     <div class="column-left">
+       <h1 class="about-title">What is Kanban?</h1>
+       <p class="eventDescription">
+        The Kanban Challenge is a fun, team-based event, where members solve
+        tasks and work together to beat the clock to win big.
+       </p>
+
+       <p class="eventDescription">
+         Challenges vary from serious to silly (logic puzzles to wrapping someone up in toilet paper)
+         , and no Computer Science background necessary! We will put you into teams of four, so don't
+         worry about not having a team.
+       </p>
+
+       <p class="eventDescription">
+         To learn more about Kanban,
+         <a id="kanban-info" target="kanban info" href="https://www.atlassian.com/agile/kanban">
+           click here</a>.
+         It's used by companies everywhere for teams of all sizes!
+       </p>
+     </div>
+
+     <div class="column-right">
+       <h1 class="about-title">Perks</h1>
+       <div id="perks">
+         <p>PRIZES</p>
+         <p>FOOD</p>
+         <p>PEOPLE</p>
+         <p>CHALLENGES</p>
+       </div>
+
+        <h2>Hosted by:</h2>
+        <div class="sponsors">
+          <a target="purdue usb" href="https://www.purdueusb.com/">
+            <img class="usb-logo" src="styles/img/header-logo.png" alt="usb logo">
+          </a>
+          <a target="purdue usb" href="https://careers.microsoft.com/">
+            <img class="msft-logo" src="styles/img/MSFt_logo.png" alt="microsoft logo">
+          </a>
+        </div>
+     </div>
+
+   </div>
+
+    <a id="footer" target="sign_up" href="https://docs.google.com/forms/d/1hTYYw3OLAGaJ9kzwTa_4RYQeMVujK6QV_8R1566Vc4U/viewform?edit_requested=true">
+      <span id="signUp">Sign Up! All participants will be entered in a raffle to win an XBOX!</span>
+    </a>
+  </div>
+
+</body>
