@@ -1,3 +1,12 @@
----
+/*---
 layout: style
----
+---*/
+.teamphoto {
+    margin-bottom: 40px;
+}
+li.active {
+    border-bottom: 2px solid #fff;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    background: rgba(0,0,0,0);
+}
