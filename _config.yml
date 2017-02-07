@@ -1,5 +1,5 @@
 url: localhost
-baseurl: 
+baseurl:
 
 # Site settings
 title: CS Undergraduate Student Board
@@ -9,38 +9,19 @@ description: "The Computer Science Undergraduate Student Board (USB) is awesome.
 # Color settings (hex-codes without the leading hash-tag)
 color:
   primary: dd6b27
-  secondary: a94500  
+  secondary: a94500
   secondary-dark: 333
 
 # Team names, titles and social links
 people:
-- name: Kirby Kohlmorgen
-  pic: kirby
-  position: President
-
-- name: Andrew Shildmyer
-  pic: andrew
-  position: Vice President
-
-- name: Ivan Zhang
-  pic: ivan
-  position: Treasurer
-
-- name: Emma Wynne
-  pic: emma
-  position: Science Fair
-
-- name: Scott Opell
-  pic: scott
-  position: Server Project
-
-- name: Levi Starrett
-  pic: levi
-  position: CS 190
-
+# Seniors
 - name: Ben Aldefer
   pic: ben
-  position: BoilerMake
+  position: President
+
+- name: Bryan Duffy
+  pic: duffy
+  position: Treasurer
 
 - name: Evan Walsh
   pic: evan
@@ -50,21 +31,30 @@ people:
   pic: mason
   position: Hardware Lab
 
-- name: Spencer Brown
-  pic: spencer
-  position: CS 190
-
 - name: Rhys Howell
   pic: rhys
   position: Science Fair
 
-- name: Bryan Duffy
-  pic: duffy
-  position: PM Course
+- name: Spencer Brown
+  pic: spencer
+  position: CS 190
+
+# Juniors
+- name: Adam Loeb
+  pic: adam
+  position: Server Project
+
+- name: Caitlin Kennedy
+  pic: caitlin
+  position: USB Labs
 
 - name: Jay Hankins
   pic: jay
   position: Design
+
+- name: Marty Von Kausas
+  pic: marty
+  position: Vice President
 
 - name: Matt Ess
   pic: matt
@@ -74,17 +64,31 @@ people:
   pic: shane
   position: CPP Mixer
 
-- name: Caitlin Kennedy
-  pic: caitlin
-  position: USB Labs
+# Sophomores
 
-- name: Marty Von Kausas
-  pic: marty
-  position: Special Projects
+- name: Ahad Sagheer
+  pic: none
+  position: Help Room
 
-- name: Adam Loeb
-  pic: adam
-  position: Server Project
+- name: Cole Johnson
+  pic: none
+  position: Public Relations
+
+- name: Emmy Zhang
+  pic: none
+  position: Shadow Day
+
+- name: Ian Renfro
+  pic: none
+  position: Help Room
+
+- name: Kameron Lutes
+  pic: none
+  position: Shadow Day
+
+- name: Puja Mittal
+  pic: none
+  position: Kanban Challenge
 
 # Postal address (add as many lines as necessary)
 address:
