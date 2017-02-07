@@ -10,3 +10,13 @@ li.active {
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
     background: rgba(0,0,0,0);
 }
+#initiatives a {
+    text-decoration: none;
+    color: inherit;
+}
+.send-button {
+    background: #DD6C01;
+}
+section {
+    padding: 100px 0px;
+}

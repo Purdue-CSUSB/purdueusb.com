@@ -5,4 +5,5 @@ layout: default
 modal-id: help-room
 date: 2014-07-16
 thumbnail: help-room-thumbnail.png
+link: /helproom
 ---

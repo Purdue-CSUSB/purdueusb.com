@@ -18,10 +18,10 @@
                         <!-- </div> -->
                         <img src="/assets/img/initiatives/{{ post.thumbnail }}" class="img-responsive" alt="">
                     </a>
-                    <div class="initiative-caption">
+                    <a {% if post.link %}href="{{post.link}}" target="_blank" {% endif %}><div class="initiative-caption">
                         <h4>{{ post.title }}</h4>
                         <p class="text-muted">{{ post.subtitle }}</p>
-                    </div>
+                    </div></a>
                 </div>
             {% endfor %}
             </div>
