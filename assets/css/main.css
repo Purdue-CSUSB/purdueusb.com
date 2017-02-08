@@ -20,3 +20,35 @@ li.active {
 section {
     padding: 100px 0px;
 }
+.navbar-brand {
+    font-family: 'Lato', sans-serif;
+}
+body {
+    font-family: 'Lato', sans-serif;
+}
+.initiative {
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: #fff;
+}
+.initiative img {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.initiative .subtitle {
+    padding: 10px;
+    text-align: center;
+}
+#mission i {
+    color: #303030;
+}
+.service-heading {
+    font-weight: bold;
+}
+section h2.section-heading {
+    margin-bottom: 40px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 20px 40px;
+    border-bottom: 2px solid #333;
+}

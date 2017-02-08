@@ -1,6 +1,6 @@
 ---
 title: BoilerMake
-subtitle: Purdue's Intercollegiate Hackathon
+subtitle: Purdue's Hackathon
 layout: default
 modal-id: boilermake
 date: 2014-07-18

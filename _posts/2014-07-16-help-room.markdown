@@ -1,6 +1,6 @@
 ---
 title: Help Room
-subtitle: Mon-Thurs, 7-9PM, B158
+subtitle: CS177, CS180, CS182, CS240
 layout: default
 modal-id: help-room
 date: 2014-07-16

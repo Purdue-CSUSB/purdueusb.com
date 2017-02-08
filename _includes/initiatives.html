@@ -7,23 +7,17 @@
                 </div>
             </div>
             <div class="row">
-            {% for post in site.posts %}
-                <div class="col-md-4 col-sm-6 initiative-item">
-                    <a class="initiative-link" data-toggle="modal">
-                    <!-- <a href="#{{ post.modal&#45;id }}" class="initiative&#45;link" data&#45;toggle="modal"> -->
-                        <!-- <div class="initiative&#45;hover"> -->
-                        <!--     <div class="initiative&#45;hover&#45;content"> -->
-                        <!--         <i class="fa fa&#45;plus fa&#45;3x"></i> -->
-                        <!--     </div> -->
-                        <!-- </div> -->
-                        <img src="/assets/img/initiatives/{{ post.thumbnail }}" class="img-responsive" alt="">
-                    </a>
-                    <a {% if post.link %}href="{{post.link}}" target="_blank" {% endif %}><div class="initiative-caption">
-                        <h4>{{ post.title }}</h4>
-                        <p class="text-muted">{{ post.subtitle }}</p>
+                {% for post in site.posts %}
+                    <a {% if post.link %}href="{{post.link}}" target="_blank" {% endif %}><div class="col-sm-4" style="padding: 10px; margin: 0 auto; max-width: 400px">
+                        <div class="initiative">
+                            <img src="/assets/img/initiatives/{{ post.thumbnail }}" width="100%" height="auto"/>
+                            <div class="subtitle">
+                                <h4>{{ post.title }}</h4>
+                                <p class="text-muted">{{ post.subtitle }}</p>
+                            </div>
+                        </div>
                     </div></a>
-                </div>
-            {% endfor %}
+                {% endfor %}
             </div>
         </div>
     </section>
