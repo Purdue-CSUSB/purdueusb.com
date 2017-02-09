@@ -1,5 +1,5 @@
 url: localhost
-baseurl: 
+baseurl:
 
 # Site settings
 title: CS Undergraduate Student Board
@@ -67,11 +67,11 @@ people:
 # Sophomores
 
 - name: Ahad Sagheer
-  pic: none
+  pic: ahad
   position: Help Room
 
 - name: Cole Johnson
-  pic: none
+  pic: cole
   position: Public Relations
 
 - name: Emmy Zhang
@@ -79,15 +79,15 @@ people:
   position: Shadow Day
 
 - name: Ian Renfro
-  pic: none
+  pic: ian
   position: Help Room
 
 - name: Kameron Lutes
-  pic: none
+  pic: kameron
   position: Shadow Day
 
 - name: Puja Mittal
-  pic: none
+  pic: puja
   position: Kanban Challenge
 
 # Postal address (add as many lines as necessary)
