@@ -90,6 +90,32 @@ people:
   pic: puja
   position: Kanban Challenge
 
+# Freshman
+
+- name: Amol Jha
+  pic: none
+  position: Help Room
+
+- name: Ian Zanger
+  pic: none
+  position: Public Relations
+
+- name: Ivy Chenyao
+  pic: none
+  position: Shadow Day
+
+- name: Nirali Rai
+  pic: none
+  position: Help Room
+
+- name: Rohan Gupta
+  pic: none
+  position: Shadow Day
+
+- name: Zach Johnson
+  pic: none
+  position: Kanban Challenge
+
 # Postal address (add as many lines as necessary)
 address:
   - line: 305 N. University St.
