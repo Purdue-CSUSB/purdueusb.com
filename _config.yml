@@ -94,27 +94,27 @@ people:
 
 - name: Amol Jha
   pic: none
-  position: Help Room
+  position:
 
 - name: Ian Zanger
   pic: none
-  position: Public Relations
+  position:
 
 - name: Ivy Chenyao
   pic: none
-  position: Shadow Day
+  position: 
 
 - name: Nirali Rai
   pic: none
-  position: Help Room
+  position:
 
 - name: Rohan Gupta
   pic: none
-  position: Shadow Day
+  position:
 
 - name: Zach Johnson
   pic: none
-  position: Kanban Challenge
+  position:
 
 # Postal address (add as many lines as necessary)
 address:
