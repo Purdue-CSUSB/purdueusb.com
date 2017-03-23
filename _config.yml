@@ -93,19 +93,19 @@ people:
 # Freshman
 
 - name: Amol Jha
-  pic: none
+  pic: amol
   position:
 
 - name: Ian Zanger
-  pic: none
+  pic: ianz
   position:
 
 - name: Ivy Chenyao
   pic: none
-  position: 
+  position:
 
 - name: Nirali Rai
-  pic: none
+  pic: nirali
   position:
 
 - name: Rohan Gupta
@@ -113,7 +113,7 @@ people:
   position:
 
 - name: Zach Johnson
-  pic: none
+  pic: zach
   position:
 
 # Postal address (add as many lines as necessary)
