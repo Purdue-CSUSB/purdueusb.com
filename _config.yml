@@ -17,11 +17,11 @@ people:
 # Seniors
 - name: Ben Aldefer
   pic: ben
-  position: President
+  position: Former President
 
 - name: Bryan Duffy
   pic: duffy
-  position: Treasurer
+  position: Former Treasurer
 
 - name: Evan Walsh
   pic: evan
@@ -50,11 +50,11 @@ people:
 
 - name: Jay Hankins
   pic: jay
-  position: Secretary
+  position: President
 
 - name: Marty Von Kausas
   pic: marty
-  position: Vice President
+  position: Former Vice President
 
 - name: Matt Ess
   pic: matt
@@ -72,7 +72,7 @@ people:
 
 - name: Cole Johnson
   pic: cole
-  position: Public Relations
+  position: Vice President
 
 - name: Emmy Zhang
   pic: emmy
@@ -98,15 +98,15 @@ people:
 
 - name: Ian Zanger
   pic: ianz
-  position:
+  position: Secretary
 
 - name: Ivy Chenyao
   pic: ivy
-  position:
+  position: Design Workshops
 
 - name: Nirali Rai
   pic: nirali
-  position:
+  position: Treasurer
 
 - name: Rohan Gupta
   pic: rohan
@@ -114,7 +114,7 @@ people:
 
 - name: Zach Johnson
   pic: zach
-  position:
+  position: Design Workshops
 
 # Postal address (add as many lines as necessary)
 address:
