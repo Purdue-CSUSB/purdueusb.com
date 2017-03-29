@@ -75,7 +75,7 @@ people:
   position: Public Relations
 
 - name: Emmy Zhang
-  pic: none
+  pic: emmy
   position: Shadow Day
 
 - name: Ian Renfro
@@ -101,7 +101,7 @@ people:
   position:
 
 - name: Ivy Chenyao
-  pic: none
+  pic: ivy
   position:
 
 - name: Nirali Rai
@@ -109,7 +109,7 @@ people:
   position:
 
 - name: Rohan Gupta
-  pic: none
+  pic: rohan
   position:
 
 - name: Zach Johnson
