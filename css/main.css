@@ -122,15 +122,20 @@ h6 {
 .team-item .name{
     font-weight: 600;
 }
-.team-item-text {
+.team-item-text-wrapper {
     visibility: hidden;
     background: rgba(255,255,255,.7);
     height: 100%;
     padding: 10px;
     text-align: center;
 }
-.team-item:hover .team-item-text {
+.team-item:hover .team-item-text-wrapper {
     visibility: visible;
+}
+.team-item-text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 input {
     width: 100%;
