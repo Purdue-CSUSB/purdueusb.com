@@ -76,7 +76,7 @@ var team = [
     },
     {
         name: 'Ian Renfro',
-        role: 'Help Room',
+        role: 'Help Room & Internships and Interviews',
         img: 'ian'
     },
     {
