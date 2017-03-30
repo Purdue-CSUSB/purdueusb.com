@@ -1,9 +1,0 @@
----
-title: CS 190
-subtitle: The Tools Course We Started
-layout: default
-modal-id: cs190
-date: 2014-07-17
-thumbnail: cs190-thumbnail.png
-link: //github.com/Purdue-CSUSB/CS-190-S2017
----
