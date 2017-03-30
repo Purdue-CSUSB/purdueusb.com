@@ -1,0 +1,169 @@
+<style>
+  html,body {
+  	margin:0;
+  	padding:0;
+  	height:100%;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+  }
+  body {
+    background-image: url("../img/kanban/header-bg.jpg");
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  h2{
+    font-size: 23px;
+    line-height: 25px;
+  }
+  #wrapper {
+  	min-height: 100%;
+  	position: relative;
+  }
+  #header {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  	padding: 10px;
+  }
+  #title{
+    margin: 70px 0 0 0;
+    color: #dd6c01;
+  }
+  #anvil-location{
+    text-decoration: none;
+    color: #dd6c01;
+  }
+  #content {
+    display: flex;
+    flex-wrap: wrap;
+  	padding-bottom: 120px;
+  }
+  .column-left, .column-right{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: column;
+    text-align: center;
+  }
+  .eventDescription{
+    text-align: center;
+    width: 60%;
+    line-height: 25px;
+  }
+  #kanban-info{
+    text-decoration: none;
+    color: #dd6c01;
+  }
+  #perks {
+    text-align: center;
+    margin: 10px 0 10px 0;
+  }
+  .sponsors{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .usb-logo, .msft-logo{
+    max-width: 300px;
+    height: auto;
+    margin: 0 10px 0 10px;
+  }
+  #footer {
+  	background: #dd6c01;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding: 0;
+    margin: 0;
+  	width: 100%;
+  	height: 100px;
+  	position: fixed;
+  	bottom: 0;
+  	left: 0;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+  }
+  #footer:hover {
+    background: #fff;
+    color: #dd6c01;
+  }
+  #signUp, #signUpDescription {
+    text-align: center;
+    padding: 10px;
+  }
+  @media screen and (max-width: 620px) {
+      .column-left, .column-right {
+          width:100%;
+      }
+  }
+</style>
+
+<body>
+  <div id="wrapper">
+    <div id="header">
+      <h1 id="title">THE KANBAN CHALLENGE</h1>
+      <h2>NOVEMBER 11, 2016 | 6:30 PM to 8:30 PM |
+        <a id="anvil-location" target="anvil location" href="https://www.google.com/maps/dir/''/the+anvil+purdue/@40.4265306,-86.9127611,16.91z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8812e2add3b890a9:0xfec7fcdc61c1d63d!2m2!1d-86.9099979!2d40.4261195">
+          The Anvil</a>
+        </h2>
+
+    </div>
+
+    <div id="content">
+     <div class="column-left">
+       <h2 class="about-title">What is Kanban?</h2>
+       <p class="eventDescription service-heading">
+        The Kanban Challenge is a fun, team-based event, where members solve
+        tasks and work together to beat the clock to win big.
+      </p>
+
+       <p class="eventDescription service-heading">
+         Challenges vary from serious to silly (logic puzzles to wrapping someone up in toilet paper)
+         , and no Computer Science background necessary! We will put you into teams of four, so don't
+         worry about not having a team.
+       </p>
+
+       <p class="eventDescription service-heading">
+         To learn more about Kanban,
+         <a id="kanban-info" target="kanban info" href="https://www.atlassian.com/agile/kanban">
+           click here</a>.
+         It's used by companies everywhere for teams of all sizes!
+       </p>
+     </div>
+
+     <div class="column-right">
+       <h2 class="about-title">Perks</h2>
+       <div id="perks">
+         <p class="service-heading">PRIZES</p>
+         <p class="service-heading">FOOD</p>
+         <p class="service-heading">PEOPLE</p>
+         <p class="service-heading">CHALLENGES</p>
+       </div>
+
+        <h2 class="section-heading">Hosted by:</h2>
+        <div class="sponsors">
+          <a target="purdue usb" href="https://www.purdueusb.com/">
+            <img class="usb-logo" src="../img/kanban/header-logo.png" alt="usb logo">
+          </a>
+          <a target="purdue usb" href="https://careers.microsoft.com/">
+            <img class="msft-logo" src="../img/kanban/msft-logo.png" alt="microsoft logo">
+          </a>
+        </div>
+     </div>
+
+   </div>
+
+    <a id="footer" target="sign_up" href="https://docs.google.com/forms/d/1hTYYw3OLAGaJ9kzwTa_4RYQeMVujK6QV_8R1566Vc4U/viewform?edit_requested=true">
+      <h4 id="signUp">Sign Up! All participants will be entered in a raffle to win an XBOX!</h4>
+    </a>
+  </div>
+
+</body>
