@@ -1,9 +1,0 @@
----
-title: Help Room
-subtitle: CS177, CS180, CS182, CS240
-layout: default
-modal-id: help-room
-date: 2014-07-16
-thumbnail: help-room-thumbnail.png
-link: /helproom
----
