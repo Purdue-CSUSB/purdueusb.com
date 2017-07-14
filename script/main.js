@@ -1,40 +1,5 @@
 var team = [
     {
-        name: 'Ben Alderfer',
-        role: 'Design Workshops',
-        img: 'ben'
-    },
-    {
-        name: 'Bryan Duffy',
-        role: 'Former Treasurer',
-        img: 'duffy'
-    },
-    {
-        name: 'Evan Walsh',
-        role: 'CS190',
-        img: 'evan'
-    },
-    {
-        name: 'Mason Everett',
-        role: 'Hardware Lab',
-        img: 'mason'
-    },
-    {
-        name: 'Rhys Howell',
-        role: 'Science Fair',
-        img: 'rhys'
-    },
-    {
-        name: 'Spencer Brown',
-        role: 'CS190',
-        img: 'spencer'
-    },
-    {
-        name: 'Adam Loeb',
-        role: 'Server Project',
-        img: 'adam'
-    },
-    {
         name: 'Caitlin Kennedy',
         role: 'USB Labs',
         img: 'caitlin'
