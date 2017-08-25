@@ -26,7 +26,7 @@ var team = [
     },
     {
         name: 'Ahad Sagheer',
-        role: 'Help Room & CS190',
+        role: 'Help Room & CS193',
         img: 'ahad'
     },
     {
@@ -56,7 +56,7 @@ var team = [
     },
     {
         name: 'Amol Jha',
-        role: '',
+        role: 'CS Town Hall',
         img: 'amol'
     },
     {
@@ -76,7 +76,7 @@ var team = [
     },
     {
         name: 'Rohan Gupta',
-        role: '',
+        role: 'Student Outreach',
         img: 'rohan'
     },
     {
