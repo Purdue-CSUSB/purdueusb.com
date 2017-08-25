@@ -172,3 +172,15 @@ textarea:focus {
     width: 100%;
     height: 250px;
 }
+
+.col-sm-2 {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+     width: 12.5em; 
+}
+
+.team {
+    text-align: center;
+    width: 100%;
+}
