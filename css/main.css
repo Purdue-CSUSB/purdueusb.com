@@ -25,7 +25,8 @@ header {
 .call-to {
     color: #fff;
     font-weight: 600;
-    font-size: 44px;
+    /* font-size: 44px; */
+    font-size: 55px;
     padding: 0 10px;
     position: relative;
     top: 50%;
@@ -41,6 +42,7 @@ button {
     background: #4EBFE5;
     border: none;
     font-size: 16px;
+     margin-top: 20px; 
     margin-bottom: 20px;
     outline: none;
     color: #fff;
@@ -71,7 +73,7 @@ section {
 .section-header {
     font-weight: 600;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 3em;
 }
 .text-center {
     text-align: center;
@@ -87,6 +89,7 @@ section {
 }
 p {
     line-height: 1.6em;
+    font-size: 18px;
 }
 h5 {
     font-weight: 600;
@@ -94,7 +97,7 @@ h5 {
 }
 h6 {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 24px;
     margin: 10px auto;
 }
 .card {
