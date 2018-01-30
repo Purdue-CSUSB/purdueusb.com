@@ -20,11 +20,6 @@ var team = [
         img: 'matt'
     },
     {
-        name: 'Shane DeWael',
-        role: 'CPP Mixer',
-        img: 'shane'
-    },
-    {
         name: 'Ahad Sagheer',
         role: 'Help Room & CS193',
         img: 'ahad'
@@ -33,11 +28,6 @@ var team = [
         name: 'Cole Johnson',
         role: 'Vice President',
         img: 'cole'
-    },
-    {
-        name: 'Emmy Zhang',
-        role: 'Shadow Day',
-        img: 'emmy'
     },
     {
         name: 'Ian Renfro',
@@ -63,11 +53,6 @@ var team = [
         name: 'Ian Zanger',
         role: 'Secretary',
         img: 'ianz'
-    },
-    {
-        name: 'Ivy Chenyao',
-        role: 'Design Workshops',
-        img: 'ivy'
     },
     {
         name: 'Nirali Rai',
