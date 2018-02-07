@@ -11,7 +11,7 @@ var team = [
     },
     {
         name: 'Marty Von Kausas',
-        role: 'Former Vice President',
+        role: 'Demo Day',
         img: 'marty'
     },
     {
@@ -21,7 +21,7 @@ var team = [
     },
     {
         name: 'Ahad Sagheer',
-        role: 'Help Room & CS193',
+        role: 'Help Room & CS190',
         img: 'ahad'
     },
     {
@@ -46,7 +46,7 @@ var team = [
     },
     {
         name: 'Amol Jha',
-        role: 'CS Town Hall',
+        role: '',
         img: 'amol'
     },
     {
@@ -61,7 +61,7 @@ var team = [
     },
     {
         name: 'Rohan Gupta',
-        role: 'Student Outreach',
+        role: '',
         img: 'rohan'
     },
     {
