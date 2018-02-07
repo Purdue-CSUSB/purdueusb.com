@@ -2,6 +2,12 @@ body {
     font-family: 'Raleway', sans-serif;
     color: #202020;
 }
+.top-notif {
+  width: 100%;
+  padding: 12px 0;
+  text-align: center;
+  background: #C4DEDB;
+}
 header {
     background: url('../img/header_large.jpg');
     background-size: cover;
@@ -41,7 +47,7 @@ button {
     background: #4EBFE5;
     border: none;
     font-size: 16px;
-     margin-top: 20px; 
+     margin-top: 20px;
     margin-bottom: 20px;
     outline: none;
     color: #fff;
@@ -147,6 +153,7 @@ input {
     padding: 8px;
     font-size: 14px;
     color: #202020;
+    margin-bottom: 12px;
 }
 input:hover {
     border: 2px solid #7C7977;
@@ -179,7 +186,7 @@ textarea:focus {
     display: inline-block;
     float: none;
     vertical-align: top;
-     width: 12.5em; 
+     width: 12.5em;
 }
 
 .team {
