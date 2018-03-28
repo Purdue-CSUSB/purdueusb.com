@@ -45,11 +45,6 @@ var team = [
         img: 'puja'
     },
     {
-        name: 'Amol Jha',
-        role: '',
-        img: 'amol'
-    },
-    {
         name: 'Ian Zanger',
         role: 'Secretary',
         img: 'ianz'
