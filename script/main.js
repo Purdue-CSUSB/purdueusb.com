@@ -1,7 +1,7 @@
 var team = [
     {
         name: 'Caitlin Kennedy',
-        role: 'USB Labs',
+        role: '',
         img: 'caitlin'
     },
     {
@@ -16,7 +16,7 @@ var team = [
     },
     {
         name: 'Matt Ess',
-        role: 'Help Room',
+        role: '',
         img: 'matt'
     },
     {
@@ -66,7 +66,7 @@ var team = [
     },
     {
         name: 'Megan Walsh',
-        role: 'Design Workshops',
+        role: '',
         img: 'megan'
     },
     {
@@ -91,17 +91,17 @@ var team = [
     },
     {
         name: 'Sagar Nattuvetty',
-        role: 'Design Workshops',
+        role: '',
         img: 'sagar'
     },
     {
         name: 'Sera Savas',
-        role: 'Design Workshops',
+        role: '',
         img: 'sera'
     },
     {
         name: 'Zach Bryant',
-        role: 'Design Workshops',
+        role: '',
         img: 'zachb'
     }
 ];
