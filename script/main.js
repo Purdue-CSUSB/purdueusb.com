@@ -1,7 +1,7 @@
 var team = [
     {
         name: 'Caitlin Kennedy',
-        role: 'USB Labs',
+        role: '',
         img: 'caitlin'
     },
     {
@@ -16,7 +16,7 @@ var team = [
     },
     {
         name: 'Matt Ess',
-        role: 'Help Room',
+        role: '',
         img: 'matt'
     },
     {
@@ -45,6 +45,11 @@ var team = [
         img: 'puja'
     },
     {
+        name: 'Sean Flannery',
+        role: '',
+        img: 'sean'
+    },
+    {
         name: 'Ian Zanger',
         role: 'Secretary',
         img: 'ianz'
@@ -60,9 +65,44 @@ var team = [
         img: 'rohan'
     },
     {
+        name: 'Megan Walsh',
+        role: '',
+        img: 'megan'
+    },
+    {
         name: 'Zach Johnson',
         role: 'Design Workshops',
-        img: 'zach'
+        img: 'zachj'
+    },
+    {
+        name: 'Albert Zhong',
+        role: '',
+        img: 'albert'
+    },
+    {
+        name: 'CJ Enright',
+        role: '',
+        img: 'cj'
+    },
+    {
+        name: 'Lauren Lum',
+        role: '',
+        img: 'lauren'
+    },
+    {
+        name: 'Sagar Nattuvetty',
+        role: '',
+        img: 'sagar'
+    },
+    {
+        name: 'Sera Savas',
+        role: '',
+        img: 'sera'
+    },
+    {
+        name: 'Zach Bryant',
+        role: '',
+        img: 'zachb'
     }
 ];
 
