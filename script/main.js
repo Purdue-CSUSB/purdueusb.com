@@ -1,32 +1,12 @@
 var team = [
     {
-        name: 'Caitlin Kennedy',
-        role: '',
-        img: 'caitlin'
-    },
-    {
-        name: 'Jay Hankins',
-        role: 'President',
-        img: 'jay'
-    },
-    {
-        name: 'Marty Von Kausas',
-        role: 'Demo Day',
-        img: 'marty'
-    },
-    {
-        name: 'Matt Ess',
-        role: '',
-        img: 'matt'
-    },
-    {
         name: 'Ahad Sagheer',
-        role: 'Help Room & CS190',
+        role: 'Help Room & CS 193',
         img: 'ahad'
     },
     {
         name: 'Cole Johnson',
-        role: 'Vice President',
+        role: 'Former Vice President',
         img: 'cole'
     },
     {
@@ -36,7 +16,7 @@ var team = [
     },
     {
         name: 'Kameron Lutes',
-        role: 'Shadow Day',
+        role: 'President',
         img: 'kameron'
     },
     {
@@ -51,7 +31,7 @@ var team = [
     },
     {
         name: 'Ian Zanger',
-        role: 'Secretary',
+        role: 'Vice President',
         img: 'ianz'
     },
     {
@@ -61,7 +41,7 @@ var team = [
     },
     {
         name: 'Rohan Gupta',
-        role: '',
+        role: 'CS 193',
         img: 'rohan'
     },
     {
@@ -86,7 +66,7 @@ var team = [
     },
     {
         name: 'Lauren Lum',
-        role: '',
+        role: 'Secretary',
         img: 'lauren'
     },
     {
