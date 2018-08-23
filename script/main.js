@@ -5,11 +5,6 @@ var team = [
         img: 'ahad'
     },
     {
-        name: 'Cole Johnson',
-        role: 'Former Vice President',
-        img: 'cole'
-    },
-    {
         name: 'Ian Renfro',
         role: 'Help Room & Internships and Interviews',
         img: 'ian'
