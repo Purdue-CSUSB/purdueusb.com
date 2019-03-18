@@ -1,10 +1,5 @@
 var team = [
     {
-        name: 'Ahad Sagheer',
-        role: 'Help Room & CS 193',
-        img: 'ahad'
-    },
-    {
         name: 'Ian Renfro',
         role: 'Help Room & Internships and Interviews',
         img: 'ian'
@@ -45,11 +40,6 @@ var team = [
         img: 'megan'
     },
     {
-        name: 'Zach Johnson',
-        role: 'Design Workshops',
-        img: 'zachj'
-    },
-    {
         name: 'Albert Zhong',
         role: '',
         img: 'albert'
@@ -77,7 +67,47 @@ var team = [
     {
         name: 'Zach Bryant',
         role: '',
-        img: 'zachb'
+        img: 'zach'
+    },
+    {
+        name: 'Arianna Smith',
+        role: '',
+        img: 'arianna'
+    },
+    {
+        name: 'Christopher Lehman',
+        role: '',
+        img: 'christopher'
+    },
+    {
+        name: 'Cindy Ding',
+        role: '',
+        img: 'cindy'
+    },
+    {
+        name: 'Noah Alderton',
+        role: '',
+        img: 'noah'
+    },
+    {
+        name: 'Pallav Agarwal',
+        role: '',
+        img: 'pallav'
+    },
+    {
+        name: 'Pinaki Mohanty',
+        role: '',
+        img: 'pinaki'
+    },
+    {
+        name: 'Riley McKeever',
+        role: '',
+        img: 'riley'
+    },
+    {
+        name: 'Sarah Thomas',
+        role: '',
+        img: 'sarah'
     }
 ];
 
