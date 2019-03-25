@@ -1,7 +1,7 @@
 var team = [
     {
         name: 'Ian Renfro',
-        role: 'Help Room & Internships and Interviews',
+        role: '',
         img: 'ian'
     },
     {
@@ -11,7 +11,7 @@ var team = [
     },
     {
         name: 'Puja Mittal',
-        role: 'Kanban Challenge',
+        role: '',
         img: 'puja'
     },
     {
@@ -31,7 +31,7 @@ var team = [
     },
     {
         name: 'Rohan Gupta',
-        role: 'CS 193',
+        role: '',
         img: 'rohan'
     },
     {
