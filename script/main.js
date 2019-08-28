@@ -1,33 +1,23 @@
 var team = [
     {
-        name: 'Ian Renfro',
-        role: '',
-        img: 'ian'
-    },
-    {
-        name: 'Kameron Lutes',
+        name: 'Zach Bryant',
         role: 'President',
-        img: 'kameron'
+        img: 'zach'
     },
     {
-        name: 'Puja Mittal',
-        role: '',
-        img: 'puja'
-    },
-    {
-        name: 'Sean Flannery',
-        role: '',
-        img: 'sean'
-    },
-    {
-        name: 'Ian Zanger',
+        name: 'Lauren Lum',
         role: 'Vice President',
-        img: 'ianz'
+        img: 'lauren'
     },
     {
         name: 'Nirali Rai',
         role: 'Treasurer',
         img: 'nirali'
+    },
+    {
+        name: 'Ian Zanger',
+        role: '',
+        img: 'ianz'
     },
     {
         name: 'Rohan Gupta',
@@ -50,11 +40,6 @@ var team = [
         img: 'cj'
     },
     {
-        name: 'Lauren Lum',
-        role: 'Secretary',
-        img: 'lauren'
-    },
-    {
         name: 'Sagar Nattuvetty',
         role: '',
         img: 'sagar'
@@ -63,11 +48,6 @@ var team = [
         name: 'Sera Savas',
         role: '',
         img: 'sera'
-    },
-    {
-        name: 'Zach Bryant',
-        role: '',
-        img: 'zach'
     },
     {
         name: 'Arianna Smith',
