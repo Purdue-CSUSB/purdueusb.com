@@ -117,21 +117,21 @@ var initiatives = [
     {
         title: 'CS 191 Panel',
         description: 'Q&A panel of upperclass CS/DS students',
-        img: '',
+        img: 'CS191_Panel_Logo',
         linkText: '',
         linkURL: '',
     },
     {
         title: 'Virtual Office Hours',
         description: 'Innovative new way to hold office hours',
-        img: '',
+        img: 'Virtual_Office_Hours_Logo',
         linkText: '',
         linkURL: '',
     },
     {
         title: 'Undergraduate Student Forum',
         description: 'Forum for undergrads to discuss their experiences',
-        img: '',
+        img: 'Student_Forum_Logo',
         linkText: '',
         linkURL: '',
 
