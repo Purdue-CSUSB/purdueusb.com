@@ -145,7 +145,7 @@ for (var i = 0; i < team.length; i++) {
 for (var i = 0; i < initiatives.length; i++) {
     $('.initiatives').append(`<div class="col-sm-4">
     <div class="card text-center">
-        <div class="init-img" style="background: url('img/init/` + initiatives[i].img +`.png'); background-size: cover; background-position: center"></div>
+        <div class="init-img" style="background: url('img/initiative_logos/` + initiatives[i].img +`.png'); background-size: cover; background-position: center"></div>
         <div class="card-body">
             <div class="card-text">
                 <h6>`+ initiatives[i].title + `</h6>
