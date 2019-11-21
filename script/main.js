@@ -91,8 +91,74 @@ var team = [
     }
 ];
 
+
+var initiatives = [
+    {
+        title: 'CS 193',
+        description: 'Tools course taught by USB members',
+        img: 'cs193-thumbnail',
+        linkText: '',
+        linkURL: '',
+    },
+    {
+        title: 'Help Room',
+        description: 'CS 193, CS 180, CS 182, and CS 240 Help',
+        img: 'help-room-thumbnail',
+        linkText: 'View Times',
+        linkURL: 'helproom/index.html',
+    },
+    {
+        title: 'Office Hours',
+        description: 'Come talk with us!',
+        img: 'oh',
+        linkText: 'View Times',
+        linkURL: 'officehours/index.html',
+    },
+    {
+        title: 'CS 191 Panel',
+        description: 'Q&A panel of upperclass CS/DS students',
+        img: '',
+        linkText: '',
+        linkURL: '',
+    },
+    {
+        title: 'Virtual Office Hours',
+        description: 'Innovative new way to hold office hours',
+        img: '',
+        linkText: '',
+        linkURL: '',
+    },
+    {
+        title: 'Undergraduate Student Forum',
+        description: 'Forum for undergrads to discuss their experiences',
+        img: '',
+        linkText: '',
+        linkURL: '',
+
+    }
+];
+
 for (var i = 0; i < team.length; i++) {
     $('.team').append("<div class='col-sm-2'><div class='team-item' style=\"background: url('img/team/" + team[i].img + ".jpg'); background-size: cover; background-position: center\"><div class='team-item-text-wrapper'><div class='team-item-text'><div class='name'>" + team[i].name + "</div><div class='role'>" + team[i].role + "</div></div></div></div></div>");
+}
+
+for (var i = 0; i < initiatives.length; i++) {
+    $('.initiatives').append(`<div class="col-sm-4">
+    <div class="card text-center">
+        <div class="init-img" style="background: url('img/init/` + initiatives[i].img +`.png'); background-size: cover; background-position: center"></div>
+        <div class="card-body">
+            <div class="card-text">
+                <h6>`+ initiatives[i].title + `</h6>
+                <p>
+                    ` + initiatives[i].description + ` 
+                </p>
+            </div>
+        </div>
+        <div class="card-body">
+        <b><a href="`+ initiatives[i].linkURL +`">` + initiatives[i].linkText + `</a></b>
+        </div>
+    </div>
+</div>`);
 }
 
 // Makes team height same as width
