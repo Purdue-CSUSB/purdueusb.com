@@ -22,7 +22,15 @@ body{-webkit-font-smoothing:antialiased;font:normal .8764em/1.5em Arial,Verdana,
   <meta name="theme-color" content="#ffffff">
 </head>
 
-<div>
-  <p style="text-align: center">Applications are now closed.</p>
-  <p style="text-align: center">Questions? Please email <a href="mailto:usb@cs.purdue.edu">usb@cs.purdue.edu</a>.</p>
+<div id="applicationDiv">
+  <script>
+    let applicationForm = null;//"https://forms.gle/YpfggNoGNs6BU2YS6";
+
+    if (!!applicationForm)
+      window.location = applicationForm;
+    else {
+      let div = document.getElementById("applicationDiv");
+      div.innerHTML = '<p style="text-align: center">Applications are now closed.</p><p style="text-align: center">Questions? Please email <a href="mailto:usb@cs.purdue.edu">usb@cs.purdue.edu</a>.</p>';
+    }
+  </script>
 </div>
