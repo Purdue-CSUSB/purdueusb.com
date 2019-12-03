@@ -79,6 +79,7 @@ section {
     font-weight: 600;
     text-align: center;
     font-size: 3em;
+    padding-bottom: 5vh;
 }
 .text-center {
     text-align: center;
@@ -111,6 +112,7 @@ h6 {
     max-width: 355px;
     margin: 0 auto;
     margin-bottom: 20px;
+    height: 40vh;
 }
 .init-img {
     width: 100%;
