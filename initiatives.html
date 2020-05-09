@@ -3,3 +3,10 @@ layout: page
 title: Initiatives
 permalink: /initiatives/
 ---
+
+{%- for initative in site.initatives -%}
+    <h1>
+        {{ initative.title | escape }}
+    </h1>
+
+{%- endfor -%}

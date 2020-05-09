@@ -1,32 +1,46 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+{%- include head.html -%}
 
-  {{ content }}
+<body>
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-  {%- endif -%}
 
-</div>
+  {%- include header.html -%}
+  <main class="home">
+    <div class="banner">
+      <div class="row" style="justify-content: center;">
+        <div class="column banner-image">
+          <img src="/assets/images/group.png">
+        </div>
+        <div class="column banner-text">
+          <h1>Hello from USB!</h1>
+          <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+          <button>Read Student Resources</button>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="height: 30vh;">
+      <div id="rectangle">
+        <div id="rectangle-text column">
+        <h2>Our Mission</h2>
+        <p>The Computer Science Undergraduate Student Board exists to promote a supportive and engaged community within Purdue’s Computer Science Department, and to use its relationship with faculty, the Computer Science Corporate Partners Program, and administration to advocate for the student body.</p>
+      </div>
+      </div>
+      <div id="triangle"></div>
+      <div id="objectives">
+        <h2>Our Objectives</h2>
+
+      </div>
+    </div>
+    <div class="members">
+      <h2>Current USB Members</h2>
+
+    </div>
+  </main>
+
+  {%- include footer.html -%}
+
+</body>
+
+</html>
