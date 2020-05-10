@@ -4,9 +4,15 @@ title: Initiatives
 permalink: /initiatives/
 ---
 
-{%- for initative in site.initatives -%}
-    <h1>
-        {{ initative.title | escape }}
-    </h1>
+<div class="initative-container">
+    {%- for initative in site.initatives -%}
+    <div class="card">
+        <img src="{{ initative.image }}" style="width:100%">
+        <div class="card-container">
+            <h4>{{ initative.title | escape }}</h4>
+            <p>{{ initative.content }}</p>
+        </div>
+    </div>
 
-{%- endfor -%}
+    {%- endfor -%}
+</div>
