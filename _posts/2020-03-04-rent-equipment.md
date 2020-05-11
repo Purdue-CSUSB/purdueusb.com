@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "How can I rent equipment?"
+description: "Borrow equipment to tinker with for free"
 author: Noah Alderton
 date:   2020-03-04 17:00:00 -0400
 categories: campus

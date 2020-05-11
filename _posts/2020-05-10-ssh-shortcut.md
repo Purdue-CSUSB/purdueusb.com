@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "SSH Shortcut for Purdue Servers"
+description: "Tired of typing data.cs.purdue.edu?"
 author: Jay Hankins
 date:   2020-05-10 00:00:00 -0400
 categories: techical

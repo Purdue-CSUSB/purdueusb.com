@@ -1,0 +1,16 @@
+<aside>
+  {%- if site.posts.size > 0 -%}
+  <ul class="post-list">
+    {%- for post in site.posts -%}
+    <li>
+      <h4>
+        <a class="sidebar-post" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h4>
+      <p>{{ post.description }}</p>
+    </li>
+    {%- endfor -%}
+  </ul>
+  {%- endif -%}
+</aside>
