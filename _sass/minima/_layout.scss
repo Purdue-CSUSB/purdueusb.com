@@ -7,6 +7,7 @@
 
   // Positioning context for the mobile navigation icon
   position: relative;
+  grid-area: head;
 }
 
 .site-title {
@@ -118,6 +119,7 @@
   border-top: 1px solid $grey-color-light;
   background-color: #333333;
   color: white;
+  grid-area: footer;
 }
 
 .footer-heading {
