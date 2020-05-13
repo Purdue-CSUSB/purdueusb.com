@@ -3,12 +3,14 @@
   <ul class="post-list">
     {%- for post in site.posts -%}
     <li>
-      <h4>
-        <a class="sidebar-post" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
-      </h4>
-      <p>{{ post.description }}</p>
+      <div {% if post.url == page.url %}id="active" {% endif %}>
+        <h4>
+          <a class="sidebar-post" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h4>
+        <p>{{ post.description }}</p>
+      </div>
     </li>
     {%- endfor -%}
   </ul>
