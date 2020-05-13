@@ -1,33 +1,8 @@
 var team = [
     {
-        name: 'Zach Bryant',
-        role: 'President',
-        img: 'zach'
-    },
-    {
         name: 'Lauren Lum',
-        role: 'Vice President',
+        role: 'President',
         img: 'lauren'
-    },
-    {
-        name: 'Nirali Rai',
-        role: 'Treasurer',
-        img: 'nirali'
-    },
-    {
-        name: 'Ian Zanger',
-        role: '',
-        img: 'ianz'
-    },
-    {
-        name: 'Rohan Gupta',
-        role: '',
-        img: 'rohan'
-    },
-    {
-        name: 'Megan Walsh',
-        role: '',
-        img: 'megan'
     },
     {
         name: 'Albert Zhong',
@@ -51,7 +26,7 @@ var team = [
     },
     {
         name: 'Arianna Smith',
-        role: '',
+        role: 'Vice President',
         img: 'arianna'
     },
     {
@@ -61,7 +36,7 @@ var team = [
     },
     {
         name: 'Cindy Ding',
-        role: '',
+        role: 'Treasurer',
         img: 'cindy'
     },
     {
@@ -88,7 +63,42 @@ var team = [
         name: 'Sarah Thomas',
         role: '',
         img: 'sarah'
-    }
+    },
+    {
+        name: 'Neerali Shah',
+        role: 'Secretary',
+        img: 'neerali'
+    },
+    {
+        name: 'Sweta Saravanan',
+        role: '',
+        img: 'sweta'
+    },
+    {
+        name: 'Simran Kadadi',
+        role: '',
+        img: 'simran'
+    },
+    {
+        name: 'Shashank Kumar',
+        role: '',
+        img: 'shashank'
+    },
+    {
+        name: 'Caleb Ahn',
+        role: '',
+        img: 'caleb'
+    },
+    {
+        name: 'Arya Sharma',
+        role: '',
+        img: 'arya'
+    },
+    {
+        name: 'Anisha Bhat',
+        role: '',
+        img: 'anisha'
+    },
 ];
 
 
