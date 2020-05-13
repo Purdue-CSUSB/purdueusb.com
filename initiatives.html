@@ -4,13 +4,13 @@ title: Initiatives
 permalink: /initiatives/
 ---
 
-<div class="initative-container">
-    {%- for initative in site.initatives -%}
+<div class="initiatives-container">
+    {%- for initiative in site.initiatives -%}
     <div class="card">
-        <img src="{{ initative.image }}" style="width:100%">
+        <img src="{{ initiative.image }}" style="width:100%">
         <div class="card-container">
-            <h4>{{ initative.title | escape }}</h4>
-            <p>{{ initative.content }}</p>
+            <h4>{{ initiative.title | escape }}</h4>
+            <p>{{ initiative.content }}</p>
         </div>
     </div>
 

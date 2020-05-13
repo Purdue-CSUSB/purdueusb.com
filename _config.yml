@@ -54,5 +54,5 @@ plugins:
 #   - vendor/ruby/
 
 collections:
-  - initatives
+  - initiatives
   - members

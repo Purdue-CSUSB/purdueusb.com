@@ -1,3 +1,10 @@
+.about-title {
+    font-size: 36px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+
 .banner {
     background-color: $usb-gray;
     width: 100%;
@@ -52,10 +59,10 @@
 
 #triangle {
     position: absolute;
-    left: 40vw;
+    left: 50vw;
     width: 0;
     height: 0;
-    border-bottom: 250px solid $usb-yellow;
+    border-bottom: 225px solid $usb-yellow;
     border-right: 150px solid transparent;
     z-index: 1;
 }
@@ -63,8 +70,8 @@
 #rectangle {
     position: absolute;
     background-color: $usb-yellow;
-    height: 250px;
-    width: 40vw;
+    height: 225px;
+    width: 50vw;
     z-index: 2;
 }
 
@@ -85,16 +92,14 @@
 }
 
 #mission-container {
-    width:50vw; 
+    width:75vw; 
     height: 250px; 
     min-width: 600px;
 }
 
 #objectives {
-    left: 65vw;
     padding-top: 1vh;
     width: 35vw;
-
 }
 
 #objectives h2 {
@@ -107,7 +112,7 @@
     }
     #rectangle {
         width: 100%;
-        height: 30vh;
+        height: 25vh;
     }
     #rectangle-text {
         right: auto;
@@ -121,16 +126,4 @@
     #mission-container {
         height: 30vh;
     }
-}
-
-
-.members {
-    padding-top: 2vh;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
-.members h2 {
-    font-weight: bold;
 }

@@ -1,4 +1,38 @@
 ---
-layout: home
+
 ---
 
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+{%- include head.html -%}
+
+<body>
+
+  {%- include header.html -%}
+
+  <main class="home">
+    <div class="banner">
+      <div class="row" style="justify-content: center;">
+        <div class="column banner-image">
+          <img src="/assets/images/group.png">
+        </div>
+        <div class="column banner-text">
+          <h1>Hello from USB!</h1>
+          <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex
+            ea commodo consequat.</h5>
+          <button onclick="location.href='/resources'" type="button">Read Student Resources</button>
+        </div>
+      </div>
+    </div>
+    {%- include aboutus.html -%}
+    {%- include members.html -%}
+  </main>
+
+  {%- include footer.html -%}
+
+</body>
+
+</html>

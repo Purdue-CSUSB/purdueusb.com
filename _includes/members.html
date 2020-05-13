@@ -1,0 +1,18 @@
+<div class="members">
+    <h2>Current USB Members</h2>
+
+<div class="members-flex">
+    {%- for member in site.members -%}
+    <div class="hvrbox">
+        <img src="{{ member.image }}" class="hvrbox-layer_bottom">
+        <div class="hvrbox-layer_top">
+            <div class="hvrbox-text">
+                {{ member.name }}
+                <div style="font-size: 12px;">{{ member.title }}</div>
+                <div style="font-size: 12px;">{{ member.class }}</div>
+            </div>
+        </div>
+    </div>
+    {%- endfor -%}
+</div>
+</div>
