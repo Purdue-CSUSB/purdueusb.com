@@ -25,6 +25,7 @@
 }
 
 .site-nav {
+  z-index: 1;
   float: right;
   line-height: $base-line-height * $base-font-size * 2.25;
 
