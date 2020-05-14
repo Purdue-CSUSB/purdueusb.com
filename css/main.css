@@ -13,6 +13,7 @@ header {
     background-size: cover;
     background-position: center center;
     width: 100%;
+    height: 90vh;
 }
 .logo {
     font-size: 44px;
@@ -22,7 +23,7 @@ header {
     text-shadow: 0 0 10px rgba(0,0,0,.3);
 }
 .call-to-wrapper {
-    height: 520px;
+    height: 82vh;
     max-width: 500px;
     margin: 0 auto;
     text-align: center;
@@ -31,7 +32,7 @@ header {
     color: #fff;
     font-weight: 600;
     /* font-size: 44px; */
-    font-size: 55px;
+    /* font-size: 55px; */
     padding: 0 10px;
     position: relative;
     top: 50%;
@@ -39,22 +40,34 @@ header {
 }
 .call-to button {
     max-width: 200px;
-}
-button {
     width: 100%;
     height: 40px;
-    background: rgba(0,0,0,0);
     background: #4EBFE5;
     border: none;
-    font-size: 16px;
+    font-size: 20px;
      margin-top: 20px;
     margin-bottom: 20px;
     outline: none;
     color: #fff;
     font-weight: 600;
 }
-button:hover {
-    background: #5BC4E7;
+.call-to button:hover {
+    background: rgb(99, 195, 228);
+}
+.row button {
+    width: 100%;
+    height: 40px;
+    background: #4EBFE5;
+    border: none;
+    font-size: 20px;
+     margin-top: 20px;
+    margin-bottom: 20px;
+    outline: none;
+    color: #fff;
+    font-weight: 600;
+}
+.row button:hover {
+    background: rgb(99, 195, 228);
 }
 .call-to .row {
     margin-top: 20px;
@@ -90,21 +103,27 @@ section {
 }
 .max-width {
     padding: 20px;
-    max-width: 1150px;
+    /* max-width: 1150px; */
+    max-width: 1300px;
     margin: 0 auto;
 }
 p {
     line-height: 1.6em;
     font-size: 18px;
 }
-h5 {
+.max-width h5 {
     font-weight: 600;
     font-size: 22px;
 }
-h6 {
+
+.card-text h6 {
     font-weight: 600;
     font-size: 24px;
     margin: 10px auto;
+}
+.card-body a {
+    font-size: 15px;
+    margin: 5px auto;
 }
 .card {
     background: #fff;
@@ -131,6 +150,11 @@ h6 {
 }
 .team-item .name{
     font-weight: 600;
+    font-size: 15px;
+}
+.team-item .role{
+    font-weight: 600;
+    font-size: 12px;
 }
 .team-item-text-wrapper {
     visibility: hidden;
@@ -147,7 +171,9 @@ h6 {
     top: 50%;
     transform: translateY(-50%);
 }
-input {
+
+/* contact */
+.form-group input {
     width: 100%;
     border-radius: 0px;
     outline: none;
@@ -157,6 +183,7 @@ input {
     color: #202020;
     margin-bottom: 12px;
 }
+
 input:hover {
     border: 2px solid #7C7977;
 }
@@ -164,13 +191,14 @@ input:hover {
 input:focus {
     border: 2px solid #4EBFE5;
 }
-textarea {
+.form-group textarea {
     width: 100%;
     height: 150px;
     border: 2px solid #CECBC9;
     padding: 8px;
     outline: none;
     resize: none;
+    font-size: 14px;
 }
 textarea:hover {
     border: 2px solid #7C7977;
@@ -198,4 +226,24 @@ textarea:focus {
 
 .info {
     font-size: 18px;
+}
+
+
+/* NAVBAR */
+.fixed {
+    position:fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar {
+    min-height: 6vh;
+    font-family: 'Raleway', sans-serif;
+    font-size: large;
+    position: fixed;
+    background: rgba(241, 241, 241, 0.7);
+}
+
+.nav-item {
+    margin-left: 15px;
 }
