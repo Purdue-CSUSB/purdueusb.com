@@ -40,8 +40,6 @@ header {
 }
 .call-to button {
     max-width: 200px;
-}
-button {
     width: 100%;
     height: 40px;
     background: #4EBFE5;
@@ -53,7 +51,22 @@ button {
     color: #fff;
     font-weight: 600;
 }
-button:hover {
+.call-to button:hover {
+    background: rgb(99, 195, 228);
+}
+.row button {
+    width: 100%;
+    height: 40px;
+    background: #4EBFE5;
+    border: none;
+    font-size: 20px;
+     margin-top: 20px;
+    margin-bottom: 20px;
+    outline: none;
+    color: #fff;
+    font-weight: 600;
+}
+.row button:hover {
     background: rgb(99, 195, 228);
 }
 .call-to .row {
@@ -158,7 +171,9 @@ p {
     top: 50%;
     transform: translateY(-50%);
 }
-input {
+
+/* contact */
+.form-group input {
     width: 100%;
     border-radius: 0px;
     outline: none;
@@ -168,6 +183,7 @@ input {
     color: #202020;
     margin-bottom: 12px;
 }
+
 input:hover {
     border: 2px solid #7C7977;
 }
@@ -175,13 +191,14 @@ input:hover {
 input:focus {
     border: 2px solid #4EBFE5;
 }
-textarea {
+.form-group textarea {
     width: 100%;
     height: 150px;
     border: 2px solid #CECBC9;
     padding: 8px;
     outline: none;
     resize: none;
+    font-size: 14px;
 }
 textarea:hover {
     border: 2px solid #7C7977;
@@ -225,4 +242,8 @@ textarea:focus {
     font-size: large;
     position: fixed;
     background: rgba(241, 241, 241, 0.7);
+}
+
+.nav-item {
+    margin-left: 15px;
 }
