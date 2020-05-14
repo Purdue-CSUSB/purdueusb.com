@@ -118,12 +118,15 @@ p {
 
 .card-text h6 {
     font-weight: 600;
-    font-size: 24px;
+    font-size: 3vh;
     margin: 10px auto;
 }
 .card-body a {
-    font-size: 15px;
+    font-size: 18px;
     margin: 5px auto;
+}
+.card-body p {
+    font-size: 2vh;
 }
 .card {
     background: #fff;
