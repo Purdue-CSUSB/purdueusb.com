@@ -12,7 +12,7 @@ var team = [
     {
         name: 'Cindy Ding',
         role: 'Treasurer',
-        img: 'cin'
+        img: 'cindyDing'
     },
     {
         name: 'Neerali Shah',
@@ -87,7 +87,7 @@ var team = [
     {
         name: 'Caleb Ahn',
         role: '',
-        img: 'cal'
+        img: 'calebAhn'
     },
     {
         name: 'Arya Sharma',
