@@ -5,6 +5,21 @@ var team = [
         img: 'lauren'
     },
     {
+        name: 'Arianna Smith',
+        role: 'Vice President',
+        img: 'arianna'
+    },
+    {
+        name: 'Cindy Ding',
+        role: 'Treasurer',
+        img: 'cindy'
+    },
+    {
+        name: 'Neerali Shah',
+        role: 'Secretary',
+        img: 'neerali'
+    },
+    {
         name: 'Albert Zhong',
         role: '',
         img: 'albert'
@@ -25,19 +40,9 @@ var team = [
         img: 'sera'
     },
     {
-        name: 'Arianna Smith',
-        role: 'Vice President',
-        img: 'arianna'
-    },
-    {
         name: 'Christopher Lehman',
         role: '',
         img: 'christopher'
-    },
-    {
-        name: 'Cindy Ding',
-        role: 'Treasurer',
-        img: 'cindy'
     },
     {
         name: 'Noah Alderton',
@@ -65,11 +70,6 @@ var team = [
         img: 'sarah'
     },
     {
-        name: 'Neerali Shah',
-        role: 'Secretary',
-        img: 'neerali'
-    },
-    {
         name: 'Sweta Saravanan',
         role: '',
         img: 'sweta'
@@ -82,7 +82,7 @@ var team = [
     {
         name: 'Shashank Kumar',
         role: '',
-        img: 'shashank'
+        img: 'empty'
     },
     {
         name: 'Caleb Ahn',
@@ -97,7 +97,12 @@ var team = [
     {
         name: 'Anisha Bhat',
         role: '',
-        img: 'anisha'
+        img: 'empty'
+    },
+    {
+        name: 'Sean Flannery',
+        role: '',
+        img: 'sean'
     },
 ];
 
@@ -105,7 +110,7 @@ var team = [
 var initiatives = [
     {
         title: 'CS 193',
-        description: 'Tools course taught by USB members',
+        description: 'Tools course developed and taught by USB members',
         img: 'cs193-thumbnail',
         linkText: '',
         linkURL: '',
@@ -132,11 +137,12 @@ var initiatives = [
         linkURL: '',
     },
     {
-        title: 'Virtual Office Hours',
-        description: 'Innovative new way to hold office hours',
-        img: 'Virtual_Office_Hours_Logo',
-        linkText: '',
-        linkURL: '',
+        title: 'USB Tutor List',
+        description: 'Tutor list maintained by USB for students looking for extra help',
+        img: 'tutor',
+        linkText: 'View List',
+        linkURL: 'https://www.purdueusb.com/tutors/',
+
     },
     {
         title: 'Undergraduate Student Forum',
@@ -145,7 +151,30 @@ var initiatives = [
         linkText: '',
         linkURL: '',
 
-    }
+    },
+    {
+        title: 'Mentorship',
+        description: 'Working on creating a supportive community between upperclassmen and underclassmen',
+        img: 'mentorship',
+        linkText: '',
+        linkURL: '',
+
+    },
+    {
+        title: 'Virtual Office Hours',
+        description: 'Innovative new way to hold office hours',
+        img: 'Virtual_Office_Hours_Logo',
+        linkText: '',
+        linkURL: '',
+    },
+    {
+        title: 'And Much More!',
+        description: 'From corporate events to the CS180 cookie drop, USB is working to develop new exciting initiatives',
+        img: 'more_red',
+        linkText: 'Stay Updated with USB!',
+        linkURL: 'https://www.facebook.com/purdueusb/',
+
+    },
 ];
 
 for (var i = 0; i < team.length; i++) {
