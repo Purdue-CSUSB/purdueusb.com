@@ -2,9 +2,9 @@
     <h2>Current USB Members</h2>
 
 <div class="members-flex">
-    {%- for member in site.members -%}
+    {%- for member in site.data.members -%}
     <div class="hvrbox">
-        <img src="{{ member.image }}" class="hvrbox-layer_bottom">
+        <img src="/assets/images/members/{{ member.image }}" class="hvrbox-layer_bottom">
         <div class="hvrbox-layer_top">
             <div class="hvrbox-text">
                 {{ member.name }}

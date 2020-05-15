@@ -14,7 +14,8 @@
 
 /* Add some padding inside the card container */
 .card-container {
-    padding: 2px 16px;
+    padding: 10px;
+    height: 20%;
 }
 
 .initiatives-container {
@@ -22,4 +23,21 @@
     align-content: center;
     flex-wrap: wrap;
     justify-content: space-between;
+    text-align: center;
+}
+
+.initiative-title {
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.initiative-description {
+
+}
+
+.initiative-button {
+    color: $usb-blue;
+    margin: auto;
+    width: 50%;
+    font-size: 1.2em;
 }
