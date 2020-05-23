@@ -2,7 +2,12 @@
 This repository is created for Purdue's CS Undergraduate Student Board.  This website was designed to be easily maintained.  Information that is frequently updated, like members, initiatives, and student resources, can all be updated by editing YAML and Markdown files.  This site is built using Jekyll with a customized minima theme.  Jekyll was selected due to its compatibility with GitHub Pages, as well as it's quality of life improvements.  We tried to make this site fairly lightweight.  Jekyll only allows for static site creation, which is fine for our purposes.  
 
 ## Installation
-Please follow the installation instructions found on the [Jekyll Website](https://jekyllrb.com/docs/installation/).  There are instructions for Windows, macOS, and Linux.  Once Jekyll is properly installed, clone the repository.  Then, run `bundle exec jekyll serve` in the repository's root directory.  
+Please follow the installation instructions found on the [Jekyll Website](https://jekyllrb.com/docs/installation/).  There are instructions for Windows, macOS, and Linux.  Once Jekyll is properly installed, clone the repository.  Then, run `bundle exec jekyll serve` in the repository's root directory.
+
+## TODO
+  * Replace placeholder text
+  * Make post sidebar in student resource page independent scrollable from the article content
+  * Either create an about page (maybe about the history of the organization) or have it link to the landing instead.
 
 ## Usage
 
