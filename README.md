@@ -24,7 +24,6 @@ Refers to snippets of code within the `_includes` directory that can be inserted
   - `members.html` &mdash; A flexbox showing the profile images of all the current members of USB.
   - `postsidebar.html` &mdash; The sidebar of all articles that is seen when a user clicks on a student resource post/
   - `social.html` &mdash; Creates a row of social media icons that are used in the footer.  Clicking on these icons will take the user to our respective social media pages.
-  - 
 
 ### Sass
 
