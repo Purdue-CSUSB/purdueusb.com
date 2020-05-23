@@ -2,7 +2,7 @@
     <div>
         <div id="rectangle">
             <div id="rectangle-text">
-                <h2>Our Mission</h2>
+                <h1>Our Mission</h1>
                 <p>The Computer Science Undergraduate Student Board exists to promote a supportive and engaged community
                     within Purdue’s Computer Science Department, and to use its relationship with faculty, the Computer
                     Science Corporate Partners Program, and administration to advocate for the student body.</p>
@@ -13,7 +13,20 @@
     <div class="row">
         <div id="mission-container"></div>
         <div id="objectives">
-            <h2>Our Objectives</h2>
+            <h1>Our Objectives</h1>
+            <div id="objectiveParts">
+                {%- for objective in site.data.objectives -%}
+                <div class="objective">
+                    <img src="/assets/images/objectives/{{ objective.image }}">
+                    <div class="objective-text">
+                        <h3>{{ objective.title }}</h3>
+                        <p>{{ objective.description }}</p>
+                    </div>
+                </div>
+
+                {%- endfor -%}
+
+            </div>
         </div>
     </div>
 </div>
