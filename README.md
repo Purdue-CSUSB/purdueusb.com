@@ -4,6 +4,28 @@ This repository is created for Purdue's CS Undergraduate Student Board.  This we
 ## Installation
 Please follow the installation instructions found on the [Jekyll Website](https://jekyllrb.com/docs/installation/).  There are instructions for Windows, macOS, and Linux.  Once Jekyll is properly installed, clone the repository.  Then, run `bundle exec jekyll serve` in the repository's root directory.  
 
+## Usage
+
+### Editing USB Members
+  1. If necessary, add their photograph in `assets/images/members`.  Make sure the images are cropped to be square.
+  2. Edit `_data/members.yml` with their name, image, title, and class rank.
+
+### Editing Initiatives
+  1. Add an initiative logo in `assets/images/initiative`.  The logo must be 400px by 289px in resolution.
+  2. Edit `_data/initiatives.yml` with title, image, and description.
+
+### Editing Objectives
+  1. Add an objective logo to `assets/images/objectives`
+  2. Edit `_data/objectives.yml` with title, image, and description.
+
+### Editing Student Resources
+Articles are to be written in Markdown.  Look at one of the preexisting articles as a reference.  Be sure to include the following "front matter" attributes to the top of the Markdown file between a pair of `---`.
+ * layout - This will always be `post`
+ * title - Title of the article
+ * description - Describe what the article is about.  Keep this down to one sentence.
+ * author: Name of the author
+ * date - Date of most recent edit
+ * categories: Category this fits the article, like `technical` or `campus`.  Multiple categories can be included, as long as they are comma separated, an between square brackets.
 
 ### Layouts
 
@@ -43,14 +65,6 @@ Contains the `main.scss` that imports sass files from within the `_sass` directo
 
 This directory can include sub-directories to manage assets of similar type, and will be copied over as is, to the final transformed site directory.
 
-#### Post Listing
-
-This section is optional from Minima v2.2 onwards.<br/>
-It will be automatically included only when your site contains one or more valid posts or drafts (if the site is configured to `show_drafts`).
-
-The title for this section is `Posts` by default and rendered with an `<h2>` tag. You can customize this heading by defining a `list_title` variable in the document's front matter.
-
-
 ### Change default date format
 
 You can change the default date format by specifying `site.minima.date_format`
@@ -62,9 +76,6 @@ in `_config.yml`.
 minima:
   date_format: "%b %-d, %Y"
 ```
-
---
-
 
 ### Social networks
 
@@ -89,5 +100,3 @@ mastodon:
  - username: jekyll2
    instance: example.com
 ```
-
---

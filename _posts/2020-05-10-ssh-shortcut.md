@@ -4,7 +4,7 @@ title:  "SSH Shortcut for Purdue Servers"
 description: "Tired of typing data.cs.purdue.edu?"
 author: Jay Hankins
 date:   2020-05-10 00:00:00 -0400
-categories: techical
+categories: technical
 ---
 
 It can be tedious to type `ssh <username>@<machine>.cs.purdue.edu` over and over again whenever you need to login to a CS machine.
