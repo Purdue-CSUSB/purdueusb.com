@@ -1,20 +1,41 @@
 ---
-layout: page
 title: Initiatives
 description: Projects we are currently working on!
 permalink: /initiatives/
 ---
 
-<div class="initiatives-container">
-    {%- for initiative in site.data.initiatives -%}
-    <div class="card">
-        <img src="/assets/images/initiatives/{{ initiative.image }}" style="width:100%">
-        <div class="card-container">
-            <h4 class="initiative-title">{{ initiative.title | escape }}</h4>
-            <p class="initiative-description">{{ initiative.description }}</p>
-        </div>
-        <a class="initiative-button" href="{{ initiative.buttonLink }}">{{ initiative.buttonText }}</a>
-    </div>
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-    {%- endfor -%}
-</div>
+{%- include head.html -%}
+
+<body>
+
+    {%- include header.html -%}
+    <main class="page-content">
+        <div class="wrapper">
+            <h1 class="post-title">{{ page.title | escape }}</h1>
+            <h3 class="post-subtitle" style="margin-top: -10px;">{{ page.description | escape }}</h3>
+        </div>
+        <div style="max-width: 1400px; margin: auto; padding-bottom: 20px;">
+            <div class="initiatives-container">
+                {%- for initiative in site.data.initiatives -%}
+                <div class="card">
+                    <img src="/assets/images/initiatives/{{ initiative.image }}" style="width:100%">
+                    <div class="card-container">
+                        <h4 class="initiative-title">{{ initiative.title | escape }}</h4>
+                        <p class="initiative-description">{{ initiative.description }}</p>
+                    </div>
+                    <a class="initiative-button" href="{{ initiative.buttonLink }}">{{ initiative.buttonText }}</a>
+                </div>
+
+                {%- endfor -%}
+            </div>
+        </div>
+    </main>
+
+    {%- include footer.html -%}
+
+</body>
+
+</html>
