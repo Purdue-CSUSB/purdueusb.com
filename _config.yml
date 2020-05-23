@@ -2,7 +2,7 @@ title: Purdue USB
 author:
   name: Purdue USB
   email: usb@cs.purdue.edu
-description: > # this means to ignore newlines until "show_excerpts:"
+description: The Computer Science Undergraduate Student Board (USB) at Purdue University is the liaison between undergraduate CS/DS students and the CS department.
 show_excerpts: false # set to true to show excerpts on the homepage
 
 # Minima date format
@@ -42,10 +42,3 @@ minima:
     #   instance: example.com
     # - username: jekyll2
     #   instance: example.com
-
-plugins:
- - jekyll-feed
- - jekyll-seo-tag
-
-collections:
-  - initiatives
