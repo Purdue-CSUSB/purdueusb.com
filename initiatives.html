@@ -13,11 +13,11 @@ permalink: /initiatives/
 
     {%- include header.html -%}
     <main class="page-content">
-        <div class="wrapper">
+        <div class="title">
             <h1 class="post-title">{{ page.title | escape }}</h1>
             <h3 class="post-subtitle" style="margin-top: -10px;">{{ page.description | escape }}</h3>
         </div>
-        <div style="max-width: 1400px; margin: auto; padding-bottom: 20px;">
+        <div style="max-width: 1400px; margin: auto; padding-bottom: 3vh; margin-top: 3vh;">
             <div class="initiatives-container">
                 {%- for initiative in site.data.initiatives -%}
                 <div class="card">

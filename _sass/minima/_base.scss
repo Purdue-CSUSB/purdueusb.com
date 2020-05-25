@@ -172,6 +172,31 @@ pre {
 
 
 /**
+ * Title
+ */
+.title {
+  background-color: #333333;
+  padding-top: 10vh;
+  text-align: center;
+  height: 20vh;
+  color: white;
+  width: 100%;
+}
+
+.title .post-title {
+  font-weight: 700;
+  font-family: $base-font-family;
+  font-size: 40px;
+  margin-bottom: 3vh;
+}
+
+.title .post-subtitle {
+  font-weight: 500;
+  font-family: $base-font-family;
+  font-size: 20px;
+}
+
+/**
  * Wrapper
  */
 .wrapper {
@@ -181,6 +206,8 @@ pre {
   margin-left: auto;
   padding-right: $spacing-unit;
   padding-left: $spacing-unit;
+  margin-top: $spacing-unit;
+  
   @extend %clearfix;
 
   @include media-query($on-laptop) {
