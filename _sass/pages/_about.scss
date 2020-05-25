@@ -18,7 +18,7 @@
     width: 100%;
     padding-bottom: 5vh;
     justify-content: center;
-    height: 60vh;
+    height: 70vh;
 }
 
 .home {
@@ -38,7 +38,7 @@
     padding-top: 30px;
     padding-left: 10px;
     padding-right: 20px;
-    margin-top: 12vh;
+    margin-top: 6vh;
     max-width: 400px;
 }
 
@@ -143,9 +143,13 @@
     padding-left: 15px;
 
     h3 {
+        margin-top: 5px;
         margin-bottom: 5px;
         font-weight: bold;
+    }
 
+    p {
+        margin-bottom: 5vh;
     }
 }
 
