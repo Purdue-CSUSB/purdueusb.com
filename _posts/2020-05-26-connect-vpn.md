@@ -9,7 +9,7 @@ categories: technical
 
 ## Introduction
 
-A Virtual Private Networking (VPN) is a method that allows users to securely access an organization's internal network resources. By using Purdue's VPN service, you can access resources that are only available on campus anywhere, e.g. printing to any campus printer, remotely accessing Purdue's servers/UNIX machines (like mc19.cs.purdue.edu) through remote desktop, etc. 
+A Virtual Private Networking (VPN) is a method that allows users to securely access an organization's internal network resources. By using Purdue's VPN service, you can access resources that are only available on campus anywhere, e.g. printing to any campus printer, remotely accessing Purdue's servers/UNIX machines (like `mc19.cs.purdue.edu`) through remote desktop, etc. 
 
 This tutorial will show you how to connect to Purdue's VPN using Cisco AnyConnect.
 
@@ -29,7 +29,7 @@ Select Cisco AnyConnect for Personally Owned Computers and select the appropriat
 
 Once you finished installing Cisco AnyConnect, open it up. You will see that Cisco AnyConnect is ready to connect to the VPN server: `webvpn.purdue.edu`.
 
-There are a couple options you can choose. Due to COVID-19, more people are utilizing Purdue's VPN services. Purdue has created another VPN server: `http://webvpn.purdue.edu/` for people to connect to. Whichever VPN server you choose to connect to will work.
+There are a couple options you can choose. Due to COVID-19, more people are utilizing Purdue's VPN services. Purdue has created another VPN server: `webvpn2.purdue.edu/` for people to connect to. Whichever VPN server you choose to connect to will work.
 
 ![AnyConnect](https://user-images.githubusercontent.com/25762130/82869903-0c63c100-9efd-11ea-9409-3ca6c919f54f.png)
 
