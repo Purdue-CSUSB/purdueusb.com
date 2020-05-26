@@ -1,7 +1,15 @@
 .about-title {
-    font-size: 36px;
-    padding-top: 20px;
+    font-size: 40px;
+    padding-top: 10vh;
     text-align: center;
+    background-color: $usb-gray;
+    height: 20vh;
+    color: white;
+    font-weight: 700;
+}
+
+.aboutus h1 {
+    font-weight: bolder;
 }
 
 
@@ -10,6 +18,7 @@
     width: 100%;
     padding-bottom: 5vh;
     justify-content: center;
+    height: 70vh;
 }
 
 .home {
@@ -29,6 +38,7 @@
     padding-top: 30px;
     padding-left: 10px;
     padding-right: 20px;
+    margin-top: 6vh;
     max-width: 400px;
 }
 
@@ -40,11 +50,14 @@
     align-items: center;
     justify-content: center;
     display: flex;
-    padding-top: 10px;
+    margin-top: 15vh;
+    margin-right: 3vh;
+    margin-left: 3vh;
+    /*padding-top: 10px;
     padding-right: 10px;
     padding-left: 20px;
-    padding-bottom: 10px;
-    max-width: 400px;
+    padding-bottom: 10px;*/
+    max-width: 1000px;
 }
 
 .banner button{
@@ -100,7 +113,7 @@
 }
 
 #objectives {
-    padding-top: 1vh;
+    padding-top: 3vh;
     width: 35vw;
     display: flex;
     flex-direction: column;
@@ -130,8 +143,13 @@
     padding-left: 15px;
 
     h3 {
+        margin-top: 5px;
         margin-bottom: 5px;
-        font-weight: 500;
+        font-weight: bold;
+    }
+
+    p {
+        margin-bottom: 5vh;
     }
 }
 
@@ -154,6 +172,7 @@
         padding-top: 10px;
         padding-right: 10px;
         padding-bottom: 10px;
+
     }
     #rectangle h1 {
         text-align: left;
