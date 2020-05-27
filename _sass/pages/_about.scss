@@ -33,13 +33,22 @@
     flex: 50%;
 }
 
+.banner-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-items: right;
+    padding-top: 11vh;
+    align-content: flex-start;
+}
+
 .banner-text {
+    margin-left: 3vh;
     color:white;
-    padding-top: 30px;
-    padding-left: 10px;
-    padding-right: 20px;
-    margin-top: 6vh;
-    max-width: 400px;
+    margin-right: 25%;
+    max-width: 70%;
+    grid-row:    1;
+    grid-column: 2 / 3;
+    text-align: left;
 }
 
 .banner-text h5 {
@@ -47,17 +56,13 @@
 }
 
 .banner-image {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin-top: 15vh;
-    margin-right: 3vh;
-    margin-left: 3vh;
-    /*padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 20px;
-    padding-bottom: 10px;*/
-    max-width: 1000px;
+    margin-right: 5vh;
+    margin-left: 5vh;
+    max-width: 100%;
+    padding-top: 3vh;
+    grid-row:    1;
+    grid-column: 1 / 2;
+
 }
 
 .banner button{
@@ -154,6 +159,31 @@
 }
 
 @media (max-width: 915px) {
+    .banner-grid {
+        display: block;
+        padding-top: 5vh;
+    }
+
+    .banner-text {
+        color:white;
+        padding-top: 2vh;
+        margin-top: 2vh;
+        width: auto;
+        max-width: none;
+        position: relative;
+        display: block;
+        margin-right: 5%;
+    }
+    
+    .banner-image {
+        width: auto;
+        max-width: none;
+        position: relative;
+        display: block;
+        margin-left: 2vh;
+        margin-right: 2vh;
+    }
+
     #triangle {
         display: none;
     }
