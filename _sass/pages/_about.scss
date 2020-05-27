@@ -18,7 +18,8 @@
     width: 100%;
     padding-bottom: 5vh;
     justify-content: center;
-    height: 70vh;
+    //height: 70vh;
+    height:500px;
 }
 
 .home {
@@ -59,7 +60,7 @@
     margin-right: 5vh;
     margin-left: 5vh;
     max-width: 100%;
-    padding-top: 3vh;
+    padding-top: 12vh;
     grid-row:    1;
     grid-column: 1 / 2;
 
@@ -182,6 +183,7 @@
         display: block;
         margin-left: 2vh;
         margin-right: 2vh;
+        padding-top: 3vh;
     }
 
     #triangle {
