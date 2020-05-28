@@ -6,7 +6,8 @@ Please follow the installation instructions found on the [Jekyll Website](https:
 
 ## TODO
   * Make post sidebar in student resource page independent scrollable from the article content
-  * Either create an about page (maybe about the history of the organization) or have it link to the landing instead.
+  * Either create an about page (maybe about the history of the organization) or have it link to the landing instead
+  * Make social media links present on the "Hello from USB!" section
 
 ## Usage
 
