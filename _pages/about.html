@@ -1,0 +1,29 @@
+---
+title: About Us
+permalink: /about/
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+{%- include head.html -%}
+
+<body>
+
+  {%- include header.html -%}
+  <h1 class="about-title">About Us</h1>
+
+  <main class="home">
+
+    {%- include aboutus.html -%}
+    
+    <br/>
+
+    {%- include members.html -%}
+  </main>
+
+  {%- include footer.html -%}
+
+</body>
+
+</html>

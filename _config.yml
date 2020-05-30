@@ -4,6 +4,7 @@ author:
   email: usb@cs.purdue.edu
 description: The Computer Science Undergraduate Student Board (USB) at Purdue University is the liaison between undergraduate CS/DS students and the CS department.
 show_excerpts: false # set to true to show excerpts on the homepage
+include: ["_pages"]
 
 # Minima date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
@@ -12,30 +13,21 @@ minima:
 
   # generate social links in footer
   social_links:
-    # twitter: jekyllrb
-    github:  Purdue-CSUSB
-    # devto: jekyll
-    # dribbble: jekyll
+    github: Purdue-CSUSB
     facebook: purdueusb
-    # flickr:   jekyll
     instagram: purdueusb
+    # devto: jekyll
+    # twitter: jekyllrb
     # linkedin: jekyll
-    # pinterest: jekyll
     # youtube: jekyll
     # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
     # youtube_channel_name: CloudCannon
-    # telegram: jekyll
-    # googleplus: +jekyll
-    # microdotblog: jekyll
-    # keybase: jekyll
-
     # Mastodon instances
     # mastodon:
     # - username: jekyll
     #   instance: example.com
     # - username: jekyll2
     #   instance: example.com
-
     # GitLab instances
     # gitlab:
     # - username: jekyll

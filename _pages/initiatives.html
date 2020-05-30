@@ -1,0 +1,27 @@
+---
+title: Initiatives
+description: Check out what USB is currently working on!
+permalink: /initiatives/
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+{%- include head.html -%}
+
+<body>
+
+    {%- include header.html -%}
+    <main class="page-content">
+        <div class="title">
+            <h1 class="post-title">{{ page.title | escape }}</h1>
+            <h3 class="post-subtitle" style="margin-top: -10px;">{{ page.description | escape }}</h3>
+        </div>
+        {%- include initiatives.html -%}
+    </main>
+
+    {%- include footer.html -%}
+
+</body>
+
+</html>
