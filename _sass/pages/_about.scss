@@ -2,7 +2,7 @@
     font-size: 40px;
     padding-top: 10vh;
     text-align: center;
-    background-color: $usb-gray;
+    background-color: $accent-grey;
     height: 20vh;
     color: white;
     font-weight: 700;
@@ -14,7 +14,7 @@
 
 
 .banner {
-    background-color: $usb-gray;
+    background-color: $background-dark;
     width: 100%;
     padding-bottom: 5vh;
     justify-content: center;
@@ -61,7 +61,7 @@
 }
 
 .banner button{
-    background-color: $usb-yellow;
+    background-color: $primary-color;
     border: none;
     border-radius: 4px;
     font-weight: bold;
@@ -74,14 +74,14 @@
     left: 45vw;
     width: 0;
     height: 0;
-    border-bottom: 470px solid $usb-yellow;
+    border-bottom: 470px solid $primary-color;
     border-right: 150px solid transparent;
     z-index: 1;
 }
 
 #rectangle {
     position: absolute;
-    background-color: $usb-yellow;
+    background-color: $primary-color;
     height: 470px;
     width: 45vw;
     z-index: 2;

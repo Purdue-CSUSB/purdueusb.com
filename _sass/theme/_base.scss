@@ -1,3 +1,5 @@
+@import "mixins";
+
 /**
  * Reset some basic elements
  */
@@ -9,26 +11,73 @@ dl, dd, ol, ul, figure {
 }
 
 
-
 /**
  * Basic styling
  */
 body {
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  color: $text-color;
+  @include font-body;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
      -moz-font-feature-settings: "kern" 1;
        -o-font-feature-settings: "kern" 1;
           font-feature-settings: "kern" 1;
-  font-kerning: normal;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
+.rounded {
+  @include rounded($border-radius)
+}
 
+.rounded-slight {
+  @include rounded($border-radius-slight)
+}
+
+.shadow {
+  @include shadow-box;
+}
+
+.justify-start {
+  @include justify(flex-start);
+}
+
+.justify-center {
+  @include justify(center);
+}
+
+.justify-end {
+  @include justify(flex-end);
+}
+
+.justify-between {
+  @include justify(space-between);
+}
+
+.justify-around {
+  @include justify(space-around);
+}
+
+.align-start {
+  @include align(flex-start);
+}
+
+.align-center {
+  @include align(center);
+}
+
+.align-end {
+  @include align(flex-end);
+}
+
+.align-between {
+  @include align(space-between);
+}
+
+.align-around {
+  @include align(space-around);
+}
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -41,14 +90,12 @@ ul, ol, dl, figure,
 }
 
 
-
 /**
  * `main` element
  */
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
-
 
 
 /**
@@ -69,7 +116,7 @@ figure > img {
 }
 
 figcaption {
-  font-size: $small-font-size;
+  font-size: $font-size-caption;
 }
 
 
@@ -89,29 +136,86 @@ li {
 }
 
 
-
 /**
- * Headings
+ * Fonts: headings, body elements, weights
  */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: $base-font-weight;
+h1, h2, h3, h4, h5, h6, .header {
+  @include font-header;
 }
 
+h1, h2, h3, .shadow-text {
+  @include shadow-text;
+}
+
+h1, h3, h4, .bold {
+  @include font-bold;
+}
+
+body, h2, p, blockquote, pre,
+li, ul, ol, dl, data, input, .medium {
+  @include font-medium;
+}
+
+body, p, a, blockquote, pre, code, span
+li, ul, ol, dl, data, input, caption, .caption {
+  @include font-body;
+}
+
+.semibold {
+  @include font-semibold;
+}
+
+.normal {
+  @include font-normal;
+}
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+li, ul, ol {
+  font-size: $font-size-listitem;
+}
+
+caption, .caption {
+  font-size: $font-size-caption;
+}
+
+.light {
+  color: $text-color-light;
+}
+
+.dark {
+  color: $text-color;
+}
 
 
 /**
  * Links
  */
 a {
-  color: $brand-color;
+  color: $accent-blue;
   text-decoration: none;
+  @include shadow-text;
 
   &:visited {
-    color: darken($brand-color, 15%);
+    color: darken($accent-blue, 15%);
   }
 
   &:hover {
-    color: $text-color;
+    //color: $text-color;
     text-decoration: underline;
   }
 
@@ -126,13 +230,12 @@ a {
 
 
 /**
- * Blockquotes
+ * Blockquotes TODO
  */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  color: $accent-grey;
+  border-left: 4px solid $accent-grey-light;
   padding-left: $spacing-unit / 2;
-  @include relative-font-size(1.125);
   letter-spacing: -1px;
   font-style: italic;
 
@@ -149,7 +252,7 @@ blockquote {
 pre,
 code {
   @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-light;
+  border: 1px solid $accent-grey-light;
   border-radius: 3px;
   background-color: #eef;
 }
@@ -185,14 +288,12 @@ pre {
 
 .title .post-title {
   font-weight: 700;
-  font-family: $base-font-family;
   font-size: 40px;
   margin-bottom: 3vh;
 }
 
 .title .post-subtitle {
   font-weight: 500;
-  font-family: $base-font-family;
   font-size: 20px;
 }
 
@@ -255,7 +356,7 @@ pre {
     width: 20px;
     height: 20px;
     display: inline-block;
-    fill: #{$grey-color};
+    fill: #{$accent-grey};
     padding-right: 10px;
     padding-top: 3px;
     vertical-align: text-top;
@@ -278,21 +379,42 @@ table {
   text-align: $table-text-align;
   color: lighten($text-color, 18%);
   border-collapse: collapse;
-  border: 1px solid $grey-color-light;
+  border: 1px solid $accent-grey-light;
   tr {
     &:nth-child(even) {
-      background-color: lighten($grey-color-light, 6%);
+      background-color: lighten($accent-grey-light, 6%);
     }
   }
   th, td {
     padding: ($spacing-unit / 3) ($spacing-unit / 2);
   }
   th {
-    background-color: lighten($grey-color-light, 3%);
-    border: 1px solid darken($grey-color-light, 4%);
-    border-bottom-color: darken($grey-color-light, 12%);
+    background-color: lighten($accent-grey-light, 3%);
+    border: 1px solid darken($accent-grey-light, 4%);
+    border-bottom-color: darken($accent-grey-light, 12%);
   }
   td {
-    border: 1px solid $grey-color-light;
+    border: 1px solid $accent-grey-light;
   }
+}
+
+
+/* Buttons */
+button, .button {
+  @include clickable;
+  @include rounded($border-radius);
+  @include shadow-box;
+  @include font-bold;
+  background-color: $primary-color;
+
+  &--outline {
+    @extend .button;
+    background-color: transparent;
+    color: $text-color-light;
+    @include border($background-light, $border-width)
+  }
+}
+
+.border-dark {
+  border-color: $background-dark;
 }

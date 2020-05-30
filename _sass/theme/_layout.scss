@@ -13,21 +13,21 @@
 .site-title {
   @include relative-font-size(1.625);
   font-weight: 300;
-  line-height: $base-line-height * $base-font-size * 2.25;
+  line-height: $base-line-height * $font-size-body * 2.25;
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left;
 
   &,
   &:visited {
-    color: $grey-color-dark;
+    color: $accent-grey-dark;
   }
 }
 
 .site-nav {
   z-index: 1;
   float: right;
-  line-height: $base-line-height * $base-font-size * 2.25;
+  line-height: $base-line-height * $font-size-body * 2.25;
 
   .nav-trigger {
       display: none;
@@ -62,7 +62,7 @@
     top: 9px;
     right: $spacing-unit / 2;
     background-color: $background-color;
-    border: 1px solid $grey-color-light;
+    border: 1px solid $accent-grey-light;
     border-radius: 5px;
     text-align: right;
 
@@ -85,7 +85,7 @@
       text-align: center;
 
       > svg {
-        fill: $grey-color-dark;
+        fill: $accent-grey-dark;
       }
     }
 
@@ -117,7 +117,7 @@
  * Site footer
  */
 .site-footer {
-  border-top: 1px solid $grey-color-light;
+  border-top: 1px solid $accent-grey-light;
   background-color: #333333;
   color: white;
   grid-area: footer;
@@ -136,7 +136,7 @@
 
 .footer-col-wrapper {
   @include relative-font-size(0.9375);
-  color: $grey-color;
+  color: $accent-grey;
   margin-left: -$spacing-unit / 2;
   @extend %clearfix;
 }
@@ -211,8 +211,8 @@
 }
 
 .post-meta {
-  font-size: $small-font-size;
-  color: $grey-color;
+  font-size: $font-size-caption;
+  color: $accent-grey;
 }
 
 .post-link {
