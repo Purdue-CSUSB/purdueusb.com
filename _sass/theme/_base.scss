@@ -147,7 +147,7 @@ h1, h2, h3, .shadow-text {
   @include shadow-text;
 }
 
-h1, h3, h4, .bold {
+h1, h3, h4, .bold, .button {
   @include font-bold;
 }
 
@@ -157,7 +157,7 @@ li, ul, ol, dl, data, input, .medium {
 }
 
 body, p, a, blockquote, pre, code, span
-li, ul, ol, dl, data, input, caption, .caption {
+li, ul, ol, dl, data, input, caption, .caption, .button {
   @include font-body;
 }
 
@@ -406,12 +406,17 @@ button, .button {
   @include shadow-box;
   @include font-bold;
   background-color: $primary-color;
+  text-decoration: none;
 
   &--outline {
     @extend .button;
     background-color: transparent;
     color: $text-color-light;
     @include border($background-light, $border-width)
+  }
+
+  &:hover {
+    text-decoration: none;
   }
 }
 

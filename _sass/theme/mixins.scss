@@ -32,6 +32,10 @@
   border-radius: $radius;
 }
 
+@mixin border($color, $width) {
+  border: $width solid $color;
+}
+
 @mixin shadow-box {
   box-shadow: $default-shadow;
 }
