@@ -1,0 +1,72 @@
+@mixin font-base {
+  color: $text-color;
+}
+
+@mixin font-body {
+  @include font-base;
+  font-family: $font-family-body;
+}
+
+@mixin font-header {
+  @include font-base;
+  font-family: $font-family-header;
+}
+
+@mixin font-normal {
+  font-weight: $font-weight-base;
+}
+
+@mixin font-medium {
+  font-weight: $font-weight-medium;
+}
+
+@mixin font-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+@mixin font-bold {
+  font-weight: $font-weight-bold;
+}
+
+@mixin rounded($radius) {
+  border-radius: $radius;
+}
+
+@mixin shadow-box {
+  box-shadow: $default-shadow;
+}
+
+@mixin shadow-text {
+  text-shadow: $default-shadow;
+}
+
+@mixin justify($arg) {
+  justify-content: $arg;
+}
+
+@mixin align($arg) {
+  align-content: $arg;
+}
+
+@mixin clickable {
+  cursor: pointer;
+}
+
+/* Use media queries like this:
+@include media-query($on-palm) {
+  .wrapper {
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+}
+*/
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  //font-size: $base-font-size * $ratio;
+  // TODO get rid of this
+}
