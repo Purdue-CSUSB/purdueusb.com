@@ -1,3 +1,4 @@
+/* Font Mixins */
 @mixin font-base {
   color: $text-color;
 }
@@ -56,6 +57,8 @@
   cursor: pointer;
 }
 
+
+/* Sizing mixins */
 /* Use media queries like this:
 @include media-query($on-palm) {
   .wrapper {
@@ -73,4 +76,69 @@
 @mixin relative-font-size($ratio) {
   //font-size: $base-font-size * $ratio;
   // TODO get rid of this
+}
+
+
+/* Spacing Mixins */
+// Paddings
+@mixin p-bottom($space) {
+  padding-bottom: $space;
+}
+
+@mixin p-top($space) {
+  padding-top: $space;
+}
+
+@mixin py($space) {
+  @include p-top($space);
+  @include p-bottom($space);
+}
+
+@mixin p-left($space) {
+  padding-left: $space;
+}
+
+@mixin p-right($space) {
+  padding-right: $space;
+}
+
+@mixin px($space) {
+  @include p-left($space);
+  @include p-right($space);
+}
+
+@mixin pa($space) {
+  @include px($space);
+  @include py($space);
+}
+// Margins
+@mixin m-bottom($space) {
+  margin-bottom: $space;
+}
+
+@mixin m-top($space) {
+  margin-top: $space;
+}
+
+@mixin my($space) {
+  @include m-top($space);
+  @include m-bottom($space);
+}
+
+@mixin m-left($space) {
+  margin-left: $space;
+}
+
+@mixin m-right($space) {
+  margin-right: $space;
+}
+
+@mixin mx($space) {
+  @include m-left($space);
+  @include m-right($space);
+}
+
+@mixin ma($space) {
+  @include mx($space);
+  @include my($space);
 }
