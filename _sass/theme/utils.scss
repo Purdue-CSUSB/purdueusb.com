@@ -1,0 +1,91 @@
+.rounded {
+  @include rounded($border-radius);
+
+  &--slight {
+    @include rounded($border-radius-slight);
+  }
+}
+
+.shadow {
+  &-box {
+    @include shadow-box;
+  }
+
+  &-text {
+    @include shadow-text;
+  }
+}
+
+.justify-start {
+  &-start {
+    @include justify(flex-start);
+  }
+
+  &-center {
+    @include justify(center);
+  }
+
+  &-end {
+    @include justify(flex-end);
+  }
+
+  &-around {
+    @include justify(space-around);
+  }
+}
+
+.align {
+  &-start {
+    @include align(flex-start);
+  }
+  
+  &-center {
+    @include align(center);
+  }
+
+  &-center {
+    @include align(center);
+  }
+
+  &-between {
+    @include align(space-between);
+  }
+
+  &-around {
+    @include align(space-around);
+  }
+}
+
+.font {
+  &--bold {
+    @include font-bold;
+  }
+
+  &--semibold {
+    @include font-semibold;
+  }
+
+  &--medium {
+    @include font-medium;
+  }
+
+  &--normal {
+    @include font-normal;
+  }
+}
+
+.light {
+  color: $text-color-light;
+
+  &--bg {
+    background-color: $text-color-light;
+  }
+}
+
+.dark {
+  color: $text-color;
+
+  &--bg {
+    background-color: $text-color;
+  }
+}
