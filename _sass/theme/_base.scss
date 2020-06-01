@@ -28,56 +28,63 @@ body {
 }
 
 .rounded {
-  @include rounded($border-radius)
-}
+  @include rounded($border-radius);
 
-.rounded-slight {
-  @include rounded($border-radius-slight)
+  &--slight {
+    @include rounded($border-radius-slight);
+  }
 }
 
 .shadow {
-  @include shadow-box;
+  &-box {
+    @include shadow-box;
+  }
+
+  &-text {
+    @include shadow-text;
+  }
 }
 
 .justify-start {
-  @include justify(flex-start);
+  &-start {
+    @include justify(flex-start);
+  }
+
+  &-center {
+    @include justify(center);
+  }
+
+  &-end {
+    @include justify(flex-end);
+  }
+
+  &-around {
+    @include justify(space-around);
+  }
 }
 
-.justify-center {
-  @include justify(center);
+.align {
+  &-start {
+    @include align(flex-start);
+  }
+  
+  &-center {
+    @include align(center);
+  }
+
+  &-center {
+    @include align(center);
+  }
+
+  &-between {
+    @include align(space-between);
+  }
+
+  &-around {
+    @include align(space-around);
+  }
 }
 
-.justify-end {
-  @include justify(flex-end);
-}
-
-.justify-between {
-  @include justify(space-between);
-}
-
-.justify-around {
-  @include justify(space-around);
-}
-
-.align-start {
-  @include align(flex-start);
-}
-
-.align-center {
-  @include align(center);
-}
-
-.align-end {
-  @include align(flex-end);
-}
-
-.align-between {
-  @include align(space-between);
-}
-
-.align-around {
-  @include align(space-around);
-}
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -143,11 +150,11 @@ h1, h2, h3, h4, h5, h6, .header {
   @include font-header;
 }
 
-h1, h2, h3, .shadow-text {
+h1, h2, h3 {
   @include shadow-text;
 }
 
-h1, h3, h4, .bold, .button {
+h1, h3, h4, .button {
   @include font-bold;
 }
 
@@ -161,12 +168,22 @@ li, ul, ol, dl, data, input, caption, .caption, .button {
   @include font-body;
 }
 
-.semibold {
-  @include font-semibold;
-}
+.font {
+  &--bold {
+    @include font-bold;
+  }
 
-.normal {
-  @include font-normal;
+  &--semibold {
+    @include font-semibold;
+  }
+
+  &--medium {
+    @include font-medium;
+  }
+
+  &--normal {
+    @include font-normal;
+  }
 }
 
 h1 {
@@ -195,10 +212,18 @@ caption, .caption {
 
 .light {
   color: $text-color-light;
+
+  &--bg {
+    background-color: $text-color-light;
+  }
 }
 
 .dark {
   color: $text-color;
+
+  &--bg {
+    background-color: $text-color;
+  }
 }
 
 
