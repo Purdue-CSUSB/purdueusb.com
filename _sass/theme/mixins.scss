@@ -82,11 +82,11 @@
 /* Spacing Mixins */
 // Paddings
 @mixin p-bottom($space) {
-  padding-bottom: $space;
+  padding-bottom: $space * $padding-unit;
 }
 
 @mixin p-top($space) {
-  padding-top: $space;
+  padding-top: $space * $padding-unit;
 }
 
 @mixin py($space) {
@@ -95,11 +95,11 @@
 }
 
 @mixin p-left($space) {
-  padding-left: $space;
+  padding-left: $space * $padding-unit;
 }
 
 @mixin p-right($space) {
-  padding-right: $space;
+  padding-right: $space * $padding-unit;
 }
 
 @mixin px($space) {
@@ -113,11 +113,11 @@
 }
 // Margins
 @mixin m-bottom($space) {
-  margin-bottom: $space;
+  margin-bottom: $space * $margin-unit;
 }
 
 @mixin m-top($space) {
-  margin-top: $space;
+  margin-top: $space * $margin-unit;
 }
 
 @mixin my($space) {
@@ -126,11 +126,11 @@
 }
 
 @mixin m-left($space) {
-  margin-left: $space;
+  margin-left: $space * $margin-unit;
 }
 
 @mixin m-right($space) {
-  margin-right: $space;
+  margin-right: $space * $margin-unit;
 }
 
 @mixin mx($space) {

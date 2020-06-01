@@ -45,8 +45,10 @@ $accent-grey-dark:     darken($accent-grey, 25%) !default;
 
 
 /* Spacing & Alignment */
-$table-text-align: left !default;
-$spacing-unit:     30px !default;
+$table-text-align:  left !default;
+$spacing-unit:      30px !default;
+$padding-unit:      0.25rem;
+$margin-unit:       $padding-unit;
 // Width of the content area
 $content-width:    800px !default;
 $on-palm:          600px !default;

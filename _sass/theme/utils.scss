@@ -89,3 +89,121 @@
     background-color: $text-color;
   }
 }
+
+.p {
+  &t {
+    &0 { @include p-top(0); }
+    &1 { @include p-top(1); }
+    &2 { @include p-top(2); }
+    &3 { @include p-top(3); }
+    &4 { @include p-top(4); }
+    &5 { @include p-top(5); }
+  }
+  &b {
+    &0 { @include p-bottom(0); }
+    &1 { @include p-bottom(1); }
+    &2 { @include p-bottom(2); }
+    &3 { @include p-bottom(3); }
+    &4 { @include p-bottom(4); }
+    &5 { @include p-bottom(5); }
+  }
+  &l {
+    &0 { @include p-left(0); }
+    &1 { @include p-left(1); }
+    &2 { @include p-left(2); }
+    &3 { @include p-left(3); }
+    &4 { @include p-left(4); }
+    &5 { @include p-left(5); }
+  }
+  &r {
+    &0 { @include p-right(0); }
+    &1 { @include p-right(1); }
+    &2 { @include p-right(2); }
+    &3 { @include p-right(3); }
+    &4 { @include p-right(4); }
+    &5 { @include p-right(5); }
+  }
+  &x {
+    &0 { @include px(0); }
+    &1 { @include px(1); }
+    &2 { @include px(2); }
+    &3 { @include px(3); }
+    &4 { @include px(4); }
+    &5 { @include px(5); }
+  }
+  &y {
+    &0 { @include py(0); }
+    &1 { @include py(1); }
+    &2 { @include py(2); }
+    &3 { @include py(3); }
+    &4 { @include py(4); }
+    &5 { @include py(5); }
+  }
+  &a {
+    &0 { @include pa(0); }
+    &1 { @include pa(1); }
+    &2 { @include pa(2); }
+    &3 { @include pa(3); }
+    &4 { @include pa(4); }
+    &5 { @include pa(5); }
+  }
+}
+
+.m {
+  &t {
+    &0 { @include m-top(0); }
+    &1 { @include m-top(1); }
+    &2 { @include m-top(2); }
+    &3 { @include m-top(3); }
+    &4 { @include m-top(4); }
+    &5 { @include m-top(5); }
+  }
+  &b {
+    &0 { @include m-bottom(0); }
+    &1 { @include m-bottom(1); }
+    &2 { @include m-bottom(2); }
+    &3 { @include m-bottom(3); }
+    &4 { @include m-bottom(4); }
+    &5 { @include m-bottom(5); }
+  }
+  &l {
+    &0 { @include m-left(0); }
+    &1 { @include m-left(1); }
+    &2 { @include m-left(2); }
+    &3 { @include m-left(3); }
+    &4 { @include m-left(4); }
+    &5 { @include m-left(5); }
+  }
+  &r {
+    &0 { @include m-right(0); }
+    &1 { @include m-right(1); }
+    &2 { @include m-right(2); }
+    &3 { @include m-right(3); }
+    &4 { @include m-right(4); }
+    &5 { @include m-right(5); }
+  }
+  &x {
+    &0 { @include mx(0); }
+    &1 { @include mx(1); }
+    &2 { @include mx(2); }
+    &3 { @include mx(3); }
+    &4 { @include mx(4); }
+    &5 { @include mx(5); }
+  }
+  &y {
+    &0 { @include my(0); }
+    &1 { @include my(1); }
+    &2 { @include my(2); }
+    &3 { @include my(3); }
+    &4 { @include my(4); }
+    &5 { @include my(5); }
+  }
+  &a {
+    &0 { @include ma(0); }
+    &1 { @include ma(1); }
+    &2 { @include ma(2); }
+    &3 { @include ma(3); }
+    &4 { @include ma(4); }
+    &5 { @include ma(5); }
+  }
+}
