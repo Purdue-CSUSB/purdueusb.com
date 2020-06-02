@@ -12,29 +12,11 @@
     font-weight: bolder;
 }
 
-
-.banner {
-    background-color: $background-dark;
-    width: 100%;
-    padding-bottom: 5vh;
-    padding-top: 5vh;
-    justify-content: center;
-    height: 40vh;
-}
-
 .home {
     flex: 1;
 }
 
-.row {
-    display: flex;
-  }
-  
-.column {
-    flex: 50%;
-}
-
-.banner-text {
+.banner__text {
     color:white;
     padding-top: 30px;
     padding-left: 10px;
@@ -43,11 +25,11 @@
     max-width: 400px;
 }
 
-.banner-text h5 {
+.banner__text h5 {
     font-size: medium;
 }
 
-.banner-image {
+.banner__image {
     align-items: center;
     justify-content: center;
     display: flex;

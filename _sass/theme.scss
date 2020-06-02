@@ -11,21 +11,23 @@ Define defaults for each variable. Be sure to include !default on the end of eac
 }
 @include google-font("Raleway", "400;400i;500;600;700");
 @include google-font("Montserrat", "400;700");
-$font-family-backup: sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+// TODO remove comic sans
+$font-family-backup: "Comic Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $font-family-body: "Raleway", $font-family-backup !default;
 $font-family-header: "Montserrat", $font-family-backup !default;
-$font-size-h1:        56px !default;
-$font-size-h2:        48px !default;
-$font-size-h3:        36px !default;
-$font-size-h4:        24px !default;
-$font-size-listitem:  24px !default;
-$font-size-body:      18px !default;
-$font-size-caption:   14px !default;
+$font-size-h1:        3.2rem !default;
+$font-size-h2:        2.7rem !default;
+$font-size-h3:        2rem !default;
+$font-size-h4:        1.4rem !default;
+$font-size-button:    $font-size-h4 !default;
+$font-size-listitem:  1.4rem !default;
+$font-size-body:      1rem !default;
+$font-size-caption:   0.777rem !default;
 $font-weight-base:      400 !default;
 $font-weight-medium:    500 !default;
 $font-weight-semibold:  600 !default;
 $font-weight-bold:      700 !default;
-$base-line-height: 1.5 !default;
+$base-line-height:    1.5 !default;
 
 
 /* Colors */
@@ -40,15 +42,18 @@ $accent-blue:       #8AC9FE !default;
 $accent-color:      $accent-blue !default;
 $accent-red:        #FE646F !default;
 $accent-grey:       #828282 !default;
-$accent-grey-light:    lighten($accent-grey, 40%) !default;
-$accent-grey-dark:     darken($accent-grey, 25%) !default;
+$accent-grey-light:  lighten($accent-grey, 40%) !default;
+$accent-grey-dark:   darken($accent-grey, 25%) !default;
 
 
 /* Spacing & Alignment */
-$table-text-align:  left !default;
-$spacing-unit:      30px !default;
-$padding-unit:      0.25rem;
-$margin-unit:       $padding-unit;
+$table-text-align:    left !default;
+$spacing-types:       "margin", "padding" !default;
+$spacing-sizes:       0, 0.5, 1, 2, 4, 8 !default;
+$spacing-directions:  "top", "bottom", "left", "right", "x", "y", "a" !default;
+$spacing-unit:        1.9rem !default;
+$padding-button-x:    $spacing-unit / 2.5 !default;
+$padding-button-y:    $spacing-unit / 3.8 !default;
 // Width of the content area
 $content-width:    800px !default;
 $on-palm:          600px !default;

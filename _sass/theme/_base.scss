@@ -4,6 +4,9 @@
 /**
  * Reset some basic elements
  */
+html {
+  font-size: 100%;
+}
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
@@ -25,9 +28,8 @@ body {
           font-feature-settings: "kern" 1;
   display: flex;
   min-height: 100vh;
-  flex-direction: column;
+  @extend .column;
 }
-
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -97,7 +99,7 @@ h1, h2, h3 {
   @include shadow-text;
 }
 
-h1, h3, h4, .button {
+h1, h3, h4, button, .button {
   @include font-bold;
 }
 
@@ -107,7 +109,8 @@ li, ul, ol, dl, data, input, .medium {
 }
 
 body, p, a, blockquote, pre, code, span
-li, ul, ol, dl, data, input, caption, .caption, .button {
+li, ul, ol, dl, data, input, caption, 
+button,.caption, .button {
   @include font-body;
 }
 
@@ -339,9 +342,12 @@ button, .button {
   @include clickable;
   @include rounded($border-radius);
   @include shadow-box;
-  @include font-bold;
+  @include font-button;
+  min-height: 60px;
   background-color: $primary-color;
   text-decoration: none;
+  @include px($padding-button-x);
+  @include py($padding-button-y);
 
   &--outline {
     @extend .button;

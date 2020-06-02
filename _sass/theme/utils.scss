@@ -16,7 +16,7 @@
   }
 }
 
-.justify-start {
+.justify {
   &-start {
     @include justify(flex-start);
   }
@@ -32,27 +32,55 @@
   &-around {
     @include justify(space-around);
   }
+
+  &-between {
+    @include justify(space-between);
+  }
 }
 
 .align {
-  &-start {
-    @include align(flex-start);
-  }
+  &-items {
+    &-start {
+      align-items: flex-start;
+    }
+    
+    &-center {
+      align-items: center;
+    }
   
-  &-center {
-    @include align(center);
+    &-end {
+      align-items: flex-end;
+    }
+  
+    &-baseline {
+      align-items: baseline;
+    } 
   }
 
-  &-center {
-    @include align(center);
-  }
-
-  &-between {
-    @include align(space-between);
-  }
-
-  &-around {
-    @include align(space-around);
+  &-content {
+    &-start {
+      align-content: flex-start;
+    }
+    
+    &-center {
+      align-content: center;
+    }
+  
+    &-end {
+      align-content: flex-end;
+    }
+  
+    &-between {
+      align-content: space-between;
+    }
+  
+    &-around {
+      align-content: space-around;
+    }
+  
+    &-baseline {
+      align-content: baseline;
+    }
   }
 }
 
@@ -90,120 +118,160 @@
   }
 }
 
-.p {
-  &t {
-    &0 { @include p-top(0); }
-    &1 { @include p-top(1); }
-    &2 { @include p-top(2); }
-    &3 { @include p-top(3); }
-    &4 { @include p-top(4); }
-    &5 { @include p-top(5); }
-  }
-  &b {
-    &0 { @include p-bottom(0); }
-    &1 { @include p-bottom(1); }
-    &2 { @include p-bottom(2); }
-    &3 { @include p-bottom(3); }
-    &4 { @include p-bottom(4); }
-    &5 { @include p-bottom(5); }
-  }
-  &l {
-    &0 { @include p-left(0); }
-    &1 { @include p-left(1); }
-    &2 { @include p-left(2); }
-    &3 { @include p-left(3); }
-    &4 { @include p-left(4); }
-    &5 { @include p-left(5); }
-  }
-  &r {
-    &0 { @include p-right(0); }
-    &1 { @include p-right(1); }
-    &2 { @include p-right(2); }
-    &3 { @include p-right(3); }
-    &4 { @include p-right(4); }
-    &5 { @include p-right(5); }
-  }
-  &x {
-    &0 { @include px(0); }
-    &1 { @include px(1); }
-    &2 { @include px(2); }
-    &3 { @include px(3); }
-    &4 { @include px(4); }
-    &5 { @include px(5); }
-  }
-  &y {
-    &0 { @include py(0); }
-    &1 { @include py(1); }
-    &2 { @include py(2); }
-    &3 { @include py(3); }
-    &4 { @include py(4); }
-    &5 { @include py(5); }
-  }
-  &a {
-    &0 { @include pa(0); }
-    &1 { @include pa(1); }
-    &2 { @include pa(2); }
-    &3 { @include pa(3); }
-    &4 { @include pa(4); }
-    &5 { @include pa(5); }
+@each $type in $spacing-types {
+  @each $direction in $spacing-directions {
+    @for $index from 0 to length($refcolors) {
+      $size: list.nth($spacing-sizes, $index + 1);
+      $type_abbr: string.slice($type, 1, 1);
+      $direction_abbr: string.slice($direction, 1, 1);
+      .#{$type_abbr}#{$direction_abbr}-#{$index} {
+        @if length($type) > 1 {
+          @include property-spacing($type + "-" + $direction, $index);
+        } 
+        @else {
+          @if type == "x" or type == "a" {
+            
+          } 
+          @if type == "y" or type == "a" {
+  
+          }
+        }
+      }
+    }
   }
 }
 
-.m {
-  &t {
-    &0 { @include m-top(0); }
-    &1 { @include m-top(1); }
-    &2 { @include m-top(2); }
-    &3 { @include m-top(3); }
-    &4 { @include m-top(4); }
-    &5 { @include m-top(5); }
+.flex, .container {
+  display: flex;
+  display: -webkit-flex;
+  @extend .row;
+  &--wrap {
+    @extend .flex;
+    flex-wrap: wrap;
+    &-reverse {
+      @extend .flex;
+      flex-wrap: wrap-reverse;
+    }
   }
-  &b {
-    &0 { @include m-bottom(0); }
-    &1 { @include m-bottom(1); }
-    &2 { @include m-bottom(2); }
-    &3 { @include m-bottom(3); }
-    &4 { @include m-bottom(4); }
-    &5 { @include m-bottom(5); }
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+
+  &-flex {
+    display: inline-flex;
   }
-  &l {
-    &0 { @include m-left(0); }
-    &1 { @include m-left(1); }
-    &2 { @include m-left(2); }
-    &3 { @include m-left(3); }
-    &4 { @include m-left(4); }
-    &5 { @include m-left(5); }
+
+  &-block {
+    display: inline-block;
   }
-  &r {
-    &0 { @include m-right(0); }
-    &1 { @include m-right(1); }
-    &2 { @include m-right(2); }
-    &3 { @include m-right(3); }
-    &4 { @include m-right(4); }
-    &5 { @include m-right(5); }
+}
+
+.none {
+  display: none;
+}
+
+.invisible, .hidden {
+  display: hidden;
+}
+
+.row {
+  width: 100%;
+  @include flex-even;
+  flex-direction: row;
+  flex-wrap: wrap;
+  &-reverse {
+    @extend .row;
+    flex-direction: row-reverse;
   }
-  &x {
-    &0 { @include mx(0); }
-    &1 { @include mx(1); }
-    &2 { @include mx(2); }
-    &3 { @include mx(3); }
-    &4 { @include mx(4); }
-    &5 { @include mx(5); }
+}
+
+.column {
+  @include flex-even;
+  flex-direction: column;
+  //flex-basis: 100%;
+  &-reverse {
+    @extend .column;
+    flex-direction: column-reverse;
   }
-  &y {
-    &0 { @include my(0); }
-    &1 { @include my(1); }
-    &2 { @include my(2); }
-    &3 { @include my(3); }
-    &4 { @include my(4); }
-    &5 { @include my(5); }
+}
+
+.h {
+  &-100 {
+    height: 100%;
   }
-  &a {
-    &0 { @include ma(0); }
-    &1 { @include ma(1); }
-    &2 { @include ma(2); }
-    &3 { @include ma(3); }
-    &4 { @include ma(4); }
-    &5 { @include ma(5); }
+
+  &-75 {
+    height: 75%;
+  }
+
+  &-50 {
+    height: 50%;
+  }
+
+  &-25 {
+    height: 25%;
+  }
+}
+
+.w {
+  &-100 {
+    width: 100%;
+  }
+
+  &-75 {
+    width: 75%;
+  }
+
+  &-66 {
+    width: 66%;
+  }
+
+  &-50 {
+    width: 50%;
+  }
+
+  &-33 {
+    width: 33%;
+  }
+
+  &-25 {
+    width: 25%;
+  }
+}
+
+.grow {
+  flex-grow: 1;
+  &-0 {
+    flex-grow: 0;
+  }
+  &-1 {
+    flex-grow: 1;
+  }
+  &-2 {
+    flex-grow: 2;
+  }
+  &-3 {
+    flex-grow: 3;
+  }
+}
+
+.shrink {
+  flex-shrink: 1;
+  &-0 {
+    flex-shrink: 0;
+  }
+  &-1 {
+    flex-shrink: 1;
+  }
+  &-2 {
+    flex-shrink: 2;
+  }
+  &-3 {
+    flex-shrink: 3;
   }
 }

@@ -1,3 +1,47 @@
+/* Credit: https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/ */
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@mixin rem-fallback($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*16}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  } 
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  } 
+  
+  #{$property}: $pxValues; 
+  #{$property}: $remValues; 
+}
+/* Credit: https://css-tricks.com/snippets/sass/power-function/ */
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: calc($value * $number);
+    }
+  }
+
+  @return $value;
+}
+
 /* Font Mixins */
 @mixin font-base {
   color: $text-color;
@@ -29,6 +73,12 @@
   font-weight: $font-weight-bold;
 }
 
+@mixin font-button {
+  @include font-bold;
+  @include font-header;
+  font-size: $font-size-button;
+}
+
 @mixin rounded($radius) {
   border-radius: $radius;
 }
@@ -49,12 +99,15 @@
   justify-content: $arg;
 }
 
-@mixin align($arg) {
-  align-content: $arg;
-}
-
 @mixin clickable {
   cursor: pointer;
+}
+
+@mixin flex-even {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
 }
 
 
@@ -81,64 +134,68 @@
 
 /* Spacing Mixins */
 // Paddings
-@mixin p-bottom($space) {
-  padding-bottom: $space * $padding-unit;
+@mixin p-bottom($index) {
+  @include property-spacing(padding-bottom, $index);
 }
 
-@mixin p-top($space) {
-  padding-top: $space * $padding-unit;
+@mixin p-top($index) {
+  @include property-spacing(padding-top, $index);
 }
 
-@mixin py($space) {
-  @include p-top($space);
-  @include p-bottom($space);
+@mixin py($index) {
+  @include p-top($index);
+  @include p-bottom($index);
 }
 
-@mixin p-left($space) {
-  padding-left: $space * $padding-unit;
+@mixin p-left($index) {
+  @include property-spacing(padding-left, $index);
 }
 
-@mixin p-right($space) {
-  padding-right: $space * $padding-unit;
+@mixin p-right($index) {
+  @include property-spacing(padding-right, $index);
 }
 
-@mixin px($space) {
-  @include p-left($space);
-  @include p-right($space);
+@mixin px($index) {
+  @include p-left($index);
+  @include p-right($index);
 }
 
-@mixin pa($space) {
-  @include px($space);
-  @include py($space);
+@mixin pa($index) {
+  @include px($index);
+  @include py($index);
 }
 // Margins
-@mixin m-bottom($space) {
-  margin-bottom: $space * $margin-unit;
+@mixin m-bottom($index) {
+  @include property-spacing(margin-bottom, $index);
 }
 
-@mixin m-top($space) {
-  margin-top: $space * $margin-unit;
+@mixin m-top($index) {
+  @include property-spacing(margin-top, $index);
 }
 
-@mixin my($space) {
-  @include m-top($space);
-  @include m-bottom($space);
+@mixin my($index) {
+  @include m-top($index);
+  @include m-bottom($index);
 }
 
-@mixin m-left($space) {
-  margin-left: $space * $margin-unit;
+@mixin m-left($index) {
+  @include property-spacing(margin-left, $index);
 }
 
-@mixin m-right($space) {
-  margin-right: $space * $margin-unit;
+@mixin m-right($index) {
+  @include property-spacing(margin-right, $index);
 }
 
-@mixin mx($space) {
-  @include m-left($space);
-  @include m-right($space);
+@mixin mx($index) {
+  @include m-left($index);
+  @include m-right($index);
 }
 
-@mixin ma($space) {
-  @include mx($space);
-  @include my($space);
+@mixin ma($index) {
+  @include mx($index);
+  @include my($index);
+}
+
+@mixin property-spacing($property, $index) {
+  #{$property}: list.nth($spacing-sizes, $index);
 }
