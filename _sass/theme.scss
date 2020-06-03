@@ -9,7 +9,7 @@ Define defaults for each variable. Be sure to include !default on the end of eac
 @mixin google-font($family, $variants) {
   @import url('https://fonts.googleapis.com/css2?family=#{$family}:wght@#{$variants}&display=swap');
 }
-@include google-font("Raleway", "400;400i;500;600;700");
+@include google-font("Raleway", "400;500;600;700");
 @include google-font("Montserrat", "400;700");
 // TODO remove comic sans
 $font-family-backup: "Comic Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
@@ -18,7 +18,7 @@ $font-family-header: "Montserrat", $font-family-backup !default;
 $font-size-h1:        3.2rem !default;
 $font-size-h2:        2.7rem !default;
 $font-size-h3:        2rem !default;
-$font-size-h4:        1.4rem !default;
+$font-size-h4:        1.3rem !default;
 $font-size-button:    $font-size-h4 !default;
 $font-size-listitem:  1.4rem !default;
 $font-size-body:      1rem !default;
@@ -33,8 +33,8 @@ $base-line-height:    1.5 !default;
 /* Colors */
 $text-color:        #333 !default;
 $text-color-light:  #FFF !default;
-$background-dark:   #333 !default;
-$background-light:  #FFF !default;
+$background-dark:   $text-color !default;
+$background-light:  $text-color-light !default;
 $background-color:  $background-light !default;
 $primary-color:     #FFCA44 !default;
 
@@ -45,15 +45,30 @@ $accent-grey:       #828282 !default;
 $accent-grey-light:  lighten($accent-grey, 40%) !default;
 $accent-grey-dark:   darken($accent-grey, 25%) !default;
 
+$variant-elements: ("bg": background-color, "text": color) !default;
+$color-variants: (
+    "dark":     $background-dark, 
+    "light":    $background-light,
+    "primary":  $primary-color,
+    "blue":     $accent-blue,
+    "red":      $accent-red,
+    "grey":     $accent-grey,
+    "grey-light":  $accent-grey-light,
+    "grey-dark":  $accent-grey-dark
+  ) !default;
+
 
 /* Spacing & Alignment */
 $table-text-align:    left !default;
 $spacing-types:       "margin", "padding" !default;
-$spacing-sizes:       0, 0.5, 1, 2, 4, 8 !default;
 $spacing-directions:  "top", "bottom", "left", "right", "x", "y", "a" !default;
+$spacing-max-group:   10 !default;
+$spacing-base:        1.35914091423 !default;
 $spacing-unit:        1.9rem !default;
 $padding-button-x:    $spacing-unit / 2.5 !default;
 $padding-button-y:    $spacing-unit / 3.8 !default;
+$dimension-sizing-groups: 3, 4, 10 !default;
+$max-grow-shrink-factor:  3 !default;
 // Width of the content area
 $content-width:    800px !default;
 $on-palm:          600px !default;
@@ -67,6 +82,8 @@ $default-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25) !default;
 
 
 // Import partials.
+@import "mixins";
+@import "utils";
 @import "theme/base";
 @import "theme/layout";
 @import "theme/syntax-highlighting";

@@ -1,0 +1,274 @@
+.rounded {
+  @include rounded($border-radius);
+
+  &--slight {
+    @include rounded($border-radius-slight);
+  }
+}
+
+.shadow {
+  &-box {
+    @include shadow-box;
+  }
+
+  &-text {
+    @include shadow-text;
+  }
+}
+
+.justify {
+  &-start {
+    @include justify(flex-start);
+  }
+
+  &-center {
+    @include justify(center);
+  }
+
+  &-end {
+    @include justify(flex-end);
+  }
+
+  &-around {
+    @include justify(space-around);
+  }
+
+  &-between {
+    @include justify(space-between);
+  }
+}
+
+.align {
+  &-items {
+    &-start {
+      align-items: flex-start;
+    }
+    
+    &-center {
+      align-items: center;
+    }
+  
+    &-end {
+      align-items: flex-end;
+    }
+  
+    &-baseline {
+      align-items: baseline;
+    } 
+  }
+
+  &-content {
+    &-start {
+      align-content: flex-start;
+    }
+    
+    &-center {
+      align-content: center;
+    }
+  
+    &-end {
+      align-content: flex-end;
+    }
+  
+    &-between {
+      align-content: space-between;
+    }
+  
+    &-around {
+      align-content: space-around;
+    }
+  
+    &-baseline {
+      align-content: baseline;
+    }
+  }
+}
+
+.font {
+  &--bold {
+    @include font-bold;
+  }
+
+  &--semibold {
+    @include font-semibold;
+  }
+
+  &--medium {
+    @include font-medium;
+  }
+
+  &--normal {
+    @include font-normal;
+  }
+}
+
+/* Color Variant generation */
+@each $elem, $property in $variant-elements {
+  @each $variant, $color in $color-variants {
+    .#{$elem}--#{$variant} {
+      #{$property}: $color;
+    }
+  }
+}
+@each $variant, $color in $color-variants {
+  .#{$variant} {
+    color: $color;
+  }
+}
+
+/* Margin & Padding class generation */
+@each $type in $spacing-types {
+  @each $direction in $spacing-directions {
+    @for $index from 0 through $spacing-max-group {
+      $size: 0;
+      @if $index > 0 {
+        $size: pow($spacing-base, $index - 2);
+      }
+      $size: #{$size + "rem"};
+      $type_abbr: str-slice($type, 1, 1);
+      $direction_abbr: str-slice($direction, 1, 1);
+      .#{$type_abbr}#{$direction_abbr}-#{$index} {
+        @if str-length($direction) > 1 {
+          #{$type + "-" + $direction}: $size;
+        }
+        @else {
+          @if $direction == "a" {
+            #{$type}: $size $size $size $size;
+          }
+          @else {
+            @if $direction == "x" {
+              #{$type + "-left"}: $size;
+              #{$type + "-right"}: $size;
+            } 
+            @if $direction == "y" {
+              #{$type + "-top"}: $size;
+              #{$type + "-bottom"}: $size;
+            }
+          }
+        }
+      }
+    }
+    // percentag based spacing
+    @each $denominator in $dimension-sizing-groups {
+      @for $numerator from 1 to $denominator {
+        $size: percentage($numerator / $denominator);
+        $type_abbr: str-slice($type, 1, 1);
+        $direction_abbr: str-slice($direction, 1, 1);
+        .#{$type_abbr}#{$direction_abbr}-#{$numerator}-#{$denominator} {
+          @if str-length($direction) > 1 {
+            #{$type + "-" + $direction}: $size;
+          }
+          @else {
+            @if $direction == "a" {
+              #{$type}: $size $size $size $size;
+            }
+            @else {
+              @if $direction == "x" {
+                #{$type + "-left"}: $size;
+                #{$type + "-right"}: $size;
+              } 
+              @if $direction == "y" {
+                #{$type + "-top"}: $size;
+                #{$type + "-bottom"}: $size;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.flex, .container {
+  display: flex;
+  display: -webkit-flex;
+  @extend .row;
+  &--wrap {
+    @extend .flex;
+    flex-wrap: wrap;
+    &-reverse {
+      @extend .flex;
+      flex-wrap: wrap-reverse;
+    }
+  }
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+
+  &-flex {
+    display: inline-flex;
+  }
+
+  &-block {
+    display: inline-block;
+  }
+}
+
+.none {
+  display: none;
+}
+
+.invisible, .hidden {
+  display: hidden;
+}
+
+.row {
+  width: 100%;
+  @include flex-even;
+  flex-direction: row;
+  flex-wrap: wrap;
+  &-reverse {
+    @extend .row;
+    flex-direction: row-reverse;
+  }
+}
+
+.column {
+  @include flex-even;
+  flex-direction: column;
+  //flex-basis: 100%;
+  &-reverse {
+    @extend .column;
+    flex-direction: column-reverse;
+  }
+}
+
+/* Percentage sizing class generation */
+@each $property in "height", "width" {
+  @each $denominator in $dimension-sizing-groups {
+    @for $numerator from 0 to $denominator {
+      $size: percentage($numerator / $denominator);
+      @if $size == 0% {
+        .#{str-slice($property, 1, 1)}-0 {
+          #{$property}: $size;
+        }
+      } @else {
+        .#{str-slice($property, 1, 1)}-#{$numerator}-#{$denominator} {
+          #{$property}: $size;
+        }
+      }
+    }
+  }
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+/* Flex Shrink/Grow class generation */
+@for $factor from 0 through $max-grow-shrink-factor {
+  @each $property in "grow", "shrink" {
+    .#{$property}-#{$factor} {
+      flex-#{$property}: $factor;
+    }
+  }
+}

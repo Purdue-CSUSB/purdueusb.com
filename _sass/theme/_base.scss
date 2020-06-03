@@ -1,6 +1,3 @@
-@import "mixins";
-@import "utils";
-
 /**
  * Reset some basic elements
  */
@@ -258,7 +255,6 @@ pre {
 }
 
 .header-wrapper {
-  max-width: inherit;
   margin-right: 3vh;
   margin-left: 3vh;
   padding-right: $spacing-unit;
@@ -348,6 +344,7 @@ button, .button {
   text-decoration: none;
   @include px($padding-button-x);
   @include py($padding-button-y);
+  border: none;
 
   &--outline {
     @extend .button;
@@ -357,7 +354,9 @@ button, .button {
   }
 
   &:hover {
+    @extend .button;
     text-decoration: none;
+    background-color: lighten($primary-color, 5%);
   }
 }
 

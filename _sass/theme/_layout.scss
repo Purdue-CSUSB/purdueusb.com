@@ -2,26 +2,13 @@
  * Site header
  */
 .site-header {
-  min-height: $spacing-unit * 1.865;
-  background-color: #FFCA44;
-
   // Positioning context for the mobile navigation icon
   position: relative;
   grid-area: head;
 }
 
-.site-title {
-  @include relative-font-size(1.625);
-  font-weight: 300;
-  line-height: $base-line-height * $font-size-body * 2.25;
-  letter-spacing: -1px;
-  margin-bottom: 0;
-  float: left;
-
-  &,
-  &:visited {
-    color: $accent-grey-dark;
-  }
+.site-logo, .site-header {
+  height: $spacing-unit * 3;
 }
 
 .site-nav {

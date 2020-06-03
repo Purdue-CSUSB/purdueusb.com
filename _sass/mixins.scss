@@ -29,14 +29,21 @@
   #{$property}: $pxValues; 
   #{$property}: $remValues; 
 }
-/* Credit: https://css-tricks.com/snippets/sass/power-function/ */
+/* Credit: https://css-tricks.com/snippets/sass/power-function/
+  Modified by Zach Bryant
+*/
 @function pow($number, $exponent) {
   $value: 1;
 
   @if $exponent > 0 {
     @for $i from 1 through $exponent {
-      $value: calc($value * $number);
+      $value: $value * $number;
     }
+  } @else if $exponent < 0 {
+    @for $i from $exponent through -1 {
+      $value: $value * $number;
+    }
+    $value: 1 / $value;
   }
 
   @return $value;
@@ -105,6 +112,7 @@
 
 @mixin flex-even {
   display: flex;
+  display: -webkit-flex;
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 0;
@@ -134,68 +142,64 @@
 
 /* Spacing Mixins */
 // Paddings
-@mixin p-bottom($index) {
-  @include property-spacing(padding-bottom, $index);
+@mixin p-bottom($size) {
+  padding-bottom: $size;
 }
 
-@mixin p-top($index) {
-  @include property-spacing(padding-top, $index);
+@mixin p-top($size) {
+  padding-top: $size;
 }
 
-@mixin py($index) {
-  @include p-top($index);
-  @include p-bottom($index);
+@mixin py($size) {
+  @include p-top($size);
+  @include p-bottom($size);
 }
 
-@mixin p-left($index) {
-  @include property-spacing(padding-left, $index);
+@mixin p-left($size) {
+  padding-left: $size;
 }
 
-@mixin p-right($index) {
-  @include property-spacing(padding-right, $index);
+@mixin p-right($size) {
+  padding-right: $size;
 }
 
-@mixin px($index) {
-  @include p-left($index);
-  @include p-right($index);
+@mixin px($size) {
+  @include p-left($size);
+  @include p-right($size);
 }
 
-@mixin pa($index) {
-  @include px($index);
-  @include py($index);
+@mixin pa($size) {
+  @include px($size);
+  @include py($size);
 }
 // Margins
-@mixin m-bottom($index) {
-  @include property-spacing(margin-bottom, $index);
+@mixin m-bottom($size) {
+  margin-bottom: $size;
 }
 
-@mixin m-top($index) {
-  @include property-spacing(margin-top, $index);
+@mixin m-top($size) {
+  margin-top: $size;
 }
 
-@mixin my($index) {
-  @include m-top($index);
-  @include m-bottom($index);
+@mixin my($size) {
+  @include m-top($size);
+  @include m-bottom($size);
 }
 
-@mixin m-left($index) {
-  @include property-spacing(margin-left, $index);
+@mixin m-left($size) {
+  margin-left: $size;
 }
 
-@mixin m-right($index) {
-  @include property-spacing(margin-right, $index);
+@mixin m-right($size) {
+  margin-right: $size;
 }
 
-@mixin mx($index) {
-  @include m-left($index);
-  @include m-right($index);
+@mixin mx($size) {
+  @include m-left($size);
+  @include m-right($size);
 }
 
-@mixin ma($index) {
-  @include mx($index);
-  @include my($index);
-}
-
-@mixin property-spacing($property, $index) {
-  #{$property}: list.nth($spacing-sizes, $index);
+@mixin ma($size) {
+  @include mx($size);
+  @include my($size);
 }
