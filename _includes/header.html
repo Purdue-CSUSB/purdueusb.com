@@ -18,10 +18,9 @@
       </label>
 
       <div class="trigger flex justify-end">
-        <a class="page-link" href="/">About</a>
-        <a class="page-link" href="/initiatives">Initiatives</a>
-        <a class="page-link" href="/resources">Resources</a>
-        <a class="page-link" href="/contact">Contact</a>
+        {%- for link in site.data.header_links -%}
+          <a class="page-link" href="{{ link.href }}"><h4>{{ link.text }}</h4></a>
+        {% endfor %}
       </div>
     </nav>
   </div>

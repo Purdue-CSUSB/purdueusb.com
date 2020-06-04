@@ -17,14 +17,28 @@
         <div class="column mr-2">
           <img src="/assets/images/group.png">
         </div>
-        <div class="column ml-2">
+        <div class="column ml-2"> 
           <h1 class="light mb-0">Hello from USB!</h1>
-          <h4 class="light font--normal">
+          <h4 class="light font--normal mt-0 mb-3">
             The Computer Science Undergraduate Board is dedicated to improving the student experience within Computer and Data Sciences at Purdue- whether by
             managing CS193, hosting forums for student advocacy, or maintaining a database of undergrad-tailored resources, USB is continually 
             creating initiatives that will uphold our values.
           </h4>
-          <a href="/resources"><button>Read Student Resources</button></a>
+          <div class="row align-items-end">
+            <div class="column align-content-start">
+              <a href="/resources"><button>Read Student Resources</button></a>
+            </div>
+            <div class="column align-items-end">
+              <p class="light font--bold">Stay updated with our social media</p>
+              <div class="row justify-end">
+                {% for social in site.data.social_media %}
+                  <a href="https://{{social.link}}" target="_blank" class="social-link">
+                    <img alt="Our {{social.site}}" class="icon-48px" src="/assets/images/logos/socialmedia/{{social.icon}}"/>
+                  </a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
