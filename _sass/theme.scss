@@ -10,7 +10,7 @@ Define defaults for each variable. Be sure to include !default on the end of eac
   @import url('https://fonts.googleapis.com/css2?family=#{$family}:wght@#{$variants}&display=swap');
 }
 @include google-font("Raleway", "400;500;600;700");
-@include google-font("Montserrat", "400;700");
+@include google-font("Montserrat", "400;500;600;700");
 // TODO remove comic sans
 $font-family-backup: "Comic Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $font-family-body: "Raleway", $font-family-backup !default;
@@ -18,7 +18,7 @@ $font-family-header: "Montserrat", $font-family-backup !default;
 $font-size-h1:        3.2rem !default;
 $font-size-h2:        2.7rem !default;
 $font-size-h3:        2rem !default;
-$font-size-h4:        1.3rem !default;
+$font-size-h4:        1.4rem !default;
 $font-size-button:    $font-size-h4 !default;
 $font-size-listitem:  1.4rem !default;
 $font-size-body:      1rem !default;

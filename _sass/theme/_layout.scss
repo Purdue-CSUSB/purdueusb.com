@@ -24,13 +24,18 @@
     display: none;
   }
 
+  .page-link h4 {
+    @include font-semibold;
+    @include my(0);
+    &:hover {
+      @include font-bold;
+    }
+  }
   .page-link {
-    color: $text-color;
-    line-height: $base-line-height;
-
+    text-decoration: none;
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
-      margin-right: 20px;
+      @extend .mr-4;
     }
   }
 

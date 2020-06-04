@@ -148,7 +148,7 @@
         }
       }
     }
-    // percentag based spacing
+    // percentage based spacing
     @each $denominator in $dimension-sizing-groups {
       @for $numerator from 1 to $denominator {
         $size: percentage($numerator / $denominator);
@@ -270,5 +270,20 @@
     .#{$property}-#{$factor} {
       flex-#{$property}: $factor;
     }
+  }
+}
+
+/* Icon Sizing */
+.icon-0 {
+  width: 1.111rem;
+  max-width: 20px;
+}
+@for $factor from 1 through 8 {
+  $size: 12 * $factor * 1px;
+  $ratio: ($size / 18px) * 1rem;
+  @debug $ratio;
+  .icon-#{$size} {
+    width: $ratio;
+    max-width: $size;
   }
 }

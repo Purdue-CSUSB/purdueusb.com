@@ -28,6 +28,25 @@ body {
   @extend .column;
 }
 
+* {
+  scrollbar-width: thin;          /* "auto" or "thin"  */
+  scrollbar-color: $accent-grey-dark $accent-grey-light;   /* scroll thumb & track */ 
+}
+
+*::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+*::-webkit-scrollbar-track {
+  color: $accent-grey-light;
+}
+
+*::-webkit-scrollbar-thumb {
+  @include rounded($border-radius);
+  background-color: $accent-grey-dark;
+  border: 0.1rem solid $accent-grey-light;
+}
+
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -90,6 +109,7 @@ li {
  */
 h1, h2, h3, h4, h5, h6, .header {
   @include font-header;
+  line-height: $base-line-height;
 }
 
 h1, h2, h3 {
@@ -207,31 +227,6 @@ pre {
   }
 }
 
-
-
-/**
- * Title
- */
-.title {
-  background-color: #333333;
-  padding-top: 10vh;
-  text-align: center;
-  height: 20vh;
-  color: white;
-  width: 100%;
-}
-
-.title .post-title {
-  font-weight: 700;
-  font-size: 40px;
-  margin-bottom: 3vh;
-}
-
-.title .post-subtitle {
-  font-weight: 500;
-  font-size: 20px;
-}
-
 /**
  * Wrapper
  */
@@ -300,6 +295,13 @@ pre {
   li + li {
     padding-top: 5px;
   }
+}
+
+.social-link {
+  &:not(:last-child) {
+    @extend .mr-4;
+  }
+  @include clickable;
 }
 
 
