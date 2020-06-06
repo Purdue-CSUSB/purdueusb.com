@@ -1,15 +1,21 @@
-<div class="members">
-    <h1>Meet the Board</h1>
+<div class="column px-1-10 pt-6 text-center">
+    <h3 class="mb-0">Meet the Board</h3>
+    {%- assign year = 'now' | date: "%Y" -%}
+    <p class="mb-4">{{ year }} &ndash; {{ year |plus:1 }} Members</p>
 
-    <div class="members-flex">
+    <div class="flex--wrap align-content-center justify-around">
         {%- for member in site.data.members -%}
-        <div class="hvrbox">
-            <img src="/assets/images/members/{{ member.image }}" class="hvrbox-layer_bottom">
-            <div class="hvrbox-layer_top">
-                <div class="hvrbox-text">
-                    {{ member.name }}
-                    <div style="font-size: 12px;">{{ member.title }}</div>
-                    <div style="font-size: 12px;">{{ member.class }}</div>
+        <div class="px-5 py-3">
+            <div class="overlay-container border-box-size shadow-drop">
+                <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-204px block" alt="{{ member.name }}">
+                <div class="overlay rounded--circle fade-in-out icon-204px">
+                    <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} class="no-decoration">
+                        <div class="column shadow-drop--dark justify-center align-content-center h-full">
+                            <h4 class="light h-auto font--height-normal mb-0 pa-1">{{ member.name }}</h4>
+                            <p class="font--bold ma-0 light">{{ member.title }}</p>
+                            <small class="font--bold font--italic text--light">{{ member.class }}</small>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
