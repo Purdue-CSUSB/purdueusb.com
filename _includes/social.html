@@ -1,8 +1,10 @@
-{%- for social in site.minima.social_links -%}
-  <a href="https://{{ social[1] | escape}}" title="{{ social[0] | escape }}" target="_blank">
-    <svg class="svg-icon grey">
-      <use xlink:href="/assets/social-icons.svg#{{social[0]}}">
-      </use>
-    </svg>
-  </a>
-{%- endfor -%}
+<div class="margin-list">
+    {%- for social in site.minima.social_links -%}
+    <a href="https://{{ social[1] | escape}}" title="{{ social[0] | escape }}" target="_blank" class="no-decoration">
+        <svg class="svg-icon">
+            <use xlink:href="/assets/images/logos/socialmedia/social-icons.svg#{{social[0]}}">
+            </use>
+        </svg>
+    </a>
+    {%- endfor -%}
+</div> 

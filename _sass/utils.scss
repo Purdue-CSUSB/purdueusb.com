@@ -366,6 +366,7 @@
 /* Icon Sizing */
 .icon-0 {
   width: 1.111rem;
+  max-height: 20px;
   max-width: 20px;
 }
 @for $factor from 1 through $max-icon-multiple {
@@ -373,6 +374,23 @@
   $ratio: ($size / 18px) * 1rem;
   .icon-#{$size} {
     width: $ratio;
+    max-height: $size;
     max-width: $size;
   }
+}
+
+.margin-list > * {
+    &:not(:last-child) {
+        @extend .mr-4;
+    }
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.hover {
+    &--underline {
+        text-decoration: underline;
+    }
 }

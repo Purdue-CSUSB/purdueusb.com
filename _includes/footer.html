@@ -1,23 +1,29 @@
-<footer class="site-footer h-card bg--dark py-0 px-6">
-
+<footer class="site-footer h-card bg--dark py-2 px-6">
   <div class="flex row align-items-center">
 
-    <div class="align-content-center">
-      <a href="{{ '/' | relative_url }}">
-        <img class="site-logo shadow-drop" src="/assets/images/logos/light_logo.svg" />
-      </a>
+    <div class="row justify-between align-content-center">
+        <div class="row align-items-center">
+            <div class="align-content-center">
+                <a class="mr-5" href="{{ '/' | relative_url }}">
+                    <img class="shadow-drop icon-48px" src="/assets/images/logos/square/dark_mono_rounded.svg" />
+                </a>
+            </div>
+            <div class="column text--grey-light">
+                <small class="mb-1 font--bold">&copy; Purdue CS USB</small>
+                <small>Made with <img src="/assets/images/heart.svg" alt="love" class="icon-12px"/> and<a href="https://jekyllrb.com/" target="_blank"><img src="/assets/images/jekyll.png" alt="jekyll" class="icon-12px px-1"/></a>, designed on<a href="https://figma.com/" target="_blank"><img src="/assets/images/figma.svg" alt="figma" class="icon-12px px-1"/></a></small>
+            </div>
+        </div>
     </div>
-    <nav class="site-nav">
-      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
 
-      <div class="trigger flex justify-end">
+    <nav class="site-nav column">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <div class="trigger flex justify-end margin-list">
         {%- for link in site.data.header_links -%}
           <a class="page-link" href="{{ link.href }}"><p class="light">{{ link.text }}</p></a>
         {% endfor %}
-        {% include social.html %}
+        <div class="ml-4">{% include social.html %}</div>
       </div>
-      
     </nav>
-  </div>
 
+  </div>
 </footer>
