@@ -1,30 +1,30 @@
-<div>
-    <div class="aboutus">
-        <div id="rectangle">
-            <div id="rectangle-text">
-                <h1>Our Mission</h1>
-                <p>The Computer Science Undergraduate Student Board exists to promote a supportive and engaged community
+<div class="px-8 bg--angled">
+    <div class="column">
+        <h1 class="text-center mb-4 mt-5">About Us</h1>
+        <div id="about" class="row justify-between">
+            <div class="column mx-3">
+                <h3 class="text-center mb-3">Our Mission</h3>
+                <h4 class="font--medium text-justify">
+                    The Computer Science Undergraduate Student Board exists to promote a supportive and engaged community
                     within Purdue’s Computer Science Department, and to use its relationship with faculty, the Computer
-                    Science Corporate Partners Program, and administration to advocate for the student body.</p>
+                    Science Corporate Partners Program, and administration to advocate for the student body.
+                </h4>
             </div>
-        </div>
-        <div id="triangle"></div>
-    </div>
-    <div class="row">
-        <div id="mission-container"></div>
-        <div id="objectives">
-            <div id="objectiveParts">
-                {%- for objective in site.data.objectives -%}
-                <div class="objective">
-                    <img src="/assets/images/objectives/{{ objective.image }}">
-                    <div class="objective-text">
-                        <h3>{{ objective.title }}</h3>
-                        <p>{{ objective.description }}</p>
+            <div class="column mx-3">
+                <h3 class="text-center mb-3">Our Objectives</h3>
+                <div>
+                    {%- for objective in site.data.objectives -%}
+                    <div class="row mb-5">
+                        <div class="column">
+                            <h4 class="mb-1">{{ objective.title }}</h3>
+                            <p class="text-justify mb-0">{{ objective.description }}</p>
+                        </div>
+                        <div class="column grow-0 ml-3 justify-center">
+                            <img class="icon-60px" src="/assets/images/objectives/{{ objective.image }}">
+                        </div>
                     </div>
+                    {%- endfor -%}
                 </div>
-
-                {%- endfor -%}
-
             </div>
         </div>
     </div>

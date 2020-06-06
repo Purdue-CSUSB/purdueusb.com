@@ -1,20 +1,23 @@
-<footer class="site-footer h-card">
+<footer class="site-footer h-card bg--dark py-0 px-6">
 
-  <div class="header-wrapper">
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}"><img style="padding:10px" width="170" src="/assets/images/logos/light_logo.svg" /></a>
-      <nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <div class="flex row align-items-center">
 
-        <div class="trigger">
-            <a class="footer-page-link" href="/">About</a>
-            <a class="footer-page-link" href="/initiatives">Initiatives</a>
-            <a class="footer-page-link" href="/resources">Resources</a>
-            <a class="footer-page-link" href="/contact">Contact</a>
-            {% include social.html %}
-            
-        </div>
-        
-      </nav>
+    <div class="align-content-center">
+      <a href="{{ '/' | relative_url }}">
+        <img class="site-logo shadow-drop" src="/assets/images/logos/light_logo.svg" />
+      </a>
+    </div>
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+      <div class="trigger flex justify-end">
+        {%- for link in site.data.header_links -%}
+          <a class="page-link" href="{{ link.href }}"><p class="light">{{ link.text }}</p></a>
+        {% endfor %}
+        {% include social.html %}
+      </div>
+      
+    </nav>
   </div>
 
 </footer>
