@@ -9,7 +9,7 @@
             <div class="overlay-container border-box-size shadow-drop">
                 <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-204px block" alt="{{ member.name }}">
                 <div class="overlay rounded--circle fade-in-out icon-204px">
-                    <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} class="no-decoration">
+                    <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} class="no-decoration" target="_blank">
                         <div class="column shadow-drop--dark justify-center align-content-center h-full">
                             <h4 class="light h-auto font--height-normal mb-0 pa-1">{{ member.name }}</h4>
                             <p class="font--bold ma-0 light">{{ member.title }}</p>
