@@ -10,10 +10,12 @@
                 <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-204px block" alt="{{ member.name }}">
                 <div class="overlay rounded--circle fade-in-out icon-204px">
                     <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} class="no-decoration" target="_blank">
-                        <div class="column shadow-drop--dark justify-center align-content-center h-full">
-                            <h4 class="light h-auto font--height-normal mb-0 pa-1">{{ member.name }}</h4>
-                            <p class="font--bold ma-0 light">{{ member.title }}</p>
-                            <small class="font--bold font--italic text--light">{{ member.class }}</small>
+                        <div class="column shadow-drop--dark h-full justify-center align-content-center">
+                            <h4 class="light h-auto font--height-normal mb-0 mt-1 px-1">{{ member.name }}</h4>
+                            <div class="mt-1 px-2">
+                                <p class="font--bold ma-0 light">{{ member.title }}</p>
+                                <small class="font--bold font--italic text--light">{{ member.class }}</small>
+                            </div>
                         </div>
                     </a>
                 </div>
