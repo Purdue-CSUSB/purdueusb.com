@@ -1,55 +1,5 @@
-.about-title {
-    font-size: 40px;
-    padding-top: 10vh;
-    text-align: center;
-    background-color: $accent-grey;
-    height: 20vh;
-    color: white;
-    font-weight: 700;
-}
-
-.aboutus h1 {
-    font-weight: bolder;
-}
-
-.home {
-    flex: 1;
-}
-
-.banner__text {
-    color:white;
-    padding-top: 30px;
-    padding-left: 10px;
-    padding-right: 20px;
-    margin-top: 6vh;
-    max-width: 400px;
-}
-
-.banner__text h5 {
-    font-size: medium;
-}
-
-.banner__image {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin-top: 15vh;
-    margin-right: 3vh;
-    margin-left: 3vh;
-    /*padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 20px;
-    padding-bottom: 10px;*/
-    max-width: 1000px;
-}
-
-.banner button{
-    background-color: $primary-color;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 1em;
-    padding: 10px;
+#about > .column {
+    max-width: 41.5rem;
 }
 
 #triangle {

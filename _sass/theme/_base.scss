@@ -152,7 +152,7 @@ li, ul, ol {
   font-size: $font-size-listitem;
 }
 
-caption, .caption {
+caption, .caption, small {
   font-size: $font-size-caption;
 }
 
@@ -163,7 +163,7 @@ caption, .caption {
 a {
   color: $accent-blue;
   text-decoration: none;
-  @include shadow-text;
+  @include shadow-drop;
 
   &:visited {
     color: darken($accent-blue, 15%);
@@ -172,6 +172,9 @@ a {
   &:hover {
     //color: $text-color;
     text-decoration: underline;
+    &.no-decoration {
+        text-decoration: none;
+    }
   }
 
   .social-media-list &:hover {
@@ -250,12 +253,6 @@ pre {
 }
 
 .header-wrapper {
-  margin-right: 3vh;
-  margin-left: 3vh;
-  padding-right: $spacing-unit;
-  padding-left: $spacing-unit;
-  @extend %clearfix;
-
   @include media-query($on-laptop) {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
     max-width:         calc(#{$content-width} - (#{$spacing-unit}));
@@ -282,13 +279,11 @@ pre {
  */
 
 .svg-icon {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
+  @extend .icon-24px;
     fill: #{$accent-grey};
-    padding-right: 10px;
-    padding-top: 3px;
-    vertical-align: text-top;
+    &:not(:last-child) {
+      @extend .mr-4;
+    }
 }
 
 .social-media-list {

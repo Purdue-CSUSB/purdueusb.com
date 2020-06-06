@@ -5,6 +5,7 @@
   // Positioning context for the mobile navigation icon
   position: relative;
   grid-area: head;
+  @include shadow-drop;
 }
 
 .site-logo, .site-header {
@@ -12,25 +13,18 @@
 }
 
 .site-nav {
-  z-index: 1;
-  float: right;
-  line-height: $base-line-height * $font-size-body * 2.25;
-
-  .nav-trigger {
+  .nav-trigger, .menu-icon {
       display: none;
   }
 
-  .menu-icon {
-    display: none;
-  }
-
-  .page-link h4 {
+  .page-link * {
     @include font-semibold;
     @include my(0);
     &:hover {
       @include font-bold;
     }
   }
+
   .page-link {
     text-decoration: none;
     // Gaps between nav items, but not on the last one
@@ -39,44 +33,17 @@
     }
   }
 
-  .footer-page-link {
-    color: $background-color;
-    line-height: $base-line-height;
-
-    // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
-  }
-
-  @include media-query($on-palm) {
-    position: absolute;
-    top: 9px;
-    right: $spacing-unit / 2;
-    background-color: $background-color;
-    border: 1px solid $accent-grey-light;
-    border-radius: 5px;
-    text-align: right;
+  @include media-query($on-mobile) {
 
     label[for="nav-trigger"] {
-      display: block;
-      float: right;
-      width: 36px;
-      height: 36px;
-      z-index: 2;
-      cursor: pointer;
+      width: 2rem;
+      height: 2rem;
+      @include clickable;
     }
 
     .menu-icon {
-      display: block;
-      float: right;
-      width: 36px;
-      height: 26px;
-      line-height: 0;
-      padding-top: 10px;
-      text-align: center;
 
-      > svg {
+      > img {
         fill: $accent-grey-dark;
       }
     }
@@ -88,7 +55,6 @@
 
     input:checked ~ .trigger {
       display: block;
-      padding-bottom: 5px;
     }
 
     .page-link {
@@ -109,15 +75,7 @@
  * Site footer
  */
 .site-footer {
-  border-top: 1px solid $accent-grey-light;
-  background-color: #333333;
-  color: white;
   grid-area: footer;
-}
-
-.footer-heading {
-  @include relative-font-size(1.125);
-  margin-bottom: $spacing-unit / 2;
 }
 
 .contact-list,
@@ -167,7 +125,7 @@
   }
 }
 
-@include media-query($on-palm) {
+@include media-query($on-mobile) {
   .footer-col {
     float: none;
     width: -webkit-calc(100% - (#{$spacing-unit} / 2));

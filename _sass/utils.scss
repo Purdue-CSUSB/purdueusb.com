@@ -4,6 +4,9 @@
   &--slight {
     @include rounded($border-radius-slight);
   }
+  &--circle {
+    @include rounded(100%);
+  }
 }
 
 .shadow {
@@ -13,6 +16,13 @@
 
   &-text {
     @include shadow-text;
+  }
+
+  &-drop {
+    @include shadow-drop;
+    &--dark {
+        filter: drop-shadow($shadow-dark);
+    }
   }
 }
 
@@ -36,6 +46,24 @@
   &-between {
     @include justify(space-between);
   }
+}
+
+.text {
+    &-left {
+        text-align: left;
+    }
+
+    &-right {
+        text-align: right;
+    }
+
+    &-center {
+        text-align: center;
+    }
+
+    &-justify {
+        text-align: justify;
+    }
 }
 
 .align {
@@ -99,6 +127,15 @@
 
   &--normal {
     @include font-normal;
+    font-style: normal;
+  }
+
+  &--italic {
+    font-style: italic;
+  }
+
+  &--height-normal {
+    line-height: 1;
   }
 }
 
@@ -114,6 +151,12 @@
   .#{$variant} {
     color: $color;
   }
+}
+.bg {
+    &--angled {
+        background: url("/assets/images/bg-angled.svg") no-repeat center;
+        background-size: cover;
+    }
 }
 
 /* Margin & Padding class generation */
@@ -256,12 +299,26 @@
   }
 }
 
-.w-full {
-  width: 100%;
+.w- {
+    &full {
+        width: 100%;
+    }
+    &auto {
+        width: auto;
+    }
 }
 
-.h-full {
-  height: 100%;
+.h- {
+    &full {
+        height: 100%;
+    }
+    &auto {
+        height: auto;
+    }
+}
+
+.border-box-size, .border-box-size * {
+    box-sizing: border-box;
 }
 
 /* Flex Shrink/Grow class generation */
@@ -278,10 +335,9 @@
   width: 1.111rem;
   max-width: 20px;
 }
-@for $factor from 1 through 8 {
+@for $factor from 1 through $max-icon-multiple {
   $size: 12 * $factor * 1px;
   $ratio: ($size / 18px) * 1rem;
-  @debug $ratio;
   .icon-#{$size} {
     width: $ratio;
     max-width: $size;

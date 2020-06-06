@@ -42,8 +42,9 @@ $accent-blue:       #8AC9FE !default;
 $accent-color:      $accent-blue !default;
 $accent-red:        #FE646F !default;
 $accent-grey:       #828282 !default;
-$accent-grey-light:  lighten($accent-grey, 40%) !default;
-$accent-grey-dark:   darken($accent-grey, 25%) !default;
+$accent-grey-light: lighten($accent-grey, 40%) !default;
+$accent-grey-dark:  darken($accent-grey, 25%) !default;
+$profile-overlay:   rgba(0, 0, 0, 0.25);
 
 $variant-elements: ("bg": background-color, "text": color) !default;
 $color-variants: (
@@ -69,16 +70,19 @@ $padding-button-x:    $spacing-unit / 2.5 !default;
 $padding-button-y:    $spacing-unit / 3.8 !default;
 $dimension-sizing-groups: 3, 4, 10 !default;
 $max-grow-shrink-factor:  3 !default;
+$max-icon-multiple:       17 !default;
 // Width of the content area
 $content-width:    800px !default;
-$on-palm:          600px !default;
+$on-mobile:        600px !default;
 $on-laptop:        800px !default;
 
 /* Effects */
 $border-width: 4px !default;
 $border-radius: 10px !default;
 $border-radius-slight: 3px !default;
-$default-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25) !default;
+$shadow-default: 4px 4px 4px rgba(0, 0, 0, 0.25) !default;
+$shadow-dark: 4px 4px 4px rgba(0, 0, 0, 0.95) !default;
+$animation-fade-time: 0.3s !default;
 
 
 // Import partials.
