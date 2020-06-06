@@ -20,16 +20,9 @@
   .page-link * {
     @include font-semibold;
     @include my(0);
+    @extend .no-decoration;
     &:hover {
       @include font-bold;
-    }
-  }
-
-  .page-link {
-    text-decoration: none;
-    // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
-      @extend .mr-4;
     }
   }
 
@@ -78,8 +71,7 @@
   grid-area: footer;
 }
 
-.contact-list,
-.social-media-list {
+.contact-list {
   list-style: none;
   margin-left: 0;
 }

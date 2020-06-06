@@ -1,5 +1,14 @@
-#about > .column {
-    max-width: 41.5rem;
+#about > .section {
+    max-width: 50rem;
+}
+
+.objective {
+    width: 30rem;
+    max-width: 35rem;
+    max-width: 50%;
+    & > .column {
+        flex-basis: 100%;
+    }
 }
 
 #triangle {

@@ -107,7 +107,7 @@ li {
 /**
  * Fonts: headings, body elements, weights
  */
-h1, h2, h3, h4, h5, h6, .header {
+h1, h2, h3 .header {
   @include font-header;
   line-height: $base-line-height;
 }
@@ -125,9 +125,9 @@ li, ul, ol, dl, data, input, .medium {
   @include font-medium;
 }
 
-body, p, a, blockquote, pre, code, span
+h4, h5, h6, body, p, a, blockquote, pre, code, span
 li, ul, ol, dl, data, input, caption, 
-button,.caption, .button {
+button,.caption, .button, .body {
   @include font-body;
 }
 
@@ -156,6 +156,10 @@ caption, .caption, small {
   font-size: $font-size-caption;
 }
 
+svg path{
+    fill: currentcolor;
+}
+
 
 /**
  * Links
@@ -169,12 +173,9 @@ a {
     color: darken($accent-blue, 15%);
   }
 
-  &:hover {
+  & > *:hover {
     //color: $text-color;
-    text-decoration: underline;
-    &.no-decoration {
-        text-decoration: none;
-    }
+    //text-decoration: underline;
   }
 
   .social-media-list &:hover {
@@ -279,26 +280,15 @@ pre {
  */
 
 .svg-icon {
-  @extend .icon-24px;
-    fill: #{$accent-grey};
-    &:not(:last-child) {
-      @extend .mr-4;
+    @extend .icon-0;
+    /*@include media-query($on-mobile) {
+        @extend .pa-1 // needs mixins for this
+    }*/
+    @extend .fill--grey-light;
+    &:hover {
+        @extend .fill--light;
     }
 }
-
-.social-media-list {
-  li + li {
-    padding-top: 5px;
-  }
-}
-
-.social-link {
-  &:not(:last-child) {
-    @extend .mr-4;
-  }
-  @include clickable;
-}
-
 
 
 /**
@@ -338,23 +328,28 @@ button, .button {
   @include font-button;
   min-height: 60px;
   background-color: $primary-color;
-  text-decoration: none;
   @include px($padding-button-x);
   @include py($padding-button-y);
+  @extend .no-decoration;
   border: none;
 
   &--outline {
     @extend .button;
     background-color: transparent;
     color: $text-color-light;
-    @include border($background-light, $border-width)
+    @include border($background-light, $border-width);
+    &--dark {
+        @extend .button--outline;
+        color: $text-color;
+        @extend .border-dark;
+    }
   }
 
-  &:hover {
+  /*&:hover {   // breaks outline style
     @extend .button;
     text-decoration: none;
     background-color: lighten($primary-color, 5%);
-  }
+  }*/
 }
 
 .border-dark {
