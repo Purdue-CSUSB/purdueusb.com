@@ -28,9 +28,9 @@
 			</div>
 			<div class="column align-items-end">
 			  <p class="light font--bold">Stay updated with our social media</p>
-			  <div class="row justify-end">
+			  <div class="row justify-end margin-list">
 				{% for social in site.minima.social_links %}
-				  <a href="https://{{social[1]}}" target="_blank" class="social-link">
+				  <a href="https://{{social[1]}}" target="_blank">
 					<img alt="{{social[0]}}" class="icon-48px" src="/assets/images/logos/socialmedia/{{social[0]}}.svg"/>
 				  </a>
 				{% endfor %}
