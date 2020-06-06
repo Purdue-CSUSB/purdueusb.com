@@ -227,12 +227,15 @@
   display: -webkit-flex;
   @extend .row;
   &--wrap {
-    @extend .flex;
-    flex-wrap: wrap;
     &-reverse {
-      @extend .flex;
-      flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
     }
+    flex-wrap: wrap;
+    @extend .flex;
+  }
+
+  &--nowrap {
+    flex-wrap: nowrap;
   }
 }
 
@@ -252,6 +255,7 @@
   }
 }
 
+/* Display classes */
 .none {
   display: none;
 }
@@ -259,6 +263,35 @@
 .invisible, .hidden {
   display: hidden;
 }
+
+.mobile, .sm {
+    display: none;
+    @include media-query($on-mobile) {
+        display: initial;
+    }
+}
+
+.laptop, .md {
+    display: none;
+    @include media-query($on-laptop) {
+        display: initial;
+    }
+}
+
+.desktop, .lg {
+    display: none;
+    @include media-query($on-desktop) {
+        display: initial;
+    }
+}
+
+.desktop--wide, .xl {
+    display: none;
+    @include media-query($on-ultrawide) {
+        display: initial;
+    }
+}
+
 
 .row {
   width: 100%;
