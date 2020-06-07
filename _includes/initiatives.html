@@ -1,4 +1,4 @@
-<div class="column px-1-10 mb-3 justify-center">
+<div class="column px-1-20 mb-3 justify-center">
     <h1 class="mt-3 text-center">Our Initiatives</h1>
     <div class="row justify-center mb-3">
         <div class="section text-justify">
@@ -8,26 +8,24 @@
         
     </div>
     <script>
-        /* Credit: https://medium.com/@andybarefoot/a-masonry-style-layout-using-css-grid-8c663d355ebb */
-        function resize(){
-            grid = document.getElementsByClassName("grid-initiatives")[0];
-            grid.style.gridAutoRows = "auto";
-            grid.style.alignItems = "self-start";
-            rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-            rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-            allItems = grid.getElementsByClassName("card").forEach(item => {
-                item.style.gridRowEnd = `span ${Math.ceil(
-                    (item.clientHeight + rowGap) / (rowHeight + rowGap)
-                )}`;
+        function setup() {
+            let magicGrid = new MagicGrid({
+                container: "#initiative-container",
+                items: parseInt("{{site.data.initiatives | size}}"), // Required for dynamic content. Initial number of items in the container.
+                maxColumns: 3, // Optional. Maximum number of columns. Default: Infinite.
+                useMin: true, // Optional. Prioritize shorter columns when positioning items? Default: false.
+                useTransform: true, // Optional. Position items using CSS transform? Default: True.
+                animate: true, // Optional. Animate item positioning? Default: false.
+                center: true, //Optional. Center the grid items? Default: true. 
             });
-            grid.removeAttribute("style");
+
+            magicGrid.listen();
         }
-        window.addEventListener("load", resize);
-        window.addEventListener("resize", resize);
+        window.addEventListener("load", setup);
     </script>
-    <div class="grid-initiatives">
+    <div id="initiative-container">
         {%- for initiative in site.data.initiatives -%}
-        <div class="card pr-3">
+        <div class="card pr-3 my-2">
             <div class="row align-content-start justify-between mb-0">
                 <div class="column grow-0">
                     <img src="/assets/images/initiatives/{{ initiative.image }}" class="icon-204px rounded w-full img-cover">
@@ -75,7 +73,7 @@
                         {% endif %}
                         {% if hasButton %}
                             <div class="row align-content-center justify-center my-1">
-                                <a class="pa-1 hover--underline" href="{{ initiative.buttonLink }}">
+                                <a class="py-1 w-full text-center hover--underline" href="{{ initiative.buttonLink }}">
                                     <h4 class="mb-0">{{ initiative.buttonText }}</h4>
                                 </a>
                             </div>
