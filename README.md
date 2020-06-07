@@ -21,8 +21,9 @@ Please follow the installation instructions found on the [Jekyll Website](https:
 
 ### Editing Initiatives
 
-1. Add an initiative logo in `assets/images/initiative`. The logo must be 400px by 289px in resolution.
-2. Edit `_data/initiatives.yml` with title, image, and description.
+1. Add an initiative logo in `assets/images/initiative`. Please use a square resolution, or it will be cropped to fit automatically.
+2. Edit `_data/initiatives.yml` with title, image, description, and full names of members (as spelled in members.yml).
+  * Optionally, provide an inactive entry with either `true | string`. True will display "INACTIVE" and anything else will be displayed.
 
 ### Editing Objectives
 
