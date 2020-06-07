@@ -7,31 +7,9 @@
                 </a>
             </div>
 
-            <nav class="site-nav column align-content-center align-items-end">
-                <label for="nav-trigger" class="bg--light rounded--slight">
-                    <span class="menu-icon icon-36px pa-0">
-                    <img class="icon-24px fill--dark text--dark" src="/assets/images/mobile-menu.svg"/>
-                    </span>
-                </label>
-                <div class="md-above">
-                    <div class="trigger row justify-end margin-list">
-                        {%- for link in site.data.header_links -%}
-                        <a class="page-link" href="{{ link.href }}"><h4>{{link.text}}</h4></a>
-                        {% endfor %}
-                    </div>
-                </div>
-            </nav>
+            {%- include navmenu.html -%}
         </div>
-        <div class="site-nav w-full md-below">
-            <div class="row">
-                <input type="checkbox" id="nav-trigger" class="nav-trigger clickable" />
-                <div class="trigger my-2 column align-content-end align-items-end justify-end margin-list">
-                    {%- for link in site.data.header_links -%}
-                    <a class="page-link my-1" href="{{ link.href }}"><h4 class="mb-0 text-right">{{link.text}}</h4></a>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
+        {%- include navmenu_mobile.html -%}
     </header>
     {%- include announcement.html -%}
 </div>

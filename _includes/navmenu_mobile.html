@@ -1,0 +1,10 @@
+<div class="site-nav w-full md-below">
+    <div class="row">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger clickable" />
+        <div class="trigger my-2 column align-content-end align-items-end justify-end margin-list">
+            {%- for link in site.data.header_links -%}
+            <a class="page-link my-1" href="{{ link.href }}"><h4 class="mb-0 text-right">{{link.text}}</h4></a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
