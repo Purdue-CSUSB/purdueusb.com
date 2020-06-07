@@ -2,7 +2,7 @@
     <div class="column">
         <h1 class="text-center mb-4 mt-5">About Us</h1>
         <div id="about" class="row justify-between">
-            <div class="column mx-3">
+            <div class="section column mx-3">
                 <h3 class="text-center mb-3">Our Mission</h3>
                 <h4 class="font--medium text-justify">
                     The Computer Science Undergraduate Student Board exists to promote a supportive and engaged community
@@ -10,17 +10,21 @@
                     Science Corporate Partners Program, and administration to advocate for the student body.
                 </h4>
             </div>
-            <div class="column mx-3">
+            <div class="section mx-3">
                 <h3 class="text-center mb-3">Our Objectives</h3>
-                <div>
+                <div class="flex--wrap">
                     {%- for objective in site.data.objectives -%}
-                    <div class="row mb-5">
+                    <div class="objective row mb-5">
                         <div class="column">
                             <h4 class="mb-1">{{ objective.title }}</h3>
-                            <p class="text-justify mb-0">{{ objective.description }}</p>
-                        </div>
-                        <div class="column grow-0 ml-3 justify-center">
-                            <img class="icon-60px" src="/assets/images/objectives/{{ objective.image }}">
+                            <div class="row flex--nowrap justify-center align-content-center">
+                                <div class="column">
+                                    <p class="text-justify mb-0">{{ objective.description }}</p>
+                                </div>
+                                <div class="column grow-0 ml-3">
+                                    <img class="icon-60px" src="/assets/images/objectives/{{ objective.image }}">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     {%- endfor -%}

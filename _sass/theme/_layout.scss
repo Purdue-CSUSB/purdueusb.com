@@ -208,3 +208,15 @@
     }
   }
 }
+
+.divider {
+    &--horizontal {
+        @extend .w-full;
+        @extend .bg--primary;
+        height: 1px;
+    }
+}
+
+.section {
+    max-width: 50rem;
+}

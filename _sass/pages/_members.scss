@@ -2,17 +2,6 @@
     max-width: 1000px;
 }
 
-.fade-in-out{
-    opacity: 0;
-    -moz-transition: all $animation-fade-time ease-in-out 0s;
-    -webkit-transition: all $animation-fade-time ease-in-out 0s;
-    -ms-transition: all $animation-fade-time ease-in-out 0s;
-    transition: all $animation-fade-time ease-in-out 0s;
-    &:hover {
-        opacity: 1;
-    }
-}
-
 .overlay {
     &-container {
         position: relative;

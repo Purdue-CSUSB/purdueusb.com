@@ -16,13 +16,24 @@
 
   &-text {
     @include shadow-text;
+    &--dark {
+        filter: drop-shadow($shadow-dark);
+    }
   }
 
   &-drop {
     @include shadow-drop;
-    &--dark {
-        filter: drop-shadow($shadow-dark);
+    &--hover {
+        transition: $animation-fade-time;
+        &:hover {
+            filter: drop-shadow($shadow-hover);
+        }
+        
     }
+  }
+
+  &-none {
+    filter: none;
   }
 }
 
@@ -163,11 +174,10 @@
 @each $type in $spacing-types {
   @each $direction in $spacing-directions {
     @for $index from 0 through $spacing-max-group {
-      $size: 0;
+      $size: 0rem;
       @if $index > 0 {
-        $size: pow($spacing-base, $index - 2);
+        $size: spacing-group($index);
       }
-      $size: #{$size + "rem"};
       $type_abbr: str-slice($type, 1, 1);
       $direction_abbr: str-slice($direction, 1, 1);
       .#{$type_abbr}#{$direction_abbr}-#{$index} {
@@ -239,6 +249,12 @@
   }
 }
 
+.flex-break {
+    display: block;
+    height: 1px;
+    width: 100%;
+  }
+
 .block {
   display: block;
 }
@@ -262,6 +278,18 @@
 
 .invisible, .hidden {
   display: hidden;
+}
+
+.overflow {
+    &-hidden {
+        overflow: hidden;
+    }
+    &-scroll {
+        overflow: scroll;
+    }
+    &-visible {
+        overflow: visible;
+    }
 }
 
 .mobile, .sm {
@@ -381,8 +409,14 @@
 
 .margin-list > * {
     &:not(:last-child) {
-        @extend .mr-4;
+        @extend .mr-2;
     }
+    &:not(:first-child) {
+        @extend .ml-2;
+    }
+}
+.margin-list--wrap > * {
+    @extend .mx-2;
 }
 
 .no-decoration {
@@ -390,7 +424,26 @@
 }
 
 .hover {
-    &--underline {
+    &--underline:hover {
         text-decoration: underline;
     }
+}
+
+.fade-in-out{
+    opacity: 0;
+    -moz-transition: all $animation-fade-time ease-in-out 0s;
+    -webkit-transition: all $animation-fade-time ease-in-out 0s;
+    -ms-transition: all $animation-fade-time ease-in-out 0s;
+    transition: all $animation-fade-time ease-in-out 0s;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+img.img-cover {
+    object-fit: cover;
 }

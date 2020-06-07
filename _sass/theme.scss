@@ -41,7 +41,7 @@ $primary-color:     #FFCA44 !default;
 $accent-blue:       #8AC9FE !default;
 $accent-color:      $accent-blue !default;
 $accent-red:        #FE646F !default;
-$accent-grey:       #828282 !default;
+$accent-grey:       #6B6A6A !default;
 $accent-grey-light: #A6A6A6 !default;
 $accent-grey-dark:  darken($accent-grey, 25%) !default;
 $profile-overlay:   rgba(0, 0, 0, 0.25);
@@ -92,6 +92,7 @@ $border-radius: 10px !default;
 $border-radius-slight: 3px !default;
 $shadow-default: 4px 4px 4px rgba(0, 0, 0, 0.25) !default;
 $shadow-dark: 4px 4px 4px rgba(0, 0, 0, 0.95) !default;
+$shadow-hover: 0px 0px 12px rgba(0,0,0,0.25) !default;
 $animation-fade-time: 0.3s !default;
 
 

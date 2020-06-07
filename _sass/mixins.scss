@@ -146,6 +146,10 @@
 
 
 /* Spacing Mixins */
+@function spacing-group($index) {
+    $num: pow($spacing-base, $index - 2);
+    @return #{$num + "rem"}
+}
 // Paddings
 @mixin p-bottom($size) {
   padding-bottom: $size;

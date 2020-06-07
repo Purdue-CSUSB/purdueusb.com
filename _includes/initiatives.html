@@ -1,15 +1,97 @@
-<div style="max-width: 1400px; margin: auto; padding-bottom: 3vh; margin-top: 3vh;">
-    <div class="initiatives-container">
+<div class="column px-1-10 mb-3 justify-center">
+    <h1 class="mt-3 text-center">Our Initiatives</h1>
+    <div class="row justify-center mb-3">
+        <div class="section text-justify">
+            <p>We take pride in the freedom our members have to pursue initatives that are impactful immediately and in the long term.  Some initiatives have been around for a decade or more, while some come and go as our goals evolve.</p>
+            <p>Check out what we've been working on!</p>
+        </div>
+        
+    </div>
+    <script>
+        /* Credit: https://medium.com/@andybarefoot/a-masonry-style-layout-using-css-grid-8c663d355ebb */
+        function resize(){
+            grid = document.getElementsByClassName("grid-initiatives")[0];
+            grid.style.gridAutoRows = "auto";
+            grid.style.alignItems = "self-start";
+            rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+            rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+            allItems = grid.getElementsByClassName("card").forEach(item => {
+                item.style.gridRowEnd = `span ${Math.ceil(
+                    (item.clientHeight + rowGap) / (rowHeight + rowGap)
+                )}`;
+            });
+            grid.removeAttribute("style");
+        }
+        window.addEventListener("load", resize);
+        window.addEventListener("resize", resize);
+    </script>
+    <div class="grid-initiatives">
         {%- for initiative in site.data.initiatives -%}
-        <div class="card">
-            <img src="/assets/images/initiatives/{{ initiative.image }}" style="width:100%">
-            <div class="card-container">
+        <div class="card pr-3">
+            <div class="row align-content-start justify-between mb-0">
+                <div class="column grow-0">
+                    <img src="/assets/images/initiatives/{{ initiative.image }}" class="icon-204px rounded w-full img-cover">
+                </div>
+                <div class="column ml-2 pt-2">
+                    <div class="row grow-0 justify-between align-items-baseline">
+                        <h4 class="mb-1 inline">{{ initiative.title | escape }}</h4>
+                        {% if initiative.inactive == true %}
+                            <small class="uppercase text--red">inactive</small>
+                        {% elsif initiative.inactive != "" and initiative.inactive != nil %}
+                            <small class="uppercase text--grey">{{initiative.inactive}}</small>
+                        {% endif %}
+                    </div>
+                    <p class="mb-0">{{ initiative.description }}</p>
+                </div>
+            </div>
+            {% assign hasMembers = initiative.members != nil %}
+            {% assign hasButton = initiative.buttonText != "" and initiative.buttonText != nil and initiative.buttonLink != "" and initiative.buttonLink != nil %}
+            {% if hasMembers or hasButton %}
+                <div class="mx-3">
+                    <div class="column align-content-center align-items-center justify-between mx-2">
+                        {% if hasMembers %}
+                            <div class="row mt-1 align-content-start">
+                                <small class="font--bold block">Members</small>
+                            </div>
+                            <div class="row">
+                                <div class="row align-content-between justify-between">
+                                    {% assign row_limit = 11 %}
+                                    {% assign initiative_members = initiative.members | sort:"value" %}
+                                    {% for name in initiative_members %}
+                                        {% assign member = site.data.members | where:"name", name | first %}
+                                        <div class="border-box-size mx-0 mt-1">
+                                            <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} title="{{ member.name }}" class="no-decoration shadow-none" target="_blank">
+                                                <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-48px block" alt="{{ member.name }}">
+                                            </a>
+                                        </div>
+
+                                        {% assign remainder = forloop.index | modulo: row_limit %}
+                                        {% if remainder == 0 %}
+                                            <div class="flex-break"></div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% if hasButton %}
+                            <div class="row align-content-center justify-center my-1">
+                                <a class="pa-1 hover--underline" href="{{ initiative.buttonLink }}">
+                                    <h4 class="mb-0">{{ initiative.buttonText }}</h4>
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        {%- endfor -%}
+        <!--<div class="card mx-5 my-3">
+            <img src="/assets/images/initiatives/{{ initiative.image }}" class="w-full">
+            <div class="mt-2 mb-1 mx-1">
                 <h4 class="initiative-title">{{ initiative.title | escape }}</h4>
                 <p class="initiative-description">{{ initiative.description }}</p>
+                <a class="initiative-button" href="{{ initiative.buttonLink }}">{{ initiative.buttonText }}</a>
             </div>
-            <a class="initiative-button" href="{{ initiative.buttonLink }}">{{ initiative.buttonText }}</a>
-        </div>
-
-        {%- endfor -%}
+        </div>-->
     </div>
 </div>
