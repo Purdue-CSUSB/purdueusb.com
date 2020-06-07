@@ -1,4 +1,4 @@
-<div class="column px-1-10 pt-6 text-center">
+<div class="column px-1-20 pt-6 text-center">
     <h3 class="mb-0">Meet the Board</h3>
     {%- assign year = 'now' | date: "%Y" -%}
     <p class="mb-4">{{ year }} &ndash; {{ year |plus:1 }} Members</p>
@@ -9,7 +9,7 @@
             <div class="overlay-container border-box-size shadow-drop shadow-drop--hover">
                 <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-204px block" alt="{{ member.name }}">
                 <div class="overlay rounded--circle fade-in-out icon-204px">
-                    <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} class="no-decoration" target="_blank">
+                    <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} title="{{ member.name }}" class="no-decoration" target="_blank">
                         <div class="column shadow-text--dark h-full justify-center align-content-center">
                             <h4 class="light h-auto font--height-normal mb-0 mt-1 px-1">{{ member.name }}</h4>
                             <div class="mt-1 px-2">
