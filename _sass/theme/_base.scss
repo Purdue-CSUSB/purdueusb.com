@@ -38,13 +38,13 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-  color: $accent-grey-light;
+    //background-color: white;
 }
 
 *::-webkit-scrollbar-thumb {
   @include rounded($border-radius);
   background-color: $accent-grey-dark;
-  border: 0.1rem solid $accent-grey-light;
+  border: 0.2rem solid $background-color;
 }
 
 /**
@@ -230,38 +230,6 @@ pre {
     padding-left: 0;
   }
 }
-
-/**
- * Wrapper
- */
-.wrapper {
-  max-width: -webkit-calc(#{$content-width});
-  max-width:         calc(#{$content-width});
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: $spacing-unit;
-  padding-left: $spacing-unit;
-  margin-top: $spacing-unit;
-  
-  @extend %clearfix;
-
-  @include media-query($on-laptop) {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-    padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
-  }
-}
-
-.header-wrapper {
-  @include media-query($on-laptop) {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-    padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
-  }
-}
-
 
 
 /**

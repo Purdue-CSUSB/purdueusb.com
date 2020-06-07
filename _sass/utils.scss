@@ -165,8 +165,16 @@
 }
 .bg {
     &--angled {
-        background: url("/assets/images/bg-angled.svg") no-repeat center;
+        @include media-query-min($screen-large) {
+            background-image: url("/assets/images/bg-angled.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
         background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
     }
 }
 
@@ -292,31 +300,22 @@
     }
 }
 
-.mobile, .sm {
-    display: none;
-    @include media-query($on-mobile) {
-        display: initial;
-    }
-}
-
-.laptop, .md {
-    display: none;
-    @include media-query($on-laptop) {
-        display: initial;
-    }
-}
-
-.desktop, .lg {
-    display: none;
-    @include media-query($on-desktop) {
-        display: initial;
-    }
-}
-
-.desktop--wide, .xl {
-    display: none;
-    @include media-query($on-ultrawide) {
-        display: initial;
+@each $name, $vals in $screens {
+    .#{$name}-- {
+        &above {
+            display: none !important;
+            $size: map-get($vals, "min");
+            @include media-query-min($size) {
+                display: initial !important;
+            }
+        }
+        &below {
+            display: none !important;
+            $size: map-get($vals, "max");
+            @include media-query-max($size) {
+                display: initial !important;
+            }
+        }
     }
 }
 
@@ -330,6 +329,9 @@
     @extend .row;
     flex-direction: row-reverse;
   }
+  &--nowrap {
+    flex-wrap: nowrap;
+  }
 }
 
 .column {
@@ -339,6 +341,9 @@
   &-reverse {
     @extend .column;
     flex-direction: column-reverse;
+  }
+  &--nowrap {
+    flex-wrap: nowrap;
   }
 }
 
@@ -444,6 +449,6 @@
     text-transform: uppercase;
 }
 
-img.img-cover {
+.img-cover {
     object-fit: cover;
 }
