@@ -1,27 +1,37 @@
 <div>
-    <header class="site-header bg--primary py-0 px-5" role="banner">
-    <div class="flex row align-items-center">
-        <div class="align-content-center">
-        <a href="{{ "/" | relative_url }}">
-            <img class="site-logo" src="/assets/images/logos/wordmark/dark_mono_nobg.svg" />
-        </a>
-        </div>
+    <header class="column w-auto justify-center align-content-center align-items-center bg--primary py-0 px-1-20" role="banner">
+        <div class="row align-content-center align-items-center justify-between">
+            <div class="column grow-0 align-content-center">
+                <a href="{{ "/" | relative_url }}">
+                    <img class="icon-252px" src="/assets/images/logos/wordmark/dark_mono_nobg.svg" />
+                </a>
+            </div>
 
-        <nav class="site-nav column">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-            <span class="menu-icon icon-36px pa-0">
-            <img class="icon-24px" src="/assets/images/mobile-menu.svg"/>
-            </span>
-        </label>
-
-        <div class="trigger flex justify-end margin-list">
-            {%- for link in site.data.header_links -%}
-            <a class="page-link" href="{{ link.href }}"><h4>{{link.text}}</h4></a>
-            {% endfor %}
+            <nav class="site-nav column align-content-center align-items-end">
+                <label for="nav-trigger" class="bg--light rounded--slight">
+                    <span class="menu-icon icon-36px pa-0">
+                    <img class="icon-24px fill--dark text--dark" src="/assets/images/mobile-menu.svg"/>
+                    </span>
+                </label>
+                <div class="md-above">
+                    <div class="trigger row justify-end margin-list">
+                        {%- for link in site.data.header_links -%}
+                        <a class="page-link" href="{{ link.href }}"><h4>{{link.text}}</h4></a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </nav>
         </div>
-        </nav>
-    </div>
+        <div class="site-nav w-full md-below">
+            <div class="row">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger clickable" />
+                <div class="trigger my-2 column align-content-end align-items-end justify-end margin-list">
+                    {%- for link in site.data.header_links -%}
+                    <a class="page-link my-1" href="{{ link.href }}"><h4 class="mb-0 text-right">{{link.text}}</h4></a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </header>
     {%- include announcement.html -%}
 </div>

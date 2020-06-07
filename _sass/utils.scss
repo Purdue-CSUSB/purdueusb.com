@@ -301,19 +301,17 @@
 }
 
 @each $name, $vals in $screens {
-    .#{$name}-- {
+    .#{$name}- {
         &above {
-            display: none !important;
             $size: map-get($vals, "min");
-            @include media-query-min($size) {
-                display: initial !important;
+            @include media-query-max($size) {
+                display: none !important;
             }
         }
         &below {
-            display: none !important;
             $size: map-get($vals, "max");
-            @include media-query-max($size) {
-                display: initial !important;
+            @include media-query-min($size) {
+                display: none !important;
             }
         }
     }

@@ -9,6 +9,7 @@
 }
 
 .site-nav {
+  transition: $animation-fade-time;
   .nav-trigger, .menu-icon {
       display: none;
   }
@@ -22,40 +23,28 @@
     }
   }
 
-  /*@include media-query($on-mobile) {
+  @include media-query-max($screen-medium) {
 
     label[for="nav-trigger"] {
       width: 2rem;
       height: 2rem;
-      @include clickable;
-    }
-
-    .menu-icon {
-
-      > img {
-        fill: $accent-grey-dark;
-      }
     }
 
     input ~ .trigger {
-      clear: both;
       display: none;
     }
 
     input:checked ~ .trigger {
-      display: block;
+      display: inline-block;
     }
 
-    .page-link {
-      display: block;
-      padding: 5px 10px;
-
-      &:not(:last-child) {
-        margin-right: 0;
+    .menu-icon {
+      > img {
+        fill: $text-color;
+        color: $text-color
       }
-      margin-left: 20px;
     }
-  }*/
+  }
 }
 
 
