@@ -14,7 +14,7 @@
   image: Help_Room_Logo.png
   description: CS 193, CS 180, CS 182, and CS 240 Help
   buttonText: View Times
-  buttonLink: https://www.purdueusb.com/helproom/index.html
+  buttonLink: https://www.purdueusb.com/helproom/
 
 - title: Office Hours
   image: Office_Hours_Logo.png
