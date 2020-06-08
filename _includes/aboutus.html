@@ -1,37 +1,37 @@
 <div>
     <div class="divider--horizontal"></div>
-    <div class="px-1-20 bg--angled pt-5 pb-4">
-        <h1 class="text-center">About Us</h1>
-        <div class="row">
-            <div id="about" class="row justify-between">
-                <div class="column section-mission">
+    <div class="bg--angled">
+        <h1 class="text-center pt-5 px-1-20 mb-0 pb-1 bg--primary-mobile">About Us</h1>
+        <div class="row justify-between pb-2">
+            <div class="column section-mission bg--angled-mobile">
+                <div class="mx-1-20">
                     <h3 class="text-center mb-3">Our Mission</h3>
-                    <h4 class="font--medium text-justify">
+                    <h4 class="font--medium text-justify mb-6">
                         The Computer Science Undergraduate Student Board was established in 1999 to promote a supportive and engaged community
                         within Purdue’s Computer Science Department, and to use its relationship with faculty, the Computer
                         Science Corporate Partners Program, and administration to advocate for the student body.
                     </h4>
                 </div>
-                <div class="flex-break md-below my-1"></div>
-                <div class="column--nowrap section-objectives justify-center align-items-center">
-                    <h3 class="text-center mb-3">Our Objectives</h3>
-                    <div id="objective-container" class="row justify-around margin-list--wrap align-content-center">
-                        {%- for objective in site.data.objectives -%}
-                        <div class="objective mb-5">
-                            <div class="column">
-                                <h4 class="mb-1">{{ objective.title }}</h3>
-                                <div class="row justify-center align-content-center">
-                                    <div class="column">
-                                        <p class="text-justify mb-0">{{ objective.description }}</p>
-                                    </div>
-                                    <div class="column grow-0 ml-3">
-                                        <img class="icon-60px" src="/assets/images/objectives/{{ objective.image }}">
-                                    </div>
+            </div>
+            <div class="flex-break md-below"></div>
+            <div class="column--nowrap section-objectives justify-center align-items-center">
+                <h3 class="text-center mb-3">Our Objectives</h3>
+                <div id="objective-container" class="row justify-around margin-list--wrap align-content-center">
+                    {%- for objective in site.data.objectives -%}
+                    <div class="objective mb-5">
+                        <div class="column">
+                            <h4 class="mb-1">{{ objective.title }}</h3>
+                            <div class="row justify-center align-content-center">
+                                <div class="column">
+                                    <p class="text-justify mb-0">{{ objective.description }}</p>
+                                </div>
+                                <div class="column grow-0 ml-3">
+                                    <img class="icon-60px" src="/assets/images/objectives/{{ objective.image }}">
                                 </div>
                             </div>
                         </div>
-                        {%- endfor -%}
                     </div>
+                    {%- endfor -%}
                 </div>
             </div>
         </div>

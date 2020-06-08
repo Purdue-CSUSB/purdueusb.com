@@ -133,13 +133,13 @@
   }
 }
 */
-@mixin media-query-min($device) {
+@mixin media-query-above($device) {
   @media screen and (min-width: $device) {
     @content;
   }
 }
 
-@mixin media-query-max($device) {
+@mixin media-query-below($device) {
     @media screen and (max-width: $device) {
         @content;
     }

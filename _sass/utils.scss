@@ -164,17 +164,20 @@
   }
 }
 .bg {
-    &--angled {
-        @include media-query-min($screen-large) {
-            background-image: url("/assets/images/bg-angled.svg");
-            background-repeat: no-repeat;
-            background-position: center;
+    &--primary-mobile {
+        @include media-query-below($screen-medium) {
+            background-color: $primary-color;
         }
-
-        background-size: cover;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
+    }
+    &--light-mobile {
+        @include media-query-below($screen-medium) {
+            background-color: $background-light;
+        }
+    }
+    &--dark-mobile {
+        @include media-query-below($screen-medium) {
+            background-color: $background-dark;
+        }
     }
 }
 
@@ -304,13 +307,13 @@
     .#{$name}- {
         &above {
             $size: map-get($vals, "min");
-            @include media-query-max($size) {
+            @include media-query-below($size) {
                 display: none !important;
             }
         }
         &below {
             $size: map-get($vals, "max");
-            @include media-query-min($size) {
+            @include media-query-above($size) {
                 display: none !important;
             }
         }

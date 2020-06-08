@@ -84,9 +84,13 @@ $screens: (
     'xl': ('min': '1280px'),
 ) !default;
 $screen-small: map-get(map-get($screens, "sm"), "max");
+$screen-small-min: map-get(map-get($screens, "sm"), "min");
 $screen-medium: map-get(map-get($screens, "md"), "max");
+$screen-medium-min: map-get(map-get($screens, "md"), "min");
 $screen-large: map-get(map-get($screens, "lg"), "max");
+$screen-large-min: map-get(map-get($screens, "lg"), "min");
 $screen-xlarge: map-get(map-get($screens, "xl"), "max");
+$screen-xlarge-min: map-get(map-get($screens, "xl"), "min");
 
 /* Effects */
 $border-width: 4px !default;

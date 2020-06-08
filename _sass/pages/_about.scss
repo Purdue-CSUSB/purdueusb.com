@@ -1,9 +1,33 @@
+.bg {
+    &--angled {
+        @include media-query-above($screen-large-min) {
+            background-image: url("/assets/images/bg-angled.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+        }
+    }
+    &--angled-mobile {
+        @include media-query-below($screen-medium) {
+            background: linear-gradient(to bottom right, $primary-color 50%, transparent 0%) no-repeat bottom,
+            linear-gradient(30deg, $primary-color, $primary-color) no-repeat top;
+            $angle: 4rem; // Lower -> more horizontal
+            background-size: 100% $angle, 100% calc(100% - #{$angle});
+            background-origin: content-box;
+            -webkit-background-origin: content-box;
+        }
+    }
+}
+
 .objective {
-    @include media-query-max($screen-medium) {
+    @include media-query-below($screen-medium) {
         max-width: 100%;
     }
 
-    @include media-query-min($screen-large) {
+    @include media-query-above($screen-large) {
         max-width: 45%;
     }
 }
@@ -20,23 +44,12 @@
         max-width: $objectives-width;
     }
     &objectives, &mission {
-        @include media-query-max($screen-medium) {
+        @include media-query-below($screen-medium) {
             width: 100%;
             max-width: 100%;
         }
     }
     
-}
-
-#trapezoid {
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-bottom: 100px solid $primary-color;
-    border-left: 0px solid transparent;
-    border-right: 5rem solid transparent;
-    height: 100%;
-    width: 45%;
 }
 
 #triangle {
