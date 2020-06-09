@@ -12,25 +12,25 @@ Please follow the installation instructions found on the [Jekyll Website](https:
 - Either create an about page (maybe about the history of the organization) or have it link to the landing instead.
 - Future deprecation issues: convert all @import statements when support is added for @use in the jekyll sass converter. See [relevant issue](https://github.com/jekyll/jekyll-sass-converter/issues/105).
 
-## Usage
+## Editing Site Information
 
-### Editing USB Members
+### USB Members
 
 1. If necessary, add their photograph in `assets/images/members`. Make sure the images are cropped to be square.
 2. Edit `_data/members.yml` with their name, image, title, and class rank.
 
-### Editing Initiatives
+### Initiatives
 
 1. Add an initiative logo in `assets/images/initiative`. Please use a square resolution, or it will be cropped to fit automatically.
 2. Edit `_data/initiatives.yml` with title, image, description, and full names of members (as spelled in members.yml).
   * Optionally, provide an inactive entry with either `true | string`. True will display "INACTIVE" and anything else will be displayed.
 
-### Editing Objectives
+### Objectives
 
 1. Add an objective logo to `assets/images/objectives`
 2. Edit `_data/objectives.yml` with title, image, and description.
 
-### Editing Student Resources
+### Student Resources
 
 Articles are to be written in Markdown. Look at one of the preexisting articles as a reference. Be sure to include the following "front matter" attributes to the top of the Markdown file between a pair of `---`.
 
@@ -41,13 +41,13 @@ Articles are to be written in Markdown. Look at one of the preexisting articles 
 - date - Date of most recent edit
 - categories: Category this fits the article, like `technical` or `campus`. Multiple categories can be included, as long as they are comma separated, an between square brackets.
 
+## Development
+
 ### Layouts
 
 Refers to files within the `_layouts` directory, that define the markup for your theme.
 
-- `default.html` &mdash; The base layout that lays the foundation for subsequent layouts. The derived layouts inject their contents into this file at the line that says `{{ content }}` and are linked to this file via [FrontMatter](https://jekyllrb.com/docs/frontmatter/) declaration `layout: default`. This was not used for some of our pages, due to a need for custom designs. Instead, a few pages (index.html and initiatives.html) use their own custom layouts.
-- `page.html` &mdash; The layout for your documents that contain FrontMatter, but are not posts. This was used for the student resources page.
-- `post.html` &mdash; The layout for your posts. Each of the student resource articles is a "post."
+- `default.html` &mdash; The base layout that lays the foundation for subsequent layouts. The derived layouts inject their contents into this file at the line that says `{{ content }}` and are linked to this file via [FrontMatter](https://jekyllrb.com/docs/frontmatter/) declaration `layout: default`.
 
 ### Includes
 
@@ -114,3 +114,13 @@ mastodon:
   - username: jekyll2
     instance: example.com
 ```
+
+### Accessibility
+
+The USB serves all students, and our website is no exception. Ensuring WCAG compliance is of the utmost importance, and accessibility issues [may lead to lawsuits](https://www.boia.org/blog/is-there-a-legal-requirement-to-implement-wcag) as [potential violations of the ADA Title III requirement](https://www.grassley.senate.gov/sites/default/files/documents/2018-10-11%20DOJ%20to%20Grassley%20-%20ADA%20Website%20Accessibility.pdf)!
+
+#### What should you do?
+
+The WCAG is tedious to read, but first and foremost use your head and empathize with the user. Secondly, you can read a summary or checklist such as [this one](https://uxdesign.cc/web-accessibility-standards-an-overview-for-designers-1a4d39f2fe5e) published in the UX Collective publication.
+
+It doesn't have to be perfect, but we should be as compliant as possible whenever we can.
