@@ -1,7 +1,7 @@
-<div class="column px-1-20 mb-3 justify-center">
-    <h1 class="mt-3 text-center">Our Initiatives</h1>
-    <div class="row justify-center mb-3">
-        <div class="section text-justify">
+<div class="column px-1-20 my-3">
+    <h1 class="text-center">Our Initiatives</h1>
+    <div class="row grow-0 justify-center mb-3">
+        <div class="textwidth text-justify">
             <p>We take pride in the freedom our members have to pursue initatives that are impactful immediately and in the long term.  Some initiatives have been around for a decade or more, while some come and go as our goals evolve.</p>
             <p>Check out what we've been working on!</p>
         </div>
@@ -34,9 +34,9 @@
                     <div class="row grow-0 justify-between align-items-baseline">
                         <h4 class="mb-1 inline">{{ initiative.title | escape }}</h4>
                         {% if initiative.inactive == true %}
-                            <small class="uppercase text--red">inactive</small>
+                            <small class="uppercase red">inactive</small>
                         {% elsif initiative.inactive != "" and initiative.inactive != nil %}
-                            <small class="uppercase text--grey">{{initiative.inactive}}</small>
+                            <small class="uppercase grey">{{initiative.inactive}}</small>
                         {% endif %}
                     </div>
                     <p class="mb-0">{{ initiative.description }}</p>
@@ -49,7 +49,7 @@
                     <div class="column align-content-center align-items-center justify-between mx-2">
                         {% if hasMembers %}
                             <div class="row mt-1 align-content-start">
-                                <small class="font--bold block">Members</small>
+                                <small class="font-bold block">Members</small>
                             </div>
                             <div class="row">
                                 <div class="row align-content-between justify-between">
