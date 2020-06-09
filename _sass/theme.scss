@@ -1,3 +1,4 @@
+/* CSS customization for base theme */
 @charset "utf-8";
 
 /** 
@@ -11,70 +12,54 @@ Define defaults for each variable. Be sure to include !default on the end of eac
 }
 @include google-font("Raleway", "400;500;600;700");
 @include google-font("Montserrat", "400;500;600;700");
-// TODO remove comic sans
-$font-family-backup: "Comic Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-$font-family-body: "Raleway", $font-family-backup !default;
-$font-family-header: "Montserrat", $font-family-backup !default;
-$font-size-h1:        3.2rem !default;
-$font-size-h2:        2.7rem !default;
-$font-size-h3:        2rem !default;
-$font-size-h4:        1.4rem !default;
-$font-size-button:    $font-size-h4 !default;
-$font-size-listitem:  1.4rem !default;
-$font-size-body:      1rem !default;
-$font-size-caption:   0.777rem !default;
-$font-weight-base:      400 !default;
-$font-weight-medium:    500 !default;
-$font-weight-semibold:  600 !default;
-$font-weight-bold:      700 !default;
+$font-family-backup: sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-families: (
+    body: ("Raleway", $font-family-backup),
+    header: ("Montserrat", $font-family-backup)
+) !default;
+$font-sizes: (
+    h1:         3.2rem,
+    h2:         2.7rem,
+    h3:         2rem,
+    h4:         1.4rem,
+    button:     1.4rem,
+    listitem:   1.4rem,
+    body:       1rem,
+    caption:    0.777rem,
+) !default;
 $base-line-height:    1.5 !default;
 
 
 /* Colors */
 $text-color:        #333 !default;
 $text-color-light:  #FFF !default;
-$background-dark:   $text-color !default;
 $background-light:  $text-color-light !default;
+$background-dark:   $text-color-light !default;
+
 $background-color:  $background-light !default;
 $primary-color:     #FFCA44 !default;
 
 $accent-blue:       #8AC9FE !default;
 $accent-color:      $accent-blue !default;
 $accent-red:        #FE646F !default;
+$accent-purple:     #BC78C2 !default;
+$accent-green:      #ADD080 !default;
+$accent-orange:     #FEA465 !default;
 $accent-grey:       #6B6A6A !default;
-$accent-grey-light: #A6A6A6 !default;
+$accent-grey-light: #E5E5E5 !default;
 $accent-grey-dark:  darken($accent-grey, 25%) !default;
 $profile-overlay:   rgba(0, 0, 0, 0.25);
-
-$variant-elements: (
-    "bg": background-color, 
-    "text": color, 
-    "fill": fill
-) !default;
-$color-variants: (
-    "dark":     $background-dark, 
-    "light":    $background-light,
-    "primary":  $primary-color,
-    "blue":     $accent-blue,
-    "red":      $accent-red,
-    "grey":     $accent-grey,
-    "grey-light":  $accent-grey-light,
-    "grey-dark":  $accent-grey-dark
-) !default;
 
 
 /* Spacing & Alignment */
 $table-text-align:    left !default;
-$spacing-types:       "margin", "padding" !default;
-$spacing-directions:  "top", "bottom", "left", "right", "x", "y", "a" !default;
 $spacing-max-group:   10 !default;
 $spacing-base:        1.35914091423 !default;
 $spacing-unit:        1.9rem !default;
 $padding-button-x:    $spacing-unit / 2.5 !default;
 $padding-button-y:    $spacing-unit / 3.8 !default;
-$dimension-sizing-groups: 3, 4, 10, 20 !default;
-$max-grow-shrink-factor:  3 !default;
-$max-icon-multiple:       21 !default;
+
+
 // Width of the content area
 $content-width:    800px !default;
 $screens: (
@@ -100,10 +85,15 @@ $shadow-default: 4px 4px 4px rgba(0, 0, 0, 0.25) !default;
 $shadow-dark: 4px 4px 4px rgba(0, 0, 0, 0.95) !default;
 $shadow-hover: 0px 0px 12px rgba(0,0,0,0.25) !default;
 $animation-fade-time: 0.3s !default;
+$bg-angle: 4rem !default;
+$bg-angle-color: $primary-color !default;
+$scrollbar-background: white !default;
+$scrollbar-foreground: $accent-grey !default;
 
 
 // Import partials.
 @import "mixins";
+@import "generate";
 @import "utils";
 @import "theme/base";
 @import "theme/layout";

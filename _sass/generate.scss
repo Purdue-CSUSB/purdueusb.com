@@ -1,0 +1,310 @@
+/* Source: https://gist.github.com/mattfelten/5c6ad6edb70c6ab10f5c377c21eda2f2 */
+@mixin modifiers($map, $attribute, $prefix: '-', $separator: '-', $base: 'base', $remove: null, $toplevel: false) {
+	@each $key, $value in $map {
+		@if $remove {
+			$key: str-replace($key, $remove, '');
+        }
+        @if $toplevel {
+            .#{$key} {
+                @if type-of($value) == 'map' {
+                    @include modifiers($value, $attribute, $prefix, $separator, $base, $remove);
+                }
+                @else if type-of($attribute) == 'list' {
+                    @each $a in $attribute {
+                        #{$a}: $value;
+                    }
+                }
+                @else {
+                    #{$attribute}: $value;
+                }
+            }
+        }
+		@else {
+            &#{if($key != $base, #{$prefix}#{$key}, '')} {
+                @if type-of($value) == 'map' {
+                    @include modifiers($value, $attribute, $prefix, $separator, $base, $remove);
+                }
+                @else if type-of($attribute) == 'list' {
+                    @each $a in $attribute {
+                        #{$a}: $value;
+                    }
+                }
+                @else {
+                    #{$attribute}: $value;
+                }
+            }
+        }
+	}
+}
+
+
+$dimension-sizing-groups: 3, 4, 10, 20;
+$max-grow-shrink-factor:  3;
+$max-icon-multiple:       21;
+$spacing-types:       "margin", "padding";
+$spacing-directions:  "top", "bottom", "left", "right", "x", "y", "a";
+
+$colors: (
+    transparent: transparent,
+    none:       unset,
+    dark:       $text-color,
+    light:      $text-color-light,
+    primary:    $primary-color,
+    blue:       $accent-blue,
+    red:        $accent-red,
+    purple:     $accent-purple,
+    green:      $accent-green,
+    orange:     $accent-orange,
+    grey: (
+        base:   $accent-grey,
+        light:  $accent-grey-light,
+        dark:   $accent-grey-dark
+    ),
+) !default;
+
+@include modifiers($colors, 'color', $toplevel: true);
+
+$displays: (
+    block: block,
+    invisible: invisible,
+    hidden: invisible,
+    inline: (
+        base: inline,
+        flex: inline-flex,
+        block: inline-block
+    ),
+    none: none,
+);
+@include modifiers($displays, 'display', $toplevel: true);
+
+.overflow {
+    $overflows: (
+        visible: visible,
+        scroll: scroll,
+        hidden: hidden,
+    );
+    @include modifiers($overflows, 'overflow');
+}
+
+
+.bg {
+    @include modifiers($colors, 'background-color');
+}
+
+.fill {
+    @include modifiers($colors, 'fill');
+}
+
+.justify {
+    $map: (
+        start:  flex-start,
+        center: center,
+        end:    flex-end,
+        around: space-around,
+        between:space-between
+    );
+    @include modifiers($map, 'justify-content')
+}
+
+.align- {
+    &content {
+        $map: (
+            start:      flex-start,
+            center:     center,
+            end:        flex-end,
+            around:     space-around,
+            between:    space-between,
+            baseline:   baseline
+        );
+        @include modifiers($map, 'align-content');
+    }
+    &items {
+        $map: (
+            start:      flex-start,
+            center:     center,
+            end:        flex-end,
+            baseline:   baseline
+        );
+        @include modifiers($map, 'align-items');
+    }
+}
+
+.text {
+    $map: (
+        left: left,
+        right: right,
+        center: center,
+        justify: justify
+    );
+    @include modifiers($map, 'text-align')
+}
+
+$font-weights: (
+    normal:     400,
+    medium:     500,
+    semibold:   600,
+    bold:       700
+) !default;
+$font-styles: (
+    normal: normal,
+    italic: italic
+) !default;
+.font {
+    @include modifiers($font-sizes, 'font-size', $prefix: '-');
+    @include modifiers($font-weights, 'font-weight');
+    @include modifiers($font-styles, 'font-style', $prefix: '-');
+}
+
+
+$roundings: (
+    base:   $border-radius,
+    slight: $border-radius-slight,
+    circle: 100%
+);
+.rounded {
+    @include modifiers($roundings, ('border-radius', '-webkit-border-radius'), $prefix: '--');
+}
+
+
+@each $type in $spacing-types {
+    @each $direction in $spacing-directions {
+        @for $index from 0 through $spacing-max-group {
+            $size: 0rem;
+
+            @if $index>0 {
+                $size: spacing-group($index);
+            }
+
+            $type_abbr: str-slice($type, 1, 1);
+            $direction_abbr: str-slice($direction, 1, 1);
+
+            .#{$type_abbr}#{$direction_abbr}-#{$index} {
+                @if str-length($direction)>1 {
+                    #{$type + "-" + $direction}: $size;
+                }
+
+                @else {
+                    @if $direction=="a" {
+                        #{$type}: $size $size $size $size;
+                    }
+
+                    @else {
+                        @if $direction=="x" {
+                            #{$type + "-left"}: $size;
+                            #{$type + "-right"}: $size;
+                        }
+
+                        @if $direction=="y" {
+                            #{$type + "-top"}: $size;
+                            #{$type + "-bottom"}: $size;
+                        }
+                    }
+                }
+            }
+        }
+
+        // percentage based spacing
+        @each $denominator in $dimension-sizing-groups {
+            @for $numerator from 1 to $denominator {
+                $size: percentage($numerator / $denominator);
+                $type_abbr: str-slice($type, 1, 1);
+                $direction_abbr: str-slice($direction, 1, 1);
+
+                .#{$type_abbr}#{$direction_abbr}-#{$numerator}-#{$denominator} {
+                    @if str-length($direction)>1 {
+                        #{$type + "-" + $direction}: $size;
+                    }
+
+                    @else {
+                        @if $direction=="a" {
+                            #{$type}: $size $size $size $size;
+                        }
+
+                        @else {
+                            @if $direction=="x" {
+                                #{$type + "-left"}: $size;
+                                #{$type + "-right"}: $size;
+                            }
+
+                            @if $direction=="y" {
+                                #{$type + "-top"}: $size;
+                                #{$type + "-bottom"}: $size;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Percentage sizing class generation */
+@each $property in "height", "width" {
+    @each $denominator in $dimension-sizing-groups {
+        @for $numerator from 0 to $denominator {
+            $size: percentage($numerator / $denominator);
+
+            @if $size==0% {
+                .#{str-slice($property, 1, 1)}-0 {
+                    #{$property}: $size;
+                }
+            }
+
+            @else {
+                .#{str-slice($property, 1, 1)}-#{$numerator}-#{$denominator} {
+                    #{$property}: $size;
+                }
+            }
+        }
+    }
+}
+
+.w- {
+    &full {
+        width: 100%;
+    }
+
+    &auto {
+        width: auto;
+    }
+}
+
+.h- {
+    &full {
+        height: 100%;
+    }
+
+    &auto {
+        height: auto;
+    }
+}
+
+/* Flex Shrink/Grow class generation */
+@for $factor from 0 through $max-grow-shrink-factor {
+
+    @each $property in "grow",
+    "shrink" {
+        .#{$property}-#{$factor} {
+            flex-#{$property}: $factor !important;
+        }
+    }
+}
+
+
+/* Icon Sizing */
+.icon-0 {
+    width: 1.111rem;
+    max-height: 20px;
+    max-width: 20px;
+}
+
+@for $factor from 1 through $max-icon-multiple {
+    $size: 12 * $factor * 1px;
+    $ratio: ($size / 18px) * 1rem;
+
+    .icon-#{$size} {
+        width: $ratio;
+        max-height: $size;
+        max-width: $size;
+    }
+}

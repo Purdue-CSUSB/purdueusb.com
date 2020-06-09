@@ -1,126 +1,142 @@
 /* Credit: https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/ */
 @function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+    @return $num / ($num * 0 + 1);
 }
 
 @mixin rem-fallback($property, $values...) {
-  $max: length($values);
-  $pxValues: '';
-  $remValues: '';
+    $max: length($values);
+    $pxValues: '';
+    $remValues: '';
 
-  @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
-    $pxValues: #{$pxValues + $value*16}px;
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+        $pxValues: #{$pxValues + $value*16}px;
 
-    @if $i < $max {
-      $pxValues: #{$pxValues + " "};
+        @if $i < $max {
+            $pxValues: #{$pxValues + " "};
+        }
     }
-  } 
 
-  @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
-    $remValues: #{$remValues + $value}rem;
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+        $remValues: #{$remValues + $value}rem;
 
-    @if $i < $max {
-      $remValues: #{$remValues + " "};
+        @if $i < $max {
+            $remValues: #{$remValues + " "};
+        }
     }
-  } 
-  
-  #{$property}: $pxValues; 
-  #{$property}: $remValues; 
+
+    #{$property}: $pxValues;
+    #{$property}: $remValues;
 }
+
 /* Credit: https://css-tricks.com/snippets/sass/power-function/
   Modified by Zach Bryant
 */
 @function pow($number, $exponent) {
-  $value: 1;
+    $value: 1;
 
-  @if $exponent > 0 {
-    @for $i from 1 through $exponent {
-      $value: $value * $number;
+    @if $exponent>0 {
+        @for $i from 1 through $exponent {
+            $value: $value * $number;
+        }
     }
-  } @else if $exponent < 0 {
-    @for $i from $exponent through -1 {
-      $value: $value * $number;
-    }
-    $value: 1 / $value;
-  }
 
-  @return $value;
+    @else if $exponent < 0 {
+        @for $i from $exponent through -1 {
+            $value: $value * $number;
+        }
+
+        $value: 1 / $value;
+    }
+
+    @return $value;
 }
 
 /* Font Mixins */
+@mixin font-size($arg) {
+    font-size: map-get($font-sizes, $arg);
+}
+@mixin font-family($arg) {
+    font-family: map-get($font-families, $arg);
+}
+@mixin font-weight($arg) {
+    font-weight: map-get($font-weights, $arg);
+}
 @mixin font-base {
-  color: $text-color;
+    color: $text-color;
 }
 
 @mixin font-body {
-  @include font-base;
-  font-family: $font-family-body;
+    @include font-base;
+    @include font-family("body");
 }
 
 @mixin font-header {
-  @include font-base;
-  font-family: $font-family-header;
+    @include font-base;
+    @include font-family("header");
 }
 
 @mixin font-normal {
-  font-weight: $font-weight-base;
+    @include font-weight("base");
 }
 
 @mixin font-medium {
-  font-weight: $font-weight-medium;
+    @include font-weight("medium");
 }
 
 @mixin font-semibold {
-  font-weight: $font-weight-semibold;
+    @include font-weight("semibold");
 }
 
 @mixin font-bold {
-  font-weight: $font-weight-bold;
+    @include font-weight("bold");
 }
 
 @mixin font-button {
-  @include font-bold;
-  @include font-header;
-  font-size: $font-size-button;
+    @include font-bold;
+    @include font-header;
+    @include font-size("button");
 }
 
 @mixin rounded($radius) {
-  border-radius: $radius;
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
 }
 
 @mixin border($color, $width) {
-  border: $width solid $color;
+    border: $width solid $color;
 }
 
 @mixin shadow-box {
-  box-shadow: $shadow-default;
+    -webkit-box-shadow: $shadow-default;
+    box-shadow: $shadow-default;
 }
 
 @mixin shadow-text {
-  text-shadow: $shadow-default;
+    text-shadow: $shadow-default;
 }
 
 @mixin shadow-drop {
-  filter: drop-shadow($shadow-default);
+    -webkit-filter: drop-shadow($shadow-default);
+    filter: drop-shadow($shadow-default);
 }
 
 @mixin justify($arg) {
-  justify-content: $arg;
+    justify-content: $arg;
 }
 
 @mixin clickable {
-  cursor: pointer;
-  @include shadow-drop;
+    cursor: pointer;
+    @include shadow-drop;
 }
 
 @mixin flex-even {
-  display: flex;
-  display: -webkit-flex;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
+    display: flex;
+    display: -webkit-flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
 }
 
 
@@ -134,9 +150,9 @@
 }
 */
 @mixin media-query-above($device) {
-  @media screen and (min-width: $device) {
-    @content;
-  }
+    @media screen and (min-width: $device) {
+        @content;
+    }
 }
 
 @mixin media-query-below($device) {
@@ -145,76 +161,100 @@
     }
 }
 
-@mixin relative-font-size($ratio) {
-  //font-size: $base-font-size * $ratio;
-  // TODO get rid of this
-}
-
 
 /* Spacing Mixins */
 @function spacing-group($index) {
     $num: pow($spacing-base, $index - 2);
-    @return #{$num + "rem"}
+    @return #{$num + "rem"};
 }
+
 // Paddings
 @mixin p-bottom($size) {
-  padding-bottom: $size;
+    padding-bottom: $size;
 }
 
 @mixin p-top($size) {
-  padding-top: $size;
+    padding-top: $size;
 }
 
 @mixin py($size) {
-  @include p-top($size);
-  @include p-bottom($size);
+    @include p-top($size);
+    @include p-bottom($size);
 }
 
 @mixin p-left($size) {
-  padding-left: $size;
+    padding-left: $size;
 }
 
 @mixin p-right($size) {
-  padding-right: $size;
+    padding-right: $size;
 }
 
 @mixin px($size) {
-  @include p-left($size);
-  @include p-right($size);
+    @include p-left($size);
+    @include p-right($size);
 }
 
 @mixin pa($size) {
-  @include px($size);
-  @include py($size);
+    @include px($size);
+    @include py($size);
 }
+
 // Margins
 @mixin m-bottom($size) {
-  margin-bottom: $size;
+    margin-bottom: $size;
 }
 
 @mixin m-top($size) {
-  margin-top: $size;
+    margin-top: $size;
 }
 
 @mixin my($size) {
-  @include m-top($size);
-  @include m-bottom($size);
+    @include m-top($size);
+    @include m-bottom($size);
 }
 
 @mixin m-left($size) {
-  margin-left: $size;
+    margin-left: $size;
 }
 
 @mixin m-right($size) {
-  margin-right: $size;
+    margin-right: $size;
 }
 
 @mixin mx($size) {
-  @include m-left($size);
-  @include m-right($size);
+    @include m-left($size);
+    @include m-right($size);
 }
 
 @mixin ma($size) {
-  @include mx($size);
-  @include my($size);
+    @include mx($size);
+    @include my($size);
+}
+
+@mixin screen-variant($prefix:"--") {
+
+    @each $name, $vals in $screens {
+        .#{$prefix}#{$name}- {
+            &above {
+                @content;
+                $size: map-get($vals, "min");
+
+                @include media-query-below($size) {
+                    display: none !important;
+                }
+            }
+
+            &below {
+                @content;
+                $size: map-get($vals, "max");
+
+                @include media-query-above($size) {
+                    display: none !important;
+                }
+            }
+        }
+    }
+
+    @content;
 }

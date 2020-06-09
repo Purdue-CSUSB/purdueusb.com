@@ -4,50 +4,46 @@
 
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
-{%- include head.html -%}
-
-<body>
-  {%- include header.html -%}
-  <main class="home">
-	<div class="bg--dark px-5 py-6">
-	  <div class="row justify-around align-items-center">
-		<div class="flex--nowrap w-auto justify-center align-content-center align-items-center">
-		  <img src="/assets/images/group.png">
-        </div>
-        <div class="flex-break sm-below"></div>
-        <div class="mx-2 lg-above"></div>
-		<div class="column">
-		  <h1 class="light mb-0">Hello from USB!</h1>
-		  <h4 class="light font--normal text-justify mt-0 mb-3">
-			The Computer Science Undergraduate Board is dedicated to improving the student experience within Computer and Data Sciences at Purdue- whether by
-			managing CS193, hosting forums for student advocacy, or maintaining a database of undergrad-tailored resources, USB is continually
-			creating initiatives that will uphold our values.
-		  </h4>
-		  <div class="row align-items-end">
-			<div class="column align-items-center justify-center">
-			  <a href="/resources"><button>Read Student Resources</button></a>
+    {%- include head.html -%}
+    <body class="h-full">
+        {%- include header.html -%}
+        <main class="home">
+            <div class="bg-dark px-4 py-6">
+                <div class="row justify-around align-items-center">
+                    <div class="column--nowrap justify-center align-content-center align-items-center">
+                        <img src="/assets/images/group.png" alt="USB group picture" class="sm-above.rounded">
+                    </div>
+                    <div class="flex-break lg-below mt-1"></div>
+                    <div class="mx-1 lg-above"></div>
+                    <div class="column">
+                        <h1 class="light mb-0">Hello from USB!</h1>
+                        <h4 class="light font-normal text-justify mt-0 mb-3">
+                            The Computer Science Undergraduate Board is dedicated to improving the student experience within Computer and Data Sciences at Purdue- whether by
+                            managing CS193, hosting forums for student advocacy, or maintaining a database of undergrad-tailored resources, USB is continually
+                            creating initiatives that will uphold our values.
+                        </h4>
+                        <div class="row align-content-center align-items-center justify-around">
+                            <a href="/resources"><button>Read Student Resources</button></a>
+                            <div class="flex-break md-below my-1"></div>
+                            <div class="flex--nowrap align-items-center justify-center">
+                                <p class="light font-bold text-justify">Stay updated with our social media</p>
+                                <div class="row justify-between w-auto">
+                                    {% for social in site.minima.social_links %}
+                                    <a href="https://{{social[1]}}" target="_blank" class="mx-1">
+                                        <img alt="{{social[0]}}" class="icon-48px" src="/assets/images/logos/socialmedia/{{social[0]}}.svg"/>
+                                    </a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="flex-break md-below my-1"></div>
-			<div class="column align-items-center justify-center">
-			  <p class="light font--bold text-justify">Stay updated with our social media</p>
-			  <div class="row justify-between w-auto">
-				{% for social in site.minima.social_links %}
-				  <a href="https://{{social[1]}}" target="_blank">
-					<img alt="{{social[0]}}" class="icon-48px mx-1" src="/assets/images/logos/socialmedia/{{social[0]}}.svg"/>
-				  </a>
-				{% endfor %}
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	</div>
-	{%- include aboutus.html -%}
-	{%- include members.html -%}
-	<div class="divider--horizontal mt-5"></div>
-	{%- include initiatives.html -%}
-  </main>
-  {%- include footer.html -%}
-</body>
+            {%- include aboutus.html -%}
+            {%- include members.html -%}
+            <div class="divider--horizontal mt-5"></div>
+            {%- include initiatives.html -%}
+        </main>
+        {%- include footer.html -%}
+    </body>
 </html>

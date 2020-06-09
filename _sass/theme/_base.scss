@@ -1,14 +1,24 @@
+/* CSS for base common theme */
+
 /**
  * Reset some basic elements
  */
 html {
-  font-size: 100%;
+    font-size: 100%;
 }
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
-  margin: 0;
-  padding: 0;
+
+body, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, hr, dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    @extend .h-full;
+}
+
+main {
+    @extend .flex;
 }
 
 
@@ -16,53 +26,50 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  @include font-body;
-  background-color: $background-color;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-feature-settings: "kern" 1;
-     -moz-font-feature-settings: "kern" 1;
-       -o-font-feature-settings: "kern" 1;
-          font-feature-settings: "kern" 1;
-  display: flex;
-  min-height: 100vh;
-  @extend .column;
+    @include font-body;
+    background-color: $background-color;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern"1;
+    -moz-font-feature-settings: "kern"1;
+    -o-font-feature-settings: "kern"1;
+    font-feature-settings: "kern"1;
+    display: flex;
+    min-height: 100vh;
+    @extend .column;
 }
 
 * {
-  scrollbar-width: thin;          /* "auto" or "thin"  */
-  scrollbar-color: $accent-grey-dark $accent-grey-light;   /* scroll thumb & track */ 
+    scrollbar-width: thin;
+    /* "auto" or "thin"  */
+    scrollbar-color: $scrollbar-foreground $scrollbar-background;
+    /* scroll thumb & track */
 }
 
-*::-webkit-scrollbar {
-  width: 0.6rem;
+::-webkit-scrollbar {
+    width: 0.5rem;
 }
 
-*::-webkit-scrollbar-track {
-    //background-color: white;
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+    background-color: $scrollbar-background;
 }
 
-*::-webkit-scrollbar-thumb {
-  @include rounded($border-radius);
-  background-color: $accent-grey-dark;
-  border: 0.2rem solid $background-color;
+::-webkit-scrollbar-thumb {
+    background-color: $scrollbar-foreground;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+    @extend .rounded;
 }
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
+h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, ul, ol, dl, figure,
 %vertical-rhythm {
-  margin-bottom: $spacing-unit / 2;
-}
-
-
-/**
- * `main` element
- */
-main {
-  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+    margin-bottom: $spacing-unit / 2;
 }
 
 
@@ -70,8 +77,8 @@ main {
  * Images
  */
 img {
-  max-width: 100%;
-  vertical-align: middle;
+    max-width: 100%;
+    vertical-align: middle;
 }
 
 
@@ -80,11 +87,11 @@ img {
  * Figures
  */
 figure > img {
-  display: block;
+    display: block;
 }
 
 figcaption {
-  font-size: $font-size-caption;
+    @extend .font-caption;
 }
 
 
@@ -93,70 +100,72 @@ figcaption {
  * Lists
  */
 ul, ol {
-  margin-left: $spacing-unit;
+    margin-left: $spacing-unit;
 }
 
 li {
-  > ul,
-  > ol {
-    margin-bottom: 0;
-  }
+    > ul, > ol {
+        @extend .mb-0;
+    }
 }
 
 
 /**
  * Fonts: headings, body elements, weights
  */
-h1, h2, h3 .header {
-  @include font-header;
-  line-height: $base-line-height;
+h1, h2, h3, .header {
+    @include font-header;
+    line-height: $base-line-height;
 }
 
 h1, h2, h3 {
-  @include shadow-text;
+    @include shadow-text;
 }
 
 h1, h3, h4, button, .button {
-  @include font-bold;
+    @extend .font-bold;
 }
 
-body, h2, p, blockquote, pre,
-li, ul, ol, dl, data, input, .medium {
-  @include font-medium;
+body, h2, p, blockquote,
+pre, li, ul, ol, dl, data, input, .medium {
+    @extend .font-medium;
 }
 
-h4, h5, h6, body, p, a, blockquote, pre, code, span
-li, ul, ol, dl, data, input, caption, 
-button,.caption, .button, .body {
-  @include font-body;
+h4, h5, h6, body, p, a, blockquote, pre,
+code, span, li, ul, ol, dl, data, input,
+caption, button, .caption, .button, .body {
+    @include font-body;
 }
-
 
 h1 {
-  font-size: $font-size-h1;
+    @extend .font-h1;
 }
 
 h2 {
-  font-size: $font-size-h2;
+    @extend .font-h2;
 }
 
 h3 {
-  font-size: $font-size-h3;
+    @extend .font-h3;
 }
 
 h4 {
-  font-size: $font-size-h4;
+    @extend .font-h4;
 }
 
-li, ul, ol {
-  font-size: $font-size-listitem;
+li,
+ul,
+ol {
+    @extend .font-listitem;
 }
 
-caption, .caption, small {
-  font-size: $font-size-caption;
+caption,
+.caption,
+small {
+    @extend .font-caption;
 }
 
-svg path{
+svg path {
     fill: currentcolor;
 }
 
@@ -165,26 +174,26 @@ svg path{
  * Links
  */
 a {
-  color: $accent-blue;
-  text-decoration: none;
-  @include shadow-drop;
-
-  &:visited {
-    color: darken($accent-blue, 15%);
-  }
-
-  & > *:hover {
-    //color: $text-color;
-    //text-decoration: underline;
-  }
-
-  .social-media-list &:hover {
+    @extend .blue;
     text-decoration: none;
+    @include shadow-drop;
 
-    .username {
-      text-decoration: underline;
+    &:visited {
+        @extend .purple;
     }
-  }
+
+    &>*:hover {
+        //color: $text-color;
+        //text-decoration: underline;
+    }
+
+    .social-media-list &:hover {
+        text-decoration: none;
+
+        .username {
+            text-decoration: underline;
+        }
+    }
 }
 
 
@@ -192,15 +201,15 @@ a {
  * Blockquotes TODO
  */
 blockquote {
-  color: $accent-grey;
-  border-left: 4px solid $accent-grey-light;
-  padding-left: $spacing-unit / 2;
-  letter-spacing: -1px;
-  font-style: italic;
+    @extend .grey;
+    @extend .font-italic;
+    border-left: 4px solid $accent-grey-light;
+    padding-left: $spacing-unit / 2;
+    letter-spacing: -1px;
 
-  > :last-child {
-    margin-bottom: 0;
-  }
+    > :last-child {
+        @extend .mb-0;
+    }
 }
 
 
@@ -210,25 +219,25 @@ blockquote {
  */
 pre,
 code {
-  @include relative-font-size(0.9375);
-  border: 1px solid $accent-grey-light;
-  border-radius: 3px;
-  background-color: #eef;
+    border: 1px solid $accent-grey-light;
+    border-radius: 3px;
+    @extend .bg-grey-light;
 }
 
 code {
-  padding: 1px 5px;
+    // TODO check this
+    padding: 1px 5px;
 }
 
 pre {
-  padding: 8px 12px;
-  overflow-x: auto;
+    padding: 8px 12px;
+    overflow-x: auto;
 
-  > code {
-    border: 0;
-    padding-right: 0;
-    padding-left: 0;
-  }
+    >code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
 }
 
 
@@ -236,9 +245,9 @@ pre {
  * Clearfix
  */
 %clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 
@@ -252,9 +261,10 @@ pre {
     /*@include media-query($on-mobile) {
         @extend .pa-1 // needs mixins for this
     }*/
-    @extend .fill--grey-light;
+    @extend .fill-grey-light;
+
     &:hover {
-        @extend .fill--light;
+        @extend .fill-light;
     }
 }
 
@@ -263,63 +273,63 @@ pre {
  * Tables
  */
 table {
-  margin-bottom: $spacing-unit;
-  width: 100%;
-  text-align: $table-text-align;
-  color: lighten($text-color, 18%);
-  border-collapse: collapse;
-  border: 1px solid $accent-grey-light;
-  tr {
-    &:nth-child(even) {
-      background-color: lighten($accent-grey-light, 6%);
-    }
-  }
-  th, td {
-    padding: ($spacing-unit / 3) ($spacing-unit / 2);
-  }
-  th {
-    background-color: lighten($accent-grey-light, 3%);
-    border: 1px solid darken($accent-grey-light, 4%);
-    border-bottom-color: darken($accent-grey-light, 12%);
-  }
-  td {
+    margin-bottom: $spacing-unit;
+    width: 100%;
+    text-align: $table-text-align;
+    color: lighten($text-color, 18%);
+    border-collapse: collapse;
     border: 1px solid $accent-grey-light;
-  }
+
+    tr {
+        &:nth-child(even) {
+            background-color: lighten($accent-grey-light, 6%);
+        }
+    }
+
+    th,
+    td {
+        padding: ($spacing-unit / 3) ($spacing-unit / 2);
+    }
+
+    th {
+        background-color: lighten($accent-grey-light, 3%);
+        border: 1px solid darken($accent-grey-light, 4%);
+        border-bottom-color: darken($accent-grey-light, 12%);
+    }
+
+    td {
+        border: 1px solid $accent-grey-light;
+    }
 }
 
 
 /* Buttons */
-button, .button {
-  @include clickable;
-  @include rounded($border-radius);
-  @include shadow-box;
-  @include font-button;
-  min-height: 60px;
-  background-color: $primary-color;
-  @include px($padding-button-x);
-  @include py($padding-button-y);
-  @extend .no-decoration;
-  border: none;
+button,
+.button {
+    @include font-button;
+    min-height: 60px;
+    @extend .bg-primary, .clickable, .shadow-box, .rounded, .no-decoration;
+    @include px($padding-button-x);
+    @include py($padding-button-y);
+    border: none;
 
-  &--outline {
-    @extend .button;
-    background-color: transparent;
-    color: $text-color-light;
-    @include border($background-light, $border-width);
-    &--dark {
-        @extend .button--outline;
-        color: $text-color;
-        @extend .border-dark;
+    &--outline {
+        @extend .button, .light, .bg-transparent;
+        @include border($background-light, $border-width);
+
+        &--dark {
+            @extend .button--outline, .dark, .border-dark;
+        }
     }
-  }
 
-  /*&:hover {   // breaks outline style
+    /*&:hover {   // breaks outline style
     @extend .button;
     text-decoration: none;
     background-color: lighten($primary-color, 5%);
   }*/
 }
 
+// TODO make more general
 .border-dark {
-  border-color: $background-dark;
+    border-color: $background-dark;
 }

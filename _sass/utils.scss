@@ -1,432 +1,157 @@
 .rounded {
-  @include rounded($border-radius);
+    @include screen-variant {
+        @include rounded($border-radius);
 
-  &--slight {
-    @include rounded($border-radius-slight);
-  }
-  &--circle {
-    @include rounded(100%);
-  }
+        &--slight {
+            @include rounded($border-radius-slight);
+        }
+
+        &--circle {
+            @include rounded(100%);
+        }
+    }
 }
 
 .shadow {
-  &-box {
-    @include shadow-box;
-  }
-
-  &-text {
-    @include shadow-text;
-    &--dark {
-        filter: drop-shadow($shadow-dark);
+    &-box {
+        @include shadow-box;
     }
-  }
 
-  &-drop {
-    @include shadow-drop;
-    &--hover {
-        transition: $animation-fade-time;
-        &:hover {
-            filter: drop-shadow($shadow-hover);
+    &-text {
+        @include shadow-text;
+
+        &--dark {
+            filter: drop-shadow($shadow-dark);
         }
-        
-    }
-  }
-
-  &-none {
-    filter: none;
-  }
-}
-
-.justify {
-  &-start {
-    @include justify(flex-start);
-  }
-
-  &-center {
-    @include justify(center);
-  }
-
-  &-end {
-    @include justify(flex-end);
-  }
-
-  &-around {
-    @include justify(space-around);
-  }
-
-  &-between {
-    @include justify(space-between);
-  }
-}
-
-.text {
-    &-left {
-        text-align: left;
     }
 
-    &-right {
-        text-align: right;
+    &-drop {
+        @include shadow-drop;
+
+        &--hover {
+            transition: $animation-fade-time;
+
+            &:hover {
+                filter: drop-shadow($shadow-hover);
+            }
+
+        }
     }
 
-    &-center {
-        text-align: center;
+    &-none {
+        filter: none;
     }
-
-    &-justify {
-        text-align: justify;
-    }
-}
-
-.align {
-  &-items {
-    &-start {
-      align-items: flex-start;
-    }
-    
-    &-center {
-      align-items: center;
-    }
-  
-    &-end {
-      align-items: flex-end;
-    }
-  
-    &-baseline {
-      align-items: baseline;
-    } 
-  }
-
-  &-content {
-    &-start {
-      align-content: flex-start;
-    }
-    
-    &-center {
-      align-content: center;
-    }
-  
-    &-end {
-      align-content: flex-end;
-    }
-  
-    &-between {
-      align-content: space-between;
-    }
-  
-    &-around {
-      align-content: space-around;
-    }
-  
-    &-baseline {
-      align-content: baseline;
-    }
-  }
 }
 
 .font {
-  &--bold {
-    @include font-bold;
-  }
-
-  &--semibold {
-    @include font-semibold;
-  }
-
-  &--medium {
-    @include font-medium;
-  }
-
-  &--normal {
-    @include font-normal;
-    font-style: normal;
-  }
-
-  &--italic {
-    font-style: italic;
-  }
-
-  &--height-normal {
-    line-height: 1;
-  }
-}
-
-/* Color Variant generation */
-@each $elem, $property in $variant-elements {
-  @each $variant, $color in $color-variants {
-    .#{$elem}--#{$variant} {
-      #{$property}: $color;
+    &--height-normal {
+        line-height: 1;
     }
-  }
 }
-@each $variant, $color in $color-variants {
-  .#{$variant} {
-    color: $color;
-  }
-}
+
 .bg {
-    &--primary-mobile {
+    &-primary-mobile {
         @include media-query-below($screen-medium) {
             background-color: $primary-color;
         }
     }
-    &--light-mobile {
+
+    &-light-mobile {
         @include media-query-below($screen-medium) {
             background-color: $background-light;
         }
     }
-    &--dark-mobile {
+
+    &-dark-mobile {
         @include media-query-below($screen-medium) {
             background-color: $background-dark;
         }
     }
 }
 
-/* Margin & Padding class generation */
-@each $type in $spacing-types {
-  @each $direction in $spacing-directions {
-    @for $index from 0 through $spacing-max-group {
-      $size: 0rem;
-      @if $index > 0 {
-        $size: spacing-group($index);
-      }
-      $type_abbr: str-slice($type, 1, 1);
-      $direction_abbr: str-slice($direction, 1, 1);
-      .#{$type_abbr}#{$direction_abbr}-#{$index} {
-        @if str-length($direction) > 1 {
-          #{$type + "-" + $direction}: $size;
-        }
-        @else {
-          @if $direction == "a" {
-            #{$type}: $size $size $size $size;
-          }
-          @else {
-            @if $direction == "x" {
-              #{$type + "-left"}: $size;
-              #{$type + "-right"}: $size;
-            } 
-            @if $direction == "y" {
-              #{$type + "-top"}: $size;
-              #{$type + "-bottom"}: $size;
-            }
-          }
-        }
-      }
-    }
-    // percentage based spacing
-    @each $denominator in $dimension-sizing-groups {
-      @for $numerator from 1 to $denominator {
-        $size: percentage($numerator / $denominator);
-        $type_abbr: str-slice($type, 1, 1);
-        $direction_abbr: str-slice($direction, 1, 1);
-        .#{$type_abbr}#{$direction_abbr}-#{$numerator}-#{$denominator} {
-          @if str-length($direction) > 1 {
-            #{$type + "-" + $direction}: $size;
-          }
-          @else {
-            @if $direction == "a" {
-              #{$type}: $size $size $size $size;
-            }
-            @else {
-              @if $direction == "x" {
-                #{$type + "-left"}: $size;
-                #{$type + "-right"}: $size;
-              } 
-              @if $direction == "y" {
-                #{$type + "-top"}: $size;
-                #{$type + "-bottom"}: $size;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
 
-.flex, .container {
-  display: flex;
-  display: -webkit-flex;
-  @extend .row;
-  &--wrap {
-    &-reverse {
-        flex-wrap: wrap-reverse;
-    }
-    flex-wrap: wrap;
-    @extend .flex;
-  }
+.flex,
+.container {
+    display: flex;
+    display: -webkit-flex;
+    @extend .row;
 
-  &--nowrap {
-    flex-wrap: nowrap;
-  }
+    &--wrap {
+        &-reverse {
+            flex-wrap: wrap-reverse;
+        }
+
+        flex-wrap: wrap;
+        @extend .flex;
+    }
+
+    &--nowrap {
+        flex-wrap: nowrap;
+    }
 }
 
 .flex-break {
     display: block;
     height: 1px;
     width: 100%;
-  }
-
-.block {
-  display: block;
 }
 
-.inline {
-  display: inline;
-
-  &-flex {
-    display: inline-flex;
-  }
-
-  &-block {
-    display: inline-block;
-  }
-}
-
-/* Display classes */
-.none {
-  display: none;
-}
-
-.invisible, .hidden {
-  display: hidden;
-}
-
-.overflow {
-    &-hidden {
-        overflow: hidden;
-    }
-    &-scroll {
-        overflow: scroll;
-    }
-    &-visible {
-        overflow: visible;
-    }
-}
-
-@each $name, $vals in $screens {
-    .#{$name}- {
-        &above {
-            $size: map-get($vals, "min");
-            @include media-query-below($size) {
-                display: none !important;
-            }
-        }
-        &below {
-            $size: map-get($vals, "max");
-            @include media-query-above($size) {
-                display: none !important;
-            }
-        }
-    }
-}
+@include screen-variant("");
 
 
 .row {
-  width: 100%;
-  @include flex-even;
-  flex-direction: row;
-  flex-wrap: wrap;
-  &-reverse {
-    @extend .row;
-    flex-direction: row-reverse;
-  }
-  &--nowrap {
-    flex-wrap: nowrap;
-  }
+    width: 100%;
+    @include flex-even;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &-reverse {
+        @extend .row;
+        flex-direction: row-reverse;
+    }
+
+    &--nowrap {
+        flex-wrap: nowrap;
+    }
 }
 
 .column {
-  @include flex-even;
-  flex-direction: column;
-  //flex-basis: 100%;
-  &-reverse {
-    @extend .column;
-    flex-direction: column-reverse;
-  }
-  &--nowrap {
-    flex-wrap: nowrap;
-  }
-}
+    @include flex-even;
+    flex-direction: column;
 
-/* Percentage sizing class generation */
-@each $property in "height", "width" {
-  @each $denominator in $dimension-sizing-groups {
-    @for $numerator from 0 to $denominator {
-      $size: percentage($numerator / $denominator);
-      @if $size == 0% {
-        .#{str-slice($property, 1, 1)}-0 {
-          #{$property}: $size;
-        }
-      } @else {
-        .#{str-slice($property, 1, 1)}-#{$numerator}-#{$denominator} {
-          #{$property}: $size;
-        }
-      }
+    //flex-basis: 100%;
+    &-reverse {
+        @extend .column;
+        flex-direction: column-reverse;
     }
-  }
-}
 
-.w- {
-    &full {
-        width: 100%;
-    }
-    &auto {
-        width: auto;
+    &--nowrap {
+        flex-wrap: nowrap;
     }
 }
 
-.h- {
-    &full {
-        height: 100%;
-    }
-    &auto {
-        height: auto;
-    }
-}
-
-.border-box-size, .border-box-size * {
+.border-box-size,
+.border-box-size * {
     box-sizing: border-box;
 }
 
-/* Flex Shrink/Grow class generation */
-@for $factor from 0 through $max-grow-shrink-factor {
-  @each $property in "grow", "shrink" {
-    .#{$property}-#{$factor} {
-      flex-#{$property}: $factor;
-    }
-  }
-}
-
-/* Icon Sizing */
-.icon-0 {
-  width: 1.111rem;
-  max-height: 20px;
-  max-width: 20px;
-}
-@for $factor from 1 through $max-icon-multiple {
-  $size: 12 * $factor * 1px;
-  $ratio: ($size / 18px) * 1rem;
-  .icon-#{$size} {
-    width: $ratio;
-    max-height: $size;
-    max-width: $size;
-  }
-}
-
-.margin-list > * {
+.margin-list>* {
     &:not(:last-child) {
         @extend .mr-2;
     }
+
     &:not(:first-child) {
         @extend .ml-2;
     }
 }
-.margin-list--wrap > * {
+
+.margin-list--wrap>* {
     @extend .mx-2;
 }
 
 .no-decoration {
     text-decoration: none;
+    list-style: none;
 }
 
 .hover {
@@ -435,12 +160,13 @@
     }
 }
 
-.fade-in-out{
+.fade-in-out {
     opacity: 0;
     -moz-transition: all $animation-fade-time ease-in-out 0s;
     -webkit-transition: all $animation-fade-time ease-in-out 0s;
     -ms-transition: all $animation-fade-time ease-in-out 0s;
     transition: all $animation-fade-time ease-in-out 0s;
+
     &:hover {
         opacity: 1;
     }
@@ -452,4 +178,12 @@
 
 .img-cover {
     object-fit: cover;
+}
+
+.clickable {
+    @include clickable;
+}
+
+.textwidth {
+    max-width: 53rem;
 }

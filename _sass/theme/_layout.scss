@@ -1,6 +1,5 @@
-/**
- * Site header
- */
+/* CSS for general site layout */
+
 .site-header {
   // Positioning context for the mobile navigation icon
   position: relative;
@@ -56,7 +55,7 @@
 .divider {
     &--horizontal {
         @extend .w-full;
-        @extend .bg--primary;
+        @extend .bg-primary;
         height: 1px;
     }
 }
