@@ -17,3 +17,10 @@ minima:
     facebook: "facebook.com/purdueusb"
     reddit: "reddit.com/u/purdueusb"
     github: "github.com/Purdue-CSUSB"
+
+sass:
+  style: compact
+
+plugins:
+  - jekyll-seo-tag
+  - jemoji
