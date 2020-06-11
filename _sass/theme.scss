@@ -18,29 +18,24 @@ $font-families: (
     header: ("Montserrat", $font-family-backup)
 ) !default;
 $font-sizes: (
-    h1:         3.2rem,
-    h2:         2.7rem,
-    h3:         2rem,
-    h4:         1.4rem,
-    button:     1.4rem,
-    listitem:   1.4rem,
+    h1:         1rem * 56 / 18,
+    h2:         1rem * 48 / 18,
+    h3:         1rem * 36 / 18,
+    h4:         1rem * 24 / 18,
+    button:     1rem * 24 / 18,
+    listitem:   1rem * 24 / 18,
     body:       1rem,
-    caption:    0.777rem,
+    caption:    1rem * 14 / 18,
 ) !default;
 $base-line-height:    1.5 !default;
 
 
 /* Colors */
-$text-color:        #333 !default;
-$text-color-light:  #FFF !default;
-$background-light:  $text-color-light !default;
-$background-dark:   $text-color-light !default;
-
-$background-color:  $background-light !default;
 $primary-color:     #FFCA44 !default;
+$primary-color-dark:    darken($primary-color, 10%) !default;
+$primary-color-light:   lighten($primary-color, 10%) !default;
 
 $accent-blue:       #8AC9FE !default;
-$accent-color:      $accent-blue !default;
 $accent-red:        #FE646F !default;
 $accent-purple:     #BC78C2 !default;
 $accent-green:      #ADD080 !default;
@@ -50,6 +45,14 @@ $accent-grey-light: #E5E5E5 !default;
 $accent-grey-dark:  darken($accent-grey, 25%) !default;
 $profile-overlay:   rgba(0, 0, 0, 0.25);
 
+$text-color:            #333 !default;
+$text-color-hint:       $accent-grey !default;
+$text-color-light:      #FFF !default;
+$background-light:      $text-color-light !default;
+$background-dark:       $text-color-light !default;
+$background-color:      $background-light !default;
+$focus-border-color:    $accent-blue;
+$accent-color:          $accent-blue !default;
 
 /* Spacing & Alignment */
 $table-text-align:    left !default;
@@ -63,11 +66,15 @@ $padding-button-y:    $spacing-unit / 3.8 !default;
 // Width of the content area
 $content-width:    800px !default;
 $screens: (
-    'sm': ('min': '640px', 'max': '767px'),
-    'md': ('min': '768px', 'max': '1023px'),
+    'xs': ('min': '0px',  'max': '639px'),
+    'sm': ('min': '640px',  'max': '767px'),
+    'md': ('min': '768px',  'max': '1023px'),
     'lg': ('min': '1024px', 'max': '1279px'),
-    'xl': ('min': '1280px'),
+    'xl': ('min': '1280px', 'max': '10000000000px' /* such hack */),
 ) !default;
+// For convenience elsewhere
+$screen-xsmall: map-get(map-get($screens, "sm"), "max");
+$screen-xsmall-min: map-get(map-get($screens, "sm"), "min");
 $screen-small: map-get(map-get($screens, "sm"), "max");
 $screen-small-min: map-get(map-get($screens, "sm"), "min");
 $screen-medium: map-get(map-get($screens, "md"), "max");
@@ -81,9 +88,12 @@ $screen-xlarge-min: map-get(map-get($screens, "xl"), "min");
 $border-width: 4px !default;
 $border-radius: 10px !default;
 $border-radius-slight: 3px !default;
-$shadow-default: 4px 4px 4px rgba(0, 0, 0, 0.25) !default;
-$shadow-dark: 4px 4px 4px rgba(0, 0, 0, 0.95) !default;
-$shadow-hover: 0px 0px 12px rgba(0,0,0,0.25) !default;
+$shadow-color-default: rgba(0, 0, 0, 0.25) !default;
+$shadow-color-dark: rgba(0, 0, 0, 0.95) !default;
+$shadow-default: 4px 4px 4px !default;
+$shadow-dark: 4px 4px 4px !default;
+$shadow-nooffset: 0px 0px 4px !default;
+$shadow-nooffset-soft: 0px 0px 12px !default;
 $animation-fade-time: 0.3s !default;
 $bg-angle: 4rem !default;
 $bg-angle-color: $primary-color !default;
@@ -91,7 +101,7 @@ $scrollbar-background: white !default;
 $scrollbar-foreground: $accent-grey !default;
 
 
-// Import partials.
+// Import partials. DO NOT REORDER
 @import "mixins";
 @import "generate";
 @import "utils";

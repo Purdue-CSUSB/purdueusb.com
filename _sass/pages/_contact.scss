@@ -4,22 +4,6 @@ fieldset {
 }
 
 #contactForm {
-    display: flex;
-    flex-direction: column;
     
-    input {
-        margin-bottom: 10px;
-    }
-
-    textarea {
-        margin-bottom: 10px;
-    }
-}
-
-#submitButton {
-    border: none;
-    font-size: 1em;
-    padding: 10px;
-    width: 100%;
 }
 

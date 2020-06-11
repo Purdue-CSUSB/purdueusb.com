@@ -1,7 +1,7 @@
 /* CSS for /aboutus */
 .bg {
     &--angled {
-        @include media-query-above($screen-large-min) {
+        @include media-query($above: $screen-large-min) {
             background-image: url("/assets/images/bg-angled.svg");
             background-repeat: no-repeat;
             background-position: center;
@@ -12,22 +12,21 @@
         }
     }
     &--angled-mobile {
-        @include media-query-below($screen-medium) {
+        @include media-query($below: $screen-medium) {
             background: linear-gradient(to bottom right, $bg-angle-color 50%, transparent 0%) no-repeat bottom,
             linear-gradient(30deg, $bg-angle-color, $bg-angle-color) no-repeat top;
-            background-size: 100% $bg-angle, 100% calc(100% - #{$bg-angle});
-            background-origin: content-box;
-            -webkit-background-origin: content-box;
+            background-size: 100% $bg-angle, 100% calc(100% - #{$bg-angle} + 2px);
+            @include p-bottom(spacing-group(5));
         }
     }
 }
 
 .objective {
-    @include media-query-below($screen-medium) {
+    @include media-query($below: $screen-medium) {
         max-width: 100%;
     }
 
-    @include media-query-above($screen-large) {
+    @include media-query($above: $screen-large) {
         max-width: 45%;
     }
 }
@@ -44,7 +43,7 @@
         max-width: $objectives-width;
     }
     &objectives, &mission {
-        @include media-query-below($screen-medium) {
+        @include media-query($below: $screen-medium) {
             width: 100%;
             max-width: 100%;
         }

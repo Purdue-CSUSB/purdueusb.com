@@ -6,6 +6,10 @@ This repository is created for Purdue's CS Undergraduate Student Board. This web
 
 Please follow the installation instructions found on the [Jekyll Website](https://jekyllrb.com/docs/installation/). There are instructions for Windows, macOS, and Linux. Once Jekyll is properly installed, clone the repository. Then, run `bundle exec jekyll serve` in the repository's root directory.
 
+## Plugins
+
+Curious about plugins? Github only supports automatic builds with [certain plugins](https://help.github.com/en/github/working-with-github-pages/about-github-pages-and-jekyll).
+
 ## TODO
 
 - Make post sidebar in student resource page independent scrollable from the article content

@@ -3,12 +3,12 @@
 {%- assign button_text = site.data.announcement.buttontext -%}
 {%- assign button_link = site.data.announcement.buttonlink -%}
 {% if show and text != "" and text != nil and button_text != "" and button_text != nil and button_link != "" and button_link != nil %}
-    <div class="px-1-10 bg-blue ">
+    <div class="px-1-10 bg-blue">
         <div class="row align-content-center align-items-center justify-between">
-            <img src="/assets/images/megaphone.svg" class="icon-84px"/>
+            <img src="/assets/images/megaphone.svg" class="icon-7"/>
             <h4 class="mb-0">{{text}}</h4>
-            <a href="{{button_link}}" target="_blank" class="no-decoration my-2">
-                <button class="button--outline--dark">{{button_text}}</button>
+            <a href="{{button_link}}" target="_blank" class="no-decoration my-2 flat">
+                <button class="--outline-dark">{{button_text}}</button>
             </a>
         </div>
     </div>

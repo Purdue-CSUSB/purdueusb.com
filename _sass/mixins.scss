@@ -108,18 +108,34 @@
     border: $width solid $color;
 }
 
+@mixin shadow($type: 'drop', $size: $shadow-default, $color: $shadow-color-default) {
+    @if $type == 'drop' or $type == 'drop-shadow' {
+        -webkit-filter: drop-shadow(#{$size} #{$color});
+        filter: drop-shadow(#{$size} #{$color});
+        transition: filter $animation-fade-time ease-in-out;
+    }
+    @else  {
+        #{$type}: #{$size} #{$color};
+        transition: #{$type} $animation-fade-time ease-in-out;
+    }
+}
+
 @mixin shadow-box {
-    -webkit-box-shadow: $shadow-default;
-    box-shadow: $shadow-default;
+    @include shadow('box-shadow');
 }
 
 @mixin shadow-text {
-    text-shadow: $shadow-default;
+    @include shadow('text-shadow');
 }
 
 @mixin shadow-drop {
-    -webkit-filter: drop-shadow($shadow-default);
-    filter: drop-shadow($shadow-default);
+    @include shadow('drop-shadow');
+}
+
+@mixin shadow-none {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
 }
 
 @mixin justify($arg) {
@@ -141,23 +157,23 @@
 
 
 /* Sizing mixins */
-/* Use media queries like this:
-@include media-query($on-mobile) {
-  .wrapper {
-    padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
-  }
-}
-*/
-@mixin media-query-above($device) {
-    @media screen and (min-width: $device) {
-        @content;
+@mixin media-query($above: null, $below: null) {
+    @if $above and $below {
+        @media screen and (min-width: $above) and (max-width: $below) {
+            @content;
+        }
     }
-}
-
-@mixin media-query-below($device) {
-    @media screen and (max-width: $device) {
-        @content;
+    @else {
+        @if $above { 
+            @media screen and (min-width: $above) {
+                @content;
+            } 
+        }
+        @if $below { 
+            @media screen and (max-width: $below) {
+                @content;
+            }
+         }
     }
 }
 
@@ -232,29 +248,43 @@
     @include my($size);
 }
 
-@mixin screen-variant($prefix:"--") {
+@mixin screen-variant($attribute, $value, $prefix:"\\@", $variant-only: false) {
 
     @each $name, $vals in $screens {
-        .#{$prefix}#{$name}- {
-            &above {
+        #{if(&, '&', '.')}#{$prefix}#{$name} {
+            @include screen-variant-helper($vals, $attribute, $value) {
                 @content;
-                $size: map-get($vals, "min");
-
-                @include media-query-below($size) {
-                    display: none !important;
-                }
-            }
-
-            &below {
-                @content;
-                $size: map-get($vals, "max");
-
-                @include media-query-above($size) {
-                    display: none !important;
-                }
             }
         }
     }
+    @if not $variant-only {
+        @content;
+    }
+}
 
-    @content;
+@mixin screen-variant-helper($vals, $attribute, $value) {
+    $min: map-get($vals, "min");
+    $max: map-get($vals, "max");
+
+    @if $min {
+        &-above { @include media-query($above: $min) { @content; } }
+    }
+    @if $max {
+        &-below { @include media-query($below: $max) { @content; } }
+    }
+
+    @if $min and $max {
+        @include media-query($below: $max, $above: $min) { @content; }
+    }
+}
+
+@mixin screen-variant-force($attribute, $value) {
+    @if type-of($attribute) == 'list' {
+        @each $attr in $attribute {
+            #{$attr}: #{$value};
+        }
+    }
+    @else {
+        #{$attribute}: #{$value};
+    }
 }

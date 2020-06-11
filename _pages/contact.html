@@ -1,34 +1,7 @@
 ---
-layout: page
+layout: default
 title: Contact Us
-description: USB was created by students, for students- what's on your mind?
 permalink: /contact/
 ---
 
-<div>
-    <p>You can also send us an email at <a href="mailto:usb@cs.purdue.edu">usb@cs.purdue.edu</a></p>
-    <p>
-        <strong>Note:</strong> If you have an important concern that should be reported in an official capacity,
-        please go to the
-        <a href="https://my.cs.purdue.edu/undergraduate/concern">CS Concern Form</a>.
-    </p>
-</div>
-
-<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/usb@cs.purdue.edu"
-    method="post">
-    <fieldset id="fs-frm-inputs">
-        <div id="contactForm">
-            <label for="full-name">Full Name</label>
-            <input type="text" name="Name" id="full-name" placeholder="First and Last" required="">
-            <label for="email-address">Email Address</label>
-            <input type="email" name="Email" id="email-address" placeholder="email@domain.tld" required="">
-            <label for="subject">Subject</label>
-            <input type="text" name="Subject" id="subject" placeholder="Subject" required="">
-            <label for="message">Message</label>
-            <textarea rows="5" name="Message" id="message" placeholder="Type your comments and questions here"
-                required=""></textarea>
-            <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-    </fieldset>
-    <input id="submitButton" type="submit" value="Submit">
-    </div>
-</form>
+{%- include contact.html -%}

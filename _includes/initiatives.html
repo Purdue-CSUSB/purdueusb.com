@@ -2,7 +2,8 @@
     <h1 class="text-center">Our Initiatives</h1>
     <div class="row grow-0 justify-center mb-3">
         <div class="textwidth text-justify">
-            <p>We take pride in the freedom our members have to pursue initatives that are impactful immediately and in the long term.  Some initiatives have been around for a decade or more, while some come and go as our goals evolve.</p>
+            <p>We take pride in the freedom our members have to pursue impactful initiatives both immediately and in the long term.
+                Some initiatives have been around for a decade or more, while others come and go as our goals evolve.</p>
             <p>Check out what we've been working on!</p>
         </div>
         
@@ -28,7 +29,7 @@
         <div class="card pr-3 my-2">
             <div class="row align-content-start justify-between mb-0">
                 <div class="column grow-0">
-                    <img src="/assets/images/initiatives/{{ initiative.image }}" class="icon-204px rounded w-full img-cover">
+                    <img src="/assets/images/initiatives/{{ initiative.image }}" class="icon-17 rounded w-full img-cover">
                 </div>
                 <div class="column ml-2 pt-2">
                     <div class="row grow-0 justify-between align-items-baseline">
@@ -45,8 +46,8 @@
             {% assign hasMembers = initiative.members != nil %}
             {% assign hasButton = initiative.buttonText != "" and initiative.buttonText != nil and initiative.buttonLink != "" and initiative.buttonLink != nil %}
             {% if hasMembers or hasButton %}
-                <div class="mx-3">
-                    <div class="column align-content-center align-items-center justify-between mx-2">
+                <div class="ml-3">
+                    <div class="column align-content-center align-items-center justify-between">
                         {% if hasMembers %}
                             <div class="row mt-1 align-content-start">
                                 <small class="font-bold block">Members</small>
@@ -59,7 +60,7 @@
                                         {% assign member = site.data.members | where:"name", name | first %}
                                         <div class="border-box-size mx-0 mt-1">
                                             <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} title="{{ member.name }}" class="no-decoration shadow-none" target="_blank">
-                                                <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-48px block" alt="{{ member.name }}">
+                                                <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-3 block" alt="{{ member.name }}">
                                             </a>
                                         </div>
 

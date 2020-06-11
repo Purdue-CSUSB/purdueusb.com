@@ -22,7 +22,7 @@
     }
   }
 
-  @include media-query-below($screen-medium) {
+  @include media-query($below: $screen-medium) {
 
     label[for="nav-trigger"] {
       width: 2rem;

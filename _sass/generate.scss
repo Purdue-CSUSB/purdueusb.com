@@ -1,55 +1,57 @@
-/* Source: https://gist.github.com/mattfelten/5c6ad6edb70c6ab10f5c377c21eda2f2 */
-@mixin modifiers($map, $attribute, $prefix: '-', $separator: '-', $base: 'base', $remove: null, $toplevel: false) {
+/* Source: https://gist.github.com/mattfelten/5c6ad6edb70c6ab10f5c377c21eda2f2
+    Modified by Zach Bryant
+*/
+@mixin generate-subclass($map, $attribute, $prefix: '-', $base: 'base', $remove: null, $important: false) {
 	@each $key, $value in $map {
 		@if $remove {
 			$key: str-replace($key, $remove, '');
         }
-        @if $toplevel {
-            .#{$key} {
-                @if type-of($value) == 'map' {
-                    @include modifiers($value, $attribute, $prefix, $separator, $base, $remove);
-                }
-                @else if type-of($attribute) == 'list' {
-                    @each $a in $attribute {
-                        #{$a}: $value;
-                    }
-                }
-                @else {
-                    #{$attribute}: $value;
-                }
-            }
+        $class: '.#{$key}';
+        @if & { // not top level class
+            $class: '&#{if($key != $base, #{$prefix}#{$key}, '')}';
         }
-		@else {
-            &#{if($key != $base, #{$prefix}#{$key}, '')} {
-                @if type-of($value) == 'map' {
-                    @include modifiers($value, $attribute, $prefix, $separator, $base, $remove);
-                }
-                @else if type-of($attribute) == 'list' {
-                    @each $a in $attribute {
-                        #{$a}: $value;
-                    }
-                }
-                @else {
-                    #{$attribute}: $value;
-                }
-            }
+        #{$class} {
+            @include generate-helper($value, $attribute, $prefix, $base, $remove, $important);
         }
 	}
 }
 
+// Helper for generating screen-size variants of each sub-class
+@mixin generate-helper($value, $attribute, $prefix, $base, $remove, $important) {
+    @if type-of($value) == 'map' {
+        @include generate-subclass($value, $attribute, $prefix, $base, $remove);
+    }
+    @else if type-of($attribute) == 'list' {
+        // A group of attributes to set to the same value
+        @include screen-variant($attribute: $attribute, $value: "unset") {
+            @each $attr in $attribute {
+                @include generate-important-helper($value, $attr, $important)
+            }
+        }
+    }
+    @else {
+        @include screen-variant($attribute: $attribute, $value: "unset") {
+            @include generate-important-helper($value, $attribute, $important)
+        }
+    }
+}
 
-$dimension-sizing-groups: 3, 4, 10, 20;
-$max-grow-shrink-factor:  3;
-$max-icon-multiple:       21;
-$spacing-types:       "margin", "padding";
-$spacing-directions:  "top", "bottom", "left", "right", "x", "y", "a";
+// Helper generates important styles
+@mixin generate-important-helper($value, $attribute, $important) {
+    #{$attribute}: $value #{if($important, '!important', '')};
+}
 
 $colors: (
     transparent: transparent,
     none:       unset,
+    hint:       $text-color-hint,
     dark:       $text-color,
     light:      $text-color-light,
-    primary:    $primary-color,
+    primary: (
+        base:   $primary-color,
+        dark:   $primary-color-dark,
+        light:   $primary-color-light,
+    ),
     blue:       $accent-blue,
     red:        $accent-red,
     purple:     $accent-purple,
@@ -61,21 +63,22 @@ $colors: (
         dark:   $accent-grey-dark
     ),
 ) !default;
-
-@include modifiers($colors, 'color', $toplevel: true);
+@include generate-subclass($colors, 'color');
 
 $displays: (
-    block: block,
-    invisible: invisible,
-    hidden: invisible,
+    block:      block,
+    grid:       grid,
+    none:       none,
+    contents:   contents,
+    inherit:    inherit,
     inline: (
-        base: inline,
-        flex: inline-flex,
-        block: inline-block
+        base:   inline,
+        flex:   inline-flex,
+        block:  inline-block,
+        grid:   inline-grid,
     ),
-    none: none,
 );
-@include modifiers($displays, 'display', $toplevel: true);
+@include generate-subclass($displays, 'display', $important: true);
 
 .overflow {
     $overflows: (
@@ -83,16 +86,16 @@ $displays: (
         scroll: scroll,
         hidden: hidden,
     );
-    @include modifiers($overflows, 'overflow');
+    @include generate-subclass($overflows, 'overflow');
 }
 
 
 .bg {
-    @include modifiers($colors, 'background-color');
+    @include generate-subclass($colors, 'background-color');
 }
 
 .fill {
-    @include modifiers($colors, 'fill');
+    @include generate-subclass($colors, 'fill');
 }
 
 .justify {
@@ -103,7 +106,7 @@ $displays: (
         around: space-around,
         between:space-between
     );
-    @include modifiers($map, 'justify-content')
+    @include generate-subclass($map, 'justify-content')
 }
 
 .align- {
@@ -116,7 +119,7 @@ $displays: (
             between:    space-between,
             baseline:   baseline
         );
-        @include modifiers($map, 'align-content');
+        @include generate-subclass($map, 'align-content');
     }
     &items {
         $map: (
@@ -125,7 +128,7 @@ $displays: (
             end:        flex-end,
             baseline:   baseline
         );
-        @include modifiers($map, 'align-items');
+        @include generate-subclass($map, 'align-items');
     }
 }
 
@@ -136,7 +139,7 @@ $displays: (
         center: center,
         justify: justify
     );
-    @include modifiers($map, 'text-align')
+    @include generate-subclass($map, 'text-align')
 }
 
 $font-weights: (
@@ -150,9 +153,9 @@ $font-styles: (
     italic: italic
 ) !default;
 .font {
-    @include modifiers($font-sizes, 'font-size', $prefix: '-');
-    @include modifiers($font-weights, 'font-weight');
-    @include modifiers($font-styles, 'font-style', $prefix: '-');
+    @include generate-subclass($font-sizes, 'font-size', $prefix: '-');
+    @include generate-subclass($font-weights, 'font-weight');
+    @include generate-subclass($font-styles, 'font-style', $prefix: '-');
 }
 
 
@@ -162,16 +165,44 @@ $roundings: (
     circle: 100%
 );
 .rounded {
-    @include modifiers($roundings, ('border-radius', '-webkit-border-radius'), $prefix: '--');
+    @include generate-subclass($roundings, ('border-radius', '-webkit-border-radius'), $prefix: '--');
+}
+
+$borders: (
+    none:   0px,
+    base:   $border-width,
+    thin:   $border-width / 2,
+    thick:  $border-width * 2,
+);
+.border {
+    @include generate-subclass($borders, 'border-width', $prefix: '-');
+    @include generate-subclass($colors, 'border-color');
 }
 
 
+/* Percentage sizing class generation */
+$dimension-sizing-groups: 2, 3, 4, 5, 6, 10, 20;
+$percentages: (
+    0: 0%,
+    half: 50%,
+    full: 100%,
+    auto: auto,
+);
+@each $denominator in $dimension-sizing-groups {
+    @for $numerator from 1 to $denominator {
+        $size: percentage($numerator / $denominator);
+        $key: "#{$numerator}\\/#{$denominator}";
+        $percentages: map-merge($percentages, ($key: $size));
+    }
+}
+$spacing-types:       "margin", "padding";
+$spacing-directions:  "top", "bottom", "left", "right", "x", "y", "a";
 @each $type in $spacing-types {
     @each $direction in $spacing-directions {
         @for $index from 0 through $spacing-max-group {
             $size: 0rem;
 
-            @if $index>0 {
+            @if $index > 0 {
                 $size: spacing-group($index);
             }
 
@@ -238,73 +269,37 @@ $roundings: (
     }
 }
 
-/* Percentage sizing class generation */
-@each $property in "height", "width" {
-    @each $denominator in $dimension-sizing-groups {
-        @for $numerator from 0 to $denominator {
-            $size: percentage($numerator / $denominator);
-
-            @if $size==0% {
-                .#{str-slice($property, 1, 1)}-0 {
-                    #{$property}: $size;
-                }
-            }
-
-            @else {
-                .#{str-slice($property, 1, 1)}-#{$numerator}-#{$denominator} {
-                    #{$property}: $size;
-                }
-            }
-        }
+// Width/Height percentage classes
+@each $property in ("height", "width") {
+    .#{str-slice($property, 1, 1)} {
+        @include generate-subclass($percentages, $property);
     }
 }
 
-.w- {
-    &full {
-        width: 100%;
-    }
-
-    &auto {
-        width: auto;
-    }
-}
-
-.h- {
-    &full {
-        height: 100%;
-    }
-
-    &auto {
-        height: auto;
-    }
-}
 
 /* Flex Shrink/Grow class generation */
+$max-grow-shrink-factor:  3;
+$grow-shrink-factors: (0:0);
 @for $factor from 0 through $max-grow-shrink-factor {
-
-    @each $property in "grow",
-    "shrink" {
-        .#{$property}-#{$factor} {
-            flex-#{$property}: $factor !important;
-        }
+    $grow-shrink-factors: map-merge($grow-shrink-factors, ($factor: $factor));
+}
+@each $property in ("grow", "shrink") {
+    .#{$property} {
+        @include generate-subclass($grow-shrink-factors, 'flex-#{$property}', $important: true);
     }
 }
 
 
 /* Icon Sizing */
-.icon-0 {
-    width: 1.111rem;
-    max-height: 20px;
-    max-width: 20px;
-}
-
-@for $factor from 1 through $max-icon-multiple {
-    $size: 12 * $factor * 1px;
-    $ratio: ($size / 18px) * 1rem;
-
-    .icon-#{$size} {
-        width: $ratio;
-        max-height: $size;
-        max-width: $size;
+$max-icon-multiple:       21;
+.icon {
+    $map: (
+        0: 1.111rem
+    );
+    @for $factor from 1 through $max-icon-multiple {
+        $ratio: $factor * 0.75rem;
+        $map: map-merge($map, ($factor: $ratio));
     }
+
+    @include generate-subclass($map, ('width', 'max-width', 'max-height'));
 }

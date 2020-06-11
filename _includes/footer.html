@@ -1,30 +1,42 @@
-<footer class="site-footer h-card bg-dark py-2 px-1-20 mt-3">
-  <div class="flex row align-items-center justify-between">
+<footer class="site-footer h-card bg-dark py-2 px-1-20">
+  <div class="row align-items-center justify-between">
 
-    <div class="justify-between align-content-center">
-        <div class="row w-auto align-items-center">
-            <div class="align-content-center">
-                <a href="{{ '/' | relative_url }}">
-                    <img class="shadow-drop icon-48px" src="/assets/images/logos/square/dark_mono_rounded.svg" />
+    <div class="row align-items-center">
+        <div class="align-content-center">
+            <a href="{{ '/' | relative_url }}">
+                <img class="shadow-drop icon-4" src="/assets/images/logos/square/dark_mono_rounded.svg" />
+            </a>
+        </div>
+        <div class="column pl-1-20 grey-light none@xs-below">
+            <small class="font-bold block">&copy; Purdue CS USB</small>
+            <small>Made with
+                <a href="https://jekyllrb.com/" target="_blank" title="Jekyll Static Site Generator">
+                    Jekyll
+                    <img src="/assets/images/jekyll.png" alt="jekyll" class="icon-1"/>
                 </a>
-            </div>
-            <div class="column ml-5 grey-light sm-above">
-                <small class="mb-0 font-bold block">&copy; Purdue CS USB</small>
-                <small>Made with <img src="/assets/images/heart.svg" alt="love" class="icon-12px"/> and<a href="https://jekyllrb.com/" target="_blank"><img src="/assets/images/jekyll.png" alt="jekyll" class="icon-12px px-1"/></a>, designed on<a href="https://figma.com/" target="_blank"><img src="/assets/images/figma.svg" alt="figma" class="icon-12px px-1"/></a></small>
-            </div>
+            </small>
+            <small>Designed with 
+                <img src="/assets/images/heart.svg" alt="love" class="icon-1"/>
+                on
+                <a href="https://figma.com/" target="_blank">
+                    Figma
+                    <img src="/assets/images/figma.svg" alt="figma" class="icon-1"/>
+                </a></small>
         </div>
     </div>
 
-    <nav class="column">
-      <div class="row grow-0 align-content-center align-items-center justify-end margin-list md-above">
-        {%- for link in site.data.header_links -%}
-          <a class="page-link" href="{{ link.href }}"><p class="mb-0 light">{{ link.text }}</p></a>
-        {% endfor %}
-        <div>
-            <div class="ml-4">{% include social.html %}</div>
+    <nav class="column align-items-center">
+        <div class="none@md-below">
+            <div class="row grow-0 justify-end margin-list">
+                {%- for link in site.data.header_links -%}
+                    <a class="page-link" href="{{ link.href }}" title="{{ link.text }}"><p class="mb-0 light">{{ link.text }}</p></a>
+                {% endfor %}
+                <div>
+                    <div class="ml-4">{% include social.html %}</div>
+                </div>
+            </div>
         </div>
-      </div>
-      {%- include navmenu_mobile.html -%}
+        {%- include navmenu_mobile.html -%}
     </nav>
 
   </div>

@@ -7,6 +7,9 @@
         position: relative;
         display: inline-block;
         height: auto;
+        &:hover {
+            @extend .shadow-drop--center--soft;
+        }
     }
     opacity: 0;
     position: absolute;

@@ -5,12 +5,16 @@
 
     <div class="flex--wrap align-content-center justify-around">
         {%- for member in site.data.members -%}
-        <div class="mx-5 my-3">
-            <div class="overlay-container border-box-size shadow-drop shadow-drop--hover">
-                <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-204px block" alt="{{ member.name }}">
-                <div class="overlay rounded--circle fade-in-out icon-204px">
+        <div class="mx-4 my-3">
+            <div class="overlay-container border-box-size shadow-drop">
+                <!-- Accessibility hack -->
+                <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} title="{{ member.name }}" class="no-decoration" target="_blank">
+                    <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-6@xs-above icon-10@md icon-14@lg icon-18@xl icon block" alt="{{ member.name }}">
+                </a> <!-- Accessibility hack -->
+                
+                <div class="overlay rounded--circle fade-in-out ">
                     <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} title="{{ member.name }}" class="no-decoration" target="_blank">
-                        <div class="column shadow-text--dark h-full justify-center align-content-center">
+                        <div class="column shadow-text-dark h-full justify-center align-content-center">
                             <h4 class="light h-auto font-height-normal mb-0 mt-1 px-1">{{ member.name }}</h4>
                             <div class="mt-1 px-2">
                                 <p class="font-bold ma-0 light">{{ member.title }}</p>

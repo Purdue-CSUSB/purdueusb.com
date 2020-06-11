@@ -5,6 +5,7 @@
  */
 html {
     font-size: 100%;
+    scroll-behavior: smooth;
 }
 
 body, h1, h2, h3, h4, h5, h6, p,
@@ -19,6 +20,7 @@ html, body {
 
 main {
     @extend .flex;
+    overflow-anchor: none;
 }
 
 
@@ -36,6 +38,14 @@ body {
     display: flex;
     min-height: 100vh;
     @extend .column;
+}
+
+[display="none"] {
+    margin: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 * {
@@ -62,6 +72,11 @@ body {
 ::-webkit-scrollbar-thumb {
     @extend .rounded;
 }
+
+::-webkit-resizer {
+    background: linear-gradient(-45deg, $accent-grey-light, $accent-grey-light 45%, white 45%, white);
+}
+
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -113,7 +128,7 @@ li {
 /**
  * Fonts: headings, body elements, weights
  */
-h1, h2, h3, .header {
+h1, h2, h3, .header, button, .button {
     @include font-header;
     line-height: $base-line-height;
 }
@@ -122,18 +137,22 @@ h1, h2, h3 {
     @include shadow-text;
 }
 
-h1, h3, h4, button, .button {
+h1, h3, h4, button, .button, input[type="submit"] {
     @extend .font-bold;
 }
 
-body, h2, p, blockquote,
-pre, li, ul, ol, dl, data, input, .medium {
+a, a * {
+    @extend .font-semibold;
+}
+
+body, h2, p, blockquote, pre, li, ul,
+ol, dl, data, input, .medium {
     @extend .font-medium;
 }
 
-h4, h5, h6, body, p, a, blockquote, pre,
+h4, h5, h6, body, p, a, blockquote, pre, textarea,
 code, span, li, ul, ol, dl, data, input,
-caption, button, .caption, .button, .body {
+caption, .caption, .body {
     @include font-body;
 }
 
@@ -153,27 +172,62 @@ h4 {
     @extend .font-h4;
 }
 
-li,
-ul,
-ol {
+button, .button, input[type="submit"] {
+    @extend .font-button;
+}
+
+li, ul, ol {
     @extend .font-listitem;
 }
 
-caption,
-.caption,
-small {
+body, p, a, blockquote, pre, textarea,
+code, span, li, ul, ol, dl, data, input, .body {
+    @extend .font-body;
+}
+
+caption, .caption, small, small * {
     @extend .font-caption;
+}
+
+textarea, input {
+    border-style: solid;
+    @extend .pa-1, .rounded--slight, .border-thin, .border-grey-light;
+    &:focus {
+        outline: none;  /* IMPORTANT Massive accessibility issue! Keep border! */
+        border-color: $focus-border-color !important;
+    }
 }
 
 svg path {
     fill: currentcolor;
 }
 
+::placeholder {
+    opacity: 1; /* Firefox */
+    @extend .hint;
+}
+
+form {
+    label {
+        @extend .caption, .uppercase, .font-semibold;
+        color: $text-color-hint !important;
+
+        &.required span {
+            @extend .font-h4, .red;
+            vertical-align: middle;
+        }
+    }
+}
+
+textarea {
+    resize: vertical;
+}
+
 
 /**
  * Links
  */
-a {
+a:not(.button) {
     @extend .blue;
     text-decoration: none;
     @include shadow-drop;
@@ -217,8 +271,7 @@ blockquote {
 /**
  * Code formatting
  */
-pre,
-code {
+pre, code {
     border: 1px solid $accent-grey-light;
     border-radius: 3px;
     @extend .bg-grey-light;
@@ -304,32 +357,49 @@ table {
 
 
 /* Buttons */
-button,
-.button {
-    @include font-button;
-    min-height: 60px;
-    @extend .bg-primary, .clickable, .shadow-box, .rounded, .no-decoration;
+button, .button, input[type="submit"] {
+    min-height: 3.75rem;
+    @extend .bg-primary, .border-none, .clickable, .shadow-drop, .rounded, .no-decoration, .animate;
     @include px($padding-button-x);
     @include py($padding-button-y);
-    border: none;
 
-    &--outline {
-        @extend .button, .light, .bg-transparent;
-        @include border($background-light, $border-width);
+    &--outline, &.--outline {
+        &, &-light {
+            @extend .light, .bg-none, .border, .border-light, %button-focus;
+        }
 
-        &--dark {
-            @extend .button--outline, .dark, .border-dark;
+        &-dark {
+            @extend .bg-none, .border, .dark, .border-dark, %button-focus;
         }
     }
-
-    /*&:hover {   // breaks outline style
-    @extend .button;
-    text-decoration: none;
-    background-color: lighten($primary-color, 5%);
-  }*/
 }
 
-// TODO make more general
-.border-dark {
-    border-color: $background-dark;
+%button-focus {
+    &:focus {
+        outline: none;  /* IMPORTANT Massive accessibility issue! Keep border! */
+        border: $border-width solid $focus-border-color !important;
+        color: $focus-border-color !important;
+    }
+}
+
+%focus {
+    &:focus {
+        outline: none;  /* IMPORTANT Massive accessibility issue! Keep border! */
+        border: $border-width solid $focus-border-color !important;
+        @extend .shadow-text;
+    }
+}
+
+input[disabled], button[disabled] {
+    background-color: $accent-grey-light !important;
+    color: $accent-grey !important;
+    border: none !important;
+} 
+
+
+.anchorjs-link {
+    transition: all .25s linear;
+}
+*:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
 }
