@@ -2,8 +2,8 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
     {%- include head.html -%}
     <body class="flex-container">
-        {%- include header.html -%}
-        <main class="pb-3 flex-container">
+        {%- include nav/header.html -%}
+        <main class="pb-3 flex-container column">
             <!--<script>
                 console.log(anchors);
                 anchors.options = {
@@ -13,6 +13,6 @@
             </script>-->
             {{content}}
         </main>
-        {%- include footer.html -%}
+        {%- include nav/footer.html -%}
     </body>
 </html>
