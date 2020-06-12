@@ -36,6 +36,7 @@ $primary-color-dark:    darken($primary-color, 10%) !default;
 $primary-color-light:   lighten($primary-color, 10%) !default;
 
 $accent-blue:       #8AC9FE !default;
+$accent-blue-light: lighten($accent-blue, 25%) !default;
 $accent-red:        #FE646F !default;
 $accent-purple:     #BC78C2 !default;
 $accent-green:      #ADD080 !default;

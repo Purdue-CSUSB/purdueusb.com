@@ -50,9 +50,12 @@ $colors: (
     primary: (
         base:   $primary-color,
         dark:   $primary-color-dark,
-        light:   $primary-color-light,
+        light:  $primary-color-light,
     ),
-    blue:       $accent-blue,
+    blue: (
+        base:   $accent-blue,
+        light:  $accent-blue-light,
+    ),
     red:        $accent-red,
     purple:     $accent-purple,
     green:      $accent-green,

@@ -2,13 +2,17 @@
 .bg {
     &--angled {
         @include media-query($above: $screen-large-min) {
-            background-image: url("/assets/images/bg-angled.svg");
+            /*background-image: url("/assets/images/bg-angled.svg");
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
             -webkit-background-size: cover;
             -moz-background-size: cover;
-            -o-background-size: cover;
+            -o-background-size: cover;*/
+            background: linear-gradient(to top right, $bg-angle-color 69%, transparent 0%) no-repeat top,
+            linear-gradient(0deg, $bg-angle-color, $bg-angle-color) no-repeat bottom;
+            $angle: 145rem;
+            background-size: 100% $angle, 100% calc(100% - #{$angle} + 2px);
         }
     }
     &--angled-mobile {
@@ -49,90 +53,4 @@
         }
     }
     
-}
-
-#triangle {
-    position: absolute;
-    left: 45vw;
-    width: 0;
-    height: 0;
-    border-bottom: 470px solid $primary-color;
-    border-right: 150px solid transparent;
-    z-index: 1;
-}
-
-#rectangle {
-    position: absolute;
-    background-color: $primary-color;
-    height: 470px;
-    width: 45vw;
-    z-index: 2;
-
-    h2 {
-        font-weight: bold;
-        padding-top: 1vh;
-        margin-right: 40px;
-        text-align: center;
-    }
-
-    p {
-        font-size: 20px;
-    }
-}
-
-#rectangle-text {
-    position: absolute;
-    max-width: 500px;
-    right:0;
-    padding-left: 20px;
-    padding-top: 100px;
-}
-
-#objectives {
-    padding-top: 3vh;
-    width: 35vw;
-    display: flex;
-    flex-direction: column;
-}
-
-@media (max-width: 915px) {
-    #triangle {
-        display: none;
-    }
-    #rectangle {
-        width: auto;
-        height: auto;
-        position: relative;
-        display: block;
-        z-index: 0;
-    }
-    #rectangle-text {
-        width: auto;
-        max-width: none;
-        position: relative;
-        display: block;
-        padding-top: 10px;
-        padding-right: 10px;
-        padding-bottom: 10px;
-
-    }
-    #rectangle h1 {
-        text-align: left;
-        margin: auto;
-        padding-left: 0px;
-    }
-    #rectangle p {
-        padding-left: 0px;
-    }
-    #mission-container {
-        display: none;
-    }
-    .objective {
-        max-width: none;
-    }
-    #objectives {
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
 }

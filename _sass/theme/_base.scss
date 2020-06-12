@@ -16,10 +16,10 @@ blockquote, pre, hr, dl, dd, ol, ul, figure {
 
 html, body {
     @extend .h-full;
+    min-height: 100%;
 }
 
 main {
-    @extend .column;
     overflow-anchor: none;
 }
 
@@ -189,14 +189,27 @@ caption, .caption, small, small * {
     @extend .font-caption;
 }
 
-textarea, input {
-    border-style: solid;
-    @extend .pa-1, .rounded--slight, .border-thin, .border-grey-light;
+%input-focus {
     &:focus {
         outline: none;  /* IMPORTANT Massive accessibility issue! Keep border! */
         border-color: $focus-border-color !important;
     }
 }
+
+form textarea, form input, .input {
+    border-style: solid;
+    @extend .pa-1, .rounded--slight, .border-thin, .border-grey-light, %input-focus;
+}
+
+.input {
+    padding: 0;
+}
+
+.input > input {
+    outline: none;
+    @extend %input-focus;
+}
+
 
 svg path {
     fill: currentcolor;

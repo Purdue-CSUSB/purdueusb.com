@@ -4,8 +4,6 @@
     @extend .rounded;
     @extend .overflow-hidden;
     transition: 0.3s;
-    //width: 300px;
-    //height: 350px;
 
     &:hover {
         @extend .shadow-drop--center--soft;

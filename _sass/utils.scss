@@ -45,6 +45,10 @@
     flex-wrap: wrap;
 }
 
+*[class^='border'], *[class*=' border'] {
+    border-style: solid;
+}
+
 .border-box-size, .border-box-size * {
     box-sizing: border-box;
 }
@@ -156,4 +160,8 @@
             }
         }
     }
+}
+
+.active, #active {
+    @extend .bg-blue;
 }
