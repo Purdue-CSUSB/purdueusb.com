@@ -19,7 +19,7 @@
 // Helper for generating screen-size variants of each sub-class
 @mixin generate-helper($value, $attribute, $prefix, $base, $remove, $important) {
     @if type-of($value) == 'map' {
-        @include generate-subclass($value, $attribute, $prefix, $base, $remove);
+        @include generate-subclass($value, $attribute, $prefix, $base, $remove, $important);
     }
     @else if type-of($attribute) == 'list' {
         // A group of attributes to set to the same value
@@ -38,7 +38,7 @@
 
 // Helper generates important styles
 @mixin generate-important-helper($value, $attribute, $important) {
-    #{$attribute}: $value #{if($important, '!important', '')};
+    #{$attribute}: $value#{if($important, ' !important', '')};
 }
 
 $colors: (
@@ -69,6 +69,7 @@ $displays: (
     block:      block,
     grid:       grid,
     none:       none,
+    flex:       flex,
     contents:   contents,
     inherit:    inherit,
     inline: (
@@ -79,6 +80,21 @@ $displays: (
     ),
 );
 @include generate-subclass($displays, 'display', $important: true);
+
+$flex-directions: ();
+@each $direction in ("row", "column") {
+    $map: (base: #{$direction}, reverse: #{$direction}-reverse);
+    $flex-directions: map-merge($flex-directions, ($direction: $map));
+}
+@include generate-subclass($flex-directions, 'flex-direction');
+
+$flex-wraps: ();
+@each $direction in ("row", "column") {
+    $wraps: (wrap: wrap, nowrap: nowrap);
+    $map: (base: $wraps, reverse: $wraps);
+    $flex-wraps: map-merge($flex-wraps, ($direction: $map));
+}
+@include generate-subclass($flex-wraps, ('flex-wrap', '-webkit-flex-wrap'), $prefix: '--', $important: true);
 
 .overflow {
     $overflows: (

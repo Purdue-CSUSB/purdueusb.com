@@ -3,12 +3,18 @@
     @extend .shadow-drop;
     @extend .rounded;
     @extend .overflow-hidden;
-    width: 35rem;
     transition: 0.3s;
     //width: 300px;
     //height: 350px;
 
     &:hover {
         @extend .shadow-drop--center--soft;
+    }
+
+    &--initiative {
+        @extend .card;
+        min-width: 20rem;
+        width: 40%;
+        max-width: 35rem;
     }
 }

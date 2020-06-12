@@ -19,7 +19,7 @@ html, body {
 }
 
 main {
-    @extend .flex;
+    @extend .column;
     overflow-anchor: none;
 }
 

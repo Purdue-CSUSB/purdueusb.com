@@ -1,5 +1,5 @@
-<div class="bg-dark px-4 py-6 w-full">
-    <div class="row justify-around align-items-center">
+<div class="flex-container bg-dark py-6 px-4 w-full">
+    <div class="row justify-around align-items-center align-content-center">
         <div class="column justify-center align-content-center align-items-center">
             <img src="/assets/images/group.png" alt="USB group picture" class="rounded">
         </div>
@@ -12,12 +12,12 @@
                 managing CS193, hosting forums for student advocacy, or maintaining a database of undergrad-tailored resources, USB is continually
                 creating initiatives that will uphold our values.
             </h4>
-            <div class="row align-content-center align-items-end justify-around@sm-below justify-between@sm-above">
+            <div class="row justify-center@sm-below justify-between@sm-above align-items-center">
                 <a href="/resources">
                     <button>Read Student Resources</button>
                 </a>
                 <div class="flex-break none@sm-above my-1"></div>
-                <div class="flex--nowrap align-items-center justify-center">
+                <div class="align-items-end">
                     <p class="light font-semibold text-justify">Stay updated with our social media</p>
                     <div class="row justify-between@md-below justify-around@md-above w-auto">
                         {% for social in site.minima.social_links %}

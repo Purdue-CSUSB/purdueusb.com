@@ -24,36 +24,40 @@
         }
         window.addEventListener("load", setup);
     </script>
+    {% assign mobile-breakpoint-above = "xl-above" %}
+    {% assign mobile-breakpoint-below = "xl-below" %}
     <div id="initiative-container">
         {%- for initiative in site.data.initiatives -%}
-        <div class="card pr-3 my-2">
+        <div class="card--initiative my-2 pb-2">
             <div class="row align-content-start justify-between mb-0">
-                <div class="column grow-0">
-                    <img src="/assets/images/initiatives/{{ initiative.image }}" class="icon-17 rounded w-full img-cover">
+                <div class="flex--nowrap grow-0@{{mobile-breakpoint-above}} w-full@{{mobile-breakpoint-below}}">
+                    <img src="/assets/images/initiatives/{{ initiative.image }}" class="icon-17@{{mobile-breakpoint-above}} rounded@{{mobile-breakpoint-above}} w-full img-cover">
                 </div>
-                <div class="column ml-2 pt-2">
+                <div class="flex-break none@{{mobile-breakpoint-above}}"></div>
+                <div class="column ml-2 mr-3 pt-2">
                     <div class="row grow-0 justify-between align-items-baseline">
                         <h4 class="mb-1 inline">{{ initiative.title | escape }}</h4>
                         {% if initiative.inactive == true %}
+
                             <small class="uppercase red">inactive</small>
                         {% elsif initiative.inactive != "" and initiative.inactive != nil %}
                             <small class="uppercase grey">{{initiative.inactive}}</small>
                         {% endif %}
                     </div>
-                    <p class="mb-0">{{ initiative.description }}</p>
+                    <p class="mb-0 text-justify">{{ initiative.description }}</p>
                 </div>
             </div>
             {% assign hasMembers = initiative.members != nil %}
             {% assign hasButton = initiative.buttonText != "" and initiative.buttonText != nil and initiative.buttonLink != "" and initiative.buttonLink != nil %}
             {% if hasMembers or hasButton %}
-                <div class="ml-3">
+                <div class="mx-3">
                     <div class="column align-content-center align-items-center justify-between">
                         {% if hasMembers %}
-                            <div class="row mt-1 align-content-start">
+                            <div class="row align-content-start mt-1">
                                 <small class="font-bold block">Members</small>
                             </div>
                             <div class="row">
-                                <div class="row align-content-between justify-between">
+                                <div class="row align-content-between justify-around">
                                     {% assign row_limit = 11 %}
                                     {% assign initiative_members = initiative.members | sort:"value" %}
                                     {% for name in initiative_members %}
@@ -73,8 +77,8 @@
                             </div>
                         {% endif %}
                         {% if hasButton %}
-                            <div class="row align-content-center justify-center my-1">
-                                <a class="py-1 w-full text-center hover--underline" href="{{ initiative.buttonLink }}">
+                            <div class="row align-content-center justify-center">
+                                <a class="py-1 mt-1 w-full text-center hover--underline" href="{{ initiative.buttonLink }}">
                                     <h4 class="mb-0">{{ initiative.buttonText }}</h4>
                                 </a>
                             </div>
