@@ -25,16 +25,16 @@
         window.addEventListener("load", setup);
     </script>
     {% assign mobile-breakpoint-above = "xl-above" %}
-    {% assign mobile-breakpoint-below = "xl-below" %}
+    {% assign mobile-breakpoint-below = "lg-below" %}
     <div id="initiative-container">
         {%- for initiative in site.data.initiatives -%}
-        <div class="card--initiative my-2 pb-2">
+        <div class="card--initiative my-2">
             <div class="row align-content-start justify-between mb-0">
                 <div class="flex--nowrap grow-0@{{mobile-breakpoint-above}} w-full@{{mobile-breakpoint-below}}">
                     <img src="/assets/images/initiatives/{{ initiative.image }}" class="icon-17@{{mobile-breakpoint-above}} rounded@{{mobile-breakpoint-above}} w-full img-cover">
                 </div>
                 <div class="flex-break none@{{mobile-breakpoint-above}}"></div>
-                <div class="column ml-2 mr-3 pt-2">
+                <div class="column mx-2 pt-2">
                     <div class="row grow-0 justify-between align-items-baseline">
                         <h4 class="mb-1 inline">{{ initiative.title | escape }}</h4>
                         {% if initiative.inactive == true %}
@@ -44,16 +44,16 @@
                             <small class="uppercase grey">{{initiative.inactive}}</small>
                         {% endif %}
                     </div>
-                    <p class="mb-0 text-justify">{{ initiative.description }}</p>
+                    <p class="mb-1 text-justify">{{ initiative.description }}</p>
                 </div>
             </div>
             {% assign hasMembers = initiative.members != nil %}
             {% assign hasButton = initiative.buttonText != "" and initiative.buttonText != nil and initiative.buttonLink != "" and initiative.buttonLink != nil %}
             {% if hasMembers or hasButton %}
-                <div class="mx-3">
+                <div class="mx-3 py-1">
                     <div class="column align-content-center align-items-center justify-between">
                         {% if hasMembers %}
-                            <div class="row align-content-start mt-1">
+                            <div class="row align-content-start">
                                 <small class="font-bold block">Members</small>
                             </div>
                             <div class="row">

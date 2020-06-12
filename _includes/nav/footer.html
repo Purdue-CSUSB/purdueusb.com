@@ -32,11 +32,11 @@
                     <a class="page-link" href="{{ link.href }}" title="{{ link.text }}"><p class="mb-0 light">{{ link.text }}</p></a>
                 {% endfor %}
                 <div>
-                    <div class="ml-4">{% include social.html %}</div>
+                    <div class="ml-4">{%- include components/social.html -%}</div>
                 </div>
             </div>
         </div>
-        {%- include navmenu_mobile.html -%}
+        {%- include nav/navmenu_mobile.html -%}
     </nav>
 
   </div>

@@ -1,0 +1,20 @@
+<aside class="card py-2 px-3 my-5 mx-5 sidebar">
+    <h4 class="text-center">Student Resources</h4>
+    <p class="text-justify mb-4">Contains locally sourced, organic wisdom. Shared by the student body, curated by USB.</p>
+    <div class="input row--nowrap">
+        <img src="/assets/images/search.svg" class="icon-0 my-1 ml-1">
+        <input type="text" name="Search" id="search" placeholder="Search..." class="border-none w-full pa-1">
+    </div>
+    {%- if site.posts.size > 0 -%}
+        {%- for post in site.posts -%}
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <a href="{{ post.url | relative_url }}">
+                <!--<span>{{ post.date | date: date_format }}</span>-->
+                <div {% if post.url == page.url %}id="active" {% endif %} class="mt-3 rounded">
+                    <p class="font-bold mb-0">{{ post.title | escape }}</p>
+                    <p class="dark font-normal mb-0">{{ post.description }}</p>
+                </div>
+            </a>
+        {%- endfor -%}
+    {%- endif -%}
+</aside>
