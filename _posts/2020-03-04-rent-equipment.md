@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "How can I rent equipment?"
 description: "Borrow equipment to tinker with for free"
 author: Noah Alderton

@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Connecting to Purdue's VPN"
 description: "Access campus-only resources from anywhere!"
 author: Cindy Ding

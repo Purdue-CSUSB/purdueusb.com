@@ -6,6 +6,28 @@ description: The Computer Science Undergraduate Student Board (USB) at Purdue Un
 show_excerpts: false # set to true to show excerpts on the homepage
 include: ["_pages"]
 
+collections:
+  pages:
+    output: true
+    permalink: /:title/
+  posts:
+    output: true
+    permalink: /resources/:title
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
 # Minima date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
 minima:

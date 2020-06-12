@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Getting a Lawson Key Fob"
 description: "Access Lawson after hours"
 author: Jay Hankins

@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "SSH Shortcut for Purdue Servers"
 description: "Tired of typing data.cs.purdue.edu?"
 author: Jay Hankins

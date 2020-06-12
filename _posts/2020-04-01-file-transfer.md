@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "Transferring Files via SCP and FileZilla"
 description: "Copy files to and from Purdue's servers"
 author: Noah Alderton

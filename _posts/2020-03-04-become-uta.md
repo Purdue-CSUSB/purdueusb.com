@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  "How do I become an Undergraduate Teaching Assistant?"
 description: "Get paid to help students during labs"
 author: Noah Alderton
