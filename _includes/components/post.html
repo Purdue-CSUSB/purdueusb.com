@@ -20,7 +20,7 @@
         {% endfor %}
     </div>
     <div class="contents">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
         <p class="font-normal hint">{{ page.date | date: date_format }}</p>
     </div>
 </div>
