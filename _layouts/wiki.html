@@ -1,0 +1,16 @@
+---
+layout: default
+title: Student Resources
+description: Locally sourced, organic wisdom. Shared by the student body, curated by USB.
+---
+
+<div class="row@lg-above column@md-below justify-start@lg-above justify-center@md-below mt-5 px-5 flex-container align-items-start">
+    <div class="column@md-below w-full@md-below w-5/20@lg-above sticky@lg-above">
+        {%- include components/sidebar.html -%}
+    </div>
+    <div class="ml-4 none@md-below"></div>
+    <div class="my-2 none@lg-above"></div>
+    <div class="column w-full@md-below w-14/20@lg-above overflow-hidden">
+        {% include components/post.html content=content %}
+    </div>
+</div>
