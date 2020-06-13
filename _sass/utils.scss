@@ -8,8 +8,7 @@
 .flex {
     display: flex;
     display: -webkit-flex;
-    box-sizing: border-box;
-    @extend .row;
+    @extend .row, .border-box-size;
 
     &--wrap {
         &-reverse {
@@ -35,7 +34,7 @@
     height: 1px;
 }
 
-*[class^='column'], *[class*=' column'] {
+[class^='column']:not([class*='\@']), [class*=' column']:not([class*='\@']) {
     @include flex-even;
 }
 
@@ -45,12 +44,10 @@
     flex-wrap: wrap;
 }
 
-*[class^='border'], *[class*=' border'] {
-    border-style: solid;
-}
-
 .border-box-size, .border-box-size * {
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .margin-list > * {
@@ -163,5 +160,45 @@
 }
 
 .active, #active {
-    @extend .bg-blue;
+    background-color: $focus-color;
+    &--hover {
+        &:hover {
+            @extend .active;
+        }
+    }
+}
+
+.card {
+    @extend .bg-light;
+    @extend .shadow-drop;
+    @extend .rounded;
+    @extend .overflow-hidden;
+    transition: 0.3s;
+
+    &:hover {
+        @extend .shadow-drop--center--soft;
+    }
+
+    &--initiative {
+        @extend .card;
+        min-width: 20rem;
+        width: 40%;
+        max-width: 35rem;
+    }
+}
+
+.w-px {
+    width: 1px;
+}
+
+.h-px {
+    height: 1px;
+}
+
+@include screen-variant() {
+    .sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: spacing-group(5);
+    }
 }

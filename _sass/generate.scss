@@ -23,14 +23,14 @@
     }
     @else if type-of($attribute) == 'list' {
         // A group of attributes to set to the same value
-        @include screen-variant($attribute: $attribute, $value: "unset") {
+        @include screen-variant() {
             @each $attr in $attribute {
                 @include generate-important-helper($value, $attr, $important)
             }
         }
     }
     @else {
-        @include screen-variant($attribute: $attribute, $value: "unset") {
+        @include screen-variant() {
             @include generate-important-helper($value, $attribute, $important)
         }
     }
@@ -47,15 +47,8 @@ $colors: (
     hint:       $text-color-hint,
     dark:       $text-color,
     light:      $text-color-light,
-    primary: (
-        base:   $primary-color,
-        dark:   $primary-color-dark,
-        light:  $primary-color-light,
-    ),
-    blue: (
-        base:   $accent-blue,
-        light:  $accent-blue-light,
-    ),
+    primary:    $primary-color,
+    blue:       $accent-blue,
     red:        $accent-red,
     purple:     $accent-purple,
     green:      $accent-green,
@@ -63,9 +56,25 @@ $colors: (
     grey: (
         base:   $accent-grey,
         light:  $accent-grey-light,
-        dark:   $accent-grey-dark
     ),
 ) !default;
+@each $color, $value in $colors {
+    @if type-of($value) != 'map' {
+        $value: (base: $value);
+    }
+    $base: map-get($value, "base");
+    @if type-of($base) == "color" {
+        @if not map-has-key($value, "light") {
+            $value: map-merge($value, (light: tint($base, $percentage-lighten)))
+        }
+        @if not map-has-key($value, "dark") {
+            $value: map-merge($value, (dark: shade($base, $percentage-darken)))
+        }
+    }
+
+    $colors: map-merge($colors, ($color: $value));
+}
+
 @include generate-subclass($colors, 'color');
 
 $displays: (
@@ -196,6 +205,10 @@ $borders: (
 .border {
     @include generate-subclass($borders, 'border-width', $prefix: '-');
     @include generate-subclass($colors, 'border-color');
+    & {
+        @extend .border;
+        border-style: solid;
+    }
 }
 
 

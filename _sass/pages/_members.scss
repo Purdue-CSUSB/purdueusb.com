@@ -10,6 +10,10 @@
         &:hover {
             @extend .shadow-drop--center--soft;
         }
+        a:focus-within {
+            border: 4px solid red !important;
+            outline: none !important;
+        }
     }
     opacity: 0;
     position: absolute;
@@ -18,18 +22,8 @@
     right:  0;
     bottom: 0;
     background: $profile-overlay;
-    &-content_mobile {
-        border-top: 1px solid rgb(179, 179, 179); /* for old browsers */
-        border-top: 1px solid rgba(179, 179, 179, 0.7);
-        margin-top: 5px;
-        padding-top: 2px;
-        display: none;
-    }
     
     &.active {
         opacity: 1;
-    }
-    &.active .hvrbox-text_mobile {
-        display: block;
     }
 }

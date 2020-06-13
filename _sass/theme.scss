@@ -7,9 +7,7 @@ Define defaults for each variable. Be sure to include !default on the end of eac
 
 
 /* Fonts */
-@mixin google-font($family, $variants) {
-  @import url('https://fonts.googleapis.com/css2?family=#{$family}:wght@#{$variants}&display=swap');
-}
+@import "mixins";
 @include google-font("Raleway", "400;500;600;700");
 @include google-font("Montserrat", "400;500;600;700");
 $font-family-backup: sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -31,19 +29,17 @@ $base-line-height:    1.5 !default;
 
 
 /* Colors */
-$primary-color:     #FFCA44 !default;
-$primary-color-dark:    darken($primary-color, 10%) !default;
-$primary-color-light:   lighten($primary-color, 10%) !default;
+$percentage-lighten:    50% !default;
+$percentage-darken:     10% !default;
+$primary-color:         #FFCA44 !default;
 
 $accent-blue:       #8AC9FE !default;
-$accent-blue-light: lighten($accent-blue, 25%) !default;
 $accent-red:        #FE646F !default;
 $accent-purple:     #BC78C2 !default;
 $accent-green:      #ADD080 !default;
 $accent-orange:     #FEA465 !default;
 $accent-grey:       #6B6A6A !default;
 $accent-grey-light: #E5E5E5 !default;
-$accent-grey-dark:  darken($accent-grey, 25%) !default;
 $profile-overlay:   rgba(0, 0, 0, 0.25);
 
 $text-color:            #333 !default;
@@ -52,7 +48,7 @@ $text-color-light:      #FFF !default;
 $background-light:      $text-color-light !default;
 $background-dark:       $text-color-light !default;
 $background-color:      $background-light !default;
-$focus-border-color:    $accent-blue;
+$focus-color:           tint($primary-color, $percentage-lighten) !default;
 $accent-color:          $accent-blue !default;
 
 /* Spacing & Alignment */
@@ -103,7 +99,6 @@ $scrollbar-foreground: $accent-grey !default;
 
 
 // Import partials. DO NOT REORDER
-@import "mixins";
 @import "generate";
 @import "utils";
 @import "theme/base";

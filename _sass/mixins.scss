@@ -1,3 +1,7 @@
+@mixin google-font($family, $variants) {
+    @import url('https://fonts.googleapis.com/css2?family=#{$family}:wght@#{$variants}&display=swap');
+  }
+  
 /* Credit: https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/ */
 @function strip-unit($num) {
     @return $num / ($num * 0 + 1);
@@ -51,6 +55,16 @@
     }
 
     @return $value;
+}
+
+/// Slightly lighten a color
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
 }
 
 /* Font Mixins */
@@ -248,11 +262,11 @@
     @include my($size);
 }
 
-@mixin screen-variant($attribute, $value, $prefix:"\\@", $variant-only: false) {
+@mixin screen-variant($prefix:"\\@", $variant-only: false) {
 
     @each $name, $vals in $screens {
         #{if(&, '&', '.')}#{$prefix}#{$name} {
-            @include screen-variant-helper($vals, $attribute, $value) {
+            @include screen-variant-helper($vals) {
                 @content;
             }
         }
@@ -262,7 +276,7 @@
     }
 }
 
-@mixin screen-variant-helper($vals, $attribute, $value) {
+@mixin screen-variant-helper($vals) {
     $min: map-get($vals, "min");
     $max: map-get($vals, "max");
 

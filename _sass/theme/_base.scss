@@ -48,6 +48,10 @@ body {
     margin-bottom: 0 !important;
 }
 
+::selection {
+    @extend .bg-primary-light, .dark;
+}
+
 * {
     scrollbar-width: thin;
     /* "auto" or "thin"  */
@@ -192,7 +196,7 @@ caption, .caption, small, small * {
 %input-focus {
     &:focus {
         outline: none;  /* IMPORTANT Massive accessibility issue! Keep border! */
-        border-color: $focus-border-color !important;
+        border-color: $focus-color !important;
     }
 }
 
@@ -268,15 +272,20 @@ a:not(.button) {
  * Blockquotes TODO
  */
 blockquote {
-    @extend .grey;
-    @extend .font-italic;
-    border-left: 4px solid $accent-grey-light;
-    padding-left: $spacing-unit / 2;
+    @extend .rounded--slight;
+    border-left: $border-width solid $accent-grey-light;
+    padding-left: spacing-group(1);
     letter-spacing: -1px;
 
     > :last-child {
         @extend .mb-0;
     }
+}
+
+blockquote, blockquote p {
+    @extend .grey;
+    color: grey;
+    @extend .font-italic;
 }
 
 
@@ -390,17 +399,21 @@ button, .button, input[type="submit"] {
 %button-focus {
     &:focus {
         outline: none;  /* IMPORTANT Massive accessibility issue! Keep border! */
-        border: $border-width solid $focus-border-color !important;
-        color: $focus-border-color !important;
+        border: $border-width solid $focus-color !important;
+        color: $focus-color !important;
     }
 }
 
 %focus {
     &:focus {
         outline: none;  /* IMPORTANT Massive accessibility issue! Keep border! */
-        border: $border-width solid $focus-border-color !important;
+        border: $border-width solid $focus-color !important;
         @extend .shadow-text;
     }
+}
+
+a img {
+    @extend %focus;
 }
 
 input[disabled], button[disabled] {

@@ -9,8 +9,8 @@ include: ["_pages"]
 collections:
   pages:
     output: true
-    permalink: /:title/
-  posts:
+    permalink: /:name/
+  wiki:
     output: true
     permalink: /resources/:title
 
@@ -18,15 +18,15 @@ defaults:
   -
     scope:
       path: ""
-      type: "posts"
+      type: "pages"
     values:
       layout: "default"
   -
     scope:
       path: ""
-      type: "pages"
+      type: "wiki"
     values:
-      layout: "default"
+      layout: "wiki"
 
 # Minima date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this

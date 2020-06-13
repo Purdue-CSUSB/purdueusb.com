@@ -54,8 +54,6 @@
 
 .divider {
     &--horizontal {
-        @extend .w-full;
-        @extend .bg-primary;
-        height: 1px;
+        @extend .w-full, .bg-primary, .h-px;
     }
 }

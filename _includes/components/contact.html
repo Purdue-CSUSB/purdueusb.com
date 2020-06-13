@@ -1,4 +1,4 @@
-<div class="flex-container px-4-20 w-full pt-5">
+<div class="px-4-20 w-full pt-5">
     <h2 class="mb-1 justify">What's on your mind?</h2>
     <p class="mb-1">You can also send us an email at <a href="mailto:usb&commat;cs&period;purdue&period;edu">usb&commat;cs&period;purdue&period;edu</a></p>
     <p class="mb-0">
@@ -6,7 +6,7 @@
         To report concerns in an official capacity, please go to the 
         <a href="https://my.cs.purdue.edu/undergraduate/concern">CS Concern Form</a>.
     </p>
-    <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/usb@cs.purdue.edu" method="post" class="column mt-3">
+    <form id="fs-frm" name="simple-contact-form" class="column mt-3" action="https://formspree.io/usb@cs.purdue.edu" accept-charset="utf-8" method="post">
         <fieldset id="fs-frm-inputs">
             <div id="contactForm">
                 <div class="row grow-0 justify-between@md-above justify-around@sm-below mb-1">
@@ -24,13 +24,13 @@
 
                 <div class="column grow-0 justify-center mb-1">
                     <label for="subject" class="required">Subject<span>*</span></label>
-                    <input type="text" name="Subject" id="subject" placeholder="What's the gist?" required>
+                    <input type="text" name="Subject" id="subject" placeholder="What's the gist?" required autocomplete="off">
                 </div>
 
                 <div class="column grow-0 justify-center mb-1">
                     <label for="message" class="required">Message<span>*</span></label>
                     <textarea rows="5" name="Message" id="message" placeholder="Questions, comments, concerns, suggestions &mdash; put 'em here!"
-                    required=""></textarea>
+                    required autocomplete="off"></textarea>
                 </div>
 
                 <div class="row grow-0">

@@ -1,4 +1,6 @@
 /* CSS for /resources */
-.sidebar {
-    min-width: 20rem;
+#sidebar {
+    max-height: 85vh;
+    overflow-y: scroll;
+    overflow-x: visible;
 }
