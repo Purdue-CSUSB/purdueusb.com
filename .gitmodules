@@ -1,0 +1,9 @@
+[submodule "Magic-Grid"]
+	path = Magic-Grid
+	url = https://github.com/e-oj/Magic-Grid.git
+[submodule "libs/Magic-Grid"]
+	path = libs/Magic-Grid
+	url = https://github.com/e-oj/Magic-Grid.git
+[submodule "libs/anchorjs"]
+	path = libs/anchorjs
+	url = https://github.com/bryanbraun/anchorjs.git
