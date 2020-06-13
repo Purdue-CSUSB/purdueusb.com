@@ -8,18 +8,20 @@ This is a static site built using [Jekyll](https://jekyllrb.com), designed on [F
 
 ### Editing Site Information
 
-Currently with automatic GH pages builds, information can be edited directly on github.
+Currently with automatic GH pages builds, information can be edited directly on github. 
+
+### **Please take a moment to familiarize yourself with [YAML](https://learnxinyminutes.com/docs/yaml/) and [Markdown](https://learnxinyminutes.com/docs/markdown/) formats.**
 
 #### USB Members
 
 1. If necessary, add their photograph in `assets/images/members`. Make sure the images are cropped to be square.
-2. Edit `_data/members.yml` with their name, image, title, and class rank.
+2. Edit `_data/members.yml` with their name, image, title, class rank, and (optionally) an appropriate personal website (future: USB alumni status).
 
 #### Initiatives
 
 1. Add an initiative logo in `assets/images/initiative`. Please use a square resolution, or it will be cropped to fit automatically.
-2. Edit `_data/initiatives.yml` with title, image, description, and full names of members (as spelled in members.yml).
-  * Optionally, provide an inactive entry with either `true | string`. True will display "INACTIVE" and anything else will be displayed.
+2. Edit `_data/initiatives.yml` with `title`, `image`, `description`, (optional) `inactive`, (optional) `buttonText` and `buttonLink` and list of participating `members` names (as spelled in members.yml).
+  - An inactive entry can contain either `true | string`. True will display "INACTIVE" and anything else will be displayed as-is.
 
 #### Objectives
 
@@ -28,14 +30,25 @@ Currently with automatic GH pages builds, information can be edited directly on 
 
 #### Student Resources
 
-Articles are to be written in Markdown. Look at one of the preexisting articles as a reference. Be sure to include the following "front matter" attributes to the top of the Markdown file between a pair of `---`.
+Articles are to be written in Markdown. The name of the file will be the URL slug, e.g. `lawson-fob.md` becomes `/resources/lawson-fob`. Be sure to include the following "front matter" attributes to the top of the Markdown file between a pair of `---`:
 
-- layout - This will always be `post`
 - title - Title of the article
 - description - Describe what the article is about. Keep this down to one sentence.
 - author: Name of the author
 - date - Date of most recent edit
 - categories: Category this fits the article, like `technical` or `campus`. Multiple categories can be included, as long as they are comma separated, an between square brackets.
+
+Example:
+```
+File: social-life.md
+---
+title: How to have a social life
+description: A very useful resource for CS/DS students.
+category: 
+ - technical
+ - campus
+---
+```
 
 ## Development
 
