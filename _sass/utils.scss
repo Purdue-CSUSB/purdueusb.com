@@ -195,8 +195,8 @@
     height: 1px;
 }
 
-@include screen-variant() {
-    .sticky {
+.sticky {
+    @include screen-variant() {
         position: -webkit-sticky;
         position: sticky;
         top: spacing-group(5);
