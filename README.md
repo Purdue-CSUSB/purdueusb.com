@@ -22,6 +22,7 @@ Currently with automatic GH pages builds, information can be edited directly on 
 1. Add an initiative logo in `assets/images/initiative`. Please use a square resolution, or it will be cropped to fit automatically.
 2. Edit `_data/initiatives.yml` with `title`, `image`, `description`, (optional) `inactive`, (optional) `buttonText` and `buttonLink` and list of participating `members` names (as spelled in members.yml).
   - An inactive entry can contain either `true | string`. True will display "INACTIVE" and anything else will be displayed as-is.
+  - Former members can be designated `alumnus`.
 
 #### Objectives
 

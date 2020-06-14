@@ -3,8 +3,11 @@
     {%- assign year = 'now' | date: "%Y" -%}
     <p class="mb-4">{{ year }} &ndash; {{ year |plus:1 }} Members</p>
 
+    {% assign current_members = site.data.members | where_exp: "member", "member.class != 'alumnus'" %}
+    {% assign former_members = site.data.members | where: "class", "alumnus" %}
+
     <div class="flex--wrap align-content-center justify-around">
-        {%- for member in site.data.members -%}
+        {%- for member in current_members -%}
         <div class="mx-4 my-3">
             <div class="overlay-container border-box shadow-drop">
                 <!-- Accessibility hack -->
