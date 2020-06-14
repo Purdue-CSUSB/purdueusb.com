@@ -145,10 +145,9 @@ $open-distance:105px;
     display: initial;
     transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
     @for $i from 1 through $menu-items{
-
         &:nth-child(#{$i+2}){
-        transition-duration: 90ms+(100ms*$i);
-        transform: translate3d(0,-110px*$i,0);
+            transition-duration: 90ms+(100ms*$i);
+            transform: translate3d(0,-110px*$i,0);
         }
     }
 }
