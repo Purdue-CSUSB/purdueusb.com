@@ -1,5 +1,7 @@
 {% if include.fab == true %}
     {% assign fab_menu_class = "menu-item" %}
+{% else %}
+    {% assign fab_menu_class = "" %}
 {% endif %}
 
 {%- for link in site.data.header_links -%}

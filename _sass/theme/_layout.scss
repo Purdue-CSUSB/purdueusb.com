@@ -72,51 +72,44 @@ $opening-angle:$pi/2;
   .menu-item{
     @extend %ball;
     @extend .rounded--more;
-      width: auto;
+    width: auto;
+    right: 0;
   }
   .hamburger{
-      @extend .block, .bg-dark;
-    $width:25px;
-    $height:3px;
-    width:$width;
-    height:$height;
-    position:absolute;
-    top:50%;
-    left:50%;
-    margin-left:-$width/2;
-    margin-top:-$height/2;
-    transition:transform 200ms;
+    @extend .block, .bg-dark, .icon-square-2, .px-2, .rounded;
+    height: $border-width;
+    transition: transform 200ms;
+
+    $hamburger-spacing: spacing-group(0);
+    &-top {
+        transform:  translate3d(0, -$hamburger-spacing, 0);
+    }
+    &-middle {
+        transform:  translate3d(0, 0, 0);
+    }
+    &-bottom {
+        transform:  translate3d(0, $hamburger-spacing, 0);
+    }
   }
-  $hamburger-spacing:8px;
-  .hamburger-1{
-    transform:translate3d(0,-$hamburger-spacing,0);
-  }
-  .hamburger-2{
-    transform:translate3d(0,0,0);
-  }
-  .hamburger-3{
-    transform:translate3d(0,$hamburger-spacing,0);
-  }
+
   .menu-open:checked+.menu-open-button{
-    .hamburger-1{
-      transform:translate3d(0,0,0) rotate(45deg); 
+    .hamburger-top{
+      transform: translate3d(0,0,0) rotate(45deg); 
     }
-    .hamburger-2{
-      transform:translate3d(0,0,0) scale(0.1,1);
+    .hamburger-middle{
+      transform: translate3d(0,0,0) scale(0.1,1);
     }
-    .hamburger-3{
-      transform:translate3d(0,0,0) rotate(-45deg); 
+    .hamburger-bottom{
+      transform: translate3d(0,0,0) rotate(-45deg); 
     }
   }
   .menu{
-    margin-left:-50px;
-    position: sticky;
+    margin-left: -3.125rem;
   }
   
   
   .menu-item{
       text-align: right;
-      right: 0;
     &:hover{
       @extend .bg-primary-light;
     }
@@ -136,6 +129,7 @@ $opening-angle:$pi/2;
   }
   .menu-open-button:hover{
     transform:scale(1.2,1.2) translate3d(0,0,0);
+    @extend .shadow--center--soft;
   }
   .menu-open:checked+.menu-open-button{
     transition-timing-function:linear;
@@ -144,7 +138,7 @@ $opening-angle:$pi/2;
   }
   
   .menu-open:checked~.menu-item{
-    display: unset;
+    display: initial;
     transition-timing-function:cubic-bezier(0.165, 0.840, 0.440, 1.000);
     @for $i from 1 through $menu-items{
   
@@ -154,4 +148,3 @@ $opening-angle:$pi/2;
       }
     }
   }
-  
