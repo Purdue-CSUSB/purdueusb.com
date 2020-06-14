@@ -65,8 +65,8 @@
 }
 
 .no-decoration {
-    text-decoration: none;
-    list-style: none;
+    text-decoration: none !important;
+    list-style: none !important;
 }
 
 .hover {
@@ -101,6 +101,10 @@
 
 .clickable {
     @include clickable;
+}
+
+a.clickable {
+    @extend .flat;
 }
 
 .clickable, a, button, .button {

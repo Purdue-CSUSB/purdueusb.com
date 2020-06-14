@@ -247,15 +247,13 @@ textarea {
 a:not(.button) {
     @extend .blue;
     text-decoration: none;
-    @include shadow-drop;
 
     &:visited {
         @extend .purple;
     }
 
-    &>*:hover {
-        //color: $text-color;
-        //text-decoration: underline;
+    &:hover {
+        text-decoration: underline;
     }
 
     .social-media-list &:hover {
