@@ -47,24 +47,22 @@
     text-align:left;
 }
 
-$fg:#00bcd4;
-$bg:#673ab7;
-$pi:3.14;
 
+/* Credit: https://codepen.io/lbebber/pen/pvwZJp */
 //config
 $menu-items:4;
 $open-distance:105px;
-$opening-angle:$pi/2;
 
   %ball{
       @extend .bg-primary, .light, .text-center;
-    width: 80px;
-    height:80px;
-    margin-left:-40px;
-    position:absolute;
-    line-height:80px;
-    transform:translate3d(0,0,0);
-    transition:transform ease-out 200ms;
+    $height: 80px;
+    width:  $height;
+    height: $height;
+    margin-left: -40px;
+    position: absolute;
+    line-height: $height;
+    transform:  translate3d(0,0,0);
+    transition: transform ease-out 200ms;
   }
   .menu-open, .menu-item{
     display:none;
@@ -94,13 +92,13 @@ $opening-angle:$pi/2;
 
   .menu-open:checked+.menu-open-button{
     .hamburger-top{
-      transform: translate3d(0,0,0) rotate(45deg); 
+      transform: translate3d(0 ,$border-width, 0) rotate(45deg); 
     }
     .hamburger-middle{
-      transform: translate3d(0,0,0) scale(0.1,1);
+      transform: translate3d(0, 0, 0) scale(0.1, 1);
     }
     .hamburger-bottom{
-      transform: translate3d(0,0,0) rotate(-45deg); 
+      transform: translate3d(0, -$border-width, 0) rotate(-45deg); 
     }
   }
   .menu{
@@ -111,7 +109,7 @@ $opening-angle:$pi/2;
   .menu-item{
       text-align: right;
     &:hover{
-      @extend .bg-primary-light;
+      @extend .bg-primary-light, .shadow--center--soft;
     }
     @for $i from 1 through $menu-items{
       &:nth-child(#{$i+2}){
