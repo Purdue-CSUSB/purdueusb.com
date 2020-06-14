@@ -10,6 +10,9 @@ function finalizeButtons() {
     });
 }
 
-function fabReveal(e) {
-    console.log(e);
+function closeFab() {
+    let fab = document.querySelector('#menu-open');
+    if (fab.checked) {
+        fab.checked = false;
+    }
 }
