@@ -44,10 +44,12 @@
 $colors: (
     transparent: transparent,
     none:       unset,
+    focus-color:$focus-color,
     hint:       $text-color-hint,
     dark:       $text-color,
     light:      $text-color-light,
     primary:    $primary-color,
+    accent:     $accent-color,
     blue:       $accent-blue,
     red:        $accent-red,
     purple:     $accent-purple,
@@ -145,7 +147,8 @@ $flex-wraps: ();
             end:        flex-end,
             around:     space-around,
             between:    space-between,
-            baseline:   baseline
+            baseline:   baseline,
+            stretch:    stretch
         );
         @include generate-subclass($map, 'align-content');
     }
@@ -167,7 +170,15 @@ $flex-wraps: ();
         center: center,
         justify: justify
     );
-    @include generate-subclass($map, 'text-align')
+    @include generate-subclass($map, 'text-align');
+
+    $map: (
+        nowrap:     nowrap,
+        pre:        pre,
+        pre-line:   pre-line,
+        pre-wrap:   pre-wrap,
+    );
+    @include generate-subclass($map, 'white-space');
 }
 
 $font-weights: (
@@ -190,6 +201,7 @@ $font-styles: (
 $roundings: (
     base:   $border-radius,
     slight: $border-radius-slight,
+    more:   4 * $border-radius,
     circle: 100%
 );
 .rounded {
@@ -323,7 +335,7 @@ $grow-shrink-factors: (0:0);
 
 
 /* Icon Sizing */
-$max-icon-multiple:       21;
+$max-icon-multiple: 21;
 .icon {
     $map: (
         0: 1.111rem
@@ -334,4 +346,24 @@ $max-icon-multiple:       21;
     }
 
     @include generate-subclass($map, ('width', 'max-width', 'max-height'));
+    &-square {
+        @include generate-subclass($map, ('width', 'max-width', 'height'));
+    }
+}
+
+$positions: (
+    top:    (0:0), 
+    bottom: (0:0), 
+    left:   (0:0), 
+    right:  (0:0),
+);
+
+@each $key, $value in $positions {
+    @for $group from 1 through $spacing-max-group {
+        $value: map-merge($value, ($group: spacing-group($group)));
+    }
+    $positions: map-merge($positions, ($key: $value));
+    .#{$key} {
+        @include generate-subclass($value, $key);
+    }
 }

@@ -32,13 +32,6 @@ defaults:
 # refer to https://shopify.github.io/liquid/filters/date/ to customize this
 date_format: "%b %-d, %Y"
 
-# generate social links in footer
-social_links:
-  instagram: "instagram.com/purdueusb"
-  facebook: "facebook.com/purdueusb"
-  reddit: "reddit.com/u/purdueusb"
-  github: "github.com/Purdue-CSUSB"
-
 sass:
   style: compact
 

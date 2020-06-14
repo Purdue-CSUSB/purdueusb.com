@@ -1,0 +1,15 @@
+# Search for FontAwesome icons here (preferably solid and not round)
+# https://fontawesome.com/icons?d=gallery
+
+instagram: 
+  url: "instagram.com/purdueusb"
+  fa-icon: "instagram"
+facebook: 
+  url: "facebook.com/purdueusb"
+  fa-icon: "facebook-square"
+reddit: 
+  url: "reddit.com/u/purdueusb"
+  fa-icon: "reddit-alien"
+github: 
+  url: "github.com/Purdue-CSUSB"
+  fa-icon: "github"

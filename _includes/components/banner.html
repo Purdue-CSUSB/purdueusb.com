@@ -11,18 +11,13 @@
                 creating initiatives that will uphold our values.
             </h4>
             <div class="row justify-center@sm-below justify-between@sm-above align-items-end">
-                <a href="/resources">
-                    <button>Read Student Resources</button>
-                </a>
+                {% assign buttonText = "Read Student Resources" %}
+                <button href="/resources" title="{{buttonText}}" class="text-wrap-nowrap">{{buttonText}}</button>
                 <div class="flex-break none@sm-above my-1"></div>
                 <div class="align-items-end">
                     <p class="light font-semibold text-justify">Stay updated with our social media</p>
                     <div class="row justify-between@md-below justify-around@md-above w-auto">
-                        {% for social in site.social_links %}
-                        <a href="https://{{social[1]}}" target="_blank" class="">
-                            <img alt="{{social[0]}}" class="icon-4" src="/assets/images/logos/socialmedia/{{social[0]}}.svg"/>
-                        </a>
-                        {% endfor %}
+                        {% include components/social.html svg=true %}
                     </div>
                 </div>
             </div>

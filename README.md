@@ -66,6 +66,8 @@ Please follow the installation instructions found on the [Jekyll Website](https:
   - Minify & purge css assets. Jekyll built-in compact mode is currently broken.
 - Add search functionality to student resources.
 - Ensure proper site accessibility.
+  - Test with screen reader.
+  - Make use of ally.js or another library.
 - Add USB alumni to collapsible section.
 - Either create an about page (maybe about the history of the organization) or have it link to the landing instead.
 - Create 404 page doodle.

@@ -31,7 +31,7 @@
         <div class="card--initiative my-2">
             <div class="row align-content-start justify-between mb-0">
                 <div class="flex--nowrap grow-0@{{mobile-breakpoint-above}} w-full@{{mobile-breakpoint-below}}">
-                    <img src="/assets/images/initiatives/{{ initiative.image }}" class="icon-17@{{mobile-breakpoint-above}} rounded@{{mobile-breakpoint-above}} w-full img-cover">
+                    <img src="/assets/images/initiatives/{{ initiative.image }}" class="icon-17@{{mobile-breakpoint-above}} rounded@{{mobile-breakpoint-above}} w-full img-cover" aria-hidden="true">
                 </div>
                 <div class="flex-break none@{{mobile-breakpoint-above}}"></div>
                 <div class="column mx-2 pt-2">
@@ -57,15 +57,15 @@
                                 <small class="font-bold block">Members</small>
                             </div>
                             <div class="row">
-                                
+
                                 <div class="row align-content-between justify-around">
                                     {% assign row_limit = 11 %}
                                     {% assign initiative_members = initiative.members | sort:"value" %}
                                     {% for name in initiative_members %}
                                         {% assign member = site.data.members | where:"name", name | first %}
-                                        <div class="border-box-size mx-0 mt-1">
+                                        <div class="border-box mx-0 mt-1">
                                             <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} title="{{ member.name }}" class="no-decoration shadow-none" target="_blank">
-                                                <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-3 block" alt="{{ member.name }}">
+                                                <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-3 block" alt="{{ member.name }}" aria-hidden="true">
                                             </a>
                                         </div>
 
@@ -89,13 +89,5 @@
             {% endif %}
         </div>
         {%- endfor -%}
-        <!--<div class="card mx-5 my-3">
-            <img src="/assets/images/initiatives/{{ initiative.image }}" class="w-full">
-            <div class="mt-2 mb-1 mx-1">
-                <h4 class="initiative-title">{{ initiative.title | escape }}</h4>
-                <p class="initiative-description">{{ initiative.description }}</p>
-                <a class="initiative-button" href="{{ initiative.buttonLink }}">{{ initiative.buttonText }}</a>
-            </div>
-        </div>-->
     </div>
 </div>

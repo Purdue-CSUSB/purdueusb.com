@@ -1,10 +1,12 @@
-<div class="site-nav w-full none@lg-above">
-    <div class="row">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger clickable" />
-        <div class="trigger my-2 column align-content-end align-items-end justify-end margin-list">
-            {%- for link in site.data.header_links -%}
-            <a class="page-link my-1" href="{{ link.href }}"><h4 class="mb-0 text-right">{{link.text}}</h4></a>
-            {% endfor %}
-        </div>
-    </div>
+<div class="fab none@lg-above inline@md-below sticky@md-below bottom-10@md-below right-3@md-below">
+    <nav class="menu">
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+        <label class="menu-open-button" for="menu-open">
+          <span class="hamburger hamburger-1"></span>
+          <span class="hamburger hamburger-2"></span>
+          <span class="hamburger hamburger-3"></span>
+        </label>
+        
+        {%- include nav/header_links.html classes="pa-1 inline font-h4" color=dark fab=true -%}
+    </nav>
 </div>

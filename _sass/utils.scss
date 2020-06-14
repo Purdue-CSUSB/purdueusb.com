@@ -8,7 +8,7 @@
 .flex {
     display: flex;
     display: -webkit-flex;
-    @extend .row, .border-box-size;
+    @extend .row, .border-box;
 
     &--wrap {
         &-reverse {
@@ -26,7 +26,7 @@
 }
 
 .flex-container {
-    @extend .border-box-size;
+    @extend .border-box;
 }
 
 .flex-break {
@@ -44,7 +44,7 @@
     flex-wrap: wrap;
 }
 
-.border-box-size, .border-box-size * {
+.border-box, .border-box * {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -195,10 +195,6 @@
     height: 1px;
 }
 
-.sticky {
-    @include screen-variant() {
-        position: -webkit-sticky;
-        position: sticky;
-        top: spacing-group(5);
-    }
+.absolute {
+    position: absolute;
 }

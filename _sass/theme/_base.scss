@@ -88,7 +88,7 @@ body {
 h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, ul, ol, dl, figure,
 %vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
+    margin-bottom: spacing-group(1);
 }
 
 
@@ -119,7 +119,7 @@ figcaption {
  * Lists
  */
 ul, ol {
-    margin-left: $spacing-unit;
+    margin-left: spacing-group(1);
 }
 
 li {
@@ -348,7 +348,7 @@ pre {
  * Tables
  */
 table {
-    margin-bottom: $spacing-unit;
+    margin-bottom: spacing-group(1);
     width: 100%;
     text-align: $table-text-align;
     color: lighten($text-color, 18%);
@@ -380,34 +380,44 @@ table {
 
 /* Buttons */
 button, .button, input[type="submit"] {
-    min-height: 3.75rem;
-    @extend .bg-primary, .border-none, .clickable, .shadow-drop, .rounded, .no-decoration, .animate;
+    @extend .bg-primary, .border-none, .clickable, .shadow-drop, .rounded, .no-decoration, .animate, %button-focus;
     @include px($padding-button-x);
     @include py($padding-button-y);
 
     &--outline, &.--outline {
         &, &-light {
-            @extend .light, .bg-none, .border, .border-light, %button-focus;
+            @extend .light, .bg-none, .border, .border-light, %button-focus--outline;
         }
 
         &-dark {
-            @extend .bg-none, .border, .dark, .border-dark, %button-focus;
+            @extend .bg-none, .border, .dark, .border-dark, %button-focus--outline-dark;
         }
     }
 }
 
 %button-focus {
+    &--outline {
+        &:focus {
+            outline: none;  /* IMPORTANT Massive accessibility issue! Keep border! */
+            @extend .primary, .border-none, .border-primary, .bg-transparent;
+        }
+        &-dark {
+            &:focus {
+                outline: none;  /* IMPORTANT Massive accessibility issue! Keep border! */
+                @extend .primary, .bg-dark, .border-none, .border-transparent;
+            }
+        }
+    }
     &:focus {
         outline: none;  /* IMPORTANT Massive accessibility issue! Keep border! */
-        border: $border-width solid $focus-color !important;
-        color: $focus-color !important;
+        @extend .bg-grey, .primary, .border-none, .border-primary;
     }
 }
 
 %focus {
     &:focus {
         outline: none;  /* IMPORTANT Massive accessibility issue! Keep border! */
-        border: $border-width solid $focus-color !important;
+        @extend .focus-color, .border-thin, .border-focus-color;
         @extend .shadow-text;
     }
 }

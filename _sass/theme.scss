@@ -36,7 +36,7 @@ $primary-color:         #FFCA44 !default;
 $accent-blue:       #8AC9FE !default;
 $accent-red:        #FE646F !default;
 $accent-purple:     #BC78C2 !default;
-$accent-green:      #ADD080 !default;
+$accent-green:      #6AEBAD !default;
 $accent-orange:     #FEA465 !default;
 $accent-grey:       #6B6A6A !default;
 $accent-grey-light: #E5E5E5 !default;
@@ -56,8 +56,8 @@ $table-text-align:    left !default;
 $spacing-max-group:   10 !default;
 $spacing-base:        1.35914091423 !default;
 $spacing-unit:        1.9rem !default;
-$padding-button-x:    $spacing-unit / 2.5 !default;
-$padding-button-y:    $spacing-unit / 3.8 !default;
+$padding-button-x:    spacing-group(2) !default;
+$padding-button-y:    spacing-group(1) !default;
 
 
 // Width of the content area

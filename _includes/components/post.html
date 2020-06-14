@@ -5,10 +5,10 @@
         {% assign author_count = page.author | size | minus: 1 %}
         {% for author in page.author %}
             {% assign member = site.data.members | where:"name", author | first %}
-            <div class="border-box-size ml-1">
+            <div class="border-box ml-1">
                 {% if member != nil %}
                     <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} title="{{ member.name }}" class="no-decoration shadow-none" target="_blank">
-                        <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-3" alt="{{ member.name }}">
+                        <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-3" alt="{{ member.name }}" aria-hidden="true">
                         <span>{{ member.name }}</span>
                     </a>
                     {% if forloop.index <= author_count %}<span class="hint">, </span>{% endif %}
