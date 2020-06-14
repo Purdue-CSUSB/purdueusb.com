@@ -9,7 +9,7 @@
             <div class="overlay-container border-box shadow-drop">
                 <!-- Accessibility hack -->
                 <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} title="{{ member.name }}" class="no-decoration" target="_blank">
-                    <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-6@xs-above icon-10@md icon-14@lg icon-18@xl icon block" alt="{{ member.name }}" aria-hidden="true">
+                    <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-10@md-below icon-14@lg icon-18@xl icon block" alt="{{ member.name }}" aria-hidden="true">
                 </a> <!-- Accessibility hack -->
                 
                 <div class="overlay rounded--circle fade-in-out ">
