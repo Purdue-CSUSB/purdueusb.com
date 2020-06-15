@@ -9,7 +9,7 @@
         {%- if site.wiki.size > 0 -%}
             {%- for post in site.wiki -%}
                 {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-                <a href="{{ post.url | relative_url }}">
+                <a href="{{ post.url | relative_url }}" class="no-decoration">
                     <!--<span>{{ post.date | date: date_format }}</span>-->
                     {{ window.hash }}
                     <div {% if post.slug == hash %}id="active" {% endif %} class="py-1 rounded active--hover">
