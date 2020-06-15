@@ -4,14 +4,14 @@
         <span class="hint">Authored by</span>
         {% assign author_count = page.author | size %}
         {% for author in page.author %}
-            {% assign member = site.data.members | where:"name", author | first %}
+            {% assign member = site.data.members  | concat: site.data.alumni | where:"name", author | first %}
             <div class="inline-block {% if author_count > 2 %} mr-1 {% else %} mx-1 {% endif %}">
                 {% if forloop.index <= author_count and forloop.index > 1 and author_count > 2 %}<span class="hint text-pre">,  </span>{% endif %}
                 {% if forloop.index == author_count %}<span class="hint">and</span>{% endif %}
             </div>
             <div class="border-box member">
                 {% if member != nil %}
-                    <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" class="clickable no-decoration" {% endif %} title="{{ member.name }}" class="not-clickable" target="_blank">
+                    <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" class="clickable no-decoration" {% else %} class="not-clickable no-decoration" {% endif %} title="{{ member.name }}" target="_blank">
                         <img src="/assets/images/members/{{ member.name }}.jpg" class="rounded--circle icon-3" alt="{{ member.name }}" aria-hidden="true">
                         <span>{{ member.name }}</span>
                     </a>
