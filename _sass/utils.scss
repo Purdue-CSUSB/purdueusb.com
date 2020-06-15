@@ -75,11 +75,11 @@
     }
 }
 
-.animate {
-    -moz-transition: all $animation-fade-time ease-in-out 0s;
-    -webkit-transition: all $animation-fade-time ease-in-out 0s;
-    -ms-transition: all $animation-fade-time ease-in-out 0s;
-    transition: all $animation-fade-time ease-in-out 0s;
+.animate, * {
+    -moz-transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
+    -webkit-transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
+    -ms-transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
+    transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
 }
 
 .fade-in-out {
@@ -103,7 +103,8 @@
     @include clickable;
 }
 
-a.clickable {
+.not-clickable {
+    cursor: default;
     @extend .flat;
 }
 

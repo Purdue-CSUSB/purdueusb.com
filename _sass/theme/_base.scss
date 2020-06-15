@@ -245,11 +245,11 @@ textarea {
  * Links
  */
 a:not(.button) {
-    @extend .blue;
+    @extend .blue-dark;
     text-decoration: none;
 
     &:visited {
-        @extend .purple;
+        @extend .purple-dark;
     }
 
     &:hover {

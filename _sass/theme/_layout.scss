@@ -8,7 +8,7 @@
 }
 
 .site-nav {
-    transition: $animation-fade-time;
+    transition: $animation-delay;
 }
 
 .page-link {
@@ -58,7 +58,7 @@ $menu-items:4;
 $open-distance:105px;
 
 %ball{
-    @extend .bg-primary, .light, .text-center;
+    @extend .bg-primary, .light, .text-center, .animate;
     $height: 80px;
     width:  $height;
     height: $height;
@@ -66,16 +66,15 @@ $open-distance:105px;
     position: absolute;
     line-height: $height;
     transform:  translate3d(0,0,0);
-    transition: transform ease-out 200ms;
 }
 .menu-open, .menu-item{
     display:none;
 }
 .menu-item{
     @extend %ball;
-    @extend .rounded--more;
+    @extend .rounded--more, .shadow-drop;
     width: auto;
-    right: 0;
+    right: 15px;
 }
 .hamburger{
     @extend .block, .bg-dark, .icon-square-2, .px-2, .rounded;
@@ -95,7 +94,7 @@ $open-distance:105px;
 }
 
 // Menu is open
-.menu-open:checked+.menu-open-button{
+.menu-open:checked+.menu-open-button {
     .hamburger-top{
         transform: translate3d(0 ,$border-width, 0) rotate(45deg); 
     }
@@ -129,7 +128,7 @@ $open-distance:105px;
     z-index:2;
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
     transition-duration: 400ms;
-    transform:s cale(1.1,1.1) translate3d(0,0,0);
+    transform: scale(1.1,1.1) translate3d(0,0,0);
 }
 .menu-open-button:hover{
     transform: scale(1.2,1.2) translate3d(0,0,0);

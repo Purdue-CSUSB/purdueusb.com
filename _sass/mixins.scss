@@ -126,11 +126,11 @@
     @if $type == 'drop' or $type == 'drop-shadow' {
         -webkit-filter: drop-shadow(#{$size} #{$color});
         filter: drop-shadow(#{$size} #{$color});
-        transition: filter $animation-fade-time ease-in-out;
+        transition: filter $animation-delay ease-in-out;
     }
     @else  {
         #{$type}: #{$size} #{$color};
-        transition: #{$type} $animation-fade-time ease-in-out;
+        transition: #{$type} $animation-delay ease-in-out;
     }
 }
 
