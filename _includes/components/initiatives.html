@@ -44,7 +44,7 @@
                             <small class="uppercase grey">{{initiative.inactive}}</small>
                         {% endif %}
                     </div>
-                    <p class="mb-1 text-justify">{{ initiative.description }}</p>
+                    <p class="mb-2 text-justify">{{ initiative.description }}</p>
                 </div>
             </div>
             {% assign hasMembers = initiative.members != nil %}
@@ -63,9 +63,9 @@
                                     {% assign initiative_members = initiative.members | sort:"value" %}
                                     {% for name in initiative_members %}
                                         {% assign member = site.data.members | concat: site.data.alumni | where:"name", name | first %}
-                                        <div class="border-box mx-0 mt-1">
+                                        <div class="border-box mx-0 mt-1 member">
                                             <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} title="{{ member.name }}" class="no-decoration shadow-none" target="_blank">
-                                                <img src="/assets/images/members/{{ member.name }}.jpg" class="rounded--circle icon-3 block" alt="{{ member.name }}" aria-hidden="true">
+                                                <img src="/assets/images/members/{{ member.name }}" class="rounded--circle icon-3 block" alt="{{ member.name }}" aria-hidden="true">
                                             </a>
                                         </div>
 

@@ -15,8 +15,7 @@ Currently with automatic GH pages builds, information can be edited directly on 
 #### USB Members
 
 1. Edit either `_data/members.yml` or `_data/alumni.yml` with their name, title, class rank, and (optionally) an appropriate personal website.
-2. If necessary, add their **JPG** photograph in `assets/images/members`. Make sure the image file name matches their name in their yml entry, and that the images are square.
-  * All photos must be the same type. If you want to convert the site to .png, go for it.
+2. If necessary, add their photograph (**no file extension!**) in `assets/images/members`. Make sure the image file name matches their name in their yml entry, and that the images are square.
 
 #### Initiatives
 
