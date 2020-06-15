@@ -14,7 +14,7 @@ function onMissingMemberPhoto() {
     document.querySelectorAll(".member img").forEach(img => {
         img.onerror = function() {
             img.onerror = null;
-            img.src = '/assets/images/members/None.jpg';
+            img.src = '/assets/images/members/None';
         }
     });
 }
