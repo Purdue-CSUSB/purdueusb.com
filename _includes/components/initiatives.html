@@ -65,7 +65,7 @@
                                         {% assign member = site.data.members | where:"name", name | first %}
                                         <div class="border-box mx-0 mt-1">
                                             <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} title="{{ member.name }}" class="no-decoration shadow-none" target="_blank">
-                                                <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-3 block" alt="{{ member.name }}" aria-hidden="true">
+                                                <img src="/assets/images/members/{{ member.name }}.jpg" class="rounded--circle icon-3 block" alt="{{ member.name }}" aria-hidden="true">
                                             </a>
                                         </div>
 

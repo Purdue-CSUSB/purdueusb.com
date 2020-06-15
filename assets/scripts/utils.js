@@ -10,6 +10,15 @@ function finalizeButtons() {
     });
 }
 
+function onMissingMemberPhoto() {
+    document.querySelectorAll(".member img").forEach(img => {
+        img.onerror = function() {
+            img.onerror = null;
+            img.src = '/assets/images/members/None.jpg';
+        }
+    });
+}
+
 function closeFab() {
     let fab = document.querySelector('#menu-open');
     if (fab.checked) {

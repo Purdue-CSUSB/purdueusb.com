@@ -2,17 +2,19 @@
 <div class="row grow-0 mb-1 px-1 justify-between align-items-baseline">
     <div class="row align-items-baseline">
         <span class="hint">Authored by</span>
-        {% assign author_count = page.author | size | minus: 1 %}
+        {% assign author_count = page.author | size %}
         {% for author in page.author %}
             {% assign member = site.data.members | where:"name", author | first %}
-            <div class="border-box ml-1">
+            <div class="inline-block {% if author_count > 2 %} mr-1 {% else %} mx-1 {% endif %}">
+                {% if forloop.index <= author_count and forloop.index > 1 and author_count > 2 %}<span class="hint text-pre">,  </span>{% endif %}
+                {% if forloop.index == author_count %}<span class="hint">and</span>{% endif %}
+            </div>
+            <div class="border-box member">
                 {% if member != nil %}
-                    <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} title="{{ member.name }}" class="no-decoration shadow-none" target="_blank">
-                        <img src="/assets/images/members/{{ member.image }}" class="rounded--circle icon-3" alt="{{ member.name }}" aria-hidden="true">
+                    <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" class="clickable no-decoration" {% endif %} title="{{ member.name }}" class="not-clickable" target="_blank">
+                        <img src="/assets/images/members/{{ member.name }}.jpg" class="rounded--circle icon-3" alt="{{ member.name }}" aria-hidden="true">
                         <span>{{ member.name }}</span>
                     </a>
-                    {% if forloop.index <= author_count %}<span class="hint">, </span>{% endif %}
-                    {% if forloop.index == author_count %}<span class="hint mx-1">and</span>{% endif %}
                 {% else %}
                     <span>{{ author }}</span>
                 {% endif %}

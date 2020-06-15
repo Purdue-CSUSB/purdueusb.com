@@ -14,15 +14,16 @@ Currently with automatic GH pages builds, information can be edited directly on 
 
 #### USB Members
 
-1. If necessary, add their photograph in `assets/images/members`. Make sure the images are cropped to be square.
-2. Edit `_data/members.yml` with their name, image, title, class rank, and (optionally) an appropriate personal website (future: USB alumni status).
+1. Edit either `_data/members.yml` or `_data/alumni.yml` with their name, title, class rank, and (optionally) an appropriate personal website.
+2. If necessary, add their **JPG** photograph in `assets/images/members`. Make sure the image file name matches their name in their yml entry, and that the images are square.
+  * All photos must be the same type. If you want to convert the site to .png, go for it.
 
 #### Initiatives
 
 1. Add an initiative logo in `assets/images/initiative`. Please use a square resolution, or it will be cropped to fit automatically.
 2. Edit `_data/initiatives.yml` with `title`, `image`, `description`, (optional) `inactive`, (optional) `buttonText` and `buttonLink` and list of participating `members` names (as spelled in members.yml).
   - An inactive entry can contain either `true | string`. True will display "INACTIVE" and anything else will be displayed as-is.
-  - Former members can be designated `alumnus`.
+  - Former members can be designated alumnus by making their class a year.
 
 #### Objectives
 

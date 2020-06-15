@@ -1,0 +1,30 @@
+<div class="flex--wrap align-content-center justify-around">
+    {%- for member in include.members -%}
+    {% if member.name %}
+        {% assign image = member.image | default: nil %}
+        <div class="mx-4 my-3">
+            <div class="overlay-container border-box shadow-drop member">
+                <img src="/assets/images/members/{{ member.name }}.jpg" 
+                    class="rounded--circle icon-square-10@md-below icon-square-14@lg icon-square-18@xl block member-nopicture" 
+                    aria-hidden="true">
+                
+                <div class="overlay rounded--circle fade-in-out ">
+                    <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% else %} href="#" {% endif %} 
+                        title="{{ member.name }}" 
+                        class="no-decoration" 
+                        target="_blank">
+                        <div class="column shadow-text-dark h-full justify-center align-content-center align-items-center">
+                            <h4 class="light font-height-normal text-center mb-1 px-1 font-body@md-below">{{ member.name }}</h4>
+                            <div class="px-2">
+                                <p class="font-bold ma-0 light font-caption@md-below">{{ member.title }}</p>
+                                <small class="font-bold@lg-above font-semibold@md-below font-italic light">{{ member.class }}</small>
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    {%- endfor -%}
+</div>

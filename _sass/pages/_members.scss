@@ -27,3 +27,24 @@
         opacity: 1;
     }
 }
+
+.title-adjust {
+    margin-right: -50px;
+}
+
+.alumnus-open, .alumnus-item{
+    @extend .animate;
+    overflow-y: hidden;
+    //transform: scaleY(0);
+    max-height: 0;
+}
+
+.alumnus-open:checked + .alumnus-open-button {
+    transform: translate3d(0, 0, 0) rotate(180deg);
+}
+
+.alumnus-open:checked ~ .alumnus-item {
+    @extend .animate;
+    //transform: scaleY(1);
+    max-height: 1000rem;
+}
