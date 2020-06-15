@@ -11,10 +11,13 @@ function finalizeButtons() {
 }
 
 function onMissingMemberPhoto() {
+    let colors = ['none', 'red', 'blue', 'primary']
     document.querySelectorAll(".member img").forEach(img => {
         img.onerror = function() {
             img.onerror = null;
             img.src = '/assets/images/members/None';
+            img.parentNode.classList.add(`bg-${colors[colors.length * Math.random() | 0]}-light`);
+            img.style = "mix-blend-mode: multiply;"
         }
     });
 }
