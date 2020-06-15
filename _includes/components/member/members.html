@@ -12,13 +12,15 @@
             {% assign former_members = former_members | push: member %}
         {% endfor %}
     {% endfor %}
-    {% include components/members_list.html members=current_members %}
+    <div class="flex--wrap align-content-center justify-around">
+        {% include components/member/members_list.html members=current_members size="icon-square-10@md-below icon-square-14@lg icon-square-18@xl" spacing="mx-4 my-3" overlay=true %}
+    </div>
 
     {% if former_members | size %}
         <div class="row mt-4 justify-center align-items-center">
             <div class="column title-adjust">
                 <h3 class="mb-0">Former Members</h3>
-                <p class="mb-0">A best-effort record of {{former_members | size}} of our former members</p>
+                <p class="mb-0">A best-effort record of our {{former_members | size}} former members</p>
             </div>
             <input type="checkbox" href="#" class="alumnus-open w-0" name="alumnus-open" id="alumnus-open"/>
             <label class="alumnus-open-button clickable pa-2" for="alumnus-open" title="Show/hide USB Alumni">
@@ -26,7 +28,10 @@
             </label>
             <div class="flex-break mb-4"></div>
             <div class="alumnus-item">
-                {% include components/members_list.html members=former_members %}
+                <div class="flex--wrap align-content-center justify-around">
+                    {% include components/member/members_list.html members=former_members size="icon-square-10@md-below icon-square-14@lg icon-square-18@xl" spacing="mx-4 my-3" overlay=true %}
+                </div>
+                
                 <input type="checkbox" href="#" class="alumnus-open w-0" name="alumnus-open" id="alumnus-open"/>
                 <label class="alumnus-open-button clickable pa-2" for="alumnus-open" title="collapse USB Alumni">
                     <span class="menu-arrow-rotate"><b>Collapse</b> <i class="fas fa-chevron-up"></i></span>

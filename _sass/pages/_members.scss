@@ -2,6 +2,11 @@
     max-width: 1000px;
 }
 
+.member img {
+    object-fit: cover;
+    object-position: center;
+}
+
 .overlay {
     &-container {
         position: relative;

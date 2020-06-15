@@ -1,0 +1,34 @@
+{% assign member_obj = include.member %}
+{% if include.name %}
+    {% assign member_obj = site.data.members | concat: site.data.alumni | where:"name", member | first %}
+{% endif %}
+
+{% if member_obj.name %}
+    {% assign image = member_obj.image | default: nil %}
+    {% assign size = include.size | default: "icon-10" %}
+    <div class="{{include.spacing}}">
+        <div class="{% if include.overlay %} overlay-container {%endif%} border-box {% if include.shadow == false %} flat {% else %} shadow-drop {% endif %} rounded--circle overflow-hidden">
+            <div class="member">
+                <!-- Accessibility hack a tag -->
+                <a {% if member_obj.site != "" and member_obj.site != nil %} href="{{member_obj.site}}" {% else %} {% endif %} 
+                        title="{{ member_obj.name }}" class="no-decoration" target="_blank">
+                    <img src="/assets/images/members/{{ member_obj.name }}" class="{{include.size}} block" aria-hidden="true">
+                </a>
+            </div>
+            {% if include.overlay %}
+                <div class="overlay fade-in-out">
+                    <a {% if member_obj.site != "" and member_obj.site != nil %} href="{{member_obj.site}}" {% else %} {% endif %} 
+                        title="{{ member_obj.name }}" class="no-decoration" target="_blank">
+                        <div class="column shadow-text-dark h-full justify-center align-content-center align-items-center">
+                            <h4 class="light font-height-normal text-center mb-1 px-1 font-body@md-below">{{ member_obj.name }}</h4>
+                            <div class="px-2">
+                                <p class="font-bold ma-0 light font-caption@md-below">{{ member_obj.title }}</p>
+                                <small class="font-bold@lg-above font-semibold@md-below font-italic light">{{ member_obj.class }}</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}

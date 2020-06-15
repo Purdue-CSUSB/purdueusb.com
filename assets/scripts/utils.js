@@ -16,7 +16,10 @@ function onMissingMemberPhoto() {
         img.onerror = function() {
             img.onerror = null;
             img.src = '/assets/images/members/None';
-            img.parentNode.classList.add(`bg-${colors[colors.length * Math.random() | 0]}-light`);
+            var parent = img.parentNode;
+            if (!parent.className.includes("member"))
+                parent = parent.parentNode;
+            parent.classList.add(`bg-${colors[colors.length * Math.random() | 0]}-light`);
             img.style = "mix-blend-mode: multiply;"
         }
     });

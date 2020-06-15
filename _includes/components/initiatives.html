@@ -59,21 +59,8 @@
                             <div class="row">
 
                                 <div class="row align-content-between justify-around">
-                                    {% assign row_limit = 11 %}
                                     {% assign initiative_members = initiative.members | sort:"value" %}
-                                    {% for name in initiative_members %}
-                                        {% assign member = site.data.members | concat: site.data.alumni | where:"name", name | first %}
-                                        <div class="border-box mx-0 mt-1 member">
-                                            <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" {% endif %} title="{{ member.name }}" class="no-decoration shadow-none" target="_blank">
-                                                <img src="/assets/images/members/{{ member.name }}" class="rounded--circle icon-3 block" alt="{{ member.name }}" aria-hidden="true">
-                                            </a>
-                                        </div>
-
-                                        {% assign remainder = forloop.index | modulo: row_limit %}
-                                        {% if remainder == 0 %}
-                                            <div class="flex-break"></div>
-                                        {% endif %}
-                                    {% endfor %}
+                                    {% include components/member/members_list.html members=initiative_members name=true rowLimit=11 shadow=false size="icon-square-3" spacing="mt-1" overlay=false %}
                                 </div>
                             </div>
                         {% endif %}
