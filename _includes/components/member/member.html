@@ -4,7 +4,6 @@
 {% endif %}
 
 {% if member_obj.name %}
-    {% assign image = member_obj.image | default: nil %}
     {% assign size = include.size | default: "icon-10" %}
     <div class="{{include.spacing}}">
         <div class="{% if include.overlay %} overlay-container {%endif%} border-box {% if include.shadow == false %} flat {% else %} shadow-drop {% endif %} rounded--circle overflow-hidden">
@@ -12,7 +11,8 @@
                 <!-- Accessibility hack a tag -->
                 <a {% if member_obj.site != "" and member_obj.site != nil %} href="{{member_obj.site}}" {% else %} {% endif %} 
                         title="{{ member_obj.name }}" class="no-decoration" target="_blank">
-                    <img src="/assets/images/members/{{ member_obj.name }}" class="{{include.size}} block" aria-hidden="true">
+                    {% assign image = site.static_files | where: "basename", member_obj.name | first | default: "None" %}
+                        <img src="{{image.path}}" class="{{include.size}} block" aria-hidden="true">
                 </a>
             </div>
             {% if include.overlay %}
