@@ -9,6 +9,7 @@
         {%- if site.wiki.size > 0 -%}
             {%- for post in site.wiki -%}
                 {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+                <div class="divider--horizontal bg-grey-light"></div>
                 <a href="{{ post.url | relative_url }}" class="no-decoration">
                     <!--<span>{{ post.date | date: date_format }}</span>-->
                     {{ window.hash }}
