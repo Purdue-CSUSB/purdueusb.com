@@ -2,13 +2,6 @@
 .bg {
     &--angled {
         @include media-query($above: $screen-large-min) {
-            /*background-image: url("/assets/images/bg-angled.svg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;*/
             background: linear-gradient(to top right, $bg-angle-color 69%, transparent 0%) no-repeat top,
             linear-gradient(0deg, $bg-angle-color, $bg-angle-color) no-repeat bottom;
             background-size: 100% $bg-angle, 100% calc(100% - #{$bg-angle} + 2px);
