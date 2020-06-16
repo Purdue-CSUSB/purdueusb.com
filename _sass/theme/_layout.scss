@@ -54,42 +54,41 @@
 
 /* Credit: https://codepen.io/lbebber/pen/pvwZJp */
 // Sorry this is so ugly! Very WIP, animations aren't working
-$menu-items:4;
-$open-distance:105px;
+$menu-items: 4;
+$open-distance: 80px;
 
 %ball{
     @extend .bg-primary, .light, .text-center, .animate;
-    $height: 80px;
+    $height: 55px;
     width:  $height;
     height: $height;
-    margin-left: -40px;
+    margin-left: -20px;
     position: absolute;
     line-height: $height;
     transform:  translate3d(0,0,0);
 }
 .menu-open, .menu-item{
-    display:none;
+    display: none;
 }
 .menu-item{
-    @extend %ball;
-    @extend .rounded--more, .shadow-drop;
+    @extend %ball, .rounded--more, .shadow-drop;
     width: auto;
-    right: 15px;
+    right: 10px;
 }
 .hamburger{
-    @extend .block, .bg-dark, .icon-square-2, .px-2, .rounded;
+    @extend .block, .bg-dark, .icon-square-1, .px-1, .rounded;
     height: $border-width;
     transition: transform 200ms;
 
     $hamburger-spacing: spacing-group(0);
     &-top {
-        transform:  translate3d(0, -$hamburger-spacing, 0);
+        transform:  translate3d(0, -$border-width * 1.5, 0);
     }
     &-middle {
         transform:  translate3d(0, 0, 0);
     }
     &-bottom {
-        transform:  translate3d(0, $hamburger-spacing, 0);
+        transform:  translate3d(0, $border-width * 1.5, 0);
     }
 }
 
@@ -146,7 +145,7 @@ $open-distance:105px;
     @for $i from 1 through $menu-items{ 
         &:nth-child(#{$i+2}){
             transition-duration: 90ms+(100ms*$i);
-            transform: translate3d(0,-110px*$i,0);
+            transform: translate3d(0,-$open-distance * $i,0);
         }
     }
 }
