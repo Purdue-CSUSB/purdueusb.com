@@ -11,16 +11,15 @@
             -o-background-size: cover;*/
             background: linear-gradient(to top right, $bg-angle-color 69%, transparent 0%) no-repeat top,
             linear-gradient(0deg, $bg-angle-color, $bg-angle-color) no-repeat bottom;
-            $angle: 145rem;
-            background-size: 100% $angle, 100% calc(100% - #{$angle} + 2px);
+            background-size: 100% $bg-angle, 100% calc(100% - #{$bg-angle} + 2px);
         }
     }
     &--angled-mobile {
         @include media-query($below: $screen-medium) {
             background: linear-gradient(to bottom right, $bg-angle-color 50%, transparent 0%) no-repeat bottom,
             linear-gradient(30deg, $bg-angle-color, $bg-angle-color) no-repeat top;
-            background-size: 100% $bg-angle, 100% calc(100% - #{$bg-angle} + 2px);
-            @include p-bottom(spacing-group(5));
+            background-size: 100% $bg-angle-mobile, 100% calc(100% - #{$bg-angle-mobile} + 2px);
+            @include p-bottom(spacing-group(6));
         }
     }
 }
