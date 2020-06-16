@@ -11,7 +11,7 @@ function finalizeButtons() {
 }
 
 function onMissingMemberPhoto() {
-    let colors = ['none', 'red', 'blue', 'primary']
+    let colors = ['none', 'red', 'blue', 'primary'];
     document.querySelectorAll(".member img").forEach(img => {
         img.onerror = function() {
             img.onerror = null;
