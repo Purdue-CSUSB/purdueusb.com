@@ -10,8 +10,7 @@ html {
 
 body, h1, h2, h3, h4, h5, h6, p,
 blockquote, pre, hr, dl, dd, ol, ul, figure {
-    margin: 0;
-    padding: 0;
+    @extend .ma-0, .pa-0;
 }
 
 html, body {
@@ -46,39 +45,8 @@ body {
     margin-right: 0 !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
-}
-
-::selection {
-    @extend .bg-primary-light, .dark;
-}
-
-* {
-    scrollbar-width: thin;
-    /* "auto" or "thin"  */
-    scrollbar-color: $scrollbar-foreground $scrollbar-background;
-    /* scroll thumb & track */
-}
-
-::-webkit-scrollbar {
-    width: 0.5rem;
-}
-
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-track-piece {
-    background-color: $scrollbar-background;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: $scrollbar-foreground;
-}
-
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-thumb {
-    @extend .rounded;
-}
-
-::-webkit-resizer {
-    background: linear-gradient(-45deg, $accent-grey-light, $accent-grey-light 45%, white 45%, white);
+    max-height: 0 !important;
+    max-width: 0 !important;
 }
 
 
@@ -88,7 +56,7 @@ body {
 h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, ul, ol, dl, figure,
 %vertical-rhythm {
-    margin-bottom: spacing-group(1);
+    margin-bottom: $margin-bottom-default;
 }
 
 
@@ -119,7 +87,7 @@ figcaption {
  * Lists
  */
 ul, ol {
-    margin-left: spacing-group(1);
+    @extend .ml-2;
 }
 
 li {
@@ -134,7 +102,7 @@ li {
  */
 h1, h2, h3, .header, button, .button {
     @include font-header;
-    line-height: $base-line-height;
+    @extend .font--height-normal;
 }
 
 h1, h2, h3 {
@@ -152,6 +120,7 @@ a, a * {
 body, h2, p, blockquote, pre, li, ul,
 ol, dl, data, input, .medium {
     @extend .font-medium;
+    line-height: 1.2;
 }
 
 h4, h5, h6, body, p, a, blockquote, pre, textarea,
@@ -200,9 +169,9 @@ caption, .caption, small, small * {
     }
 }
 
-form textarea, form input, .input {
+form textarea, form input:not([type="submit"]), .input {
     border-style: solid;
-    @extend .pa-1, .rounded--slight, .border-thin, .border-grey-light, %input-focus;
+    @extend .pa-3, .rounded--slight, .border-thin, .border-grey-light, %input-focus;
 }
 
 .input {
@@ -245,15 +214,11 @@ textarea {
  * Links
  */
 a:not(.button) {
-    @extend .blue-dark;
+    @extend .blue-dark, .hover--underline;
     text-decoration: none;
 
     &:visited {
         @extend .purple-dark;
-    }
-
-    &:hover {
-        text-decoration: underline;
     }
 
     .social-media-list &:hover {
@@ -281,75 +246,17 @@ blockquote {
 }
 
 blockquote, blockquote p {
-    @extend .grey;
-    color: grey;
-    @extend .font-italic;
+    @extend .grey-dark, .font-italic;
 }
 
 
 
 /**
- * Code formatting
- */
-pre, code {
-    border: 1px solid $accent-grey-light;
-    border-radius: 3px;
-    @extend .bg-grey-light;
-}
-
-code {
-    // TODO check this
-    padding: 1px 5px;
-}
-
-pre {
-    padding: 8px 12px;
-    overflow-x: auto;
-
-    >code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
-}
-
-
-/**
- * Clearfix
- */
-%clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-
-
-/**
- * Icons
- */
-
-.svg-icon {
-    @extend .icon-0;
-    /*@include media-query($on-mobile) {
-        @extend .pa-1 // needs mixins for this
-    }*/
-    @extend .fill-grey-light;
-
-    &:hover {
-        @extend .fill-light;
-    }
-}
-
-
-/**
- * Tables
+ * Tables TODO this has not been styled - no use case yet
  */
 table {
-    margin-bottom: spacing-group(1);
-    width: 100%;
+    @extend .mb-3, .w-full;
     text-align: $table-text-align;
-    color: lighten($text-color, 18%);
     border-collapse: collapse;
     border: 1px solid $accent-grey-light;
 
@@ -378,7 +285,7 @@ table {
 
 /* Buttons */
 button, .button, input[type="submit"] {
-    @extend .bg-primary, .border-none, .clickable, .shadow-drop, .rounded, .no-decoration, .animate, %button-focus;
+    @extend .bg-primary, .border-none, .clickable, .shadow-drop, .rounded--more, .no-decoration, .animate, %button-focus;
     @include px($padding-button-x);
     @include py($padding-button-y);
 
@@ -397,18 +304,18 @@ button, .button, input[type="submit"] {
     &--outline {
         &:focus {
             outline: none;  /* IMPORTANT Massive accessibility issue! Keep border! */
-            @extend .primary, .border-none, .border-primary, .bg-transparent;
+            @extend .dark, .border-light, .bg-light;
         }
         &-dark {
             &:focus {
                 outline: none;  /* IMPORTANT Massive accessibility issue! Keep border! */
-                @extend .primary, .bg-dark, .border-none, .border-transparent;
+                @extend .light, .bg-dark, .border-dark;
             }
         }
     }
     &:focus {
         outline: none;  /* IMPORTANT Massive accessibility issue! Keep border! */
-        @extend .bg-grey, .primary, .border-none, .border-primary;
+        @extend .bg-dark, .primary, .border, .border-primary;
     }
 }
 
@@ -430,10 +337,69 @@ input[disabled], button[disabled] {
     border: none !important;
 } 
 
+input {
+    & + label {
+        .expand {
+            display: initial;
+        }
+        .collapse {
+            display: none;
+        }
+    }
+
+    &:checked + label{
+        .expand {
+            display: none;
+        }
+        .collapse {
+            display: initial;
+        }
+
+        &.menu-button-rotate, .menu-button-rotate {
+            transform: rotate(360deg);
+            &270 {
+                transform: rotate(270deg);
+            }
+            &180 {
+                transform: rotate(180deg);
+            }
+            &90 {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+
 
 .anchorjs-link {
     transition: all .25s linear;
 }
 *:hover > .anchorjs-link {
     margin-left: -1.125em !important;
+}
+
+
+/**
+ * Syntax highlighting styles
+ */
+
+.hljs {
+    @extend .bg-dark;
+}
+
+:not(pre) {
+    > code.hljs, > code {
+        @include pa(spacing-group(4/3));
+        @extend .rounded, .inline;
+    }
+ }
+
+pre {
+    @extend .rounded;
+
+    > code, > .hljs {
+        @extend .rounded;
+        @include pa(spacing-group(4));
+    }
 }

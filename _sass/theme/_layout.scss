@@ -1,5 +1,39 @@
 /* CSS for general site layout */
 
+::selection {
+    @extend .bg-primary-light, .dark;
+}
+
+/* Scrollbar Styles */
+* {
+    scrollbar-width: thin;
+    /* "auto" or "thin"  */
+    scrollbar-color: $scrollbar-foreground $scrollbar-background;
+    /* scroll thumb & track */
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+    background-color: $scrollbar-background;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $scrollbar-foreground;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+    @extend .rounded--more;
+}
+
+::-webkit-resizer {
+    background: linear-gradient(-45deg, $accent-grey-light, $accent-grey-light 45%, white 45%, white);
+}
+
 .site-header {
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -38,7 +72,6 @@
     @include screen-variant() {
         position: -webkit-sticky;
         position: sticky;
-        top: spacing-group(5);
     }
 }
 
@@ -58,7 +91,7 @@ $menu-items: 4;
 $open-distance: 80px;
 
 %ball{
-    @extend .bg-primary, .light, .text-center, .animate;
+    @extend .bg-accent, .light, .text-center, .animate;
     $height: 55px;
     width:  $height;
     height: $height;
@@ -76,11 +109,11 @@ $open-distance: 80px;
     right: 10px;
 }
 .hamburger{
-    @extend .block, .bg-dark, .icon-square-1, .px-1, .rounded;
+    @extend .block, .bg-dark, .icon-square-1, .px-3, .rounded--more;
     height: $border-width;
     transition: transform 200ms;
 
-    $hamburger-spacing: spacing-group(0);
+    $hamburger-spacing: spacing-group(2);
     &-top {
         transform:  translate3d(0, -$border-width * 1.5, 0);
     }
@@ -113,7 +146,7 @@ $open-distance: 80px;
 .menu-item{
     text-align: right;
     &:hover{
-        @extend .bg-primary-light, .shadow--center--soft;
+        @extend .shadow--center--soft;
     }
     @for $i from 1 through $menu-items{
         &:nth-child(#{$i + 2}){
@@ -147,5 +180,12 @@ $open-distance: 80px;
             transition-duration: 90ms+(100ms*$i);
             transform: translate3d(0,-$open-distance * $i,0);
         }
+    }
+}
+
+
+.section {
+    &-title {
+        @extend .py-10, .mb-0, .text-center;
     }
 }

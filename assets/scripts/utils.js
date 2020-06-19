@@ -12,12 +12,12 @@ function finalizeButtons() {
 
 function onMissingMemberPhoto() {
     let colors = ['none', 'red', 'blue', 'primary'];
-    document.querySelectorAll(".member img").forEach(img => {
+    document.querySelectorAll(".member-color img").forEach(img => {
         img.onerror = function() {
             img.onerror = null;
             img.src = '/assets/images/members/None';
             var parent = img.parentNode;
-            if (!parent.className.includes("member"))
+            if (!parent.className.includes("member-color"))
                 parent = parent.parentNode;
             parent.classList.add(`bg-${colors[colors.length * Math.random() | 0]}-light`);
             img.style = "mix-blend-mode: multiply;"
@@ -30,4 +30,10 @@ function closeFab() {
     if (fab.checked) {
         fab.checked = false;
     }
+}
+
+function highlightCode() {
+    document.querySelectorAll("*:not(pre) > code").forEach(element => {
+        hljs.highlightBlock(element);
+    });
 }

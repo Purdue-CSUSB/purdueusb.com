@@ -25,7 +25,8 @@ $font-sizes: (
     body:       1rem,
     caption:    1rem * 14 / 18,
 ) !default;
-$base-line-height:    1.5 !default;
+$line-height-base:    1.2 !default;
+$line-height-high:    1.5 !default;
 
 
 /* Colors */
@@ -53,11 +54,13 @@ $accent-color:          $accent-blue !default;
 
 /* Spacing & Alignment */
 $table-text-align:    left !default;
-$spacing-max-group:   10 !default;
+$spacing-max-group:   64 !default;
 $spacing-base:        1.35914091423 !default;
+$spacing-multiple:    0.25rem !default;
 $spacing-unit:        1.9rem !default;
-$padding-button-x:    spacing-group(2) !default;
-$padding-button-y:    spacing-group(1) !default;
+$margin-bottom-default: spacing-group(4) !default;
+$padding-button-x:    spacing-group(4) !default;
+$padding-button-y:    spacing-group(4) !default;
 
 
 // Width of the content area
@@ -83,7 +86,7 @@ $screen-xlarge-min: map-get(map-get($screens, "xl"), "min");
 
 /* Effects */
 $border-width: 4px !default;
-$border-radius: 10px !default;
+$border-radius: 6px !default;
 $border-radius-slight: 3px !default;
 $shadow-color-default: rgba(0, 0, 0, 0.25) !default;
 $shadow-color-dark: rgba(0, 0, 0, 0.95) !default;
@@ -91,7 +94,7 @@ $shadow-default: 4px 4px 4px !default;
 $shadow-dark: 4px 4px 4px !default;
 $shadow-nooffset: 0px 0px 4px !default;
 $shadow-nooffset-soft: 0px 0px 12px !default;
-$animation-delay: 250ms !default;
+$animation-delay: 200ms !default;
 $bg-angle-mobile: 2rem !default;
 $bg-angle: 145rem !default;
 $bg-angle-color: $primary-color !default;
@@ -104,4 +107,3 @@ $scrollbar-foreground: $accent-grey !default;
 @import "utils";
 @import "theme/base";
 @import "theme/layout";
-@import "theme/syntax-highlighting";

@@ -35,6 +35,12 @@ date_format: "%b %-d, %Y"
 sass:
   style: compact
 
+highlighter: none
+markdown: kramdown
+kramdown:
+   syntax_highlighter_opts:
+      disable: true
+
 plugins:
   - jekyll-seo-tag
   - jemoji

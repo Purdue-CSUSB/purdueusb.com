@@ -1,6 +1,11 @@
 .font {
-    &--height-normal {
-        line-height: 1;
+    &--height {
+        &-normal {
+            line-height: $line-height-base;
+        }
+        &-high {
+            line-height: $line-height-high;
+        }
     }
 }
 
@@ -52,16 +57,16 @@
 
 .margin-list > * {
     &:not(:last-child) {
-        @extend .mr-2;
+        @extend .mr-4;
     }
 
     &:not(:first-child) {
-        @extend .ml-2;
+        @extend .ml-4;
     }
 }
 
 .margin-list--wrap > * {
-    @extend .mx-2;
+    @extend .mx-4;
 }
 
 .no-decoration {
@@ -73,13 +78,23 @@
     &--underline:hover {
         text-decoration: underline;
     }
+    &--bold:hover {
+        @extend .font-bold;
+    }
 }
 
-.animate, * {
+.animate {
     -moz-transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
     -webkit-transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
     -ms-transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
     transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
+
+    &-off {
+        -moz-transition: none !important;
+        -webkit-transition: none !important;
+        -ms-transition: none !important;
+        transition: none !important;
+    }
 }
 
 .fade-in-out {
@@ -174,10 +189,7 @@
 }
 
 .card {
-    @extend .bg-light;
-    @extend .shadow-drop;
-    @extend .rounded;
-    @extend .overflow-hidden;
+    @extend .bg-light, .shadow-drop, .rounded--more, .overflow-hidden;
     transition: 0.3s;
 
     &:hover {
