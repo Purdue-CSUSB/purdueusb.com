@@ -48,3 +48,4 @@ plugins:
   - jekyll-seo-tag
   - jemoji
   - jekyll-purgecss
+#  - jekyll-target-blank
