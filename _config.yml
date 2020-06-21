@@ -41,6 +41,10 @@ kramdown:
    syntax_highlighter_opts:
       disable: true
 
+
+css_dir: "assets"
+
 plugins:
   - jekyll-seo-tag
   - jemoji
+  - jekyll-purgecss
