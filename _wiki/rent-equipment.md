@@ -6,9 +6,7 @@ date:   2020-03-04 17:00:00 -0400
 categories: campus
 ---
 
-There are a few different opportunities to rent equipment for both classwork and personal use.  The Department of Computer Science allows CS/DS students to rent various equipment at this link:
-
-[https://www.cs.purdue.edu/resources/facilities/lwsndevices.html](https://www.cs.purdue.edu/resources/facilities/lwsndevices.html)
+There are a few different opportunities to rent equipment for both classwork and personal use.  The Department of Computer Science allows CS/DS students to [rent various equipment online](https://www.cs.purdue.edu/resources/facilities/lwsndevices.html).
 
 The following devices are available to rent for 1 week at a time:
 
@@ -25,4 +23,4 @@ The following devices are available to rent for 1 week at a time:
 
 Additionally, Purdue Libraries has cameras, camcorders, tripods, and hard drives available to rent for 3 days.
 
-[https://www.lib.purdue.edu/services/equipment](https://www.lib.purdue.edu/services/equipment)
+To learn more, see the [Purdue Libraries Equipment](https://www.lib.purdue.edu/services/equipment) page.

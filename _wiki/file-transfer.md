@@ -17,7 +17,7 @@ Sometimes there comes a need where you need to transfer a files between your per
 
 On Windows open “Windows PowerShell.” On Mac or Linux, open your respective Terminal.
 
-![https://piazza.com/redirect/s3?bucket=uploads&prefix=attach%2Fk4xoekpg2qs2af%2Fj6jr6ij1sv162q%2Fk8gfyjjwujp5%2Fimage1.png](https://piazza.com/redirect/s3?bucket=uploads&prefix=attach%2Fk4xoekpg2qs2af%2Fj6jr6ij1sv162q%2Fk8gfyjjwujp5%2Fimage1.png)
+![Windows Powershell](https://piazza.com/redirect/s3?bucket=uploads&prefix=attach%2Fk4xoekpg2qs2af%2Fj6jr6ij1sv162q%2Fk8gfyjjwujp5%2Fimage1.png)
 
 ### Step 2
 
@@ -37,7 +37,7 @@ For example, if I wanted to transfer my hw2.c file to my current directory on my
 scp nalderto@data.cs.purdue.edu:~/cs240/hw2/hw2.c .
 ```
 
-![https://piazza.com/redirect/s3?bucket=uploads&prefix=attach%2Fk4xoekpg2qs2af%2Fj6jr6ij1sv162q%2Fk8gfz3k1fmvd%2Fimage2.png](https://piazza.com/redirect/s3?bucket=uploads&prefix=attach%2Fk4xoekpg2qs2af%2Fj6jr6ij1sv162q%2Fk8gfz3k1fmvd%2Fimage2.png)
+![Windows Powershell](https://piazza.com/redirect/s3?bucket=uploads&prefix=attach%2Fk4xoekpg2qs2af%2Fj6jr6ij1sv162q%2Fk8gfz3k1fmvd%2Fimage2.png)
 
 ### Step 3
 
@@ -55,7 +55,7 @@ scp hw2.c nalderto@data.cs.purdue.edu:~/cs240/hw2/
 
 If you are not comfortable with the command line, there are several graphical user interface programs that are available which provide the same functionality. In this tutorial we are covering FileZilla, as it is compatible with Windows, Mac, and Linux.
 
-You can download FileZilla here:[https://filezilla-project.org/download.php?show_all=1](https://filezilla-project.org/download.php?show_all=1)
+You can download FileZilla [here](https://filezilla-project.org/download.php?show_all=1).
 
 ### Step 2
 
@@ -69,4 +69,4 @@ Once the appropriate information is entered, click “Quickconnect”. A dialog 
 
 You should now be connected to data! Your data filesystem is on the right part of the screen, while your personal computer’s files are on the left. You can drag and drop the files between the machines as you wish!
 
-![https://piazza.com/redirect/s3?bucket=uploads&prefix=attach%2Fk4xoekpg2qs2af%2Fj6jr6ij1sv162q%2Fk8gfzjg5s2wl%2Fimage3.png](https://piazza.com/redirect/s3?bucket=uploads&prefix=attach%2Fk4xoekpg2qs2af%2Fj6jr6ij1sv162q%2Fk8gfzjg5s2wl%2Fimage3.png)
+![Filezilla example](https://piazza.com/redirect/s3?bucket=uploads&prefix=attach%2Fk4xoekpg2qs2af%2Fj6jr6ij1sv162q%2Fk8gfzjg5s2wl%2Fimage3.png)
