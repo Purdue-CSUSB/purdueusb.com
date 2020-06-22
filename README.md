@@ -12,6 +12,10 @@ Currently with automatic GH pages builds, information can be edited directly on 
 
 ### **Please take a moment to familiarize yourself with [YAML](https://learnxinyminutes.com/docs/yaml/) and [Markdown](https://learnxinyminutes.com/docs/markdown/) formats.**
 
+#### Images
+
+Please run `webp-convert` on any directories of images you add that are not in webp format.
+
 #### USB Members
 
 1. Edit either `_data/members.yml` or `_data/alumni.yml` with their name, title, class rank, and (optionally) an appropriate personal website.
