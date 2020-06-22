@@ -10,7 +10,7 @@ It can be tedious to type `ssh <username>@<machine>.cs.purdue.edu` over and over
 
 Here's a little shell function which shortens this command to just <username> with an optional argument of the machine you wish to connect to.
 
-## Installation
+### Installation
 Copy and paste the following code into your shell rc file. This may be `~/.bashrc` or `~/.zshrc`.
 
 ```shell
@@ -28,10 +28,10 @@ hankinsj () {
 ```
 My username is `hankinsj` and my default machine is `data` in this example.
 
-## Usage
+### Usage
 `$ <username>`
 You can include an optional argument which specifies the machine to connect to. Otherwise, it will connect to your chosen default machine.
 
-## Example
+### Example
 `$ hankinsj mc04`
 This will connect me automatically to `mc04.cs.purdue.edu`.
