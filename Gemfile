@@ -27,6 +27,6 @@ end
 gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
 
 gem 'jemoji'
-#gem 'jekyll-target-blank'
+gem 'jekyll-target-blank'
 gem 'jekyll-purgecss'
-#gem 'jekyll-minifier'
+gem 'jekyll-minifier'
