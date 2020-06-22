@@ -11,18 +11,26 @@ function finalizeButtons() {
 }
 
 function onMissingMemberPhoto() {
-    let colors = ['none', 'red', 'blue', 'primary'];
+    let default_image = '/assets/images/members/None';
     document.querySelectorAll(".member-color img").forEach(img => {
         img.onerror = function() {
             img.onerror = null;
-            img.src = '/assets/images/members/None';
-            var parent = img.parentNode;
-            if (!parent.className.includes("member-color"))
-                parent = parent.parentNode;
-            parent.classList.add(`bg-${colors[colors.length * Math.random() | 0]}-light`);
-            img.style = "mix-blend-mode: multiply;"
+            img.src = default_image;
+            colorImage(img);
+        }
+        if (img.src == window.location.origin + default_image) {
+            colorImage(img);
         }
     });
+}
+
+function colorImage(img) {
+    let colors = ['none', 'red', 'blue', 'primary'];
+    var parent = img.parentNode;
+    if (!parent.className.includes("member-color"))
+        parent = parent.parentNode;
+    parent.classList.add(`bg-${colors[colors.length * Math.random() | 0]}-light`);
+    img.style = "mix-blend-mode: multiply;"
 }
 
 function closeFab() {
