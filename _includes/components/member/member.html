@@ -12,7 +12,7 @@
             <a {% if member_obj.site != "" and member_obj.site != nil %} href="{{member_obj.site}}" {% else %} {% endif %} title="{{ member_obj.name }}" class="no-decoration w-full" target="_blank">
                 <div class="{% if include.overlay %} member-color rounded--circle {%endif%} row--nowrap align-items-center">
                     {% assign image = site.static_files | where: "basename", member_obj.name | first %}
-                    {% assign image_path = image.path | default: "/assets/images/members/None" %}
+                    {% assign image_path = image.path | default: "/assets/images/members/None.webp" %}
                     <img src="{{image_path}}" class="{{size}} rounded--circle" aria-hidden="true">
                     {% if include.show_name %}
                         <span class="ml-2">{{ member_obj.name }}</span>

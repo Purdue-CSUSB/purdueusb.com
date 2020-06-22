@@ -11,7 +11,7 @@ function finalizeButtons() {
 }
 
 function onMissingMemberPhoto() {
-    let default_image = '/assets/images/members/None';
+    let default_image = '/assets/images/members/None.webp';
     document.querySelectorAll(".member-color img").forEach(img => {
         img.onerror = function() {
             img.onerror = null;
