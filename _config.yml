@@ -53,5 +53,5 @@ plugins:
   - jekyll-seo-tag
   - jemoji
   - jekyll-purgecss
-  - jekyll-minifier
+#  - jekyll-minifier  # Taken care of by netlify
 #  - jekyll-target-blank
