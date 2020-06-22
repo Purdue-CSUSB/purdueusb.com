@@ -33,7 +33,7 @@ defaults:
 date_format: "%b %-d, %Y"
 
 sass:
-  style: compact
+  style: expanded
 
 highlighter: none
 markdown: kramdown
@@ -44,8 +44,14 @@ kramdown:
 
 css_dir: "assets"
 
+#ES6 in minifier
+jekyll-minifier:
+  uglifier_args:
+    harmony: true
+
 plugins:
   - jekyll-seo-tag
   - jemoji
   - jekyll-purgecss
+  - jekyll-minifier
 #  - jekyll-target-blank
