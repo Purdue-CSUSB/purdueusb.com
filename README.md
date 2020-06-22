@@ -19,7 +19,8 @@ Please run `webp-convert` on any directories of images you add that are not in w
 #### USB Members
 
 1. Edit either `_data/members.yml` or `_data/alumni.yml` with their name, title, class rank, and (optionally) an appropriate personal website.
-2. If necessary, add their photograph (**no file extension!**) in `assets/images/members`. Make sure the image file name matches their name in their yml entry, and that the images are square.
+2. If necessary, add their photograph in `assets/images/members`. Make sure the image file name matches their name in their yml entry, the images are square, and 300x300.
+  - We don't want to be serving images larger than they need to be.
 
 #### Initiatives
 
@@ -66,14 +67,19 @@ To disable lightbox on a markdown link, use the `no-lightbox` class like so:
 
 Please follow the installation instructions found on the [Jekyll Website](https://jekyllrb.com/docs/installation/). There are instructions for Windows, macOS, and Linux. Once Jekyll is properly installed, clone the repository. Then, run `bundle exec jekyll serve` in the repository's root directory.
 
-  - Linux users: you can use `run.sh [-h]` to run the jekyll build server continuously and open in browser (-h for headless) all at once.
+  - Linux users: you can use `run.sh [-hilpt]` to run the jekyll build server conveniently.
+    - -h) Run in headless mode (don't open your browser automatically).
+    - -i) Run `bundle install` at start.
+    - -l) Live server (may cause cache buildup and require browser restart).
+    - -p) Production mode
+    - -t) Show traceback
 
 ### TODO
 
 - ~~Make post sidebar in student resource page independent scrollable from the article content~~
 - Decrease load time.
-  - Compress all image assets.
-  - Minify & purge css assets. Jekyll built-in compact mode is currently broken.
+  - ~~Compress all image assets.~~
+  - ~~Minify & purge css assets. Jekyll built-in compact mode is currently broken.~~
 - Add search functionality to student resources.
 - Ensure proper site accessibility.
   - Test with screen reader.
@@ -87,7 +93,13 @@ Please follow the installation instructions found on the [Jekyll Website](https:
 
 ### Plugins
 
-Curious about plugins? Github only supports automatic builds with [certain plugins](https://help.github.com/en/github/working-with-github-pages/about-github-pages-and-jekyll). If you want to introduce another plugin, consider using CDN-delivered JS libraries, git-hooks to build automatically when you push, or Github Actions.
+Plugins currently in use:
+
+- Jekyll SEO tag
+- Jemoji (github emoji support)
+- Jekyll purgecss
+- ~~Jekyll target-blank (opens markdown links in new window)~~ *broken*
+- ~~Jekyll minifier~~ *Netlify handles minification*
 
 ### Config
 
@@ -115,7 +127,9 @@ Refers to snippets of code within the `_includes` directory that can be inserted
 - Components
   - `aboutus.html` &mdash; The mission and objectives of USB, and our members.
   - `initiatives.html` &mdash; Shows the cards for each initiative present in `_data/initiatives.yml`.
-  - `members.html` &mdash; A component showing members of USB as listed in `members.yml`. 
+  - `members/` &mdash; A group of components showing members of USB as listed in `members.yml`. 
+  - `post.html` &mdash; The layout of a wiki resource (excludes sidebar).
+  - `rating.html` &mdash; The layout of a wiki resource (excludes sidebar).
   - `social.html` &mdash; Creates a row of social media icons that are used in the footer. Clicking on these icons will take the user to our respective social media pages.
 
 - `head.html` &mdash; Code-block that defines the `<head></head>` in _default_ layout.
