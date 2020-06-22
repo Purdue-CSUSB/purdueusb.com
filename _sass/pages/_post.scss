@@ -1,64 +1,46 @@
-.side-by-side {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas: "head head head head"
-                         "side main main main" 
-                         "footer footer footer footer";
-    height: 100%;
-}
-
-.side-by-side aside {
-    grid-area: side;
-    padding: 10px;
-    padding-left: 15px;
-    background-color: rgb(250, 250, 250);
-    border-right-color: rgba(0, 0, 0, 0.07);
-    border-right-style: solid;
-    border-right-width: 1px;
-}
-
-.side-by-side .post {
-    grid-area: main;
-    padding: 10px;
-    max-width: 800px;
-}
-
-.post-list h4 {
-    margin-bottom: 0px;
-}
-
-.post-list a {
-    color: black;
-    font-weight: 500;
-}
-
-.post-list li {
-    margin-bottom: 10px;
-    padding-right: 5px;
-}
-
-.post-list p {
-    font-size: 14px;
-}
-
-@media (max-width: 915px) {
-    .side-by-side {
-        display: block;
+article {
+    p img {
+        margin: 0 auto;
+        @extend .block, .rounded;
     }
-    .side-by-side aside {
-        display: none;
+
+    p {
+        @extend .justify-around, .align-items-center;
+    }
+
+    section:nth-of-type(2) p {
+        @extend .font--height-high;
+    }
+
+    code {
+        @extend .text-left;
     }
 }
 
-#active {
-    background-color: rgba(138,201,254,0.3);
-    border-radius: 10px;
-    padding-left: 10px;
-    margin-left: -10px;
-    
+label[for="rate-good"], label[for="rate-bad"] {
+    @extend .grey;
 }
 
-.post-header {
-    margin-bottom: 10px;
+#rate-bad {
+    & + label[for="rate-bad"] {
+        &:hover {
+            @extend .red;
+        }
+    }
+
+    &:checked + label[for="rate-bad"] {
+        @extend .red;
+    }
+}
+
+#rate-good {
+    & + label[for="rate-good"] {
+        &:hover {
+            @extend .green-dark;
+        }
+    }
+
+    &:checked + label[for="rate-good"] {
+        @extend .green-dark;
+    }
 }

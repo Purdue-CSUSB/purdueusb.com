@@ -2,6 +2,14 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@import "minima";
+@import "theme";
 
-@import "style";
+@import "pages/about";
+@import "pages/initiatives";
+@import "pages/post";
+@import "pages/resources";
+@import "pages/members";
+@import "pages/contact";
+
+@import "/libs/highlight/styles/gruvbox-dark.css";
+@import "/libs/lightbox/lightbox.css";

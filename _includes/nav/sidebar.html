@@ -1,0 +1,26 @@
+<aside class="card py-4">
+    <div id="sidebar" class="px-6">
+        <h4 class="text-center">Student Resources</h4>
+        <p class="text-justify mb-4">Contains locally sourced, organic wisdom. Shared by the student body, curated by USB.</p>
+        <div class="none input row--nowrap mb-5 align-items-baseline">
+            <i class="fa fa-search icon-0 my-5 ml-5 grey" aria-hidden="true"></i>
+            <input type="text" name="Search" id="search" placeholder="Search..." class="border-none w-full pa-1">
+        </div>
+        {%- if site.wiki.size > 0 -%}
+            <div class="overflow-scroll h-64@md-below">
+                {%- for post in site.wiki -%}
+                    {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+                    <div class="divider--horizontal bg-grey-light"></div>
+                    <a href="{{ post.url | relative_url }}" class="no-decoration">
+                        <!--<span>{{ post.date | date: date_format }}</span>-->
+                        {{ window.hash }}
+                        <div {% if post.slug == hash %}id="active" {% endif %} class="py-4 px-2 rounded active--hover animate-fast">
+                            <p class="font-bold mb-0">{{ post.title | escape }}</p>
+                            <p class="dark font-normal mb-0">{{ post.description }}</p>
+                        </div>
+                    </a>
+                {%- endfor -%}
+            </div>
+        {%- endif -%}
+    </div>
+</aside>

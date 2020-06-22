@@ -1,0 +1,39 @@
+{% assign member_obj = include.member %}
+{% if include.name %}
+    {% assign name = member_obj | strip %}
+    {% assign member_obj = site.data.members | concat: site.data.alumni | where:"name", name | first %}
+{% endif %}
+{% assign hasSite = member_obj != nil and member_obj.site != nil %}
+
+{% if member_obj.name %}
+    {% assign size = include.size | default: "icon-10" %}
+    <div class="{{include.spacing}}">
+        <div class="{% if include.overlay %} overlay-container {%endif%} member border-box {% if include.shadow == false or not (hasSite) %} flat {% else %} shadow-drop {% endif %} overflow-hidden">
+            <!-- Accessibility hack <a> tag -->
+            <a {% if member_obj.site != "" and member_obj.site != nil %} href="{{member_obj.site}}" {% else %} {% endif %} title="{{ member_obj.name }}" class="no-decoration w-full" target="_blank">
+                <div class="{% if include.overlay %} member-color rounded--circle {%endif%} row--nowrap align-items-center">
+                    {% assign image = site.static_files | where: "basename", member_obj.name | first %}
+                    {% assign image_path = image.path | default: "/assets/images/members/None.webp" %}
+                    <img src="{{image_path}}" class="{{size}} rounded--circle" aria-hidden="true">
+                    {% if include.show_name %}
+                        <span class="ml-2">{{ member_obj.name }}</span>
+                    {% endif %}
+                </div>
+            </a>
+            {% if include.overlay %}
+                <div class="overlay fade-in-out rounded--circle">
+                    <a {% if member_obj.site != "" and member_obj.site != nil %} href="{{member_obj.site}}" class="clickable no-decoration" {% else %} class="not-clickable no-decoration" {% endif %} 
+                        title="{{ member_obj.name }}" class="no-decoration" target="_blank">
+                        <div class="column shadow-text-dark h-full w-full justify-center align-content-center align-items-center">
+                            <h4 class="light font-height-normal text-center my-2@md-above my-1@sm-below mx-4 font-body@md-below">{{ member_obj.name }}</h4>
+                            <div class="mx-2 my-2@md-above my-1@sm-below">
+                                <p class="font-bold ma-0 light font-caption@md-below">{{ member_obj.title }}</p>
+                                <small class="font-bold@lg-above font-semibold@md-below font-italic light">{{ member_obj.class }}</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}

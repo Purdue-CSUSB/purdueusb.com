@@ -1,0 +1,9 @@
+{% if include.fab == true %}
+    {% assign fab_menu_class = "nav-item" %}
+{% else %}
+    {% assign fab_menu_class = "" %}
+{% endif %}
+
+{%- for link in site.data.header_links -%}
+    <a class="page-link {{fab_menu_class}}" href="{{ link.href }}"><span class="text-nowrap {{include.classes}} {{color}}">{{link.text}}</span></a>
+{% endfor %}

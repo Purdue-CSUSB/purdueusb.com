@@ -1,0 +1,26 @@
+<div class="bg-dark py-14 px-8 w-full">
+    <div class="row justify-around align-items-top align-content-top">
+        <img src="/assets/images/group.png" alt="USB group picture" title="USB group picture" class="rounded w-half@xl-above">
+        <div class="flex-break none@xl-above mt-6"></div>
+        <div class="mx-3 none@lg-below"></div>
+        <div class="column">
+            <h1 class="light mb-2 font--height-normal">Hello from USB!</h1>
+            <h4 class="light font-normal text-justify mt-0 mb-6">
+                The Computer Science Undergraduate Board is dedicated to improving the student experience within Computer and Data Sciences at Purdue- whether by
+                managing CS193, hosting forums for student advocacy, or maintaining a database of undergrad-tailored resources, USB is continually
+             creating initiatives that will uphold our values.
+            </h4>
+            <div class="row justify-center@sm-below justify-between@sm-above align-items-end">
+                {% assign buttonText = "Read Student Resources" %}
+                <button href="/resources" target="_self" title="{{buttonText}}" class="text-wrap-nowrap">{{buttonText}}</button>
+                <div class="flex-break none@sm-above mt-3"></div>
+                <div class="align-items-end">
+                    <p class="light font-semibold text-justify mb-3">Stay updated with our social media</p>
+                    <div class="row justify-between@md-below justify-around@md-above w-auto">
+                        {% include components/social.html svg=true %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

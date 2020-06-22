@@ -1,0 +1,334 @@
+/*
+    Written as a substitute for Tailwind since GH pages is lame. 
+    Would be immediately deprecated by Tailwind with little changes to current css.
+*/
+
+/* Source: https://gist.github.com/mattfelten/5c6ad6edb70c6ab10f5c377c21eda2f2
+    Modified by Zach Bryant
+*/
+@mixin generate-subclass($map, $attribute, $prefix: '-', $base: 'base', $remove: null, $important: false) {
+	@each $key, $value in $map {
+		@if $remove {
+			$key: str-replace($key, $remove, '');
+        }
+        $class: '.#{$key}';
+        @if & { // not top level class
+            $class: '&#{if($key != $base, #{$prefix}#{$key}, '')}';
+        }
+        #{$class} {
+            @include generate-helper($value, $attribute, $prefix, $base, $remove, $important);
+        }
+	}
+}
+
+// Helper for generating screen-size variants of each sub-class
+@mixin generate-helper($value, $attribute, $prefix, $base, $remove, $important) {
+    @if type-of($value) == 'map' {
+        @include generate-subclass($value, $attribute, $prefix, $base, $remove, $important);
+    }
+    @else if type-of($attribute) == 'list' {
+        // A group of attributes to set to the same value
+        @include screen-variant() {
+            @each $attr in $attribute {
+                @include generate-important-helper($value, $attr, $important)
+            }
+        }
+    }
+    @else {
+        @include screen-variant() {
+            @include generate-important-helper($value, $attribute, $important)
+        }
+    }
+}
+
+// Helper generates important styles
+@mixin generate-important-helper($value, $attribute, $important) {
+    #{$attribute}: $value#{if($important, ' !important', '')};
+}
+
+// Create a map of spacing values for a range
+@function range-space-map($start, $end) {
+    $map: ();
+    @for $index from $start through $end {
+        $map: map-merge($map, ($index: spacing-group($index)));
+    }
+    @return $map;
+}
+
+$spacings: range-space-map(0, $spacing-max-group);
+$spacings: map-merge($spacings, (auto: auto));
+
+
+$colors: (
+    transparent: transparent,
+    none:       unset,
+    focus-color:$focus-color,
+    hint:       $text-color-hint,
+    dark:       $text-color,
+    light:      $text-color-light,
+    primary:    $primary-color,
+    accent:     $accent-color,
+    blue:       $accent-blue,
+    red:        $accent-red,
+    purple:     $accent-purple,
+    green:      $accent-green,
+    orange:     $accent-orange,
+    grey: (
+        base:   $accent-grey,
+        light:  $accent-grey-light,
+    ),
+) !default;
+@each $color, $value in $colors {
+    @if type-of($value) != 'map' {
+        $value: (base: $value);
+    }
+    $base: map-get($value, "base");
+    @if type-of($base) == "color" {
+        @if not map-has-key($value, "light") {
+            $value: map-merge($value, (light: tint($base, $percentage-lighten)))
+        }
+        @if not map-has-key($value, "dark") {
+            $value: map-merge($value, (dark: shade($base, $percentage-darken)))
+        }
+    }
+
+    $colors: map-merge($colors, ($color: $value));
+}
+
+@include generate-subclass($colors, 'color');
+
+$displays: (
+    block:      block,
+    grid:       grid,
+    none:       none,
+    flex:       flex,
+    contents:   contents,
+    inherit:    inherit,
+    inline: (
+        base:   inline,
+        flex:   inline-flex,
+        block:  inline-block,
+        grid:   inline-grid,
+    ),
+);
+@include generate-subclass($displays, 'display', $important: true);
+
+$flex-directions: ();
+@each $direction in ("row", "column") {
+    $map: (base: #{$direction}, reverse: #{$direction}-reverse);
+    $flex-directions: map-merge($flex-directions, ($direction: $map));
+}
+@include generate-subclass($flex-directions, 'flex-direction');
+
+$flex-wraps: ();
+@each $direction in ("row", "column") {
+    $wraps: (wrap: wrap, nowrap: nowrap);
+    $map: (base: $wraps, reverse: $wraps);
+    $flex-wraps: map-merge($flex-wraps, ($direction: $map));
+}
+@include generate-subclass($flex-wraps, ('flex-wrap', '-webkit-flex-wrap'), $prefix: '--', $important: true);
+
+.overflow {
+    $overflows: (
+        visible: visible,
+        scroll: scroll,
+        hidden: hidden,
+    );
+    @include generate-subclass($overflows, 'overflow');
+}
+
+
+/* purgecss start ignore */
+.bg {
+    @include generate-subclass($colors, 'background-color');
+}
+/* purgecss end ignore */
+
+.fill {
+    @include generate-subclass($colors, 'fill');
+}
+
+.justify {
+    $map: (
+        start:  flex-start,
+        center: center,
+        end:    flex-end,
+        around: space-around,
+        between:space-between
+    );
+    @include generate-subclass($map, 'justify-content')
+}
+
+.align- {
+    &content {
+        $map: (
+            start:      flex-start,
+            center:     center,
+            end:        flex-end,
+            around:     space-around,
+            between:    space-between,
+            baseline:   baseline,
+            stretch:    stretch
+        );
+        @include generate-subclass($map, 'align-content');
+    }
+    &items {
+        $map: (
+            start:      flex-start,
+            center:     center,
+            end:        flex-end,
+            baseline:   baseline
+        );
+        @include generate-subclass($map, 'align-items');
+    }
+}
+
+.text {
+    $map: (
+        left: left,
+        right: right,
+        center: center,
+        justify: justify
+    );
+    @include generate-subclass($map, 'text-align');
+
+    $map: (
+        nowrap:     nowrap,
+        pre:        pre,
+        pre-line:   pre-line,
+        pre-wrap:   pre-wrap,
+    );
+    @include generate-subclass($map, 'white-space');
+}
+
+$font-weights: (
+    normal:     400,
+    medium:     500,
+    semibold:   600,
+    bold:       700
+) !default;
+$font-styles: (
+    normal: normal,
+    italic: italic
+) !default;
+.font {
+    @include generate-subclass($font-sizes, 'font-size', $prefix: '-');
+    @include generate-subclass($font-weights, 'font-weight');
+    @include generate-subclass($font-styles, 'font-style', $prefix: '-');
+}
+
+
+$roundings: (
+    none:   0,
+    less:   $border-radius-slight,
+    base:   $border-radius,
+    more:   $border-radius-more,
+    circle: 100%
+);
+.rounded {
+    @include generate-subclass($roundings, ('border-radius', '-webkit-border-radius'), $prefix: '--');
+}
+
+$borders: (
+    none:   0px,
+    base:   $border-width,
+    thin:   $border-width / 2,
+    thick:  $border-width * 2,
+);
+.border {
+    @include generate-subclass($borders, 'border-width', $prefix: '-');
+    @include generate-subclass($colors, 'border-color');
+    & {
+        @extend .border;
+        border-style: solid;
+    }
+}
+
+
+/* Percentage sizing class generation */
+$dimension-sizing-groups: 2, 3, 4, 5, 6, 10, 20;
+$percentages: (
+    half: 50%,
+    full: 100%,
+    auto: auto,
+);
+@each $denominator in $dimension-sizing-groups {
+    @for $numerator from 1 to $denominator {
+        $size: percentage($numerator / $denominator);
+        $key: "#{$numerator}\\/#{$denominator}";
+        $percentages: map-merge($percentages, ($key: $size));
+    }
+}
+
+$spacing-types:         (margin, padding);
+$spacing-values:        ($spacings, $percentages);
+$spacing-directions:    (top: "-top", bottom: "-bottom", left: "-left", right: "-right", x: ("-left", "-right"), y: ("-top", "-bottom"), a: ("-left", "-right", "-top", "-bottom", ""));
+@each $type in $spacing-types {
+    $t: str-slice($type, 1, 1);
+    @each $direction, $attrs in $spacing-directions {
+        $d: str-slice($direction, 1, 1);
+        $prefix: $t + $d;
+        @if type-of($attrs) == 'list' {
+            $list: [];
+            @each $a in $attrs {
+                $list: append($list, $type + $a);
+            }
+            $attrs: $list;
+        } @else {
+            $attrs: $type + $attrs;
+        }
+        .#{$prefix} {
+            @each $values in $spacing-values {
+                @include generate-subclass($values, $attrs);
+            }
+        }
+    }
+}
+
+
+// Width/Height percentage classes
+@each $property in ("height", "width") {
+    .#{str-slice($property, 1, 1)} {
+        @include generate-subclass($percentages, $property);
+        @include generate-subclass($spacings, ($property, 'min-#{$property}', 'max-#{$property}'));
+    }
+    
+}
+
+
+/* Flex Shrink/Grow class generation */
+$max-grow-shrink-factor:  3;
+$grow-shrink-factors: (0:0);
+@for $factor from 0 through $max-grow-shrink-factor {
+    $grow-shrink-factors: map-merge($grow-shrink-factors, ($factor: $factor));
+}
+@each $property in ("grow", "shrink") {
+    .#{$property} {
+        @include generate-subclass($grow-shrink-factors, 'flex-#{$property}', $important: true);
+    }
+}
+
+
+/* Icon Sizing */
+$max-icon-multiple: 21;
+.icon {
+    $map: (
+        0: 1.111rem
+    );
+    @for $factor from 1 through $max-icon-multiple {
+        $ratio: $factor * 0.75rem;
+        $map: map-merge($map, ($factor: $ratio));
+    }
+
+    @include generate-subclass($map, ('width', 'max-width', 'min-width', 'max-height'));
+    &-square {
+        @include generate-subclass($map, ('width', 'max-width', 'min-width', 'height'));
+    }
+}
+
+
+/* Classes to space away from edges */
+@each $position in (top, bottom, left, right) {
+    $map: ($position: $spacings);
+    @include generate-subclass($map, $position);
+}

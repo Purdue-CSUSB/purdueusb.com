@@ -1,89 +1,87 @@
 - name:  Lauren Lum
-  image: Lauren.jpg
   title: President
   class: Senior
+  site: https://www.linkedin.com/in/lumlauren/
 
 - name: Arianna Smith
-  image: Arianna.jpg
   title: Vice President
   class: Junior
+  site: https://www.linkedin.com/in/arianna-smith-32229816a/
 
 - name: Cindy Ding
-  image: Cindy.jpg
   title: Treasurer
   class: Junior
+  site: https://www.linkedin.com/in/cindydhy/
 
 - name: Neerali Shah
-  image: Neerali.jpg
   title: Secretary
   class: Sophomore
+  site: https://www.linkedin.com/in/neerali-shah/
 
 - name: Albert Zhong
-  image: Albert.jpg
   class: Senior
+  site: https://www.linkedin.com/in/albert-zhong-695961149/
 
 - name: CJ Enright
-  image: CJ.jpg
   class: Senior
+  site: https://www.linkedin.com/in/cjenright/
 
 - name: Sagar Nattuvetty
-  image: Sagar.jpg
   class: Senior
+  site: 
 
-- name: Sera Savas
-  image: Sera.jpg
+- name: Sera Savaş
   class: Senior
+  site: https://www.linkedin.com/in/sera-savas-179968148/
 
 - name: Christopher Lehman
-  image: Christopher.jpg
   class: Junior
+  site: https://www.linkedin.com/in/christopher-lehman/
 
 - name: Noah Alderton
-  image: Noah.jpg
   class: Senior
+  site: https://www.linkedin.com/in/noahalderton/
 
 - name: Pallav Agarwal
-  image: Pallav.jpg
   class: Junior
+  site: https://www.linkedin.com/in/pallav-agarwal/
 
 - name: Pinaki Mohanty
-  image: Pinaki.jpg
   class: Senior
+  site: https://www.linkedin.com/in/pinakim98/
 
 - name: Riley McKeever
-  image: Riley.jpg
   class: Junior
+  site: 
 
 - name: Sarah Thomas
-  image: Sarah.jpg
   class: Junior
+  site: 
 
 - name: Sweta Saravanan
-  image: Sweta.jpg
   class: Sophomore
+  site: https://www.linkedin.com/in/sweta-saravanan-aa3937191/
 
 - name: Simran Kadadi
-  image: Simran.jpg
   class: Sophomore
+  site: 
 
 - name: Shashank Kumar
-  image: None.jpg
   class: Sophomore
+  site: 
 
 - name: Caleb Ahn
-  image: Caleb.jpg
   class: Sophomore
+  site: 
 
 - name: Arya Sharma
-  image: Arya.jpg
   class: Sophomore
+  site: 
 
 - name: Anisha Bhat
-  image: None.jpg
   class: Sophomore
+  site: 
 
 - name: Sean Flannery
   title: GSB Honorary Member
-  image: Sean.jpg
-
-
+  site: https://www.linkedin.com/in/sflanner/

@@ -1,196 +1,49 @@
-.about-title {
-    font-size: 40px;
-    padding-top: 10vh;
-    text-align: center;
-    background-color: $usb-gray;
-    height: 20vh;
-    color: white;
-    font-weight: 700;
-}
-
-.aboutus h1 {
-    font-weight: bolder;
-}
-
-
-.banner {
-    background-color: $usb-gray;
-    width: 100%;
-    padding-bottom: 5vh;
-    justify-content: center;
-    height: 70vh;
-}
-
-.home {
-    flex: 1;
-}
-
-.row {
-    display: flex;
-  }
-  
-.column {
-    flex: 50%;
-}
-
-.banner-text {
-    color:white;
-    padding-top: 30px;
-    padding-left: 10px;
-    padding-right: 20px;
-    margin-top: 6vh;
-    max-width: 400px;
-}
-
-.banner-text h5 {
-    font-size: medium;
-}
-
-.banner-image {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    margin-top: 15vh;
-    margin-right: 3vh;
-    margin-left: 3vh;
-    /*padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 20px;
-    padding-bottom: 10px;*/
-    max-width: 1000px;
-}
-
-.banner button{
-    background-color: $usb-yellow;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 1em;
-    padding: 10px;
-}
-
-#triangle {
-    position: absolute;
-    left: 45vw;
-    width: 0;
-    height: 0;
-    border-bottom: 470px solid $usb-yellow;
-    border-right: 150px solid transparent;
-    z-index: 1;
-}
-
-#rectangle {
-    position: absolute;
-    background-color: $usb-yellow;
-    height: 470px;
-    width: 45vw;
-    z-index: 2;
-
-    h2 {
-        font-weight: bold;
-        padding-top: 1vh;
-        margin-right: 40px;
-        text-align: center;
+/* CSS for /aboutus */
+.bg {
+    &--angled {
+        @include media-query($above: $screen-large-min) {
+            background: linear-gradient(to top right, $bg-angle-color 69%, transparent 0%) no-repeat top,
+            linear-gradient(0deg, $bg-angle-color, $bg-angle-color) no-repeat bottom;
+            background-size: 100% $bg-angle, 100% calc(100% - #{$bg-angle} + 2px);
+        }
     }
-
-    p {
-        font-size: 20px;
+    &--angled-mobile {
+        @include media-query($below: $screen-medium) {
+            background: linear-gradient(to bottom right, $bg-angle-color 50%, transparent 0%) no-repeat bottom,
+            linear-gradient(30deg, $bg-angle-color, $bg-angle-color) no-repeat top;
+            background-size: 100% $bg-angle-mobile, 100% calc(100% - #{$bg-angle-mobile} + 2px);
+            @include p-bottom(spacing-group(10));
+            @include m-bottom(spacing-group(6));
+        }
     }
-}
-
-#rectangle-text {
-    position: absolute;
-    max-width: 500px;
-    right:0;
-    padding-left: 20px;
-    padding-top: 100px;
-}
-
-#mission-container {
-    width:60vw; 
-    height: 250px; 
-    min-width: 600px;
-}
-
-#objectives {
-    padding-top: 3vh;
-    width: 35vw;
-    display: flex;
-    flex-direction: column;
-}
-
-#objectives h2 {
-    font-weight: bold;
-    flex-grow: 1;
-}
-
-#objectiveParts {
-    display: flex;
-    flex-direction: column;
 }
 
 .objective {
-    display: flex;
-    flex-direction: row;
-    max-width: 500px;
-    min-width: 200px;
-    padding-right: 20px;
-}
-
-.objective-text {
-    display: flex;
-    flex-direction: column;
-    padding-left: 15px;
-
-    h3 {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        font-weight: bold;
+    @include media-query($below: $screen-medium) {
+        max-width: 100%;
     }
 
-    p {
-        margin-bottom: 5vh;
+    @include media-query($above: $screen-large) {
+        max-width: 45%;
     }
 }
 
-@media (max-width: 915px) {
-    #triangle {
-        display: none;
+.section- {
+    $mission-width: 45%;
+    $objectives-width: 45%;
+    &mission {
+        width: $mission-width;
+        max-width: $mission-width;
     }
-    #rectangle {
-        width: auto;
-        height: auto;
-        position: relative;
-        display: block;
-        z-index: 0;
+    &objectives {
+        width: $objectives-width;
+        max-width: $objectives-width;
     }
-    #rectangle-text {
-        width: auto;
-        max-width: none;
-        position: relative;
-        display: block;
-        padding-top: 10px;
-        padding-right: 10px;
-        padding-bottom: 10px;
-
+    &objectives, &mission {
+        @include media-query($below: $screen-medium) {
+            width: 100%;
+            max-width: 100%;
+        }
     }
-    #rectangle h1 {
-        text-align: left;
-        margin: auto;
-        padding-left: 0px;
-    }
-    #rectangle p {
-        padding-left: 0px;
-    }
-    #mission-container {
-        display: none;
-    }
-    .objective {
-        max-width: none;
-    }
-    #objectives {
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+    
 }

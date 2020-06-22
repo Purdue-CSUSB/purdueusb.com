@@ -4,41 +4,54 @@ author:
   email: usb@cs.purdue.edu
 description: The Computer Science Undergraduate Student Board (USB) at Purdue University is the liaison between undergraduate CS/DS students and the CS department.
 show_excerpts: false # set to true to show excerpts on the homepage
+include: ["_pages"]
 
-# Minima date format
-# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
-minima:
-  date_format: "%b %-d, %Y"
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+  wiki:
+    output: true
+    permalink: /resources/:title
 
-  # generate social links in footer
-  social_links:
-    # twitter: jekyllrb
-    github:  Purdue-CSUSB
-    # devto: jekyll
-    # dribbble: jekyll
-    facebook: purdueusb
-    # flickr:   jekyll
-    instagram: purdueusb
-    # linkedin: jekyll
-    # pinterest: jekyll
-    # youtube: jekyll
-    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
-    # youtube_channel_name: CloudCannon
-    # telegram: jekyll
-    # googleplus: +jekyll
-    # microdotblog: jekyll
-    # keybase: jekyll
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "wiki"
+    values:
+      layout: "wiki"
 
-    # Mastodon instances
-    # mastodon:
-    # - username: jekyll
-    #   instance: example.com
-    # - username: jekyll2
-    #   instance: example.com
+# Date Format
+# refer to https://shopify.github.io/liquid/filters/date/ to customize this
+date_format: "%b %-d, %Y"
 
-    # GitLab instances
-    # gitlab:
-    # - username: jekyll
-    #   instance: example.com
-    # - username: jekyll2
-    #   instance: example.com
+sass:
+  style: expanded
+
+highlighter: none
+markdown: kramdown
+kramdown:
+   syntax_highlighter_opts:
+      disable: true
+
+
+css_dir: "assets"
+
+#ES6 in minifier
+jekyll-minifier:
+  uglifier_args:
+    harmony: true
+
+plugins:
+  - jekyll-seo-tag
+  - jemoji
+  - jekyll-purgecss
+  - jekyll-minifier
+#  - jekyll-target-blank

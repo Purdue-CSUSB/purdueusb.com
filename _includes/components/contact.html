@@ -1,0 +1,38 @@
+<h2 class="mb-5 justify">What's on your mind?</h2>
+<p class="mb-2">You can also send us an email at <a href="mailto:usb&commat;cs&period;purdue&period;edu">usb&commat;cs&period;purdue&period;edu</a></p>
+<p class="mb-5">
+    <small class="uppercase font-bold">Note:</small> 
+    To report concerns in an official capacity, please go to the 
+    <a href="https://my.cs.purdue.edu/undergraduate/concern">CS Concern Form</a>.
+</p>
+<form id="fs-frm" name="simple-contact-form" class="column mt-3" action="https://formspree.io/usb@cs.purdue.edu" accept-charset="utf-8" method="post">
+    <fieldset id="fs-frm-inputs">
+        <div id="contactForm">
+            <div class="row grow-0 justify-between@md-above justify-around@sm-below mb-3">
+                <div class="column">
+                    <label for="name" class="required">Your Name<span>*</span></label>
+                    <input type="text" name="Name" id="name" placeholder="Purdue Pete" required>
+                </div>
+                <div class="mx-5 none@md-below"></div>
+                <div class="flex-break mb-3 none@lg-above"></div>
+                <div class="column">
+                    <label for="email" class="required">Email Address<span>*</span></label>
+                    <input type="email" name="Email" id="email" placeholder="pete@purdue.edu" required>
+                </div>
+            </div>
+
+            <div class="column grow-0 justify-center mb-3">
+                <label for="subject" class="required">Subject<span>*</span></label>
+                <input type="text" name="Subject" id="subject" placeholder="What's the gist?" required autocomplete="off">
+            </div>
+
+            <div class="column grow-0 justify-center mb-3">
+                <label for="message" class="required">Message<span>*</span></label>
+                <textarea rows="5" name="Message" id="message" placeholder="Questions, comments, concerns, suggestions &mdash; put 'em here!"
+                required autocomplete="off"></textarea>
+            </div>
+    </fieldset>
+    <div class="row justify-center">
+        <input id="submitButton" type="submit" value="Send" class="button--outline-dark w-full">
+    </div>
+</form>

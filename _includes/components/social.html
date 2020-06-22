@@ -1,0 +1,23 @@
+{% if include.color == nil %}
+    {% assign include.color = "dark" %}
+{% endif %}
+
+{% if include.svg == nil %}
+    {% assign include.svg = false %}
+{% endif %}
+
+{%- for social in site.data.social_links -%}
+    {% assign social_url = social[1].url %}
+    {% assign social-brand = social[0] %}
+    {% assign social-fa-icon = social[1].fa-icon %}
+    {% if social-fa-icon == nil %}
+        {% assign social-fa-icon = social-brand %}
+    {% endif %}
+    <a href="https://{{ social_url | escape}}" title="{{ social_brand | escape }}" target="_blank" class="no-decoration mx-2">
+        {% if include.svg == true %}
+            <img alt="{{social[0]}}" class="icon-4" src="/assets/images/logos/socialmedia/{{social[0]}}.svg"/>
+        {% else %}
+            <i class="fab fa-{{social-fa-icon}} icon-2@sm-below icon-3@lg-above {{color}}"></i>
+        {% endif %}
+    </a>
+{%- endfor -%}
