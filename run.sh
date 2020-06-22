@@ -5,7 +5,8 @@
 JENV="development"
 OPEN=true
 LIVE=false
-while getopts "hpli" opt; do
+TRACE=false
+while getopts "hplit" opt; do
     case "${opt}" in
         h) OPEN=false 
         ;;
@@ -15,12 +16,21 @@ while getopts "hpli" opt; do
         ;;
         i) bundle install
         ;;
+        t) TRACE=true
+        ;;
     esac
 done
+
 echo Running in $JENV mode.
 $OPEN && echo "Opening site in browser" && ./opensite.sh &
+OPTS=""
+
 if [ $LIVE = true ]; then
-    JEKYLL_ENV=${JENV} bundle exec jekyll serve --incremental --livereload
-else
-    JEKYLL_ENV=${JENV} bundle exec jekyll serve
+    OPTS="${OPTS} --incremental --livereload"  
 fi
+
+if [ $TRACE = true ]; then
+    OPTS="${OPTS} --trace"  
+fi
+
+eval JEKYLL_ENV=${JENV} bundle exec jekyll serve ${OPTS}
