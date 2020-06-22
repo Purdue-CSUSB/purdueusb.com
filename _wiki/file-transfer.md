@@ -60,7 +60,15 @@ You can download FileZilla [here](https://filezilla-project.org/download.php?sho
 
 #### Step 2
 
-Once you have finished installing FileZilla, open it up. On the top, there should be 4 input boxes. Put in the following information:Host: `sftp://data.cs.purdue.edu`Username: Purdue UsernamePassword: Purdue Career Account Password (same password used to SSH into data)Port: 22
+Once you have finished installing FileZilla, open it up. On the top, there should be 4 input boxes. Put in the following information:
+
+- Host: `sftp://data.cs.purdue.edu`
+
+- Username: Purdue Username
+
+- Password: Purdue Career Account Password (same password used to SSH into data)
+
+- Port: 22
 
 #### Step 3
 
