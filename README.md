@@ -76,20 +76,20 @@ Please follow the installation instructions found on the [Jekyll Website](https:
 
 ### TODO
 
-- ~~Make post sidebar in student resource page independent scrollable from the article content~~
-- Decrease load time.
-  - ~~Compress all image assets.~~
-  - ~~Minify & purge css assets. Jekyll built-in compact mode is currently broken.~~
-- Add search functionality to student resources.
-- Ensure proper site accessibility.
-  - Test with screen reader.
-  - Make use of ally.js or another library.
-- ~~Add USB alumni to collapsible section.~~
-  - Collect USB alumni photos, names, websites, and year they left usb
-- Either create an about page (maybe about the history of the organization) or have it link to the landing instead.
-- Create 404 page doodle.
-- Componentize site elements with [web components](https://css-tricks.com/an-introduction-to-web-components/)
-- Future deprecation issues: convert all @import statements when support is added for @use in the jekyll sass converter. See [relevant issue](https://github.com/jekyll/jekyll-sass-converter/issues/105).
+- [x]  Make post sidebar in student resource page independent scrollable from the article content
+- [ ]  Decrease load time.
+  - [x]  Compress all image assets.
+  - [x]  Minify & purge css assets. Jekyll built-in compact mode is currently broken.
+- [ ]  Add search functionality to student resources.
+- [ ]  Ensure proper site accessibility.
+  - [ ]  Test with screen reader.
+  - [ ]  Make use of ally.js or another library.
+- [x]  Add USB alumni to collapsible section.
+  - [ ]  Collect USB alumni photos, names, websites, and year they left usb
+- [ ]  Either create an about page (maybe about the history of the organization) or have it link to the landing instead.
+- [ ]  Create 404 page doodle.
+- [ ]  Componentize site elements with [web components](https://css-tricks.com/an-introduction-to-web-components/)
+- [ ]  Future deprecation issues: convert all @import statements when support is added for @use in the jekyll sass converter. See [relevant issue](https://github.com/jekyll/jekyll-sass-converter/issues/105).
 
 ### Plugins
 
