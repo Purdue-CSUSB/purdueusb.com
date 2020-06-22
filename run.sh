@@ -5,13 +5,15 @@
 JENV="development"
 OPEN=true
 LIVE=false
-while getopts "hpl" opt; do
+while getopts "hpli" opt; do
     case "${opt}" in
         h) OPEN=false 
         ;;
         p) JENV="production" 
         ;;
         l) LIVE=true 
+        ;;
+        i) bundle install
         ;;
     esac
 done
