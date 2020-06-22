@@ -20,14 +20,14 @@ Please run `webp-convert` on any directories of images you add that are not in w
 
 1. Edit either `_data/members.yml` or `_data/alumni.yml` with their name, title, class rank, and (optionally) an appropriate personal website.
 2. If necessary, add their photograph in `assets/images/members`. Make sure the image file name matches their name in their yml entry, the images are square, and 300x300.
-  - We don't want to be serving images larger than they need to be.
+   - We don't want to be serving images larger than they need to be.
 
 #### Initiatives
 
 1. Add an initiative logo in `assets/images/initiative`. Please use a square resolution, or it will be cropped to fit automatically.
 2. Edit `_data/initiatives.yml` with `title`, `image`, `description`, (optional) `inactive`, (optional) `buttonText` and `buttonLink` and list of participating `members` names (as spelled in members.yml).
-  - An inactive entry can contain either `true | string`. True will display "INACTIVE" and anything else will be displayed as-is.
-  - Former members can be designated alumnus by making their class a year.
+   - An inactive entry can contain either `true | string`. True will display "INACTIVE" and anything else will be displayed as-is.
+   - Former members can be designated alumnus by making their class a year.
 
 #### Objectives
 
