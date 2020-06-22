@@ -1,6 +1,6 @@
 
 {%- for member in include.members -%}
-    {% include components/member/member.html member=member name=include.name size=include.size spacing=include.spacing overlay=include.overlay %}
+    {% include components/member/member.html member=member name=include.name size=include.size spacing=include.spacing overlay=include.overlay shadow=include.shadow %}
 
     {% if include.rowLimit != nil %}
         {% assign remainder = forloop.index | modulo: include.rowLimit %}
