@@ -1,9 +1,9 @@
 <article>
     <section>
         <h2 class="mb-3">{{ page.title }}</h2>
-        <div class="column grow-0 justify-between align-items-baseline">
+        <div class="column--nowrap grow-0 justify-between align-items-baseline">
             <p class="hint mb-6 font-italic">{{ page.description }}</p>
-            <div class="row align-items-center justify-between">
+            <div class="row--nowrap align-items-center justify-between">
                 <div class="row align-items-center">
                     <span class="hint">Authored by</span>
                     {% assign author_count = page.author | size %}

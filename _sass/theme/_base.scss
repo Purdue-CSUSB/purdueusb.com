@@ -387,17 +387,10 @@ input {
 /**
  * Syntax highlighting styles
  */
-
+/* purgecss start ignore */
 .hljs {
     @extend .bg-dark;
 }
-
-:not(pre) {
-    > code.hljs, > code {
-        @include pa(spacing-group(4/3));
-        @extend .rounded, .inline;
-    }
- }
 
 pre {
     @extend .rounded;
@@ -407,3 +400,11 @@ pre {
         @include pa(spacing-group(4));
     }
 }
+
+*:not(pre) {
+    > code.hljs, > code, > .hljs {
+        @include pa(spacing-group(4/3));
+        @extend .rounded, .inline, .text-nowrap;
+    }
+ }
+/* purgecss end ignore */

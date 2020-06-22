@@ -290,7 +290,9 @@ $spacing-directions:    (top: "-top", bottom: "-bottom", left: "-left", right: "
 @each $property in ("height", "width") {
     .#{str-slice($property, 1, 1)} {
         @include generate-subclass($percentages, $property);
+        @include generate-subclass($spacings, ($property, 'min-#{$property}', 'max-#{$property}'));
     }
+    
 }
 
 

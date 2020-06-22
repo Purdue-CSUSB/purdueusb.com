@@ -5,7 +5,7 @@ article {
     }
 
     p {
-        @extend .w-full, .justify-around, .align-items-center;
+        @extend .justify-around, .align-items-center;
     }
 
     section:nth-of-type(2) p {
