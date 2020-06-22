@@ -2,7 +2,7 @@
 
 This repository is created for Purdue's CS Undergraduate Student Board website. Our main consideration is the ease of maintenance and content updates. Information that frequently changes, like members, initiatives, and student resources, can all be updated through YAML and Markdown files. 
 
-This is a static site built using [Jekyll](https://jekyllrb.com), designed on [Figma](https://figma.com), and hosted here on Github Pages. Jekyll was selected due to its compatibility with GH Pages, as well as it's out-of-the-box blog functionality, among other quality of life features.
+This is a static site built using [Jekyll](https://jekyllrb.com), designed on [Figma](https://figma.com), and hosted here on Github Pages. Jekyll was selected due to its compatibility with GH Pages, as well as it's out-of-the-box blog functionality.
 
 ## Contribution
 
