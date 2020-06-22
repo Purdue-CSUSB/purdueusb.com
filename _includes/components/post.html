@@ -1,38 +1,28 @@
 <article>
-    <h3 class="mb-3">{{ page.title }}</h3>
-    <div class="column grow-0 mb-1 px-1 justify-between align-items-baseline">
-        <p class="mb-1 hint">{{ page.description }}</p>
-        <div class="row align-items-baseline justify-between">
-            <div class="row align-items-baseline">
-                <span class="hint">Authored by</span>
-                {% assign author_count = page.author | size %}
-                {% for author in page.author %}
-                    {% assign member = site.data.members  | concat: site.data.alumni | where:"name", author | first %}
-                    <div class="inline-block {% if author_count > 2 %} mr-1 {% else %} mx-1 {% endif %}">
-                        {% if forloop.index <= author_count and forloop.index > 1 and author_count > 2 %}<span class="hint text-pre">,  </span>{% endif %}
-                        {% if forloop.index == author_count %}<span class="hint">and</span>{% endif %}
-                    </div>
-                    <div class="border-box member">
-                        {% if member != nil %}
-                            <a {% if member.site != "" and member.site != nil %} href="{{member.site}}" class="clickable no-decoration" {% else %} class="not-clickable no-decoration" {% endif %} title="{{ member.name }}" target="_blank">
-                                <img src="/assets/images/members/{{ member.name }}" class="rounded--circle icon-3" alt="{{ member.name }}" aria-hidden="true">
-                                <span>{{ member.name }}</span>
-                            </a>
-                        {% else %}
-                            <span>{{ author }}</span>
-                        {% endif %}
-                    </div>
-                {% endfor %}
-            </div>
-    
-            <div class="contents">
+    <section>
+        <h2 class="mb-3">{{ page.title }}</h2>
+        <div class="column grow-0 justify-between align-items-baseline">
+            <p class="hint mb-6 font-italic">{{ page.description }}</p>
+            <div class="row align-items-center justify-between">
+                <div class="row align-items-center">
+                    <span class="hint">Authored by</span>
+                    {% assign author_count = page.author | size %}
+                    {% for author in page.author %}
+                        <div class="inline-block {% if author_count > 2 %} mr-3 {% else %} mx-2 {% endif %}">
+                            {% if forloop.index <= author_count and forloop.index > 1 and author_count > 2 %}<span class="hint text-pre">,  </span>{% endif %}
+                            {% if forloop.index == author_count and forloop.index > 1 %}<span class="hint">and</span>{% endif %}
+                        </div>
+                        {% include components/member/member.html member=author name=true size="icon-3" show_name=true overlay=false %}
+                    {% endfor %}
+                </div>
                 {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-                <p class="font-normal hint">{{ page.date | date: date_format }}</p>
+                <p class="font-normal hint mb-0">{{ page.date | date: date_format }}</p>
             </div>
         </div>
-    </div>
-    <div class="divider--horizontal my-1 bg-grey-light"></div>
-    <div class="px-1">
+    </section>
+    <div class="divider--horizontal mt-4 mb-5 bg-grey-light"></div>
+    <section class="px-3@md-above text-justify">
         {{ content }}
-    </div>
+    </section>
+    {% include components/rating.html %}
 </article>
