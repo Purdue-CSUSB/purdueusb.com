@@ -171,7 +171,7 @@ caption, .caption, small, small * {
 
 form textarea, form input:not([type="submit"]), .input {
     border-style: solid;
-    @extend .pa-3, .rounded--slight, .border-thin, .border-grey-light, %input-focus;
+    @extend .pa-3, .rounded--less, .border-thin, .border-grey-light, %input-focus;
 }
 
 .input {
@@ -235,13 +235,17 @@ a:not(.button) {
  * Blockquotes TODO
  */
 blockquote {
-    @extend .rounded--slight;
+    @extend .rounded--less, .animate-fast;
     border-left: $border-width solid $accent-grey-light;
     padding-left: spacing-group(1);
     letter-spacing: -1px;
 
     > :last-child {
         @extend .mb-0;
+    }
+
+    &:hover {
+        @extend .border-accent;
     }
 }
 
@@ -285,7 +289,7 @@ table {
 
 /* Buttons */
 button, .button, input[type="submit"] {
-    @extend .bg-primary, .border-none, .clickable, .shadow-drop, .rounded--more, .no-decoration, .animate, %button-focus;
+    @extend .bg-primary, .border-none, .clickable, .shadow-drop, .rounded, .no-decoration, .animate, %button-focus;
     @include px($padding-button-x);
     @include py($padding-button-y);
 

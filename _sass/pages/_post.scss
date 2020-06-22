@@ -1,0 +1,46 @@
+article {
+    p img {
+        margin: 0 auto;
+        @extend .block, .rounded;
+    }
+
+    p {
+        @extend .row, .justify-around, .align-items-center;
+    }
+
+    section:nth-of-type(2) p {
+        @extend .font--height-high;
+    }
+
+    code {
+        @extend .text-left;
+    }
+}
+
+label[for="rate-good"], label[for="rate-bad"] {
+    @extend .grey;
+}
+
+#rate-bad {
+    & + label[for="rate-bad"] {
+        &:hover {
+            @extend .red;
+        }
+    }
+
+    &:checked + label[for="rate-bad"] {
+        @extend .red;
+    }
+}
+
+#rate-good {
+    & + label[for="rate-good"] {
+        &:hover {
+            @extend .green-dark;
+        }
+    }
+
+    &:checked + label[for="rate-good"] {
+        @extend .green-dark;
+    }
+}

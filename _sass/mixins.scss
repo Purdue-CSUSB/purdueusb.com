@@ -194,8 +194,8 @@
 
 /* Spacing Mixins */
 @function spacing-group($index) {
-    $num: pow($spacing-base, $index - 2);
-    @return #{$num + "rem"};
+    //$num: pow($spacing-base, $index - 2);
+    @return #{$index * $spacing-multiple};
 }
 
 // Paddings
@@ -228,6 +228,7 @@
 @mixin pa($size) {
     @include px($size);
     @include py($size);
+    padding: $size;
 }
 
 // Margins
@@ -260,6 +261,7 @@
 @mixin ma($size) {
     @include mx($size);
     @include my($size);
+    margin: $size;
 }
 
 @mixin screen-variant($prefix:"\\@", $variant-only: false) {

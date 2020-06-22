@@ -26,7 +26,7 @@ $font-sizes: (
     caption:    1rem * 14 / 18,
 ) !default;
 $line-height-base:    1.2 !default;
-$line-height-high:    1.5 !default;
+$line-height-high:    2 !default;
 
 
 /* Colors */
@@ -37,7 +37,7 @@ $primary-color:         #FFCA44 !default;
 $accent-blue:       #8AC9FE !default;
 $accent-red:        #FE646F !default;
 $accent-purple:     #BC78C2 !default;
-$accent-green:      #6AEBAD !default;
+$accent-green:      #67EA9B !default;
 $accent-orange:     #FEA465 !default;
 $accent-grey:       #6B6A6A !default;
 $accent-grey-light: #E5E5E5 !default;
@@ -72,32 +72,37 @@ $screens: (
     'lg': ('min': '1024px', 'max': '1279px'),
     'xl': ('min': '1280px', 'max': '10000000000px' /* such hack */),
 ) !default;
-// For convenience elsewhere
-$screen-xsmall: map-get(map-get($screens, "sm"), "max");
+// For convenience in css
+$screen-xsmall:     map-get(map-get($screens, "sm"), "max");
+$screen-small:      map-get(map-get($screens, "sm"), "max");
+$screen-medium:     map-get(map-get($screens, "md"), "max");
+$screen-large:      map-get(map-get($screens, "lg"), "max");
+$screen-xlarge:     map-get(map-get($screens, "xl"), "max");
 $screen-xsmall-min: map-get(map-get($screens, "sm"), "min");
-$screen-small: map-get(map-get($screens, "sm"), "max");
-$screen-small-min: map-get(map-get($screens, "sm"), "min");
-$screen-medium: map-get(map-get($screens, "md"), "max");
+$screen-small-min:  map-get(map-get($screens, "sm"), "min");
 $screen-medium-min: map-get(map-get($screens, "md"), "min");
-$screen-large: map-get(map-get($screens, "lg"), "max");
-$screen-large-min: map-get(map-get($screens, "lg"), "min");
-$screen-xlarge: map-get(map-get($screens, "xl"), "max");
+$screen-large-min:  map-get(map-get($screens, "lg"), "min");
 $screen-xlarge-min: map-get(map-get($screens, "xl"), "min");
 
 /* Effects */
-$border-width: 4px !default;
-$border-radius: 6px !default;
-$border-radius-slight: 3px !default;
-$shadow-color-default: rgba(0, 0, 0, 0.25) !default;
-$shadow-color-dark: rgba(0, 0, 0, 0.95) !default;
-$shadow-default: 4px 4px 4px !default;
-$shadow-dark: 4px 4px 4px !default;
-$shadow-nooffset: 0px 0px 4px !default;
-$shadow-nooffset-soft: 0px 0px 12px !default;
-$animation-delay: 200ms !default;
-$bg-angle-mobile: 2rem !default;
-$bg-angle: 145rem !default;
-$bg-angle-color: $primary-color !default;
+$border-width:          4px !default;
+$border-radius:         10px !default;
+$border-radius-slight:  $border-radius / pow(2, 1) !default;
+$border-radius-more:    $border-radius * pow(2, 2) !default;
+
+$shadow-color-default:  rgba(0, 0, 0, 0.25) !default;
+$shadow-color-dark:     rgba(0, 0, 0, 0.95) !default;
+$shadow-default:        4px 4px 4px !default;
+$shadow-dark:           4px 4px 4px !default;
+$shadow-nooffset:       0px 0px 4px !default;
+$shadow-nooffset-soft:  0px 0px 12px !default;
+
+$animation-delay:   200ms !default;
+
+$bg-angle-mobile:   2rem !default;
+$bg-angle:          145rem !default;
+$bg-angle-color:    $primary-color !default;
+
 $scrollbar-background: white !default;
 $scrollbar-foreground: $accent-grey !default;
 

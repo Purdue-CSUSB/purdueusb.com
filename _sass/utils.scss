@@ -69,9 +69,16 @@
     @extend .mx-4;
 }
 
-.no-decoration {
-    text-decoration: none !important;
-    list-style: none !important;
+.no{
+    &-underline {
+        text-decoration: none !important;
+    }
+    &-list-style {
+        list-style: none !important;
+    }
+    &-decoration {
+        @extend .no-underline, .no-list-style;
+    }
 }
 
 .hover {
@@ -94,6 +101,14 @@
         -webkit-transition: none !important;
         -ms-transition: none !important;
         transition: none !important;
+    }
+
+    &-fast {
+        $fast-delay: $animation-delay / 2;
+        -moz-transition: all $fast-delay ease-in-out $fast-delay / 3 !important;
+        -webkit-transition: all $fast-delay ease-in-out $fast-delay / 3 !important;
+        -ms-transition: all $fast-delay ease-in-out $fast-delay / 3 !important;
+        transition: all $fast-delay ease-in-out $fast-delay / 3 !important;
     }
 }
 
@@ -189,7 +204,7 @@
 }
 
 .card {
-    @extend .bg-light, .shadow-drop, .rounded--more, .overflow-hidden;
+    @extend .bg-light, .shadow-drop, .rounded, .overflow-hidden;
     transition: 0.3s;
 
     &:hover {

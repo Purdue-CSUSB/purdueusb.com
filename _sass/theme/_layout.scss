@@ -46,14 +46,12 @@
 }
 
 .page-link {
-    @extend .no-decoration;
+    @extend .no-decoration, .animate-fast;
 
     & * {
         @include font-semibold;
         @include my(0);
-        &:hover {
-            @include font-bold;
-        }
+        @extend .hover--bold;
     }
 }
 
@@ -100,10 +98,10 @@ $open-distance: 80px;
     line-height: $height;
     transform:  translate3d(0,0,0);
 }
-.menu-open, .menu-item{
+.menu-check, .nav-item{
     display: none;
 }
-.menu-item{
+.nav-item{
     @extend %ball, .rounded--more, .shadow-drop;
     width: auto;
     right: 10px;
@@ -126,7 +124,7 @@ $open-distance: 80px;
 }
 
 // Menu is open
-.menu-open:checked+.menu-open-button {
+.menu-check:checked+.menu-check-button {
     .hamburger-top{
         transform: translate3d(0 ,$border-width, 0) rotate(45deg); 
     }
@@ -143,7 +141,7 @@ $open-distance: 80px;
 }
 
 
-.menu-item{
+.nav-item{
     text-align: right;
     &:hover{
         @extend .shadow--center--soft;
@@ -155,24 +153,24 @@ $open-distance: 80px;
     }
 }
 
-.menu-open-button{
+.menu-check-button{
     @extend %ball, .clickable, .rounded--circle;
     z-index:2;
     transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
     transition-duration: 400ms;
     transform: scale(1.1,1.1) translate3d(0,0,0);
 }
-.menu-open-button:hover{
+.menu-check-button:hover{
     transform: scale(1.2,1.2) translate3d(0,0,0);
     @extend .shadow--center--soft;
 }
-.menu-open:checked+.menu-open-button{
+.menu-check:checked+.menu-check-button{
     transition-timing-function: linear;
     transition-duration: 200ms;
     transform: scale(0.9,0.9) translate3d(0,0,0);
 }
 
-.menu-open:checked~.menu-item{
+.menu-check:checked~.nav-item{
     display: initial;
     transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
     @for $i from 1 through $menu-items{ 

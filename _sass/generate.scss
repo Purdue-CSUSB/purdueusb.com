@@ -41,6 +41,18 @@
     #{$attribute}: $value#{if($important, ' !important', '')};
 }
 
+// Create a map of spacing values for a range
+@function range-space-map($start, $end) {
+    $map: ();
+    @for $index from $start through $end {
+        $map: map-merge($map, ($index: spacing-group($index)));
+    }
+    @return $map;
+}
+
+$spacings: range-space-map(0, $spacing-max-group);
+
+
 $colors: (
     transparent: transparent,
     none:       unset,
@@ -199,9 +211,10 @@ $font-styles: (
 
 
 $roundings: (
+    none:   0,
+    less:   $border-radius-slight,
     base:   $border-radius,
-    slight: $border-radius-slight,
-    more:   4 * $border-radius,
+    more:   $border-radius-more,
     circle: 100%
 );
 .rounded {
@@ -227,7 +240,6 @@ $borders: (
 /* Percentage sizing class generation */
 $dimension-sizing-groups: 2, 3, 4, 5, 6, 10, 20;
 $percentages: (
-    0: 0%,
     half: 50%,
     full: 100%,
     auto: auto,
@@ -239,79 +251,32 @@ $percentages: (
         $percentages: map-merge($percentages, ($key: $size));
     }
 }
-$spacing-types:       "margin", "padding";
-$spacing-directions:  "top", "bottom", "left", "right", "x", "y", "a";
+
+$spacing-types:         (margin, padding);
+$spacing-values:        ($spacings, $percentages);
+$spacing-directions:    (top: "-top", bottom: "-bottom", left: "-left", right: "-right", x: ("-left", "-right"), y: ("-top", "-bottom"), a: ("-left", "-right", "-top", "-bottom", ""));
 @each $type in $spacing-types {
-    @each $direction in $spacing-directions {
-        @for $index from 0 through $spacing-max-group {
-            $size: 0rem;
-
-            @if $index > 0 {
-                $size: spacing-group($index);
+    $t: str-slice($type, 1, 1);
+    @each $direction, $attrs in $spacing-directions {
+        $d: str-slice($direction, 1, 1);
+        $prefix: $t + $d;
+        @if type-of($attrs) == 'list' {
+            $list: [];
+            @each $a in $attrs {
+                $list: append($list, $type + $a);
             }
-
-            $type_abbr: str-slice($type, 1, 1);
-            $direction_abbr: str-slice($direction, 1, 1);
-
-            .#{$type_abbr}#{$direction_abbr}-#{$index} {
-                @if str-length($direction)>1 {
-                    #{$type + "-" + $direction}: $size;
-                }
-
-                @else {
-                    @if $direction=="a" {
-                        #{$type}: $size $size $size $size;
-                    }
-
-                    @else {
-                        @if $direction=="x" {
-                            #{$type + "-left"}: $size;
-                            #{$type + "-right"}: $size;
-                        }
-
-                        @if $direction=="y" {
-                            #{$type + "-top"}: $size;
-                            #{$type + "-bottom"}: $size;
-                        }
-                    }
-                }
-            }
+            $attrs: $list;
+        } @else {
+            $attrs: $type + $attrs;
         }
-
-        // percentage based spacing
-        @each $denominator in $dimension-sizing-groups {
-            @for $numerator from 1 to $denominator {
-                $size: percentage($numerator / $denominator);
-                $type_abbr: str-slice($type, 1, 1);
-                $direction_abbr: str-slice($direction, 1, 1);
-
-                .#{$type_abbr}#{$direction_abbr}-#{$numerator}-#{$denominator} {
-                    @if str-length($direction)>1 {
-                        #{$type + "-" + $direction}: $size;
-                    }
-
-                    @else {
-                        @if $direction=="a" {
-                            #{$type}: $size $size $size $size;
-                        }
-
-                        @else {
-                            @if $direction=="x" {
-                                #{$type + "-left"}: $size;
-                                #{$type + "-right"}: $size;
-                            }
-
-                            @if $direction=="y" {
-                                #{$type + "-top"}: $size;
-                                #{$type + "-bottom"}: $size;
-                            }
-                        }
-                    }
-                }
+        .#{$prefix} {
+            @each $values in $spacing-values {
+                @include generate-subclass($values, $attrs);
             }
         }
     }
 }
+
 
 // Width/Height percentage classes
 @each $property in ("height", "width") {
@@ -351,19 +316,9 @@ $max-icon-multiple: 21;
     }
 }
 
-$positions: (
-    top:    (0:0), 
-    bottom: (0:0), 
-    left:   (0:0), 
-    right:  (0:0),
-);
 
-@each $key, $value in $positions {
-    @for $group from 1 through $spacing-max-group {
-        $value: map-merge($value, ($group: spacing-group($group)));
-    }
-    $positions: map-merge($positions, ($key: $value));
-    .#{$key} {
-        @include generate-subclass($value, $key);
-    }
+/* Classes to space away from edges */
+@each $position in (top, bottom, left, right) {
+    $map: ($position: $spacings);
+    @include generate-subclass($map, $position);
 }
