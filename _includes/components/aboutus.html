@@ -1,11 +1,11 @@
 <div class="w-full">
     <div class="divider--horizontal"></div>
     <div class="bg--angled">
-        <h1 class="text-center pt-5 mb-0 pb-1 bg-primary@md-below">About Us</h1>
-        <div class="row justify-between@lg-above justify-center@lg-below pb-2">
+        <h1 class="section-title bg-primary@md-below">About Us</h1>
+        <div class="row justify-between@lg-above justify-center@lg-below pb-4">
             <div class="column section-mission align-items-center bg--angled-mobile">
-                <div class="textwidth mx-1-20">
-                    <h3 class="text-center mb-3">Our Mission</h3>
+                <div class="textwidth mx-1/20">
+                    <h3 class="text-center mb-6">Our Mission</h3>
                     <h4 class="font-medium text-justify mb-0">
                         The Computer Science Undergraduate Student Board was established in 1999 to promote a supportive and engaged community
                         within Purdue’s Computer Science Department, and to use its relationship with faculty, the Computer
@@ -15,21 +15,15 @@
             </div>
             <div class="flex-break none@lg-above"></div>
             <div class="column--nowrap section-objectives justify-center align-items-center">
-                <div class="mx-1-20 textwidth">
-                    <h3 class="text-center mb-3">Our Objectives</h3>
+                <div class="mx-1/20 textwidth">
+                    <h3 class="text-center mb-6">Our Objectives</h3>
                     <div id="objective-container" class="row justify-around align-content-center">
                         {%- for objective in site.data.objectives -%}
-                        <div class="objective mb-5 mx-1@lg-above">
-                            <div class="column">
-                                <h4 class="mb-1">{{ objective.title }}</h3>
-                                <div class="row justify-center align-content-center">
-                                    <div class="column">
-                                        <p class="text-justify mb-0">{{ objective.description }}</p>
-                                    </div>
-                                    <div class="column grow-0 ml-3">
-                                        <img class="icon-5" src="/assets/images/objectives/{{ objective.image }}" aria-hidden="true">
-                                    </div>
-                                </div>
+                        <div class="objective mb-10 mx-3@lg-above column">
+                            <h4 class="mb-1 block">{{ objective.title }}</h3>
+                            <div class="row--nowrap justify-center align-items-center">
+                                <p class="text-justify mb-0">{{ objective.description }}</p>
+                                <img class="icon-5 ml-3@lg-above ml-5@lg-below mb-3" src="/assets/images/objectives/{{ objective.image }}" aria-hidden="true">
                             </div>
                         </div>
                         {%- endfor -%}

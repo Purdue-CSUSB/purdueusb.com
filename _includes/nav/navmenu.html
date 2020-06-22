@@ -3,13 +3,13 @@
     {% assign color = "dark" %}
 {% endif %}
 
-<nav class="site-nav column align-content-center align-items-end">
-    <div class="none@md-below row--nowrap grow-2 align-items-center">
-        <div class="trigger row--nowrap justify-end margin-list">
+<nav class="site-nav column grow-0 align-content-center align-items-end">
+    <div class="row--nowrap justify-end">
+        <div class="none@md-below trigger row--nowrap justify-end margin-list">
             {%- include nav/header_links.html classes=include.classes color=color -%}
         </div>
         {% if include.social == true %}
-            <div class="row--nowrap none@lg-below {{color}} ml-6 margin-list">
+            <div class="row--nowrap w-auto {{color}} ml-6 margin-list justify-end grow-0">
                 {%- include components/social.html color=color -%}
             </div>
         {% endif %}
