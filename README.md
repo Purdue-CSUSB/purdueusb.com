@@ -51,6 +51,11 @@ category:
 ---
 ```
 
+To disable lightbox on a markdown link, use the `no-lightbox` class like so:
+```markdown
+[video link](https://youtu.be/iWowJBRMtpc?t=90s){:.no-lightbox}
+```
+
 ## Development
 
 ### Installation & Setup
