@@ -3,7 +3,7 @@
     <div class="bg--angled">
         <h1 class="section-title bg-primary@md-below">About Us</h1>
         <div class="row justify-between@lg-above justify-center@lg-below pb-4">
-            <div class="column section-mission align-items-center bg--angled-mobile">
+            <div class="section-mission align-items-center bg--angled-mobile">
                 <div class="textwidth mx-1/20">
                     <h3 class="text-center mb-6">Our Mission</h3>
                     <h4 class="font-medium text-justify mb-0">
@@ -14,12 +14,12 @@
                 </div>
             </div>
             <div class="flex-break none@lg-above"></div>
-            <div class="column--nowrap section-objectives justify-center align-items-center">
+            <div class="section-objectives justify-center align-items-center">
                 <div class="mx-1/20 textwidth">
                     <h3 class="text-center mb-6">Our Objectives</h3>
                     <div id="objective-container" class="row justify-around align-content-center">
                         {%- for objective in site.data.objectives -%}
-                        <div class="objective mb-10 mx-3@lg-above column">
+                        <div class="objective mb-10 mx-3@lg-above">
                             <h4 class="mb-1 block">{{ objective.title }}</h3>
                             <div class="row--nowrap justify-center align-items-center">
                                 <p class="text-justify mb-0">{{ objective.description }}</p>

@@ -34,15 +34,8 @@
     background: linear-gradient(-45deg, $accent-grey-light, $accent-grey-light 45%, white 45%, white);
 }
 
-.site-header {
-    // Positioning context for the mobile navigation icon
-    position: relative;
-    grid-area: head;
-    @include shadow-drop;
-}
-
-.site-nav {
-    transition: $animation-delay;
+footer {
+    margin-top: auto;
 }
 
 .page-link {

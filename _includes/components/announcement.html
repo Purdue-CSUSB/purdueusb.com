@@ -3,11 +3,9 @@
 {%- assign button_text = site.data.announcement.buttontext -%}
 {%- assign button_link = site.data.announcement.buttonlink -%}
 {% if show and text != "" and text != nil and button_text != "" and button_text != nil and button_link != "" and button_link != nil %}
-    <div class="px-1/20 py-4 bg-accent row">
-        <div class="row--nowrap align-content-center align-items-center justify-between">
-            <img src="/assets/images/megaphone.svg" class="icon-7@lg-above icon-6@lg icon-5@md icon-4@sm-below" aria-hidden="true"/>
-            <h4 class="mb-0 mx-1/20 font-semibold">{{text}}</h4>
-            <button href="{{button_link}}" target="_blank" class="--outline-dark" title="{{button_text}}">{{button_text}}</button>
-        </div>
+    <div class="row--nowrap align-content-center align-items-center justify-between px-1/20 py-4 bg-accent ">
+        <img src="/assets/images/megaphone.svg" class="icon-7@lg-above icon-6@lg icon-5@md icon-4@sm-below" aria-hidden="true"/>
+        <h4 class="mb-0 mx-1/20 font-semibold inline">{{text}}</h4>
+        <button href="{{button_link}}" target="_blank" class="--outline-dark" title="{{button_text}}">{{button_text}}</button>
     </div>
 {% endif %}

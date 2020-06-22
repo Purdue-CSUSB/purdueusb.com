@@ -13,7 +13,7 @@
     {% if social-fa-icon == nil %}
         {% assign social-fa-icon = social-brand %}
     {% endif %}
-    <a href="https://{{ social_url | escape}}" title="{{ social_brand | escape }}" target="_blank" class="no-decoration">
+    <a href="https://{{ social_url | escape}}" title="{{ social_brand | escape }}" target="_blank" class="no-decoration mx-2">
         {% if include.svg == true %}
             <img alt="{{social[0]}}" class="icon-4" src="/assets/images/logos/socialmedia/{{social[0]}}.svg"/>
         {% else %}

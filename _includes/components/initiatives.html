@@ -1,5 +1,5 @@
-<div class="column my-3 align-items-center w-full">
-    <div class="px-1/20 justify-center textwidth section-title">
+<div class="column my-3 px-1/20 align-items-center w-full">
+    <div class="justify-center textwidth section-title">
         <h1 class="text-center mb-4">Our Initiatives</h1>
         <p class="text-justify mb-2">We take pride in the freedom our members have to pursue impactful initiatives both immediately and in the long term.
             Some initiatives have been around for a decade or more, while others come and go as our goals evolve.</p>
@@ -27,9 +27,7 @@
         {%- for initiative in site.data.initiatives -%}
         <div class="card--initiative my-4 animate">
             <div class="row align-content-start justify-between mb-0">
-                <div class="flex--nowrap grow-0@{{mobile-breakpoint-above}} w-full@{{mobile-breakpoint-below}}">
-                    <img src="/assets/images/initiatives/{{ initiative.image }}" class="icon-17@{{mobile-breakpoint-above}} rounded@{{mobile-breakpoint-above}} w-full img-cover" aria-hidden="true">
-                </div>
+                <img src="/assets/images/initiatives/{{ initiative.image }}" class="icon-17@{{mobile-breakpoint-above}} rounded@{{mobile-breakpoint-above}} w-full@{{mobile-breakpoint-below}} img-cover" aria-hidden="true">
                 <div class="flex-break none@{{mobile-breakpoint-above}}"></div>
                 <div class="column mx-4 pt-4">
                     <div class="row grow-0 justify-between align-items-baseline">

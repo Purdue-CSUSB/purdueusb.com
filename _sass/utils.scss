@@ -30,22 +30,32 @@
     }
 }
 
-.flex-container {
-    @extend .border-box;
+.flex {
+    &-container {
+        @extend .border-box;
+    }
+
+    &-even {
+        @include flex-even;
+    }
+    
+    &-break {
+        @extend .block, .w-full;
+        height: 1px;
+    }
 }
 
-.flex-break {
-    @extend .block, .w-full;
-    height: 1px;
-}
-
-[class^='column']:not([class*='\@']), [class*=' column']:not([class*='\@']) {
+// why the absolute fuck does this break footer & fab placement in production?
+.column, .column--wrap, .column\@md-below {
     @include flex-even;
 }
 
-*[class^='row'], *[class*=' row'] {
+.row, .row--wrap, .row--nowrap {
     @extend .w-full;
     @include flex-even;
+}
+
+.row, .row--wrap {
     flex-wrap: wrap;
 }
 
