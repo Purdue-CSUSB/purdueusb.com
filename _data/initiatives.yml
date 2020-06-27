@@ -15,13 +15,13 @@
   image: Help_Room_Logo.webp
   description: CS 193, CS 180, CS 182, and CS 240 Help
   buttonText: View Times
-  buttonLink: /helproom/index.html
+  buttonLink: /helproom
 
 - title: Office Hours
   image: Office_Hours_Logo.webp
   description: Come talk with us!
   buttonText: View Times
-  buttonLink: /officehours/index.html
+  buttonLink: /officehours
 
 - title: Undergraduate Student Forum
   image: Student_Forum_Logo.webp
