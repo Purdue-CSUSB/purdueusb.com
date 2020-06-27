@@ -3,12 +3,11 @@
     {% assign name = member_obj | strip %}
     {% assign member_obj = site.data.members | concat: site.data.alumni | where:"name", name | first %}
 {% endif %}
-{% assign hasSite = member_obj != nil and member_obj.site != nil %}
 
 {% if member_obj.name %}
     {% assign size = include.size | default: "icon-10" %}
     <div class="{{include.spacing}}">
-        <div class="{% if include.overlay %} overlay-container {%endif%} member border-box {% if include.shadow == false or not (hasSite) %} flat {% else %} shadow-drop {% endif %} overflow-hidden">
+        <div class="{% if include.overlay %} overlay-container {%endif%} member border-box {% if include.shadow == false or member_obj.site == nil or member_obj.site == '' %} flat {% else %} shadow-drop clickable {% endif %} overflow-hidden">
             <!-- Accessibility hack <a> tag -->
             <a {% if member_obj.site != "" and member_obj.site != nil %} href="{{member_obj.site}}" {% else %} {% endif %} title="{{ member_obj.name }}" class="no-decoration w-full" target="_blank">
                 <div class="{% if include.overlay %} member-color rounded--circle {%endif%} row--nowrap align-items-center">

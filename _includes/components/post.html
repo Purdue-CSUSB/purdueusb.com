@@ -1,22 +1,25 @@
 <article>
-    <section>
+    <section id="meta">
         <h2 class="mb-3">{{ page.title }}</h2>
         <div class="column--nowrap grow-0 justify-between align-items-baseline">
             <p class="hint mb-6 font-italic">{{ page.description }}</p>
-            <div class="row--nowrap align-items-center justify-between">
-                <div class="row align-items-center">
-                    <span class="hint">Authored by</span>
-                    {% assign author_count = page.author | size %}
-                    {% for author in page.author %}
-                        <div class="inline-block {% if author_count > 2 %} mr-3 {% else %} mx-2 {% endif %}">
-                            {% if forloop.index <= author_count and forloop.index > 1 and author_count > 2 %}<span class="hint text-pre">,  </span>{% endif %}
-                            {% if forloop.index == author_count and forloop.index > 1 %}<span class="hint">and</span>{% endif %}
-                        </div>
-                        {% include components/member/member.html member=author name=true size="icon-3" show_name=true overlay=false %}
-                    {% endfor %}
+            <div class="row--nowrap align-items-top justify-between">
+                <div class="column align-items-top">
+                    <small class="font-medium hint mb-2">Authored by</small>
+                    <div class="row align-items-center">
+                        {% assign author_count = page.author | size %}
+                        {% for author in page.author %}
+                            <div class="inline-block">
+                                {% if forloop.index <= author_count and forloop.index > 1 and author_count > 2 %}<span class="hint text-pre">,  </span>{% endif %}
+                                {% if forloop.index == author_count and forloop.index > 1 %}<span class="hint">and</span>{% endif %}
+                                <span class="{% if author_count > 1 and forloop.index > 1 %} mr-3 {% endif %}"></span>
+                            </div>
+                            {% include components/member/member.html member=author name=true size="icon-3" show_name=true overlay=false %}
+                        {% endfor %}
+                    </div>
                 </div>
                 {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-                <p class="font-normal hint mb-0">{{ page.date | date: date_format }}</p>
+                <small class="font-medium hint mb-0 ml-4">{{ page.date | date: date_format }}</small>
             </div>
         </div>
     </section>

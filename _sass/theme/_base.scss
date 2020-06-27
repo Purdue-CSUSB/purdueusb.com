@@ -153,6 +153,10 @@ li, ul, ol {
     @extend .font-listitem;
 }
 
+ul, ol, .list {
+    list-style-position: inside;
+}
+
 body, p, a, blockquote, pre, textarea,
 code, span, li, ul, ol, dl, data, input, .body {
     @extend .font-body;

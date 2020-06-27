@@ -223,7 +223,12 @@
 
     &--initiative {
         @extend .card;
-        min-width: 20rem;
+        @include media-query($above: $screen-small-min) {
+            min-width: 20rem;
+        }
+        @include media-query($below: $screen-xsmall) {
+            min-width: 80%;
+        }
         width: 40%;
         max-width: 35rem;
     }
