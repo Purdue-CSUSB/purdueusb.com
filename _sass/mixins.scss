@@ -159,6 +159,7 @@
 @mixin clickable {
     cursor: pointer;
     @include shadow-drop;
+    @extend .shadow-drop--center--soft\:hover;
 }
 
 @mixin flex-even {
@@ -303,4 +304,13 @@
     @else {
         #{$attribute}: #{$value};
     }
+}
+
+@mixin pseudo-variant($pseudo) {
+    &\:#{$pseudo} {
+        &:#{$pseudo} {
+            @content;
+        }
+    }
+    @content;
 }
