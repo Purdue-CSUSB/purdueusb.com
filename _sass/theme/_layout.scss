@@ -77,9 +77,10 @@ footer {
 
 
 /* Credit: https://codepen.io/lbebber/pen/pvwZJp */
-// Sorry this is so ugly! Very WIP, animations aren't working
+// Sorry this is so ugly! Very WIP, animations aren't really working
 $menu-items: 4;
 $open-distance: 80px;
+$open-distance-mobile: 18vh;
 
 %ball{
     @extend .bg-accent, .light, .text-center, .animate;
@@ -135,10 +136,7 @@ $open-distance: 80px;
 
 
 .nav-item{
-    text-align: right;
-    &:hover{
-        @extend .shadow--center--soft;
-    }
+    @extend .shadow--center--soft\:hover, .text-right;
     @for $i from 1 through $menu-items{
         &:nth-child(#{$i + 2}){
             transition-duration: 180ms;
@@ -169,7 +167,12 @@ $open-distance: 80px;
     @for $i from 1 through $menu-items{ 
         &:nth-child(#{$i+2}){
             transition-duration: 90ms+(100ms*$i);
-            transform: translate3d(0,-$open-distance * $i,0);
+            @media (min-aspect-ratio: 890/400) { 
+                transform: translate3d(0,-$open-distance-mobile * $i,0);
+            }
+            @media (max-aspect-ratio: 891/400) { 
+                transform: translate3d(0,-$open-distance * $i,0);
+            }
         }
     }
 }
@@ -179,4 +182,8 @@ $open-distance: 80px;
     &-title {
         @extend .py-10, .mb-0, .text-center;
     }
+}
+
+.lb-next, .lb-prev {
+    @extend .shadow-text--center;
 }
