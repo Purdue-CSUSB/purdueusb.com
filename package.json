@@ -4,6 +4,9 @@
   "description": "This repository is created for Purdue's CS Undergraduate Student Board website. Our main consideration is the ease of maintenance and content updates. Information that frequently changes, like members, initiatives, and student resources, can all be updated through YAML and Markdown files.",
   "main": "",
   "dependencies": {
+    "anchor-js": "^4.2.2",
+    "es5-shim": "^4.5.14",
+    "lunr": "^2.3.8",
     "purgecss": "^2.3.0"
   },
   "devDependencies": {},

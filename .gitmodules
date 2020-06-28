@@ -1,9 +1,4 @@
-[submodule "Magic-Grid"]
-	path = Magic-Grid
-	url = https://github.com/e-oj/Magic-Grid.git
-[submodule "libs/Magic-Grid"]
-	path = libs/Magic-Grid
-	url = https://github.com/e-oj/Magic-Grid.git
-[submodule "libs/anchorjs"]
-	path = libs/anchorjs
-	url = https://github.com/bryanbraun/anchorjs.git
+
+[submodule "libs/lightbox2"]
+	path = libs/lightbox2
+	url = git@github.com:lokesh/lightbox2.git

@@ -65,14 +65,16 @@ To disable lightbox on a markdown link, use the `no-lightbox` class like so:
 
 ### Installation & Setup
 
-Please follow the installation instructions found on the [Jekyll Website](https://jekyllrb.com/docs/installation/). There are instructions for Windows, macOS, and Linux. Once Jekyll is properly installed, clone the repository. Then, run `bundle exec jekyll serve` in the repository's root directory.
+This project contains submodule dependencies, so clone using `git clone --recursive git@github.com:Purdue-CSUSB/purdueusb.com.git`. If you forgot to do this, run `git submodule update --init --recursive` in the project root.
 
-  - Linux users: you can use `run.sh [-hilpt]` to run the jekyll build server conveniently.
-    - -h) Run in headless mode (don't open your browser automatically).
+You can get Jekyll running by following the [installation tutorial](https://jekyllrb.com/docs/installation/). There are instructions for Windows, macOS, and Linux. Once Jekyll is properly installed, run `bundle exec jekyll serve` in the repository's root directory.
+
+  - **Linux users**: you can use `run.sh [-hilpt]` to run the jekyll build server conveniently.
+    - -h) Headless mode (don't open your browser automatically).
     - -i) Run `bundle install` at start.
-    - -l) Live server (may cause cache buildup and require browser restart).
-    - -p) Production mode
-    - -t) Show traceback
+    - -l) Live server (can cause gigabytes of cache buildup and require browser restart).
+    - -p) Production mode: runs `purgecss` (~6s) and `jekyll-minifier` (~30s).
+    - -t) Debug mode, shows traceback.
 
 ### TODO
 
@@ -100,6 +102,7 @@ Plugins currently in use:
 - Jekyll purgecss
 - ~~Jekyll target-blank (opens markdown links in new window)~~ *broken*
 - ~~Jekyll minifier~~ *Netlify handles minification*
+- jekyll-redirect-from
 
 ### Config
 

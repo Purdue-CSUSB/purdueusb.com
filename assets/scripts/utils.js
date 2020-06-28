@@ -45,3 +45,31 @@ function highlightCode() {
         hljs.highlightBlock(element);
     });
 }
+
+function lightcaseifyArticle() {
+    document.querySelectorAll("article#post section#content img:not(.no-lightcase)").forEach(img => {
+        img.classList.add("lightcase-img");
+        let link = document.createElement("a");
+        link.setAttribute("href", img.src);
+        link.setAttribute("data-rel", "lightcase");
+        let album = img.getAttribute("data-lightcase") || window.performance.now();
+        link.setAttribute("data-lightcase", album);
+
+        img.parentNode.replaceChild(link, img);
+        link.appendChild(img);
+    });
+
+    jQuery(document).ready(function($) {
+		$('a[data-rel^=lightcase]').lightcase();
+	});
+
+    document.querySelectorAll('article#post section#content > p').forEach(p => {
+        let imgs = p.querySelectorAll("img");
+        if (imgs.length > 1) {
+            p.classList.add("row", "justify-around");
+            imgs.forEach(img => {
+                img.style.display = "inline";
+            });
+        }
+    })
+}

@@ -44,3 +44,31 @@ label[for="rate-good"], label[for="rate-bad"] {
         @extend .green-dark;
     }
 }
+
+.lightcase-img {
+    @extend .clickable;
+}
+
+#lightcase-info #lightcase-caption {
+    @extend .light;
+}
+
+#lightcase-overlay {
+    background: #000;
+}
+
+.lightcase-icon-close {
+    &:before{
+        content: '×';
+    }
+    @extend .no-decoration, .flat;
+    color: $accent-grey !important;
+    &:hover {
+        color: $text-color-light !important;
+    }
+}
+
+.wiki-list {
+    max-height: 35vh;
+    min-height: 200px;
+}
