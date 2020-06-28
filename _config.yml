@@ -30,7 +30,7 @@ defaults:
 
 # Date Format
 # refer to https://shopify.github.io/liquid/filters/date/ to customize this
-date_format: "%b %-d, %Y"
+date_format: "%B %-d, %Y"
 
 sass:
   style: expanded
@@ -55,3 +55,4 @@ plugins:
   - jekyll-purgecss
   - jekyll-minifier
 #  - jekyll-target-blank
+  - jekyll-redirect-from

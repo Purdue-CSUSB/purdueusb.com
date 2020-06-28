@@ -1,13 +1,13 @@
 #!/bin/bash
 
-./clean.sh
-
 JENV="development"
 OPEN=true
 LIVE=false
 TRACE=false
-while getopts "hplit" opt; do
+while getopts "chplit" opt; do
     case "${opt}" in
+        c) ./clean.sh
+        ;;
         h) OPEN=false 
         ;;
         p) JENV="production" 

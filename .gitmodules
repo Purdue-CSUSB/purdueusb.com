@@ -1,4 +1,0 @@
-
-[submodule "libs/lightbox2"]
-	path = libs/lightbox2
-	url = git@github.com:lokesh/lightbox2.git
