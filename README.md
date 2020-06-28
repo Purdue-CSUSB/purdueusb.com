@@ -4,80 +4,81 @@ This repository is created for Purdue's CS Undergraduate Student Board website. 
 
 This is a static site built using [Jekyll](https://jekyllrb.com), designed on [Figma](https://figma.com), and hosted here on Github Pages. Jekyll was selected due to its compatibility with GH Pages, as well as it's out-of-the-box blog functionality.
 
-## Contribution
+## **Contribution**
 
-### Editing Site Information
+### **Editing Site Information**
+~~Currently with automatic GH pages builds, information can be edited directly on github.~~ Editing site information on github may be automatically deployed by netlify [*confirmation needed*].
 
-Currently with automatic GH pages builds, information can be edited directly on github. 
+*Please take a moment to familiarize yourself with [YAML](https://learnxinyminutes.com/docs/yaml/) and [Markdown](https://learnxinyminutes.com/docs/markdown/) formats.*
 
-### **Please take a moment to familiarize yourself with [YAML](https://learnxinyminutes.com/docs/yaml/) and [Markdown](https://learnxinyminutes.com/docs/markdown/) formats.**
-
-#### Images
-
+#### **Images**
 Please run `webp-convert` on any directories of images you add that are not in webp format.
 
-#### USB Members
-
+#### **USB Members**
 1. Edit either `_data/members.yml` or `_data/alumni.yml` with their name, title, class rank, and (optionally) an appropriate personal website.
 2. If necessary, add their photograph in `assets/images/members`. Make sure the image file name matches their name in their yml entry, the images are square, and 300x300.
    - We don't want to be serving images larger than they need to be.
 
-#### Initiatives
-
+#### **Initiatives**
 1. Add an initiative logo in `assets/images/initiative`. Please use a square resolution, or it will be cropped to fit automatically.
 2. Edit `_data/initiatives.yml` with `title`, `image`, `description`, (optional) `inactive`, (optional) `buttonText` and `buttonLink` and list of participating `members` names (as spelled in members.yml).
    - An inactive entry can contain either `true | string`. True will display "INACTIVE" and anything else will be displayed as-is.
    - Former members can be designated alumnus by making their class a year.
 
-#### Objectives
-
+#### **Objectives**
 1. Add an objective logo to `assets/images/objectives`
 2. Edit `_data/objectives.yml` with title, image, and description.
 
-#### Student Resources
+#### **Student Resources**
+Wiki posts are written in Markdown only. To keep the flow of information consistent, please **do not use `h1 (#)` or `h2 (##)` headings**.
 
-Articles are to be written in Markdown. The name of the file will be the URL slug, e.g. `lawson-fob.md` becomes `/resources/lawson-fob`. Be sure to include the following "front matter" attributes to the top of the Markdown file between a pair of `---`:
+The filename will be the URL slug, so `lawson-fob.md` becomes `/resources/lawson-fob`. Be sure to include the following [front matter](https://jekyllrb.com/docs/front-matter/) attributes:
 
-- title - Title of the article
-- description - Describe what the article is about. Keep this down to one sentence.
-- author: Name of the author
-- date - Date of most recent edit
+- title: Title of the article
+- description: Describe what the article is about. Keep this down to one sentence.
+- author: List of author names exactly as they appear in membership data files.
+- date: Date of most recent edit
 - categories: Category this fits the article, like `technical` or `campus`. Multiple categories can be included, as long as they are comma separated, an between square brackets.
 
-Example:
-```
-File: social-life.md
+Example: `apply-to-usb.md`
+```yaml
 ---
-title: How to have a social life
-description: A very useful resource for CS/DS students.
+title: How to Apply to the USB
+description: A very useful resource for prospective members.
+author:
+ - Clippy
 category: 
- - technical
  - campus
+ - clubs
 ---
+thank u for your interest
+![clippy](assets/images/clippy.png)
 ```
 
-To disable lightbox on a markdown link, use the `no-lightbox` class like so:
+To disable lightcase on a markdown link, use the `no-lightcase` class like so:
 ```markdown
-[video link](https://youtu.be/iWowJBRMtpc?t=90s){:.no-lightbox}
+[video link](https://youtu.be/iWowJBRMtpc?t=90s){:.no-lightcase}
 ```
 
-## Development
+## **Development**
 
-### Installation & Setup
+### **Installation & Setup**
 
 This project contains submodule dependencies, so clone using `git clone --recursive git@github.com:Purdue-CSUSB/purdueusb.com.git`. If you forgot to do this, run `git submodule update --init --recursive` in the project root.
+
+NPM is required ([version here](.node-version)) to run `purgecss` in production.
 
 You can get Jekyll running by following the [installation tutorial](https://jekyllrb.com/docs/installation/). There are instructions for Windows, macOS, and Linux. Once Jekyll is properly installed, run `bundle exec jekyll serve` in the repository's root directory.
 
   - **Linux users**: you can use `run.sh [-hilpt]` to run the jekyll build server conveniently.
+    - -c) Clean jekyll cache files.
     - -h) Headless mode (don't open your browser automatically).
     - -i) Run `bundle install` at start.
     - -l) Live server (can cause gigabytes of cache buildup and require browser restart).
     - -p) Production mode: runs `purgecss` (~6s) and `jekyll-minifier` (~30s).
     - -t) Debug mode, shows traceback.
 
-### TODO
-
+### **TODO**
 - [x]  Make post sidebar in student resource page independent scrollable from the article content
 - [ ]  Decrease load time.
   - [x]  Compress all image assets.
@@ -90,10 +91,24 @@ You can get Jekyll running by following the [installation tutorial](https://jeky
   - [ ]  Collect USB alumni photos, names, websites, and year they left usb
 - [ ]  Either create an about page (maybe about the history of the organization) or have it link to the landing instead.
 - [ ]  Create 404 page doodle.
+- [ ]  Un-extendify sass with silent classes.
 - [ ]  Componentize site elements with [web components](https://css-tricks.com/an-introduction-to-web-components/)
 - [ ]  Future deprecation issues: convert all @import statements when support is added for @use in the jekyll sass converter. See [relevant issue](https://github.com/jekyll/jekyll-sass-converter/issues/105).
 
-### Plugins
+### **Known Issues**
+- Purgecss will purge style classes used/constructed programmatically. Sometimes it is necessary to exempt classes from purgecss like so:
+    ```scss
+    /* purgecss start ignore */
+    .bg {
+        @include generate-subclass($colors, 'background-color');
+    }
+    /* purgecss end ignore */
+    ```
+- Live reload can cause major cache buildup.
+- An error seems to cause intermittent failure to load live changes:
+    ```ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf```
+
+### **Plugins**
 
 Plugins currently in use:
 
@@ -101,32 +116,41 @@ Plugins currently in use:
 - Jemoji (github emoji support)
 - Jekyll purgecss
 - ~~Jekyll target-blank (opens markdown links in new window)~~ *broken*
-- ~~Jekyll minifier~~ *Netlify handles minification*
+- Jekyll minifier *Netlify also handles minification*
 - jekyll-redirect-from
 
-### Config
+Local Dependencies:
+- Highlight.js: Syntax highlighting
 
-Here we define site configuration variables such as content collections, permalink formats, social links, plugins, and other site-wide defaults.
+NPM Dependencies:
+- Lunr.js: Site search support
+- Anchorjs: Provide anchor link support
+- Lightcase: Seamlessly display image and video links in a modal dialog
+- Purgecss: Remove unused css classes
 
-### Data
+CDN Dependencies:
+- MagicGrid: Align items in a masonry grid
+- FontAwesome: Vast array of vector icons
+- JQuery
 
+### **Config**
+Here we define site configuration variables such as content collections, permalink formats, plugins, and other site-wide defaults.
+
+### **Data**
 Data collections can be stored in YAML files under the `_data` directory, and can be accessed by using `site.data.<my_collection>` in [Liquid](https://jekyllrb.com/docs/liquid/).
 
-### Layouts
-
+### **Layouts**
 Refers to files within the `_layouts` directory, that define the markup for your theme.
 
 - `default.html` &mdash; The base layout that lays the foundation for subsequent layouts. The derived layouts inject their contents into this file at the line that says `{{ content }}` and are linked to this file via [FrontMatter](https://jekyllrb.com/docs/frontmatter/) declaration `layout: default`.
 - `wiki.html` &mdash; An extension of the base layout that includes a sidebar and content area for wiki posts.
 
-### Includes
-
+### **Includes**
 Refers to snippets of code within the `_includes` directory that can be inserted in multiple layouts (and another include-file as well) within the same theme-gem.
 - Nav
   - `footer.html` &mdash; Defines the site's footer section.
   - `header.html` &mdash; Defines the site's main header section. By default, pages defined in `_data/header_links` will show up here in defined order.
   - `sidebar.html` &mdash; The sidebar of all wiki entries that is seen when a user clicks on a student resource link.
-
 - Components
   - `aboutus.html` &mdash; The mission and objectives of USB, and our members.
   - `initiatives.html` &mdash; Shows the cards for each initiative present in `_data/initiatives.yml`.
@@ -134,12 +158,10 @@ Refers to snippets of code within the `_includes` directory that can be inserted
   - `post.html` &mdash; The layout of a wiki resource (excludes sidebar).
   - `rating.html` &mdash; The layout of a wiki resource (excludes sidebar).
   - `social.html` &mdash; Creates a row of social media icons that are used in the footer. Clicking on these icons will take the user to our respective social media pages.
-
 - `head.html` &mdash; Code-block that defines the `<head></head>` in _default_ layout.
 
 
-### Sass
-
+### **Sass**
 Refers to `.scss` files within the `_sass` directory that define the site's styles.
 
 - `theme.scss` &mdash; The core file imported by the preprocessed `main.scss`. It defines the variable defaults for the theme and also further imports sass partials to supplement itself.
@@ -154,8 +176,7 @@ Refers to `.scss` files within the `_sass` directory that define the site's styl
 Special mention:
 - `assets/main.scss` &mdash; The main file to be transpiled by sass into regular css. All page styles imported here on top of the theme.
 
-### Assets
-
+### **Assets**
 Refers to various asset files within the `assets` directory.
 Contains the `main.scss` that imports sass files from within the `_sass` directory. This `main.scss` is what gets processed into the theme's main stylesheet `main.css` called by `_layouts/default.html` via `_includes/head.html`.
 
@@ -163,8 +184,7 @@ This directory can include sub-directories to manage assets of similar type, and
 
 All assets will be compressed by the img-bot on github, so try to stick to compressable formats. Please check for quality.
 
-### Change default date format
-
+### **Default date format**
 You can change the default date format by specifying `site.date_format`
 in `_config.yml`.
 
@@ -174,8 +194,7 @@ in `_config.yml`.
 date_format: "%b %-d, %Y"
 ```
 
-### Social networks
-
+### **Social networks**
 You can add links to the accounts USB maintains on other sites by adding options to the config in the following format (`https://` included):
 
 ```yaml
@@ -184,12 +203,10 @@ myspace: "https://myspace.com/mycoolestprofile"
 
 Please ensure we have an svg icon for the site you add, and add one if not.
 
-### Accessibility
+### **Accessibility**
+The USB serves all students, and our website is no exception. Ensuring WCAG compliance is very important, and accessibility issues [have lead to lawsuits](https://www.boia.org/blog/is-there-a-legal-requirement-to-implement-wcag) as [potential violations of the ADA Title III requirement](https://www.grassley.senate.gov/sites/default/files/documents/2018-10-11%20DOJ%20to%20Grassley%20-%20ADA%20Website%20Accessibility.pdf)!
 
-The USB serves all students, and our website is no exception. Ensuring WCAG compliance is of the utmost importance, and accessibility issues [may lead to lawsuits](https://www.boia.org/blog/is-there-a-legal-requirement-to-implement-wcag) as [potential violations of the ADA Title III requirement](https://www.grassley.senate.gov/sites/default/files/documents/2018-10-11%20DOJ%20to%20Grassley%20-%20ADA%20Website%20Accessibility.pdf)!
-
-#### What should you do?
-
+#### **What should you do?**
 The WCAG is tedious to read, but first and foremost use your head and empathize with the user. Secondly, you can read a summary or checklist such as [this one](https://uxdesign.cc/web-accessibility-standards-an-overview-for-designers-1a4d39f2fe5e) published in the UX Collective publication.
 
 It doesn't have to be perfect, but we should be as compliant as possible whenever we can.
