@@ -18,7 +18,7 @@ Sometimes there comes a need where you need to transfer a files between your per
 
 On Windows open “Windows PowerShell.” On Mac or Linux, open your respective Terminal.
 
-![Windows Powershell](https://piazza.com/redirect/s3?bucket=uploads&prefix=attach%2Fk4xoekpg2qs2af%2Fj6jr6ij1sv162q%2Fk8gfyjjwujp5%2Fimage1.png)
+![Windows Powershell](/assets/images/wiki/file-transfer/image1.png)
 
 #### Step 2
 
@@ -38,7 +38,7 @@ For example, if I wanted to transfer my hw2.c file to my current directory on my
 scp nalderto@data.cs.purdue.edu:~/cs240/hw2/hw2.c .
 ```
 
-![Windows Powershell](https://piazza.com/redirect/s3?bucket=uploads&prefix=attach%2Fk4xoekpg2qs2af%2Fj6jr6ij1sv162q%2Fk8gfz3k1fmvd%2Fimage2.png)
+![Windows Powershell](/assets/images/wiki/file-transfer/image2.png)
 
 #### Step 3
 
@@ -63,11 +63,8 @@ You can download FileZilla [here](https://filezilla-project.org/download.php?sho
 Once you have finished installing FileZilla, open it up. On the top, there should be 4 input boxes. Put in the following information:
 
 - Host: `sftp://data.cs.purdue.edu`
-
 - Username: Purdue Username
-
 - Password: Purdue Career Account Password (same password used to SSH into data)
-
 - Port: 22
 
 #### Step 3
@@ -78,4 +75,4 @@ Once the appropriate information is entered, click “Quickconnect”. A dialog 
 
 You should now be connected to data! Your data filesystem is on the right part of the screen, while your personal computer’s files are on the left. You can drag and drop the files between the machines as you wish!
 
-![Filezilla example](https://piazza.com/redirect/s3?bucket=uploads&prefix=attach%2Fk4xoekpg2qs2af%2Fj6jr6ij1sv162q%2Fk8gfzjg5s2wl%2Fimage3.png)
+![Filezilla example](/assets/images/wiki/file-transfer/image3.png)
