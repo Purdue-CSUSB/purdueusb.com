@@ -6,7 +6,7 @@
 /* Source: https://gist.github.com/mattfelten/5c6ad6edb70c6ab10f5c377c21eda2f2
     Modified by Zach Bryant
 */
-@mixin generate-subclass($map, $attribute, $prefix: '-', $base: 'base', $remove: null, $important: false) {
+@mixin generate-subclass($map, $attribute, $prefix: '-', $base: 'base', $remove: null, $important: false, $pseudo: false) {
 	@each $key, $value in $map {
 		@if $remove {
 			$key: str-replace($key, $remove, '');
@@ -16,7 +16,9 @@
             $class: '&#{if($key != $base, #{$prefix}#{$key}, '')}';
         }
         #{$class} {
-            @include generate-helper($value, $attribute, $prefix, $base, $remove, $important);
+            @include generate-pseudo-helper($pseudo) {
+                @include generate-helper($value, $attribute, $prefix, $base, $remove, $important);
+            }
         }
 	}
 }
@@ -41,6 +43,19 @@
     }
 }
 
+@mixin generate-pseudo-helper($pseudo) {
+    @if $pseudo {
+        @each $variant in $pseudo-classes {
+            @include pseudo-variant($variant) {
+                @content;
+            }
+        }
+    }
+    @else {
+        @content;
+    }
+}
+
 // Helper generates important styles
 @mixin generate-important-helper($value, $attribute, $important) {
     #{$attribute}: $value#{if($important, ' !important', '')};
@@ -50,7 +65,7 @@
 @function range-space-map($start, $end) {
     $map: ();
     @for $index from $start through $end {
-        $map: map-merge($map, ($index: spacing-group($index)));
+        $map: map-merge($map, (abs($index): spacing-group($index)));
     }
     @return $map;
 }
@@ -58,6 +73,20 @@
 $spacings: range-space-map(0, $spacing-max-group);
 $spacings: map-merge($spacings, (auto: auto));
 
+$spacings-negative: range-space-map(-$spacing-max-group, -1);
+
+$pseudo-classes: (
+    'hover', 
+    'focus', 
+    'invalid', 
+    'active', 
+    'visited', 
+    'link', 
+    'checked', 
+    'disabled', 
+    'empty', 
+    'enabled',
+);
 
 $colors: (
     transparent: transparent,
@@ -95,7 +124,7 @@ $colors: (
     $colors: map-merge($colors, ($color: $value));
 }
 
-@include generate-subclass($colors, 'color');
+@include generate-subclass($colors, 'color', $pseudo: false);
 
 $displays: (
     block:      block,
@@ -260,9 +289,9 @@ $percentages: (
     }
 }
 
-$spacing-types:         (margin, padding);
-$spacing-values:        ($spacings, $percentages);
-$spacing-directions:    (top: "-top", bottom: "-bottom", left: "-left", right: "-right", x: ("-left", "-right"), y: ("-top", "-bottom"), a: ("-left", "-right", "-top", "-bottom", ""));
+$spacing-types:            (margin, padding);
+$spacing-values:           ($spacings, $percentages);
+$spacing-directions:       (top: "-top", bottom: "-bottom", left: "-left", right: "-right", x: ("-left", "-right"), y: ("-top", "-bottom"), a: ("-left", "-right", "-top", "-bottom", ""));
 @each $type in $spacing-types {
     $t: str-slice($type, 1, 1);
     @each $direction, $attrs in $spacing-directions {
@@ -280,6 +309,11 @@ $spacing-directions:    (top: "-top", bottom: "-bottom", left: "-left", right: "
         .#{$prefix} {
             @each $values in $spacing-values {
                 @include generate-subclass($values, $attrs);
+            }
+        }
+        @if $type == "margin" {
+            .-#{$prefix} {
+                @include generate-subclass($spacings-negative, $attrs);
             }
         }
     }
