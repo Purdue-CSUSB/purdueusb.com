@@ -34,6 +34,8 @@ Wiki posts are written in Markdown only. To keep the flow of information consist
 
 You can also use emojis seen on this [cheat sheet](https://www.webfx.com/tools/emoji-cheat-sheet/)! :bangbang:
 
+**A note about images**: Please only use images hosted by USB - not from an outside source. In addition, use descriptive and readable captions for wiki images, as they will be displayed to the user and read aloud via screen readers.
+
 The filename will be the URL slug, so `lawson-fob.md` becomes `/resources/lawson-fob`. Be sure to include the following [front matter](https://jekyllrb.com/docs/front-matter/) attributes:
 
 - title: Title of the article
@@ -79,6 +81,8 @@ You can get Jekyll running by following the [installation tutorial](https://jeky
     - -l) Live server (can cause gigabytes of cache buildup and require browser restart).
     - -p) Production mode: runs `purgecss` (~6s) and `jekyll-minifier` (~30s).
     - -t) Debug mode, shows traceback.
+
+Note: Jekyll does not parse changes to `_config.yml` in watch mode. You must restart the build server for changes to take effect.
 
 ### **TODO**
 - [x]  Make post sidebar in student resource page independent scrollable from the article content
