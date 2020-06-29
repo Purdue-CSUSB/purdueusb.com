@@ -91,6 +91,8 @@ You can get Jekyll running by following the [installation tutorial](https://jeky
   - [ ]  Collect USB alumni photos, names, websites, and year they left usb
 - [ ]  Either create an about page (maybe about the history of the organization) or have it link to the landing instead.
 - [ ]  Create 404 page doodle.
+- [ ]  Decrease build time
+  - [ ]  Phase out `generate.css` with `tailwind.css` (closely modeled after this framework)
 - [ ]  Un-extendify sass with silent classes.
 - [ ]  Componentize site elements with [web components](https://css-tricks.com/an-introduction-to-web-components/)
 - [ ]  Future deprecation issues: convert all @import statements when support is added for @use in the jekyll sass converter. See [relevant issue](https://github.com/jekyll/jekyll-sass-converter/issues/105).
@@ -104,9 +106,10 @@ You can get Jekyll running by following the [installation tutorial](https://jeky
     }
     /* purgecss end ignore */
     ```
-- Live reload can cause major cache buildup.
+- Live reload can cause major cache buildup and freeze your computer.
 - An error seems to cause intermittent failure to load live changes:
     ```ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf```
+- Build time is `s l o w` because of css class generation
 
 ### **Plugins**
 
