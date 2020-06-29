@@ -1,22 +1,28 @@
-<aside class="card py-4">
-    <div id="sidebar" class="px-6">
-        <h4 class="text-center">Student Resources</h4>
-        <p class="text-justify mb-4">Contains locally sourced, organic wisdom. Shared by the student body, curated by USB.</p>
-        <div class="none input row--nowrap mb-5 align-items-baseline">
-            <i class="fa fa-search icon-0 my-5 ml-5 grey" aria-hidden="true"></i>
-            <input type="text" name="Search" id="search" placeholder="Search..." class="border-none w-full pa-1">
-        </div>
+<aside id="sidebar" class="card pt-4 pb-2 px-6">
+    <h4 class="text-center mb-2">Student Resources</h4>
+    <div class="row justify-center none@sm-below">
+        <p class=" caption mb-6 w-3/4">Contains locally sourced, organic wisdom. Shared by the student body, curated by USB.</p>
+    </div>
+    
+    <div class="input row--nowrap mb-5 align-items-baseline">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input type="text" name="Search" id="search" placeholder="Search..." class="border-none w-full pa-1">
+    </div>
+
+    <div class="row">
         {%- if site.wiki.size > 0 -%}
-            <div class="overflow-scroll h-64@md-below">
+            {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+            <div id="wiki-list" class=" column overflow-scroll {% if include.limit_height %} h-72@xs {% else %} h-full {% endif %}">
                 {%- for post in site.wiki -%}
-                    {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-                    <div class="divider--horizontal bg-grey-light"></div>
+                    {% unless forloop.last or forloop.first %}
+                        <div class="divider--horizontal bg-grey-light"></div>
+                    {% endunless %}
                     <a href="{{ post.url | relative_url }}" class="no-decoration">
                         <!--<span>{{ post.date | date: date_format }}</span>-->
-                        {{ window.hash }}
-                        <div {% if post.slug == hash %}id="active" {% endif %} class="py-4 px-2 rounded active--hover animate-fast">
-                            <p class="font-bold mb-0">{{ post.title | escape }}</p>
-                            <p class="dark font-normal mb-0">{{ post.description }}</p>
+                        {% assign active_slug = page.url | split:'/' | last %}
+                        <div {% if post.slug == active_slug %}id="active" {% endif %} class="py-4 px-2 rounded active--hover animate-fast">
+                            <p class="font-bold mb-1 post-title">{{ post.title }}</p>
+                            <p class="dark font-normal mb-0 post-description">{{ post.description }}</p>
                         </div>
                     </a>
                 {%- endfor -%}
