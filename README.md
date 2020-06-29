@@ -30,7 +30,9 @@ Please run `webp-convert` on any directories of images you add that are not in w
 2. Edit `_data/objectives.yml` with title, image, and description.
 
 #### **Student Resources**
-Wiki posts are written in Markdown only. To keep the flow of information consistent, please **do not use `h1 (#)` or `h2 (##)` headings**.
+Wiki posts are written in Markdown only. To keep the flow of information consistent, please **do not use `h1 (#)` or `h2 (##)` headings**. 
+
+You can also use emojis seen on this [cheat sheet](https://www.webfx.com/tools/emoji-cheat-sheet/)! :bangbang:
 
 The filename will be the URL slug, so `lawson-fob.md` becomes `/resources/lawson-fob`. Be sure to include the following [front matter](https://jekyllrb.com/docs/front-matter/) attributes:
 
