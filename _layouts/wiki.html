@@ -4,13 +4,15 @@ title: Student Resources
 description: Locally sourced, organic wisdom. Shared by the student body, curated by USB.
 ---
 
-<div class="row--nowrap@lg-above column@md-below justify-start@lg-above justify-center@md-below mt-10@md-above mt-5@sm-below px-10@md-above px-5@sm-below flex-container align-items-start">
-    <div class="column@md-below w-full@md-below w-5/20@lg-above sticky@lg-above top-10@lg-above">
+<div class="row--nowrap@lg-above column@md-below justify-center@lg-above justify-center@md-below my-10@md-above mt-5@sm-below px-10@md-above px-5@sm-below flex-container align-items-start">
+    <div class="w-full@md-below w-7/20@lg-above sticky@lg-above top-10@lg-above wiki-shim">
         {%- include nav/sidebar.html limit_height=true -%}
     </div>
-    <div class="ml-8 none@md-below"></div>
+    <div class="ml-15 none@md-below"></div>
     <div id="postVerticalSeparator" class="my-4 none@lg-above"></div>
-    <div class="column w-full@md-below w-14/20@lg-above h-full grow-2">
+    <div class="w-full@md-below textwidth@lg-above h-full">
         {% include components/post.html content=content %}
     </div>
+    <!-- total hack to center content -->
+    <div class="none@lg-below w-0@lg-below w-7/20@xl-above wiki-shim"></div>
 </div>

@@ -210,6 +210,18 @@ $flex-wraps: ();
         );
         @include generate-subclass($map, 'align-items');
     }
+    &self {
+        $map: (
+            start:      flex-start,
+            center:     center,
+            end:        flex-end,
+            around:     space-around,
+            between:    space-between,
+            baseline:   baseline,
+            stretch:    stretch
+        );
+        @include generate-subclass($map, 'align-self');
+    }
 }
 
 .text {
@@ -331,7 +343,7 @@ $spacing-directions:       (top: "-top", bottom: "-bottom", left: "-left", right
 
 
 /* Flex Shrink/Grow class generation */
-$max-grow-shrink-factor:  3;
+$max-grow-shrink-factor:  5;
 $grow-shrink-factors: (0:0);
 @for $factor from 0 through $max-grow-shrink-factor {
     $grow-shrink-factors: map-merge($grow-shrink-factors, ($factor: $factor));

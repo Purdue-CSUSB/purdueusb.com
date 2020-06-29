@@ -145,6 +145,14 @@ h4 {
     @extend .font-h4;
 }
 
+h5 {
+    @extend .font-body;
+}
+
+h6 {
+    @extend .font-caption;
+}
+
 button, .button, input[type="submit"] {
     @extend .font-button;
 }
@@ -164,7 +172,13 @@ code, span, li, ul, ol, dl, data, input, .body {
 
 caption, .caption, small, small *, #lightcase-info #lightcase-caption {
     @extend .font-caption;
-    @extend .font-semibold;
+    &:not(b):not(strong) {
+        @extend .font-semibold;
+    }
+}
+
+b, strong {
+    @extend .font-bold;
 }
 
 %input-focus {

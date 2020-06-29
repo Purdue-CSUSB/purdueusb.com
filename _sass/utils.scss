@@ -162,9 +162,15 @@
 }
 
 .textwidth {
-    max-width: $text-width;
+    @include screen-variant() {
+        max-width: $text-width;
+    }
+    
     &--force {
-        width: $text-width;
+        @include screen-variant() {
+            width: $text-width;
+        }
+        
     }
 
 }

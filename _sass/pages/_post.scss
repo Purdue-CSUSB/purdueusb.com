@@ -13,7 +13,7 @@ article {
         @extend .justify-around, .align-items-center;
     }
 
-    section:nth-of-type(2) p {
+    section:nth-of-type(2) p, li {
         @extend .font--height-high;
     }
 
@@ -71,4 +71,8 @@ label[for="rate-good"], label[for="rate-bad"] {
     &:hover {
         color: $text-color-light !important;
     }
+}
+
+.wiki-shim {
+    max-width: 40rem;
 }
