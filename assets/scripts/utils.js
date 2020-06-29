@@ -47,7 +47,7 @@ function highlightCode() {
 }
 
 function lightcaseifyArticle() {
-    document.querySelectorAll("article#post section#content img:not(.no-lightcase)").forEach(img => {
+    document.querySelectorAll("article#post section#content img:not(.no-lightcase):not(.emoji)").forEach(img => {
         img.classList.add("lightcase-img");
         let link = document.createElement("a");
         link.setAttribute("href", img.src);

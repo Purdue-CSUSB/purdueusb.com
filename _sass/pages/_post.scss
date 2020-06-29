@@ -1,7 +1,12 @@
 article {
     p img {
-        margin: 0 auto;
-        @extend .block, .rounded;
+        &:not(.emoji) {
+            margin: 0 auto;
+            @extend .block, .rounded;
+        }
+        &.emoji {
+            @extend .-mt-2;
+        }
     }
 
     p {

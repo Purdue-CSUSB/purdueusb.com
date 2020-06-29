@@ -49,8 +49,8 @@ footer {
 }
 
 
-.divider {
-    &--horizontal {
+.divider, hr {
+    &, &--horizontal {
         @extend .w-full, .bg-primary, .h-px;
     }
 
