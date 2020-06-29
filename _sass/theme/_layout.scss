@@ -184,6 +184,9 @@ $open-distance-mobile: 18vh;
     }
 }
 
-.lb-next, .lb-prev {
-    @extend .shadow-text--center;
+.anchorjs-link {
+    color: $text-color;
+    &:hover {
+        color: $accent-red;
+    }
 }
