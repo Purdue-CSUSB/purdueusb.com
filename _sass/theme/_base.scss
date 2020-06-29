@@ -168,9 +168,9 @@ caption, .caption, small, small *, #lightcase-info #lightcase-caption {
 }
 
 %input-focus {
-    &:focus {
+    &:focus, &:focus-within {
         outline: none;  /* IMPORTANT Massive accessibility issue! Keep border! */
-        border-color: $focus-color !important;
+        @extend .border-focus-color;
     }
 }
 
@@ -181,6 +181,10 @@ form textarea, form input:not([type="submit"]), .input {
 
 .input {
     padding: 0;
+
+    i {
+        @extend .icon-0, .my-5, .ml-5, .mr-3, .grey;
+    }
 }
 
 .input > input {
