@@ -16,13 +16,13 @@ This tutorial will show you how to connect to Purdue's VPN using Cisco AnyConnec
 
 To download Cisco AnyConnect, go to the **[Purdue Community Hub](https://communityhub.purdue.edu/storefront/overview)**. After login in, you would want to go to "Antivirus and Security Software".
 
-![Community_Hub_Home_Page](https://user-images.githubusercontent.com/25762130/82869820-e50cf400-9efc-11ea-8b2b-cc91d91d03bd.png)
+![Community Hub Homepage](https://user-images.githubusercontent.com/25762130/82869820-e50cf400-9efc-11ea-8b2b-cc91d91d03bd.png)
 
 #### Step 2
 
 Select Cisco AnyConnect for Personally Owned Computers and select the appropriate settings for your computer. After adding the software to your cart, download Cisco AnyConnect.
 
-![Downloading_Cisco_AnyConnect](https://user-images.githubusercontent.com/25762130/82869848-ef2ef280-9efc-11ea-80fc-725f30737bc4.png)
+![Downloading Cisco AnyConnect](https://user-images.githubusercontent.com/25762130/82869848-ef2ef280-9efc-11ea-80fc-725f30737bc4.png)
 
 #### Step 3
 
@@ -47,5 +47,4 @@ You should be able to connect to Purdue's VPN server! A pop-up will notify you t
 After using Purdue's VPN, you want to disconnect. On Windows, right click on the Cisco AnyConnect icon, and click "Disconnect". On Mac, to disconnect, click on the Cisco AnyConnect icon from the menu bar and select "Disconnect". 
 
 ![Windows-Disconnect](https://user-images.githubusercontent.com/25762130/82869947-1daccd80-9efd-11ea-8622-a5b9fa81669f.png)
-
 ![Mac-Disconnect](https://user-images.githubusercontent.com/25762130/82869967-269d9f00-9efd-11ea-97b5-94ee51663039.png)
