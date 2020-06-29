@@ -3,14 +3,7 @@
     {%- include head.html -%}
     <body class="flex-container">
         {%- include nav/header.html -%}
-        <main class="pb-10 flex-container column">
-            <!--<script>
-                console.log(anchors);
-                anchors.options = {
-                    visible: 'touch',
-                };
-                anchors.add('h1, h2, h3, .anchored');
-            </script>-->
+        <main class="flex-container column">
             {%- include nav/navmenu_mobile.html -%}
             {{content}}
         </main>

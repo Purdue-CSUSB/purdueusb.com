@@ -162,7 +162,11 @@
 }
 
 .textwidth {
-    max-width: 53rem;
+    max-width: $text-width;
+    &--force {
+        width: $text-width;
+    }
+
 }
 
 .flat {
@@ -175,7 +179,9 @@
         &--center {
             @include shadow('drop', $shadow-nooffset);
             &--soft {
-                @include shadow('drop', $shadow-nooffset-soft);
+                @include generate-pseudo-helper(true) {
+                    @include shadow('drop', $shadow-nooffset-soft, $shadow-color-soft);
+                }
             }
         }
     }
@@ -185,7 +191,7 @@
         &--center {
             @include shadow('box-shadow', $shadow-nooffset);
             &--soft {
-                @include shadow('box-shadow', $shadow-nooffset-soft);
+                @include shadow('box-shadow', $shadow-nooffset-soft, $shadow-color-soft);
             }
         }
     }
@@ -198,17 +204,17 @@
         &--center {
             @include shadow('text-shadow', $shadow-nooffset);
             &--soft {
-                @include shadow('text-shadow', $shadow-nooffset-soft);
+                @include shadow('text-shadow', $shadow-nooffset-soft, $shadow-color-soft);
             }
         }
     }
 }
 
 .active, #active {
-    background-color: $focus-color;
+    @extend .bg-focus-color;
     &--hover {
         &:hover {
-            @extend .active;
+            @extend .bg-focus-color-light;
         }
     }
 }
@@ -217,9 +223,7 @@
     @extend .bg-light, .shadow-drop, .rounded, .overflow-hidden;
     transition: 0.3s;
 
-    &:hover {
-        @extend .shadow-drop--center--soft;
-    }
+    @extend .shadow-drop--center--soft\:hover;
 
     &--initiative {
         @extend .card;
