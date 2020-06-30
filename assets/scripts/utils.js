@@ -202,7 +202,7 @@ function titleCase (str) {
   }
 
   function setLinkTargetBlank() {
-      document.querySelectorAll("a").forEach(a => {
+      document.querySelectorAll("a:not(.page-link)").forEach(a => {
           if (!a.getAttribute("target")) {
               a.setAttribute("target", "_blank");
           }
