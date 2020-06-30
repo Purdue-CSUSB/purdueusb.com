@@ -200,3 +200,11 @@ function titleCase (str) {
       return match.charAt(0).toUpperCase() + match.substr(1);
     });
   }
+
+  function setLinkTargetBlank() {
+      document.querySelectorAll("a").forEach(a => {
+          if (!a.getAttribute("target")) {
+              a.setAttribute("target", "_blank");
+          }
+      })
+  }
