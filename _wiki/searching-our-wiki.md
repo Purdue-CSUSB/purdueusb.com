@@ -25,9 +25,9 @@ Fuzzy matching allows for some grace if you misspell a term or are off by a few 
 ### Term Presence
 Term presence allows you to explicitly include or exclude phrases in your search query with the symbols `+` and `-`, respectively. For example, `+foo -bar baz` matches only content with *foo* and without *bar*, that also may contain *baz*.
 
-By default, a result comes back if any word separated by a space matches some content. This is a limitation of the code our website uses. Searching for `+author:Zach Bryant` is seen as two separate terms, `+author:Zach` and `Bryant`. 
+By default, a result comes back if any word separated by a space matches some content. This is a limitation of the code our website uses. Searching for `+author:Purdue Pete` is seen as two separate terms, `+author:Purdue` and `Pete`. 
 
-Well, nothing's perfect. 
+Nothing's perfect. 
 
 ### Bringing It All Together
 You can make your search as simple or as complex as you'd like. As an example, if I wanted to search for articles I've authored in June not containing the phrase *krakatoa*, I could type `+author:Zach Bryant +date:June -krakatoa`. Except at this time, my *only* article contains the phrase *krakatoa*.
