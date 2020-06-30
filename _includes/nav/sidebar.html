@@ -16,7 +16,7 @@
                     {% unless forloop.last or forloop.first %}
                         <div class="divider--horizontal bg-grey-light"></div>
                     {% endunless %}
-                    <a href="{{ post.url | relative_url }}" class="no-decoration">
+                    <a href="{{ post.url | relative_url }}" class="no-decoration" target="_self">
                         {% assign active_slug = page.url | split:'/' | last %}
                         <div {% if post.slug == active_slug %}id="active" {% endif %} class="py-4 px-2 rounded active--hover animate-fast">
                             <p class="font-bold mb-1 post-title">{{ post.title }}</p>
