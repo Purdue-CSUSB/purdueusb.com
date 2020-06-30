@@ -1,11 +1,64 @@
-<div class="row justify-end@lg-above justify-center@md-below align-items-center mt-4">
-    <p class="mb-0 mr-2 font-medium">Was this page helpful?</p>
-    <input type="checkbox" href="#" class="menu-check w-0" name="rate-good" id="rate-good"/>
-    <label class="clickable pa-2" for="rate-good" title="Helpful">
-        <i class="fas fa-thumbs-up"></i>
-    </label>
-    <input type="checkbox" href="#" class="menu-check w-0" name="rate-bad" id="rate-bad"/>
-    <label class="clickable pa-2" for="rate-bad" title="Not helpful">
-        <i class="fas fa-thumbs-down"></i>
-    </label>
+<div class="column w-1/2">
+    <script>
+        function rate(good) {
+            let thumb_up = document.querySelector("#rate-good");
+            let thumb_down = document.querySelector("#rate-bad");
+            //uncheck is broken
+            /*if ((good && thumb_up.checked) || (!good && thumb_down.checked)) {
+                console.log("unchecking");
+                console.log("thumbup: " + thumb_up.checked);
+                console.log("thumbdown: " + thumb_down.checked);
+                thumb_up.checked = false;
+                thumb_down.checked = false;
+                showThanks(false);
+                showFeedbackForm(false);
+            } else {
+                console.log("checking");*/
+                thumb_up.checked = good;
+                thumb_down.checked = !good;
+                showThanks(good);
+                showFeedbackForm(!good);
+            //}
+        }
+
+        function showFeedbackForm(show) {
+            let feedback = document.querySelector("#feedback-bad-container");
+            if (show) {
+                feedback.classList.remove("none");
+            }
+            else {
+                feedback.classList.add("none");
+            }
+        }
+
+        function showThanks(show) {
+            let thanks = document.querySelector("#feedback-thanks-container");
+            if (show) thanks.classList.remove("none");
+            else thanks.classList.add("none");
+        }
+    </script>
+    <div class="row--nowrap justify-end@md-above justify-center@sm-below align-items-baseline mt-1">
+        <p class="mb-0 mr-2 font-semibold caption text-nowrap">Was this page helpful?</p>
+        <input type="checkbox" href="#" class="menu-check w-0" name="rate-good" id="rate-good" onclick="rate(true)"/>
+        <label class="clickable pa-3 mr-1" for="rate-good" title="Helpful">
+            <i class="fas fa-thumbs-up"></i>
+        </label>
+        <input type="checkbox" href="#" class="menu-check w-0" name="rate-bad" id="rate-bad" onclick="rate(false)"/>
+        <label class="clickable pa-3 ml-1" for="rate-bad" title="Not helpful">
+            <i class="fas fa-thumbs-down"></i>
+        </label>
+    </div>
+    <div class="row--nowrap justify-end@md-above justify-center@sm-below none" id="feedback-bad-container">
+        <form id="feedback-form" name="simple-contact-form" class="w-3/4" action="https://formspree.io/usb@cs.purdue.edu" accept-charset="utf-8" method="post">
+            <fieldset id="fs-frm-inputs">
+                <input type="hidden" name="Subject" id="feedback-subject" value="Wiki feedback on {{include.slug}}">
+                <textarea placeholder="Will you help us improve?" autocomplete="off" required name="Message" id="feedback" class="w-full" rows="2"></textarea>
+            </fieldset>
+        </form>
+        <button class="icon-4 pa-0 ml-2" type="submit" form="feedback-form" onclick="showThanks(true)"><i class="far fa-paper-plane"></i></button>
+    </div>
+
+    <div class="row--nowrap justify-end@md-above justify-center@sm-below align-items-center none" id="feedback-thanks-container">
+        <small class="mr-1">Thank you for your feedback!</small>:tada:
+    </div>
 </div>

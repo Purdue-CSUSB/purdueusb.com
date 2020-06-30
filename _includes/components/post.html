@@ -28,15 +28,17 @@
 
     <section id="content" class="text-justify">
         {{ content }}
+    </section>
+    <section class="row justify-between@md-above justify-center@md-below align-items-baseline">
         {% assign categories_size = page.categories | size %}
         {% if categories_size > 0 %}
-            <p class="caption">{% if categories_size > 1 %}Categories{% else %}Category{% endif %}: 
+            <small class="mb-0">{% if categories_size > 1 %}Categories{% else %}Category{% endif %}: 
                 {% for category in page.categories %}
                     <a href="/resources?s=category:{{category}}" class="caption">{{category}}</a>
                 {% endfor %}
-            </p>
+            </small>
         {% endif %}
+        <div class="flex-break none@md-above"></div>
+        {% include components/rating.html slug=page.slug %}
     </section>
-    {{site.data.search.content}}
-    <!--{% include components/rating.html %}-->
 </article>
