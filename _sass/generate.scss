@@ -167,11 +167,11 @@ $flex-wraps: ();
 }
 
 
-/* purgecss start ignore */
+/*! purgecss start ignore */
 .bg {
     @include generate-subclass($colors, 'background-color');
 }
-/* purgecss end ignore */
+/*! purgecss end ignore */
 
 .fill {
     @include generate-subclass($colors, 'fill');

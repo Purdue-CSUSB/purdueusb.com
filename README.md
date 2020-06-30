@@ -79,7 +79,7 @@ You can get Jekyll running by following the [installation tutorial](https://jeky
     - -h) Headless mode (don't open your browser automatically).
     - -i) Run `bundle install` at start.
     - -l) Live server (can cause gigabytes of cache buildup and require browser restart).
-    - -p) Production mode: runs `purgecss` (~6s) and `jekyll-minifier` (~30s).
+    - -p) Production mode: runs `purgecss` (~2mins *i know*).
     - -t) Debug mode, shows traceback.
 
 Note: Jekyll does not parse changes to `_config.yml` in watch mode. You must restart the build server for changes to take effect.
@@ -106,13 +106,13 @@ Note: Jekyll does not parse changes to `_config.yml` in watch mode. You must res
 ### **Known Issues**
 - Purgecss will purge style classes used/constructed programmatically. Sometimes it is necessary to exempt classes from purgecss like so:
     ```scss
-    /* purgecss start ignore */
+    /*! purgecss start ignore */
     .bg {
         @include generate-subclass($colors, 'background-color');
     }
-    /* purgecss end ignore */
+    /*! purgecss end ignore */
     ```
-- Live reload can cause major cache buildup and freeze your computer.
+- Live reload can cause **major** cache buildup and freeze your computer.
 - An error seems to cause intermittent failure to load live changes:
     ```ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf```
 - Build time is `s l o w` because of css class generation
