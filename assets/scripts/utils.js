@@ -173,7 +173,14 @@ function fixTitleCase() {
     });
 }
 
-// Source (not good as a local lib)
+/*
+ * Source (not right for us as a local module): https://github.com/rvagg/titlecase/blob/master/to-title-case.js
+ *
+ * To Title Case 2.1 – http://individed.com/code/to-title-case/
+ * Copyright © 2008–2013 David Gouch. Licensed under the MIT License.
+ *
+ * modifications by @rvagg Apr-2014
+ */
 var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i;
 function titleCase (str) {
     if (!str)
