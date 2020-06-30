@@ -1,7 +1,8 @@
 {% assign member_obj = include.member %}
+{% assign all_people = site.data.people.members | concat: site.data.people.alumni | concat: site.data.people.other %}
 {% if include.name %}
     {% assign name = member_obj | strip %}
-    {% assign member_obj = site.data.people.members | concat: site.data.people.alumni | where:"name", name | first %}
+    {% assign member_obj = all_people | where:"name", name | first %}
 {% endif %}
 
 {% if member_obj.name %}
