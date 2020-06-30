@@ -82,3 +82,114 @@ function scrollToPost() {
         post.scrollIntoView(true);
     }
 }
+
+function getSearchQuery() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('search') || urlParams.get('s');
+}
+
+var lastQuery = undefined;
+var searchIndex = lunr(function () {
+    this.ref('index');
+    this.field('title');
+    this.field('description');
+    this.field('content');
+    this.field('author');
+    this.field('category');
+    this.field('date');
+  
+    searchData.forEach(function (doc) {
+        doc['content'] = unescape(doc['content']);
+        this.add(doc)
+    }, this);
+});
+
+function onSearchChange() {
+    let query = this.value.trim();
+    let queryChanged = lastQuery === undefined || lastQuery != query;
+    if ((query && query.length > 1 && queryChanged)) {
+        lastQuery = query;
+        window.history.pushState(null, null, `?s=${encodeURIComponent(query)}`);
+        let results = searchIndex.search(query);
+        showSearchResults(results);
+    } 
+    if (query.length == 0 || !(!!query)) {
+        hideSearchResults();
+    }
+}
+
+function getSearchResultIndices(results) {
+    return results.map(r => parseInt(r['ref']));
+}
+
+function hideSearchResults() {
+    let wikiList = document.querySelector("#wiki-list");
+    let resultsContainer = document.querySelector("#search-results");
+    let noResults = document.querySelector("#no-search-results");
+    wikiList.classList.remove("none");
+    resultsContainer.classList.add("none");
+    noResults.classList.add("none");
+}
+
+function showSearchResults(results) {
+    let wikiList = document.querySelector("#wiki-list");
+    let resultsContainer = document.querySelector("#search-results");
+    let noResults = document.querySelector("#no-search-results");
+    if (!results || results.length == 0) {
+        wikiList.classList.add("none");
+        noResults.classList.remove("none");
+        resultsContainer.classList.add("none");
+        document.querySelector("#search-query-term").innerHTML = lastQuery
+    } else {
+        let indices = getSearchResultIndices(results);
+        let posts = searchData.filter(item => indices.includes(item['index']));
+        let elems = createPostElements(posts);
+        resultsContainer.innerHTML = '';
+        elems.forEach(e => resultsContainer.appendChild(e));
+        wikiList.classList.add("none");
+        noResults.classList.add("none");
+        resultsContainer.classList.remove("none");
+    }
+}
+
+function createPostElements(posts) {
+    let wikiList = document.querySelector("#wiki-list");
+    let clonable = wikiList.firstElementChild;
+    return posts.map(p => {
+        let clone = clonable.cloneNode(true);
+        clone.href = p.url;
+        let title = clone.querySelector(".post-title");
+        let description = clone.querySelector(".post-description");
+        title.innerHTML = p.title;
+        description.innerHTML = p.description;
+        return clone;
+    })
+}
+
+function fixTitleCase() {
+    let titles = document.querySelectorAll(".post-title");
+    titles.forEach(t => {
+        t.innerHTML = titleCase(t.innerHTML);
+    });
+}
+
+// Source (not good as a local lib)
+var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i;
+function titleCase (str) {
+    if (!str)
+      return str
+    return str.replace(/[A-Za-z0-9\u00C0-\u00FF]+[^\s-]*/g, function(match, index, title){
+      if (index > 0 && index + match.length !== title.length &&
+        match.search(smallWords) > -1 && title.charAt(index - 2) !== ':' &&
+        (title.charAt(index + match.length) !== '-' || title.charAt(index - 1) === '-') &&
+        title.charAt(index - 1).search(/[^\s-]/) < 0) {
+        return match.toLowerCase();
+      }
+  
+      if (match.substr(1).search(/[A-Z]|\../) > -1) {
+        return match;
+      }
+  
+      return match.charAt(0).toUpperCase() + match.substr(1);
+    });
+  }

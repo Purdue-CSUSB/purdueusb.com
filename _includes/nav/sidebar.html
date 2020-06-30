@@ -11,14 +11,12 @@
 
     <div class="row">
         {%- if site.wiki.size > 0 -%}
-            {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-            <div id="wiki-list" class=" column overflow-scroll {% if include.limit_height %} h-72@xs {% else %} h-full {% endif %}">
+            <div id="wiki-list" class="column overflow-scroll {% if include.limit_height %} h-72@xs {% else %} h-full {% endif %}">
                 {%- for post in site.wiki -%}
                     {% unless forloop.last or forloop.first %}
                         <div class="divider--horizontal bg-grey-light"></div>
                     {% endunless %}
                     <a href="{{ post.url | relative_url }}" class="no-decoration">
-                        <!--<span>{{ post.date | date: date_format }}</span>-->
                         {% assign active_slug = page.url | split:'/' | last %}
                         <div {% if post.slug == active_slug %}id="active" {% endif %} class="py-4 px-2 rounded active--hover animate-fast">
                             <p class="font-bold mb-1 post-title">{{ post.title }}</p>
@@ -28,5 +26,14 @@
                 {%- endfor -%}
             </div>
         {%- endif -%}
+        <div id="search-results" class="column overflow-scroll {% if include.limit_height %} h-72@xs {% else %} h-full {% endif %} none">
+            <!-- To be filled by JS -->
+        </div>
+        <div id="no-search-results" class="none column align-items-center mb-2">
+            <h4 class="font-medium text-center">No results found for <q id="search-query-term" class="font-semibold font-italic"></q></h4>
+            <small><b>Tip:</b> Read about how to <a href="/resources/searching-our-wiki">optimize your search</a>.</small>
+        </div>
     </div>
 </aside>
+
+<script src="/assets/scripts/searchbar.js"></script>

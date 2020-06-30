@@ -20,6 +20,10 @@ article {
     code {
         @extend .text-left;
     }
+
+    h1, h2, h3, h4, h5, h6, .heading {
+        @extend .mb-2;
+    }
 }
 
 label[for="rate-good"], label[for="rate-bad"] {

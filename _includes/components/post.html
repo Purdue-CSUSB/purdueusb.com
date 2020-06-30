@@ -1,6 +1,6 @@
-<article id="post">
+<article id="post" class="textwidth">
     <section id="meta">
-        <h2 class="mb-3 inline-block flat" data-anchor-id="title">{{ page.title }}</h2>
+        <h2 class="mb-3 inline-block post-title" data-anchor-id="title">{{ page.title }}</h2>
         <div class="column--nowrap grow-0 justify-between align-items-baseline">
             <p id="description" class="hint mb-6 font-italic">{{ page.description }}</p>
             <div class="row--nowrap align-items-top justify-between">
@@ -19,15 +19,24 @@
                     </div>
                 </div>
                 {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-                <small class="font-medium hint mb-0 ml-4">{{ page.date | date: date_format }}</small>
+                <small class="font-medium hint mb-0 ml-4">{{ page.date | date: site.date_format }}</small>
             </div>
         </div>
     </section>
 
     <div class="divider--horizontal mt-4 mb-5 bg-grey-light"></div>
 
-    <section id="content" class="px-3@md-above text-justify">
+    <section id="content" class="text-justify">
         {{ content }}
+        {% assign categories_size = page.categories | size %}
+        {% if categories_size > 0 %}
+            <p class="caption">{% if categories_size > 1 %}Categories{% else %}Category{% endif %}: 
+                {% for category in page.categories %}
+                    <a href="/resources?s=category:{{category}}" class="caption">{{category}}</a>
+                {% endfor %}
+            </p>
+        {% endif %}
     </section>
+    {{site.data.search.content}}
     <!--{% include components/rating.html %}-->
 </article>
