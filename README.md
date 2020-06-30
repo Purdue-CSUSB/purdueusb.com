@@ -89,14 +89,14 @@ Note: Jekyll does not parse changes to `_config.yml` in watch mode. You must res
 - [ ]  Decrease load time.
   - [x]  Compress all image assets.
   - [x]  Minify & purge css assets. Jekyll built-in compact mode is currently broken.
-- [ ]  Add search functionality to student resources.
+- [x]  Add search functionality to student resources.
 - [ ]  Ensure proper site accessibility.
   - [ ]  Test with screen reader.
   - [ ]  Make use of ally.js or another library.
 - [x]  Add USB alumni to collapsible section.
   - [ ]  Collect USB alumni photos, names, websites, and year they left usb
 - [ ]  Either create an about page (maybe about the history of the organization) or have it link to the landing instead.
-- [ ]  Create 404 page doodle.
+- [x]  Create 404 page doodle.
 - [ ]  Decrease build time
   - [ ]  Phase out `generate.css` with `tailwind.css` (closely modeled after this framework)
 - [ ]  Un-extendify sass with silent classes.
@@ -130,14 +130,14 @@ Plugins currently in use:
 
 Local Dependencies:
 - Highlight.js: Syntax highlighting
+- Lightcase: Seamlessly display image and video links in a modal dialog
+- Lunr.js: Site search support
 
 NPM Dependencies:
-- Lunr.js: Site search support
-- Anchorjs: Provide anchor link support
-- Lightcase: Seamlessly display image and video links in a modal dialog
 - Purgecss: Remove unused css classes
 
 CDN Dependencies:
+- Anchorjs: Provide anchor link support
 - MagicGrid: Align items in a masonry grid
 - FontAwesome: Vast array of vector icons
 - JQuery
