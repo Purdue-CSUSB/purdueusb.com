@@ -120,7 +120,7 @@ a, a * {
 body, h2, p, blockquote, pre, li, ul,
 ol, dl, data, input, .medium {
     @extend .font-medium;
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
 h4, h5, h6, body, p, a, blockquote, pre, textarea,
@@ -173,7 +173,7 @@ code, span, li, ul, ol, dl, data, input, .body {
 caption, .caption, small, small *, #lightcase-info #lightcase-caption {
     @extend .font-caption;
     &:not(b):not(strong) {
-        @extend .font-semibold;
+        @extend .font-medium;
     }
 }
 
@@ -413,6 +413,10 @@ input {
 /* purgecss start ignore */
 .hljs {
     @extend .bg-dark;
+    /*user-select: all;
+    -ms-user-select: all;
+    -moz-user-select: all;
+    -webkit-user-select: all;*/
 }
 
 pre {
