@@ -1,6 +1,6 @@
 ---
 title:  "Subscribing to the Purdue CS Calendar"
-description: "Get notified of CS Department events on your favorite calendar app"
+description: "Get notified of CS Department events on your calendar"
 author: 
     - Tyler Hoffman
 date:   2020-06-28  

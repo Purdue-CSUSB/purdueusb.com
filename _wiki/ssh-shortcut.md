@@ -13,7 +13,7 @@ Here's a little shell function which shortens this command to just <username> wi
 ### Installation
 Copy and paste the following code into your shell rc file. This may be `~/.bashrc` or `~/.zshrc`.
 
-```shell
+```bash
 <username> () {
     ssh <username>@${1:-<default_machine>}.cs.purdue.edu
 }
@@ -21,7 +21,7 @@ Copy and paste the following code into your shell rc file. This may be `~/.bashr
 
 Make sure to replace any information in between the `<` and `>` symbols. For example, my function looks like this:
 
-```shell
+```bash 
 hankinsj () {
     ssh hankinsj@${1:-data}.cs.purdue.edu
 }
