@@ -183,28 +183,57 @@ function fixTitleCase() {
  */
 var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i;
 function titleCase (str) {
-    if (!str)
-      return str
+    if (!str) return str
     return str.replace(/[A-Za-z0-9\u00C0-\u00FF]+[^\s-]*/g, function(match, index, title){
-      if (index > 0 && index + match.length !== title.length &&
-        match.search(smallWords) > -1 && title.charAt(index - 2) !== ':' &&
-        (title.charAt(index + match.length) !== '-' || title.charAt(index - 1) === '-') &&
-        title.charAt(index - 1).search(/[^\s-]/) < 0) {
-        return match.toLowerCase();
-      }
-  
-      if (match.substr(1).search(/[A-Z]|\../) > -1) {
-        return match;
-      }
-  
-      return match.charAt(0).toUpperCase() + match.substr(1);
-    });
-  }
+        if (index > 0 && index + match.length !== title.length &&
+            match.search(smallWords) > -1 && title.charAt(index - 2) !== ':' &&
+            (title.charAt(index + match.length) !== '-' || title.charAt(index - 1) === '-') &&
+            title.charAt(index - 1).search(/[^\s-]/) < 0) {
+            return match.toLowerCase();
+        }
 
-  function setLinkTargetBlank() {
-      document.querySelectorAll("a:not(.page-link)").forEach(a => {
-          if (!a.getAttribute("target")) {
-              a.setAttribute("target", "_blank");
-          }
-      })
-  }
+        if (match.substr(1).search(/[A-Z]|\../) > -1) {
+            return match;
+        }
+
+        return match.charAt(0).toUpperCase() + match.substr(1);
+    });
+}
+
+function setLinkTargetBlank() {
+    document.querySelectorAll("a:not(.page-link)").forEach(a => {
+        if (!a.getAttribute("target")) {
+            a.setAttribute("target", "_blank");
+        }
+    })
+}
+
+function setupGrid(options) {
+    let magicGrid = new MagicGrid(options);
+    magicGrid.listen();
+}
+
+function setupInitiativeGrid() {
+    let initiativeContainerID = "#initiative-container";
+    if (document.querySelector(initiativeContainerID)) {
+        setupGrid({
+            container: initiativeContainerID,
+            static: true,
+            //items: parseInt("{{site.data.initiatives | size}}"), // Required for dynamic content. Initial number of items in the container.
+            maxColumns: 3, // Optional. Maximum number of columns. Default: Infinite.
+            useMin: true, // Optional. Prioritize shorter columns when positioning items? Default: false.
+            animate: true, // Optional. Animate item positioning? Default: false.
+            center: true, //Optional. Center the grid items? Default: true. 
+        });
+    }   
+}
+
+function setupAnchors() {
+    anchors.options = {
+        visible: "always",
+        truncate: "20"
+    };
+    anchors.add('#post h1, #post h2, #post h3, #post h4, #post h5')
+            .add('.anchored')
+            .remove('.no-anchor');
+}
