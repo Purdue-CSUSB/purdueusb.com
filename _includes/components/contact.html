@@ -1,11 +1,11 @@
-<h2 class="mb-5 justify">What's on your mind?</h2>
+<h1 class="mb-5 justify">What's on your mind?</h1>
 <p class="mb-2">You can also send us an email at <a href="mailto:{{site.author.email}}">{{site.author.email}}</a></p>
 <p class="mb-5">
     <small class="uppercase font-bold">Note:</small> 
     To report concerns in an official capacity, please go to the 
     <a href="https://my.cs.purdue.edu/undergraduate/concern">CS Concern Form</a>.
 </p>
-<form id="fs-frm" name="simple-contact-form" class="column mt-3" action="https://formspree.io/usb@cs.purdue.edu" accept-charset="utf-8" method="post">
+<form id="fs-frm" name="simple-contact-form" class="column mt-3" action="https://formspree.io/{{site.author.email}}" accept-charset="utf-8" method="post">
     <fieldset id="fs-frm-inputs">
         <div id="contactForm">
             <div class="row grow-0 justify-between@md-above justify-around@sm-below mb-3">
@@ -17,13 +17,13 @@
                 <div class="flex-break mb-3 none@lg-above"></div>
                 <div class="column">
                     <label for="email" class="required">Email Address<span>*</span></label>
-                    <input type="email" name="Email" id="email" placeholder="pete@purdue.edu" required>
+                    <input type="email" name="_replyto" id="email" placeholder="&#112;&#101;&#116;&#101;&#64;&#112;&#117;&#114;&#100;&#117;&#101;&#46;&#101;&#100;&#117;" required>
                 </div>
             </div>
 
             <div class="column grow-0 justify-center mb-3">
                 <label for="subject" class="required">Subject<span>*</span></label>
-                <input type="text" name="Subject" id="subject" placeholder="What's the gist?" required autocomplete="off">
+                <input type="text" name="_subject" id="subject" placeholder="What's the gist?" required autocomplete="off">
             </div>
 
             <div class="column grow-0 justify-center mb-3">

@@ -11,6 +11,9 @@ This is a static site built using [Jekyll](https://jekyllrb.com), designed on [F
 
 *Please take a moment to familiarize yourself with [YAML](https://learnxinyminutes.com/docs/yaml/) and [Markdown](https://learnxinyminutes.com/docs/markdown/) formats.*
 
+#### **Emails**
+Please use an [obfuscation technique](https://www.pinnacledisplays.com/unicode-converter.htm) to prevent web crawlers from detecting emails on our site.
+
 #### **Images**
 Please run `webp-convert` on any directories of images you add that are not in webp format.
 
