@@ -1,10 +1,26 @@
-window.addEventListener("DOMContentLoaded", onMissingMemberPhoto); 
-window.addEventListener("DOMContentLoaded", highlightCode);
-window.addEventListener("DOMContentLoaded", scrollToPost);
-window.addEventListener("DOMContentLoaded", fixTitleCase);
-window.addEventListener("DOMContentLoaded", setLinkTargetBlank);
-window.addEventListener("load", lightcaseifyArticle);
-window.addEventListener("load", finalizeButtons);   /* Make buttons act like links without the bs */
-//window.addEventListener("load", scrollTop);
-window.addEventListener("load", closeFab);
-window.addEventListener("scroll", closeFab);
+const events = {
+    "DOMContentLoaded": [
+        onMissingMemberPhoto,
+        highlightCode,
+        scrollToPost,
+        fixTitleCase,
+        setLinkTargetBlank,
+        anchors,
+    ],
+    "load": [
+        setupInitiativeGrid,
+        lightcaseifyArticle,
+        finalizeButtons,
+        closeFab,
+    ],
+    "scroll": [
+        closeFab,
+        //scrollTop,
+    ]
+};
+
+for (let [key, value] of Object.entries(events)) {
+    value.forEach(func => {
+        window.addEventListener(key, func);
+    });
+}
