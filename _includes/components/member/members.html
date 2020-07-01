@@ -13,7 +13,7 @@
         {% endfor %}
     {% endfor %}
     <div class="flex--wrap align-content-center justify-around">
-        {% include components/member/members_list.html members=current_members size="icon-square-10@md-below icon-square-14@lg icon-square-18@xl" spacing="mx-1@xs-below mx-4@sm mx-6@md mx-8@lg-above my-6@md-above my-3@md-below" overlay=true %}
+        {% include components/member/list.html members=current_members size="icon-square-10@md-below icon-square-14@lg icon-square-18@xl" spacing="mx-1@xs-below mx-4@sm mx-6@md mx-8@lg-above my-6@md-above my-3@md-below" overlay=true %}
     </div>
 
     {% if former_members | size %}
@@ -24,17 +24,17 @@
             </div>
             <input type="checkbox" href="#" class="menu-check w-0 h-0 ma-0" name="alumnus-open" id="alumnus-open"/>
             <label class="clickable py-4 px-32" for="alumnus-open" title="Show/hide USB Alumni">
-                <span><span class="font-bold collapse">Collapse</span><span class="font-bold expand">Expand</span> <i class="fas fa-chevron-down menu-button-rotate180 animate"></i></span>
+                <span class="text-nowrap"><span class="font-bold collapse">Collapse</span><span class="font-bold expand">Expand</span> <i class="fas fa-chevron-down menu-button-rotate180 animate"></i></span>
             </label>
             <div class="flex-break mb-4"></div>
             <div class="menu-item">
-                <div class="flex--wrap align-content-center justify-around">
-                    {% include components/member/members_list.html members=former_members size="icon-square-10@md-below icon-square-14@lg icon-square-18@xl" spacing="mx-1@xs-below mx-4@sm mx-6@md mx-8@lg-above my-6@md-above my-3@md-below" overlay=true %}
+                <div class="flex--wrap align-content-center justify-around mb-1">
+                    {% include components/member/list.html members=former_members size="icon-square-10@md-below icon-square-14@lg icon-square-18@xl" spacing="mx-1@xs-below mx-4@sm mx-6@md mx-8@lg-above my-6@md-above my-3@md-below" overlay=true %}
                 </div>
                 
                 <input type="checkbox" href="#" class="menu-check w-0" name="alumnus-open" id="alumnus-open"/>
                 <label class="clickable py-4 px-32" for="alumnus-open" title="collapse USB Alumni">
-                    <span><span class="font-bold">Collapse</span> <i class="fas fa-chevron-up"></i></span>
+                    <span class="text-nowrap"><span class="font-bold">Collapse</span> <i class="fas fa-chevron-up"></i></span>
                 </label>
             </div>
         </div>
