@@ -41,7 +41,12 @@
         <p class="mb-0 mr-2 font-semibold caption text-nowrap">Was this page helpful?</p>
         <input type="checkbox" href="#" class="menu-check w-0" name="rate-good" id="rate-good" onclick="rate(true)"/>
         <label class="clickable pa-3 mr-1" for="rate-good" title="Helpful">
-            <i class="fas fa-thumbs-up"></i>
+            <form id="good-feedback-form" name="simple-contact-form" class="w-3/4" action="https://formspree.io/{{site.author.email}}" accept-charset="utf-8" method="post">
+                <fieldset id="good-feedback-form-inputs">
+                    <input type="hidden" name="Subject" id="good-feedback-subject" value="Positive feedback for {{include.slug}}!🎉">
+                    <i class="fas fa-thumbs-up" onclick="document.getElementById('good-feedback-form').submit();"></i>
+                </fieldset>
+            </form>
         </label>
         <input type="checkbox" href="#" class="menu-check w-0" name="rate-bad" id="rate-bad" onclick="rate(false)"/>
         <label class="clickable pa-3 ml-1" for="rate-bad" title="Not helpful">
@@ -49,8 +54,8 @@
         </label>
     </div>
     <div class="row--nowrap justify-end@md-above justify-center@sm-below none" id="feedback-bad-container">
-        <form id="feedback-form" name="simple-contact-form" class="w-3/4" action="https://formspree.io/usb@cs.purdue.edu" accept-charset="utf-8" method="post">
-            <fieldset id="fs-frm-inputs">
+        <form id="feedback-form" name="simple-contact-form" class="w-3/4" action="https://formspree.io/{{site.author.email}}" accept-charset="utf-8" method="post">
+            <fieldset id="feedback-form-inputs">
                 <input type="hidden" name="Subject" id="feedback-subject" value="Wiki feedback on {{include.slug}}">
                 <textarea placeholder="Will you help us improve?" autocomplete="off" required name="Message" id="feedback" class="w-full" rows="2"></textarea>
             </fieldset>
