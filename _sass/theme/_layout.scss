@@ -1,5 +1,6 @@
 /* CSS for general site layout */
 
+/*! purgecss start ignore */
 ::selection {
     @extend .bg-primary-light, .dark;
 }
@@ -167,12 +168,15 @@ $open-distance-mobile: 18vh;
     @for $i from 1 through $menu-items{ 
         &:nth-child(#{$i+2}){
             transition-duration: 90ms+(100ms*$i);
-            @media (min-aspect-ratio: 890/400) { 
-                transform: translate3d(0,-$open-distance-mobile * $i,0);
+            @media screen and (max-width: $screen-medium) {
+                @media (min-aspect-ratio: 501/500) { 
+                    transform: translate3d(0,-$open-distance-mobile * $i,0);
+                }
+                @media (max-aspect-ratio: 500/500) { 
+                    transform: translate3d(0,-$open-distance * $i,0);
+                }
             }
-            @media (max-aspect-ratio: 891/400) { 
-                transform: translate3d(0,-$open-distance * $i,0);
-            }
+            
         }
     }
 }
@@ -198,3 +202,5 @@ input:-webkit-autofill:active  {
     -webkit-box-shadow: 0 0 0 30px $background-color inset !important;
     box-shadow: 0 0 0 30px $background-color inset !important;
 }
+
+/*! purgecss end ignore */
