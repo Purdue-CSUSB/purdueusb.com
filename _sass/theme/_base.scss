@@ -246,6 +246,23 @@ textarea {
     resize: vertical;
 }
 
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;              
+    -o-appearance: none;
+    appearance: none;
+    @extend .clickable, .animate-fast, .rounded, .icon-1;
+
+    &:checked {
+        @extend .bg-accent;
+        border-color: $accent-color !important;
+    }
+
+    &:focus {
+        border-color: $accent-grey !important;
+    }
+}
+
 
 /**
  * Links
