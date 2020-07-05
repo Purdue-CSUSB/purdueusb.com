@@ -119,6 +119,8 @@ Note: Jekyll does not parse changes to `_config.yml` in watch mode. You must res
 - An error seems to cause intermittent failure to load live changes:
     ```ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf```
 - Build time is `s l o w` because of css class generation
+- Don't use tab characters in `_config.yml`
+- `warning: Using the last argument as keyword parameters is deprecated` -> run `bundle update jekyll` to get to `4.0.1`.
 
 ### **Plugins**
 
