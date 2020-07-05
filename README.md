@@ -122,6 +122,13 @@ Note: Jekyll does not parse changes to `_config.yml` in watch mode. You must res
 - Don't use tab characters in `_config.yml`
 - `warning: Using the last argument as keyword parameters is deprecated` -> run `bundle update jekyll` to get to `4.0.1`.
 
+### Testing
+You can access your changes from another device on your local network through your computer's local IP (e.g. `192.168.1.1:4000`).
+
+When you make a change to the website, it's necessary to test your changes on the `staging` branch before pushing to master. Once your changes are accepted into staging, `staging.purdueusb.com` will update with your changes. If not, double check that netlify has staging builds enabled.
+
+If you make a change to the HTML/CSS/plugins of the site, test your changes on all screen sizes available in the devtools device toolbar. You never know what will break with CSS, so please look through the whole site to be sure it's working.
+
 ### **Plugins**
 
 Plugins currently in use:
