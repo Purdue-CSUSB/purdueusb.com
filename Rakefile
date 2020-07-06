@@ -1,3 +1,3 @@
 task "assets:precompile" do
-    exec("jekyll build")
+    exec("bundle exec jekyll build --trace")
   end
