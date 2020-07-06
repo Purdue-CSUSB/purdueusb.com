@@ -83,89 +83,6 @@ function scrollToPost() {
     }
 }
 
-function getSearchQuery() {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('search') || urlParams.get('s');
-}
-
-var lastQuery = undefined;
-var searchIndex = lunr(function () {
-    this.ref('index');
-    this.field('title');
-    this.field('description');
-    this.field('content');
-    this.field('author');
-    this.field('category');
-    this.field('date');
-  
-    searchData.forEach(function (doc) {
-        doc['content'] = unescape(doc['content']);
-        this.add(doc)
-    }, this);
-});
-
-function onSearchChange() {
-    let query = this.value.trim();
-    let queryChanged = lastQuery === undefined || lastQuery != query;
-    if ((query && query.length > 1 && queryChanged)) {
-        lastQuery = query;
-        window.history.pushState(null, null, `?s=${encodeURIComponent(query)}`);
-        let results = searchIndex.search(query);
-        showSearchResults(results);
-    } 
-    if (query.length == 0 || !(!!query)) {
-        hideSearchResults();
-    }
-}
-
-function getSearchResultIndices(results) {
-    return results.map(r => parseInt(r['ref']));
-}
-
-function hideSearchResults() {
-    let wikiList = document.querySelector("#wiki-list");
-    let resultsContainer = document.querySelector("#search-results");
-    let noResults = document.querySelector("#no-search-results");
-    wikiList.classList.remove("none");
-    resultsContainer.classList.add("none");
-    noResults.classList.add("none");
-}
-
-function showSearchResults(results) {
-    let wikiList = document.querySelector("#wiki-list");
-    let resultsContainer = document.querySelector("#search-results");
-    let noResults = document.querySelector("#no-search-results");
-    if (!results || results.length == 0) {
-        wikiList.classList.add("none");
-        noResults.classList.remove("none");
-        resultsContainer.classList.add("none");
-        document.querySelector("#search-query-term").innerHTML = lastQuery
-    } else {
-        let indices = getSearchResultIndices(results);
-        let posts = searchData.filter(item => indices.includes(item['index']));
-        let elems = createPostElements(posts);
-        resultsContainer.innerHTML = '';
-        elems.forEach(e => resultsContainer.appendChild(e));
-        wikiList.classList.add("none");
-        noResults.classList.add("none");
-        resultsContainer.classList.remove("none");
-    }
-}
-
-function createPostElements(posts) {
-    let wikiList = document.querySelector("#wiki-list");
-    let clonable = wikiList.firstElementChild;
-    return posts.map(p => {
-        let clone = clonable.cloneNode(true);
-        clone.href = p.url;
-        let title = clone.querySelector(".post-title");
-        let description = clone.querySelector(".post-description");
-        title.innerHTML = p.title;
-        description.innerHTML = p.description;
-        return clone;
-    })
-}
-
 function fixTitleCase() {
     let titles = document.querySelectorAll(".post-title");
     titles.forEach(t => {
@@ -236,4 +153,19 @@ function setupAnchors() {
     anchors.add('#post h1, #post h2, #post h3, #post h4, #post h5')
             .add('.anchored')
             .remove('.no-anchor');
+}
+
+function ajax(method, url, data, success, error) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+            success(xhr.response, xhr.responseType);
+        } else {
+            error(xhr.status, xhr.response, xhr.responseType);
+        }
+    };
+    xhr.send(data);
 }
