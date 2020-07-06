@@ -1,6 +1,6 @@
 # Purdue USB Website
 
-This repository is created for Purdue's CS Undergraduate Student Board website. Our main consideration is the ease of maintenance and content updates. Information that frequently changes, like members, initiatives, and student resources, can all be updated through YAML and Markdown files. 
+This repository is created for Purdue's CS Undergraduate Student Board website. Our main consideration is the ease of maintenance and content updates. Information that frequently changes, like members, initiatives, and Student Wiki, can all be updated through YAML and Markdown files. 
 
 This is a static site built using [Jekyll](https://jekyllrb.com), designed on [Figma](https://figma.com), and hosted here on Github Pages. Jekyll was selected due to its compatibility with GH Pages, as well as it's out-of-the-box blog functionality.
 
@@ -32,7 +32,7 @@ Please run `webp-convert` on any directories of images you add that are not in w
 1. Add an objective logo to `assets/images/objectives`
 2. Edit `_data/objectives.yml` with title, image, and description.
 
-#### **Student Resources**
+#### **Student Wiki**
 Wiki posts are written in Markdown only. To keep the flow of information consistent, please **do not use `h1 (#)` or `h2 (##)` headings**. 
 
 You can also use emojis seen on this [cheat sheet](https://www.webfx.com/tools/emoji-cheat-sheet/)! :bangbang:
@@ -82,7 +82,7 @@ You can get Jekyll running by following the [installation tutorial](https://jeky
     - -h) Headless mode (don't open your browser automatically).
     - -i) Run `bundle install` at start.
     - -l) Live server (can cause gigabytes of cache buildup and require browser restart).
-    - -p) Production mode: runs `purgecss` (~2mins *i know*).
+    - -p) Production mode: runs `purgecss` (slow *i know*).
     - -t) Debug mode, shows traceback.
 
 Note: Jekyll does not parse changes to `_config.yml` in watch mode. You must restart the build server for changes to take effect.
@@ -92,7 +92,7 @@ Note: Jekyll does not parse changes to `_config.yml` in watch mode. You must res
 - [ ]  Decrease load time.
   - [x]  Compress all image assets.
   - [x]  Minify & purge css assets. Jekyll built-in compact mode is currently broken.
-- [x]  Add search functionality to student resources.
+- [x]  Add search functionality to Student Wiki.
 - [ ]  Ensure proper site accessibility.
   - [ ]  Test with screen reader.
   - [ ]  Make use of ally.js or another library.
@@ -118,7 +118,7 @@ Note: Jekyll does not parse changes to `_config.yml` in watch mode. You must res
 - Live reload can cause **major** cache buildup and freeze your computer.
 - An error seems to cause intermittent failure to load live changes:
     ```ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf```
-- Build time is `s l o w` because of css class generation
+- Build time is `s l o w` because of css class generation, while production builds are even slower to purge most of those classes. This is more or less a `wontfix` issue because it gives css writers major flexibility.
 - Don't use tab characters in `_config.yml`
 - `warning: Using the last argument as keyword parameters is deprecated` -> run `bundle update jekyll` to get to `4.0.1`.
 
