@@ -14,7 +14,7 @@ const events = {
         closeFab,
     ],
     "scroll": [
-        closeFab,
+        //closeFab,
         //scrollTop,
     ]
 };

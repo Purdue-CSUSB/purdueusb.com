@@ -1,10 +1,10 @@
 <aside id="sidebar" class="card pt-4 pb-2 px-6">
-    <h4 class="text-center mb-2">Student Resources</h4>
+    <h4 class="text-center mb-2">Student Wiki</h4>
     <div class="row justify-center none@sm-below">
         <p class="caption mb-6 w-3/4">Contains locally sourced, organic wisdom. Shared by the student body, curated by USB.</p>
     </div>
     
-    <div class="input row--nowrap mb-5 align-items-baseline">
+    <div class="input row--nowrap align-items-baseline">
         <i class="fa fa-search" aria-hidden="true"></i>
         <input type="text" name="Search" id="search" placeholder="Search..." class="border-none w-full pa-1">
     </div>
@@ -29,7 +29,7 @@
         <div id="search-results" class="column overflow-scroll {% if include.limit_height %} h-72@xs {% else %} h-full {% endif %} none">
             <!-- To be filled by JS -->
         </div>
-        <div id="no-search-results" class="none column align-items-center mb-2">
+        <div id="no-search-results" class="none column align-items-center mb-2 mt-4">
             <h4 class="font-medium text-center">No results found for <q id="search-query-term" class="font-semibold font-italic"></q></h4>
             <small><b>Tip:</b> Read about how to <a href="/resources/searching-our-wiki">optimize your search</a>.</small>
         </div>

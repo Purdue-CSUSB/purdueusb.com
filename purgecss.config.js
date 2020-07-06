@@ -10,7 +10,7 @@ module.exports = {
     
     // wow, looks like this is broken what a surprise
     whitelistPatterns: [
-        /.*\[\w+\W?=.*]/g,  // Matches selectors like [class*="..."]
+        /.*\[\w+\W?=.*\]/g,  // Matches selectors like [class*="..."]
         /\.bg-.*/g
     ],
   };

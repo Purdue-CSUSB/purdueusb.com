@@ -2,6 +2,7 @@ article {
     p img {
         &:not(.emoji) {
             margin: 0 auto;
+            margin-bottom: spacing-group(4);
             @extend .block, .rounded;
         }
         &.emoji {
@@ -22,7 +23,7 @@ article {
     }
 
     h1, h2, h3, h4, h5, h6, .heading {
-        @extend .mb-2, .mt-4;
+        @extend .mb-2, .mt-8;
     }
 }
 
@@ -78,5 +79,7 @@ label[for="rate-good"], label[for="rate-bad"] {
 }
 
 .wiki-shim {
+    width: 40%;
     max-width: 40rem;
+    min-width: 20rem;
 }

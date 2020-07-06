@@ -12,27 +12,27 @@ Define defaults for each variable. Be sure to include !default on the end of eac
 @include google-font("Montserrat", "400;500;600;700");
 $font-family-backup: sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $font-families: (
-    body: ("Raleway", $font-family-backup),
-    header: ("Montserrat", $font-family-backup)
+    body:    ("Raleway", $font-family-backup),
+    header:  ("Montserrat", $font-family-backup)
 ) !default;
 $font-sizes: (
-    h1:         1rem * 56 / 18,
-    h2:         1rem * 48 / 18,
-    h3:         1rem * 36 / 18,
-    h4:         1rem * 24 / 18,
-    button:     1rem * 24 / 18,
-    listitem:   1rem * 24 / 18,
-    body:       1rem,
-    caption:    1rem * 14 / 18,
+    h1:        1rem * 56 / 18,
+    h2:        1rem * 48 / 18,
+    h3:        1rem * 36 / 18,
+    h4:        1rem * 24 / 18,
+    button:    1rem * 24 / 18,
+    listitem:  1rem * 24 / 18,
+    body:      1rem,
+    caption:   1rem * 14 / 18,
 ) !default;
-$line-height-base:    1.2 !default;
-$line-height-high:    2 !default;
+$line-height-base:  1.2 !default;
+$line-height-high:  2 !default;
 
 
 /* Colors */
-$percentage-lighten:    50% !default;
-$percentage-darken:     10% !default;
-$primary-color:         #FFCA44 !default;
+$percentage-lighten:  50% !default;
+$percentage-darken:   10% !default;
+$primary-color:       #FFCA44 !default;
 
 $accent-blue:       #8AC9FE !default;
 $accent-red:        #FE646F !default;
@@ -43,29 +43,30 @@ $accent-grey:       #6B6A6A !default;
 $accent-grey-light: #E5E5E5 !default;
 $profile-overlay:   rgba(0, 0, 0, 0.35);
 
-$text-color:            #333 !default;
-$text-color-hint:       $accent-grey !default;
-$text-color-light:      #FFF !default;
-$background-light:      $text-color-light !default;
-$background-dark:       $text-color-light !default;
-$background-color:      $background-light !default;
-$focus-color:           tint($primary-color, $percentage-lighten) !default;
-$accent-color:          $accent-blue !default;
+$text-color:        #333 !default;
+$text-color-hint:   $accent-grey !default;
+$text-color-light:  #FFF !default;
+$background-light:  $text-color-light !default;
+$background-dark:   $text-color-light !default;
+$background-color:  $background-light !default;
+$focus-color:       tint($primary-color, $percentage-lighten) !default;
+$accent-color:      $accent-blue !default;
 
 /* Spacing & Alignment */
-$table-text-align:    left !default;
-$spacing-max-group:   72 !default;
-$spacing-base:        1.35914091423 !default;
-$spacing-multiple:    0.25rem !default;
-$spacing-unit:        1.9rem !default;
-$margin-bottom-default: spacing-group(4) !default;
-$padding-button-x:    spacing-group(4) !default;
-$padding-button-y:    spacing-group(4) !default;
+$dimension-sizing-groups:  2, 3, 4, 5, 6, 10, 100 !default;
+$table-text-align:         left !default;
+$spacing-max-group:        72 !default;
+$spacing-base:             1.35914091423 !default;
+$spacing-multiple:         0.25rem !default;
+$spacing-unit:             1.9rem !default;
+$margin-bottom-default:    spacing-group(4) !default;
+$padding-button-x:         spacing-group(4) !default;
+$padding-button-y:         spacing-group(4) !default;
 
 
 // Width of the content area
-$content-width:    800px !default;
-$text-width:        53rem !default;
+$content-width:  800px !default;
+$text-width:     53rem !default;
 $screens: (
     'xs': ('min': '0px',  'max': '639px'),
     'sm': ('min': '640px',  'max': '767px'),
@@ -102,7 +103,7 @@ $shadow-nooffset-soft:  0px 0px 12px !default;
 $animation-delay:   200ms !default;
 
 $bg-angle-mobile:   2rem !default;
-$bg-angle:          145rem !default;
+$bg-angle:          400% !default;
 $bg-angle-color:    $primary-color !default;
 
 $scrollbar-background: white !default;

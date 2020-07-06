@@ -1,4 +1,4 @@
-<div class="column px-1/20 pt-8 text-center">
+<div class="column px-5/100 pt-8 text-center">
     <h3 class="mb-4">Meet the Board</h3>
     {%- assign year = 'now' | date: "%Y" -%}
     <p class="mb-8">{{ year }} &ndash; {{ year | plus:1 }} Members</p>
@@ -12,7 +12,7 @@
             {% assign former_members = former_members | push: member %}
         {% endfor %}
     {% endfor %}
-    <div class="flex--wrap align-content-center justify-around">
+    <div class="flex--wrap align-content-center justify-around animate">
         {% include components/member/list.html members=current_members size="icon-square-10@md-below icon-square-14@lg icon-square-18@xl" spacing="mx-1@xs-below mx-4@sm mx-6@md mx-8@lg-above my-6@md-above my-3@md-below" overlay=true %}
     </div>
 
@@ -28,7 +28,7 @@
             </label>
             <div class="flex-break mb-4"></div>
             <div class="menu-item">
-                <div class="flex--wrap align-content-center justify-around mb-1">
+                <div class="flex--wrap align-content-center justify-around mb-1 animate">
                     {% include components/member/list.html members=former_members size="icon-square-10@md-below icon-square-14@lg icon-square-18@xl" spacing="mx-1@xs-below mx-4@sm mx-6@md mx-8@lg-above my-6@md-above my-3@md-below" overlay=true %}
                 </div>
                 

@@ -15,6 +15,7 @@ while getopts "chplit" opt; do
         l) LIVE=true 
         ;;
         i) bundle install
+            npm install
         ;;
         t) TRACE=true
         ;;

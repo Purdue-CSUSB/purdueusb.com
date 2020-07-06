@@ -7,7 +7,7 @@
 
 {% if member_obj.name %}
     {% assign size = include.size | default: "icon-10" %}
-    <div class="{{include.spacing}}">
+    <div class="{{include.spacing}} animate">
         <div class="{% if include.overlay %} overlay-container shadow-drop shadow--center--soft:hover {%endif%} member border-box {% if member_obj.site != nil and member_obj.site != '' %} clickable {%endif%} {% if include.shadow == false %} flat {% endif %} overflow-hidden">
             <!-- Accessibility hack <a> tag -->
             <a {% if member_obj.site != "" and member_obj.site != nil %} href="{{member_obj.site}}" {% else %} {% endif %} title="{{ member_obj.name }}" class="no-decoration w-full" target="_blank">

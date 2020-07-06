@@ -13,11 +13,13 @@
     {% if social-fa-icon == nil %}
         {% assign social-fa-icon = social-brand %}
     {% endif %}
-    <a href="https://{{ social_url | escape}}" title="{{ social_brand | escape }}" target="_blank" class="no-decoration mx-4">
+    <a href="https://{{ social_url | escape}}" title="{{ social_brand | escape }}" target="_blank" class="no-decoration">
         {% if include.svg == true %}
             <img alt="{{social[0]}}" class="icon-4" src="/assets/images/logos/socialmedia/{{social[0]}}.svg"/>
         {% else %}
-            <i class="fab fa-{{social-fa-icon}} icon-2@sm-below {{color}} pa-1"></i>
+            <i class="fab fa-{{social-fa-icon}} {{color}} pa-1"></i>
         {% endif %}
     </a>
+
+    {% unless forloop.last %} <div class="mx-4@lg-above mx-2@md-below"></div> {% endunless %}
 {%- endfor -%}
