@@ -31,5 +31,3 @@ gem 'jekyll-target-blank'
 gem 'jekyll-purgecss'
 gem 'jekyll-minifier'
 gem 'jekyll-redirect-from'
-
-gem "rake"
