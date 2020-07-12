@@ -1,5 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
+ls /bin
 echo "Node $(node --version)"
 echo "Ruby $(ruby -v), RubgyGems $(gem -v)"
 echo "GCC $(gcc -v), Make $(make -v)"
