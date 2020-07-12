@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine
 
 RUN apk add --update nodejs
 RUN apk add --no-cache --virtual .build-deps make gcc g++ musl-dev\
