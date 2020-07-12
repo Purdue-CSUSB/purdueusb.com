@@ -12,5 +12,7 @@ jobs:
       - uses: ./build-action
       - name: Save build changes
         run: | 
+          git config --global user.name "Buildbot"
+          git config --global user.email "usb@cs.purdue.edu"
           git commit -am "Automated build"
           git push
