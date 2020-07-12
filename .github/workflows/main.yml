@@ -17,7 +17,7 @@ jobs:
         run: | 
           git config --global user.name "USB Buildbot"
           git config --global user.email "usb@cs.purdue.edu"
-          git commit -am "Automated build"
+          git add . && git commit -m "Automated build"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
