@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ls /bin
 echo "Node $(node --version)"
