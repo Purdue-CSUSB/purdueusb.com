@@ -7,9 +7,6 @@ echo "GCC $(gcc -v), Make $(make -v)"
 echo Cleaning cache and generated files...
 rm -rf ./_site ./.jekyll-cache
 
-echo Installing gems...
-bundle install
-
 echo Building site...
 bundle exec jekyll build --trace
 
