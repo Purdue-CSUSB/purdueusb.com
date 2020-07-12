@@ -7,6 +7,7 @@ echo "GCC $(gcc -dumpversion), Make $(make -v)"
 echo
 echo Installing node packages...
 npm install
+npm install --only=dev
 
 echo
 echo Installing gems...
