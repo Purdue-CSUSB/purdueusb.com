@@ -16,8 +16,4 @@ rm -rf ./_site ./.jekyll-cache
 echo Building site...
 bundle exec jekyll build --trace
 
-echo Committing...
-git add -A
-git commit -m "Automatic build"
-
 echo Done

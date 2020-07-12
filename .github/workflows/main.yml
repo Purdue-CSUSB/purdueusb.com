@@ -10,3 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./build-action
+      - name: Save build changes
+        run: | 
+          git commit -am "Automated build"
+          git push
