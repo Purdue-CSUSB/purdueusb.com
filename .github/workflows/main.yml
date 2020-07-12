@@ -8,11 +8,18 @@ jobs:
   build-publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
+        with:
+          persist-credentials: false
+          fetch-depth: 0
       - uses: ./build-action
       - name: Save build changes
         run: | 
           git config --global user.name "USB Buildbot"
           git config --global user.email "usb@cs.purdue.edu"
           git commit -am "Automated build"
-          git push
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages-redesign
