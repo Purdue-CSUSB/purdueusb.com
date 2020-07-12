@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "Node $(node --version)"
 echo "Ruby $(ruby -v), RubgyGems $(gem -v)"
