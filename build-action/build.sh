@@ -21,6 +21,5 @@ echo
 echo Building site...
 eval JEKYLL_ENV="production" bundle exec jekyll build --trace
 
-ls _site/
 echo
 echo Done
