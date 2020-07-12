@@ -14,6 +14,7 @@ echo Cleaning cache and generated files...
 rm -rf ./_site ./.jekyll-cache
 
 echo Building site...
-bundle exec jekyll build --trace
+eval JEKYLL_ENV="production" bundle exec jekyll build --trace
 
+ls _site/
 echo Done
