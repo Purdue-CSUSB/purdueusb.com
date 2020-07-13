@@ -29,6 +29,7 @@ gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
 # For building on GH pages
 gem 'execjs'
 gem 'libv8', '~> 7.3', '>= 7.3.492.27.1'
+gem "therubyracer"
 
 gem 'jemoji'
 gem 'jekyll-target-blank'
