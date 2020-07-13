@@ -166,12 +166,9 @@ $flex-wraps: ();
     @include generate-subclass($overflows, 'overflow');
 }
 
-
-/*! purgecss start ignore */
 .bg {
     @include generate-subclass($colors, 'background-color');
 }
-/*! purgecss end ignore */
 
 .fill {
     @include generate-subclass($colors, 'fill');
@@ -287,7 +284,6 @@ $borders: (
 
 
 /* Percentage sizing class generation */
-$dimension-sizing-groups: 2, 3, 4, 5, 6, 10, 20;
 $percentages: (
     half: 50%,
     full: 100%,

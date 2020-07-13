@@ -101,19 +101,22 @@
 }
 
 .animate {
-    -moz-transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
-    -webkit-transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
-    -ms-transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
-    transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
+    &, & > * {
+        -moz-transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
+        -webkit-transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
+        -ms-transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
+        transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
+    }
+    
 
-    &-off {
+    &-off, &-off > * {
         -moz-transition: none !important;
         -webkit-transition: none !important;
         -ms-transition: none !important;
         transition: none !important;
     }
 
-    &-fast {
+    &-fast, &-fast > * {
         $fast-delay: $animation-delay / 2;
         -moz-transition: all $fast-delay ease-in-out $fast-delay / 3 !important;
         -webkit-transition: all $fast-delay ease-in-out $fast-delay / 3 !important;
@@ -216,13 +219,17 @@
     }
 }
 
-.active, #active {
+.active, #active, .highlight {
     @extend .bg-focus-color;
     &--hover {
         &:hover {
             @extend .bg-focus-color-light;
         }
     }
+}
+
+.highlight {
+    @extend .rounded;
 }
 
 .card {

@@ -15,6 +15,7 @@ while getopts "chplit" opt; do
         l) LIVE=true 
         ;;
         i) bundle install
+            npm install
         ;;
         t) TRACE=true
         ;;
@@ -23,7 +24,7 @@ done
 
 echo Running in $JENV mode.
 $OPEN && echo "Opening site in browser" && ./opensite.sh &
-OPTS=""
+OPTS="--host 0.0.0.0"
 
 if [ $LIVE = true ]; then
     OPTS="${OPTS} --incremental --livereload"  

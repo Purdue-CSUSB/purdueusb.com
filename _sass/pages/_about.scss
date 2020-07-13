@@ -14,7 +14,7 @@
             background: linear-gradient(to bottom right, $bg-angle-color 50%, transparent 0%) no-repeat bottom,
             linear-gradient(30deg, $bg-angle-color, $bg-angle-color) no-repeat top;
             background-size: 100% $bg-angle-mobile, 100% calc(100% - calc(#{$bg-angle-mobile} - 2px));
-            @include p-bottom(spacing-group(10));
+            @include p-bottom(spacing-group(12));
             @include m-bottom(spacing-group(6));
         }
     }

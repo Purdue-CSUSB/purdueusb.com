@@ -30,6 +30,6 @@ By default, a result comes back if any word separated by a space matches some co
 Nothing's perfect. 
 
 ### Bringing It All Together
-You can make your search as simple or as complex as you'd like. As an example, if I wanted to search for articles I've authored in June not containing the phrase *krakatoa*, I could type `+author:Zach Bryant +date:June -krakatoa`. Except at this time, my *only* article contains the phrase *krakatoa*.
+You can make your search as simple or as complex as you'd like. As an example, if I wanted to search for meta-articles I've authored in June, containing the mis-spelled phrase *crakato-uh*, I could type `category:meta +author:Zach +Bryant +date:June -crakatoa~1`. Except at this time, my *only* article contains the phrase *krakatoa*.
 
-Go forth and search!
+Thank you for coming to my TED talk.

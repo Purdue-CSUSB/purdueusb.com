@@ -26,8 +26,8 @@
     background-color: $scrollbar-foreground;
 }
 
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-thumb {
     @extend .rounded--more;
 }
 

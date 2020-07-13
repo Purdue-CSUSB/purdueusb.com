@@ -10,13 +10,13 @@
                 managing CS193, hosting forums for student advocacy, or maintaining a database of undergrad-tailored resources, USB is continually
                 creating initiatives that will uphold our values.
             </h4>
-            <div class="row justify-center@sm-below justify-between@sm-above align-items-end">
-                {% assign buttonText = "Read Student Resources" %}
+            <div class="row justify-center@sm-below justify-between@md-above align-items-end">
+                {% assign buttonText = "Read Student Wiki" %}
                 <button href="/resources" target="_self" title="{{buttonText}}" class="text-wrap-nowrap">{{buttonText}}</button>
-                <div class="flex-break none@sm-above mt-3"></div>
-                <div class="align-items-end">
-                    <p class="light font-semibold text-justify mb-3">Stay updated with our social media</p>
-                    <div class="row justify-between@md-below justify-around@md-above w-auto">
+                <div class="flex-break none@md-above my-2"></div>
+                <div class="">
+                    <p class="light font-semibold text-center mb-3 mt-4@sm-below">Stay updated with our social media</p>
+                    <div class="row justify-between w-auto">
                         {% include components/social.html svg=true %}
                     </div>
                 </div>
