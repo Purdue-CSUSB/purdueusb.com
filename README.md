@@ -115,6 +115,7 @@ Note: Jekyll does not parse changes to `_config.yml` in watch mode. You must res
     }
     /*! purgecss end ignore */
     ```
+  - Purgecss doesn't like to obey ignore statements ¯\\_(ツ)\_/¯
 - Live reload can cause **major** cache buildup and freeze your computer.
 - An error seems to cause intermittent failure to load live changes:
     ```ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf```
