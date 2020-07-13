@@ -5,7 +5,7 @@
             Some initiatives have been around for a decade or more, while others come and go as our goals evolve.</p>
         <p class="text-justify">Check out what we've been working on!</p>        
     </div>
-    <div id="initiative-container" class="mt-3 w-full">
+    <div id="initiative-container" class="w-full">
         {%- for initiative in site.data.initiatives -%}
             {% include components/initiative/card.html data=initiative %}
         {%- endfor -%}

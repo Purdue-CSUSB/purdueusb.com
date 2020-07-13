@@ -9,17 +9,14 @@
     {% assign size = include.size | default: "icon-10" %}
     <div class="{{include.spacing}} animate">
         <div class="{% if include.overlay %} overlay-container shadow-drop shadow--center--soft:hover {%endif%} member border-box {% if member_obj.site != nil and member_obj.site != '' %} clickable {%endif%} {% if include.shadow == false %} flat {% endif %} overflow-hidden">
-            <!-- Accessibility hack <a> tag -->
-            <a {% if member_obj.site != "" and member_obj.site != nil %} href="{{member_obj.site}}" {% else %} {% endif %} title="{{ member_obj.name }}" class="no-decoration w-full" target="_blank">
-                <div class="{% if include.overlay %} member-color rounded--circle {%endif%} row--nowrap align-items-center">
-                    {% assign image = site.static_files | where: "basename", member_obj.name | first %}
-                    {% assign image_path = image.path | default: "/assets/images/members/None.webp" %}
-                    <img src="{{image_path}}" class="{{size}} rounded--circle" aria-hidden="true">
-                    {% if include.show_name %}
-                        <span class="ml-2">{{ member_obj.name }}</span>
-                    {% endif %}
-                </div>
-            </a>
+            <div class="{% if include.overlay %} member-color rounded--circle {%endif%} row--nowrap align-items-center">
+                {% assign image = site.static_files | where: "basename", member_obj.name | first %}
+                {% assign image_path = image.path | default: "/assets/images/members/None.webp" %}
+                <img src="{{image_path}}" class="{{size}} rounded--circle" aria-hidden="true">
+                {% if include.show_name %}
+                    <span class="ml-2">{{ member_obj.name }}</span>
+                {% endif %}
+            </div>
             {% if include.overlay %}
                 <div class="overlay fade-in-out rounded--circle">
                     <a {% if member_obj.site != "" and member_obj.site != nil %} href="{{member_obj.site}}" class="clickable no-decoration" {% else %} class="not-clickable no-decoration" {% endif %} 

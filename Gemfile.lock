@@ -122,6 +122,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  execjs
   jekyll (~> 4.0.1)
   jekyll-feed (~> 0.12)
   jekyll-minifier
@@ -130,6 +131,7 @@ DEPENDENCIES
   jekyll-seo-tag (~> 2.6)
   jekyll-target-blank
   jemoji
+  libv8
   therubyracer
   tzinfo (~> 1.2)
   tzinfo-data
