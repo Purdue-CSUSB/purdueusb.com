@@ -18,7 +18,7 @@
                 {% endif %}
             </div>
             {% if include.overlay %}
-                <div class="overlay fade-in-out rounded--circle">
+                <div class="overlay fade-in-out rounded--circle overflow-hidden">
                     <a {% if member_obj.site != "" and member_obj.site != nil %} href="{{member_obj.site}}" class="clickable no-decoration" {% else %} class="not-clickable no-decoration" {% endif %} 
                         title="{{ member_obj.name }}" class="no-decoration" target="_blank">
                         <div class="column shadow-text-dark h-full w-full justify-center align-content-center align-items-center">
