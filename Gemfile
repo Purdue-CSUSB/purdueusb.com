@@ -7,7 +7,6 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "therubyracer"
 gem "jekyll", "~> 4.0.1"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
@@ -26,6 +25,10 @@ end
 
 # Performance-booster for watching directories on Windows
 gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
+
+# For building on GH pages
+gem 'execjs'
+gem "therubyracer"
 
 gem 'jemoji'
 gem 'jekyll-target-blank'
