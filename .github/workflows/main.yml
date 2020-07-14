@@ -2,7 +2,7 @@ name: Publish to Github Pages
 on:
   push:
     branches:
-      - gh-pages-redesign
+      - main
 
 jobs:
   build-publish:
