@@ -68,7 +68,7 @@ jobs:
           echo "::set-output name=tag_name::master/${git_hash}"
           echo "::set-output name=deploy_tag_name::deploy-master/${git_hash}"
       - name: 🚀 deploy
-        uses: peaceiris/actions-gh-pages@master
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
