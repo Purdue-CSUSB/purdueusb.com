@@ -23,7 +23,7 @@ article {
     }
 
     h1, h2, h3, h4, h5, h6, .heading {
-        @extend .mb-2, .mt-8;
+        @extend .mb-2, .mt-8, .text-left;
     }
 }
 
