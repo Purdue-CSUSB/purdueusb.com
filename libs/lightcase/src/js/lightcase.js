@@ -7,4 +7,1815 @@
  *
  * @version		2.4.0 (09/04/2017)
  */
-!function(t){"use strict";var e={cache:{},support:{},objects:{},init:function(e){return this.each(function(){t(this).unbind("click.lightcase").bind("click.lightcase",function(i){i.preventDefault(),t(this).lightcase("start",e)})})},start:function(i){e.origin=lightcase.origin=this,e.settings=lightcase.settings=t.extend(!0,{idPrefix:"lightcase-",classPrefix:"lightcase-",attrPrefix:"lc-",transition:"elastic",transitionOpen:null,transitionClose:null,transitionIn:null,transitionOut:null,cssTransitions:!0,speedIn:250,speedOut:250,width:null,height:null,maxWidth:800,maxHeight:500,forceWidth:!1,forceHeight:!1,liveResize:!0,fullScreenModeForMobile:!0,mobileMatchExpression:/(iphone|ipod|ipad|android|blackberry|symbian)/,disableShrink:!1,fixedRatio:!0,shrinkFactor:.75,overlayOpacity:.9,slideshow:!1,slideshowAutoStart:!0,timeout:5e3,swipe:!0,useKeys:!0,useCategories:!0,useAsCollection:!1,navigateEndless:!0,closeOnOverlayClick:!0,title:null,caption:null,showTitle:!0,showCaption:!0,showSequenceInfo:!0,inline:{width:"auto",height:"auto"},ajax:{width:"auto",height:"auto",type:"get",dataType:"html",data:{}},iframe:{width:800,height:500,frameborder:0},flash:{width:400,height:205,wmode:"transparent"},video:{width:400,height:225,poster:"",preload:"auto",controls:!0,autobuffer:!0,autoplay:!0,loop:!1},attr:"data-rel",href:null,type:null,typeMapping:{image:"jpg,jpeg,gif,png,bmp",flash:"swf",video:"mp4,mov,ogv,ogg,webm",iframe:"html,php",ajax:"json,txt",inline:"#"},errorMessage:function(){return'<p class="'+e.settings.classPrefix+'error">'+e.settings.labels.errorMessage+"</p>"},labels:{errorMessage:"Source could not be found...","sequenceInfo.of":" of ",close:"Close","navigator.prev":"Prev","navigator.next":"Next","navigator.play":"Play","navigator.pause":"Pause"},markup:function(){e.objects.body.append(e.objects.overlay=t('<div id="'+e.settings.idPrefix+'overlay"></div>'),e.objects.loading=t('<div id="'+e.settings.idPrefix+'loading" class="'+e.settings.classPrefix+'icon-spin"></div>'),e.objects["case"]=t('<div id="'+e.settings.idPrefix+'case" aria-hidden="true" role="dialog"></div>')),e.objects["case"].after(e.objects.close=t('<a href="#" class="'+e.settings.classPrefix+'icon-close"><span>'+e.settings.labels.close+"</span></a>"),e.objects.nav=t('<div id="'+e.settings.idPrefix+'nav"></div>')),e.objects.nav.append(e.objects.prev=t('<a href="#" class="'+e.settings.classPrefix+'icon-prev"><span>'+e.settings.labels["navigator.prev"]+"</span></a>").hide(),e.objects.next=t('<a href="#" class="'+e.settings.classPrefix+'icon-next"><span>'+e.settings.labels["navigator.next"]+"</span></a>").hide(),e.objects.play=t('<a href="#" class="'+e.settings.classPrefix+'icon-play"><span>'+e.settings.labels["navigator.play"]+"</span></a>").hide(),e.objects.pause=t('<a href="#" class="'+e.settings.classPrefix+'icon-pause"><span>'+e.settings.labels["navigator.pause"]+"</span></a>").hide()),e.objects["case"].append(e.objects.content=t('<div id="'+e.settings.idPrefix+'content"></div>'),e.objects.info=t('<div id="'+e.settings.idPrefix+'info"></div>')),e.objects.content.append(e.objects.contentInner=t('<div class="'+e.settings.classPrefix+'contentInner"></div>')),e.objects.info.append(e.objects.sequenceInfo=t('<div id="'+e.settings.idPrefix+'sequenceInfo"></div>'),e.objects.title=t('<h4 id="'+e.settings.idPrefix+'title"></h4>'),e.objects.caption=t('<p id="'+e.settings.idPrefix+'caption"></p>'))},onInit:{},onStart:{},onFinish:{},onResize:{},onClose:{},onCleanup:{}},i,e.origin.data?e.origin.data("lc-options"):{}),e.objects.document=t("html"),e.objects.body=t("body"),e._callHooks(e.settings.onInit),e.objectData=e._setObjectData(this),e._addElements(),e._open(),e.dimensions=e.getViewportDimensions()},get:function(t){return e.objects[t]},getObjectData:function(){return e.objectData},_setObjectData:function(i){var s=t(i),n={"this":t(i),title:e.settings.title||s.attr(e._prefixAttributeName("title"))||s.attr("title"),caption:e.settings.caption||s.attr(e._prefixAttributeName("caption"))||s.children("img").attr("alt"),url:e._determineUrl(),requestType:e.settings.ajax.type,requestData:e.settings.ajax.data,requestDataType:e.settings.ajax.dataType,rel:s.attr(e._determineAttributeSelector()),type:e.settings.type||e._verifyDataType(e._determineUrl()),isPartOfSequence:e.settings.useAsCollection||e._isPartOfSequence(s.attr(e.settings.attr),":"),isPartOfSequenceWithSlideshow:e._isPartOfSequence(s.attr(e.settings.attr),":slideshow"),currentIndex:t(e._determineAttributeSelector()).index(s),sequenceLength:t(e._determineAttributeSelector()).length};return n.sequenceInfo=n.currentIndex+1+e.settings.labels["sequenceInfo.of"]+n.sequenceLength,n.prevIndex=n.currentIndex-1,n.nextIndex=n.currentIndex+1,n},_prefixAttributeName:function(t){return"data-"+e.settings.attrPrefix+t},_determineLinkTarget:function(){return e.settings.href||t(e.origin).attr(e._prefixAttributeName("href"))||t(e.origin).attr("href")},_determineAttributeSelector:function(){var i=t(e.origin),s="";if("undefined"!=typeof e.cache.selector)s=e.cache.selector;else if(!0===e.settings.useCategories&&i.attr(e._prefixAttributeName("categories"))){var n=i.attr(e._prefixAttributeName("categories")).split(" ");t.each(n,function(t,i){t>0&&(s+=","),s+="["+e._prefixAttributeName("categories")+'~="'+i+'"]'})}else s="["+e.settings.attr+'="'+i.attr(e.settings.attr)+'"]';return e.cache.selector=s,s},_determineUrl:function(){var i,s=e._verifyDataUrl(e._determineLinkTarget()),n=0,a=0,o="";return t.each(s,function(t,s){switch(e._verifyDataType(s.url)){case"video":var c=document.createElement("video"),r=e._verifyDataType(s.url)+"/"+e._getFileUrlSuffix(s.url);"probably"!==o&&o!==c.canPlayType(r)&&""!==c.canPlayType(r)&&(o=c.canPlayType(r),i=s.url);break;default:e._devicePixelRatio()>=s.density&&s.density>=a&&e._matchMedia()("screen and (min-width:"+s.width+"px)").matches&&s.width>=n&&(n=s.width,a=s.density,i=s.url)}}),i},_normalizeUrl:function(t){var e=/^\d+$/;return t.split(",").map(function(t){var i={width:0,density:0};return t.trim().split(/\s+/).forEach(function(t,s){if(0===s)return i.url=t;var n=t.substring(0,t.length-1),a=t[t.length-1],o=parseInt(n,10),c=parseFloat(n);"w"===a&&e.test(n)?i.width=o:"h"===a&&e.test(n)?i.height=o:"x"!==a||isNaN(c)||(i.density=c)}),i})},_isPartOfSequence:function(i,s){var n=t("["+e.settings.attr+'="'+i+'"]');return new RegExp(s).test(i)&&n.length>1},isSlideshowEnabled:function(){return e.objectData.isPartOfSequence&&(!0===e.settings.slideshow||!0===e.objectData.isPartOfSequenceWithSlideshow)},_loadContent:function(){e.cache.originalObject&&e._restoreObject(),e._createObject()},_createObject:function(){var i;switch(e.objectData.type){case"image":(i=t(new Image)).attr({src:e.objectData.url,alt:e.objectData.title});break;case"inline":(i=t('<div class="'+e.settings.classPrefix+'inlineWrap"></div>')).html(e._cloneObject(t(e.objectData.url))),t.each(e.settings.inline,function(t,s){i.attr(e._prefixAttributeName(t),s)});break;case"ajax":i=t('<div class="'+e.settings.classPrefix+'inlineWrap"></div>'),t.each(e.settings.ajax,function(t,s){"data"!==t&&i.attr(e._prefixAttributeName(t),s)});break;case"flash":i=t('<embed src="'+e.objectData.url+'" type="application/x-shockwave-flash"></embed>'),t.each(e.settings.flash,function(t,e){i.attr(t,e)});break;case"video":(i=t("<video></video>")).attr("src",e.objectData.url),t.each(e.settings.video,function(t,e){i.attr(t,e)});break;default:(i=t("<iframe></iframe>")).attr({src:e.objectData.url}),t.each(e.settings.iframe,function(t,e){i.attr(t,e)})}e._addObject(i),e._loadObject(i)},_addObject:function(t){e.objects.contentInner.html(t),e._loading("start"),e._callHooks(e.settings.onStart),!0===e.settings.showSequenceInfo&&e.objectData.isPartOfSequence?(e.objects.sequenceInfo.html(e.objectData.sequenceInfo),e.objects.sequenceInfo.show()):(e.objects.sequenceInfo.empty(),e.objects.sequenceInfo.hide()),!0===e.settings.showTitle&&e.objectData.title!==undefined&&""!==e.objectData.title?(e.objects.title.html(e.objectData.title),e.objects.title.show()):(e.objects.title.empty(),e.objects.title.hide()),!0===e.settings.showCaption&&e.objectData.caption!==undefined&&""!==e.objectData.caption?(e.objects.caption.html(e.objectData.caption),e.objects.caption.show()):(e.objects.caption.empty(),e.objects.caption.hide())},_loadObject:function(i){switch(e.objectData.type){case"inline":t(e.objectData.url)?e._showContent(i):e.error();break;case"ajax":t.ajax(t.extend({},e.settings.ajax,{url:e.objectData.url,type:e.objectData.requestType,dataType:e.objectData.requestDataType,data:e.objectData.requestData,success:function(t){"json"===e.objectData.requestDataType?e.objectData.data=t:i.html(t),e._showContent(i)},error:function(){e.error()}}));break;case"flash":e._showContent(i);break;case"video":"function"==typeof i.get(0).canPlayType||0===e.objects["case"].find("video").length?e._showContent(i):e.error();break;default:e.objectData.url?(i.on("load",function(){e._showContent(i)}),i.on("error",function(){e.error()})):e.error()}},error:function(){e.objectData.type="error";var i=t('<div class="'+e.settings.classPrefix+'inlineWrap"></div>');i.html(e.settings.errorMessage),e.objects.contentInner.html(i),e._showContent(e.objects.contentInner)},_calculateDimensions:function(t){e._cleanupDimensions();var i={ratio:1,objectWidth:t.attr("width")?t.attr("width"):t.attr(e._prefixAttributeName("width")),objectHeight:t.attr("height")?t.attr("height"):t.attr(e._prefixAttributeName("height"))};if(!e.settings.disableShrink)switch(i.maxWidth=parseInt(e.dimensions.windowWidth*e.settings.shrinkFactor),i.maxHeight=parseInt(e.dimensions.windowHeight*e.settings.shrinkFactor),i.maxWidth>e.settings.maxWidth&&(i.maxWidth=e.settings.maxWidth),i.maxHeight>e.settings.maxHeight&&(i.maxHeight=e.settings.maxHeight),i.differenceWidthAsPercent=parseInt(100/i.maxWidth*i.objectWidth),i.differenceHeightAsPercent=parseInt(100/i.maxHeight*i.objectHeight),e.objectData.type){case"image":case"flash":case"video":case"iframe":case"ajax":case"inline":if("image"===e.objectData.type||!0===e.settings.fixedRatio){i.differenceWidthAsPercent>100&&i.differenceWidthAsPercent>i.differenceHeightAsPercent&&(i.objectWidth=i.maxWidth,i.objectHeight=parseInt(i.objectHeight/i.differenceWidthAsPercent*100)),i.differenceHeightAsPercent>100&&i.differenceHeightAsPercent>i.differenceWidthAsPercent&&(i.objectWidth=parseInt(i.objectWidth/i.differenceHeightAsPercent*100),i.objectHeight=i.maxHeight),i.differenceHeightAsPercent>100&&i.differenceWidthAsPercent<i.differenceHeightAsPercent&&(i.objectWidth=parseInt(i.maxWidth/i.differenceHeightAsPercent*i.differenceWidthAsPercent),i.objectHeight=i.maxHeight);break}case"error":!isNaN(i.objectWidth)&&i.objectWidth>i.maxWidth&&(i.objectWidth=i.maxWidth);break;default:(isNaN(i.objectWidth)||i.objectWidth>i.maxWidth)&&!e.settings.forceWidth&&(i.objectWidth=i.maxWidth),(isNaN(i.objectHeight)&&"auto"!==i.objectHeight||i.objectHeight>i.maxHeight)&&!e.settings.forceHeight&&(i.objectHeight=i.maxHeight)}if(e.settings.forceWidth){try{i.objectWidth=e.settings[e.objectData.type].width}catch(s){i.objectWidth=e.settings.width||i.objectWidth}i.maxWidth=null}if(t.attr(e._prefixAttributeName("max-width"))&&(i.maxWidth=t.attr(e._prefixAttributeName("max-width"))),e.settings.forceHeight){try{i.objectHeight=e.settings[e.objectData.type].height}catch(s){i.objectHeight=e.settings.height||i.objectHeight}i.maxHeight=null}t.attr(e._prefixAttributeName("max-height"))&&(i.maxHeight=t.attr(e._prefixAttributeName("max-height"))),e._adjustDimensions(t,i)},_adjustDimensions:function(t,i){t.css({width:i.objectWidth,height:i.objectHeight,"max-width":i.maxWidth,"max-height":i.maxHeight}),e.objects.contentInner.css({width:t.outerWidth(),height:t.outerHeight(),"max-width":"100%"}),e.objects["case"].css({width:e.objects.contentInner.outerWidth()}),e.objects["case"].css({"margin-top":parseInt(-e.objects["case"].outerHeight()/2),"margin-left":parseInt(-e.objects["case"].outerWidth()/2)})},_loading:function(t){"start"===t?(e.objects["case"].addClass(e.settings.classPrefix+"loading"),e.objects.loading.show()):"end"===t&&(e.objects["case"].removeClass(e.settings.classPrefix+"loading"),e.objects.loading.hide())},getViewportDimensions:function(){return{windowWidth:t(window).innerWidth(),windowHeight:t(window).innerHeight()}},_verifyDataUrl:function(t){return!(!t||t===undefined||""===t)&&(t.indexOf("#")>-1&&(t="#"+(t=t.split("#"))[t.length-1]),e._normalizeUrl(t.toString()))},_getFileUrlSuffix:function(t){return t.toLowerCase().split("?")[0].split(".")[1]},_verifyDataType:function(t){var i=e.settings.typeMapping;if(!t)return!1;for(var s in i)if(i.hasOwnProperty(s))for(var n=i[s].split(","),a=0;a<n.length;a++){var o=n[a].toLowerCase(),c=new RegExp(".("+o+")$","i"),r=t.toLowerCase().split("?")[0].substr(-5);if(!0===c.test(r)||"inline"===s&&t.indexOf(o)>-1)return s}return"iframe"},_addElements:function(){"undefined"!=typeof e.objects["case"]&&t("#"+e.objects["case"].attr("id")).length||e.settings.markup()},_showContent:function(t){switch(e.objects.document.attr(e._prefixAttributeName("type"),e.objectData.type),e.cache.object=t,e._calculateDimensions(t),e._callHooks(e.settings.onFinish),e.transition["in"]()){case"scrollTop":case"scrollRight":case"scrollBottom":case"scrollLeft":case"scrollHorizontal":case"scrollVertical":e.transition.scroll(e.objects["case"],"in",e.settings.speedIn),e.transition.fade(e.objects.contentInner,"in",e.settings.speedIn);break;case"elastic":e.objects["case"].css("opacity")<1&&(e.transition.zoom(e.objects["case"],"in",e.settings.speedIn),e.transition.fade(e.objects.contentInner,"in",e.settings.speedIn));case"fade":case"fadeInline":e.transition.fade(e.objects["case"],"in",e.settings.speedIn),e.transition.fade(e.objects.contentInner,"in",e.settings.speedIn);break;default:e.transition.fade(e.objects["case"],"in",0)}e._loading("end"),e.isBusy=!1,e.cache.firstOpened||(e.cache.firstOpened=e.objectData["this"]),e.objects.info.hide(),setTimeout(function(){e.transition.fade(e.objects.info,"in",e.settings.speedIn)},e.settings.speedIn)},_processContent:function(){switch(e.isBusy=!0,e.transition.fade(e.objects.info,"out",0),e.settings.transitionOut){case"scrollTop":case"scrollRight":case"scrollBottom":case"scrollLeft":case"scrollVertical":case"scrollHorizontal":e.objects["case"].is(":hidden")?(e.transition.fade(e.objects.contentInner,"out",0),e.transition.fade(e.objects["case"],"out",0,0,function(){e._loadContent()})):e.transition.scroll(e.objects["case"],"out",e.settings.speedOut,function(){e._loadContent()});break;case"fade":e.objects["case"].is(":hidden")?e.transition.fade(e.objects["case"],"out",0,0,function(){e._loadContent()}):e.transition.fade(e.objects["case"],"out",e.settings.speedOut,0,function(){e._loadContent()});break;case"fadeInline":case"elastic":e.objects["case"].is(":hidden")?e.transition.fade(e.objects["case"],"out",0,0,function(){e._loadContent()}):e.transition.fade(e.objects.contentInner,"out",e.settings.speedOut,0,function(){e._loadContent()});break;default:e.transition.fade(e.objects["case"],"out",0,0,function(){e._loadContent()})}},_handleEvents:function(){e._unbindEvents(),e.objects.nav.children().not(e.objects.close).hide(),e.isSlideshowEnabled()&&(!0!==e.settings.slideshowAutoStart&&!e.isSlideshowStarted||e.objects.nav.hasClass(e.settings.classPrefix+"paused")?e._stopTimeout():e._startTimeout()),e.settings.liveResize&&e._watchResizeInteraction(),e.objects.close.click(function(t){t.preventDefault(),e.close()}),!0===e.settings.closeOnOverlayClick&&e.objects.overlay.css("cursor","pointer").click(function(t){t.preventDefault(),e.close()}),!0===e.settings.useKeys&&e._addKeyEvents(),e.objectData.isPartOfSequence&&(e.objects.nav.attr(e._prefixAttributeName("ispartofsequence"),!0),e.objects.nav.data("items",e._setNavigation()),e.objects.prev.click(function(t){t.preventDefault(),!0!==e.settings.navigateEndless&&e.item.isFirst()||(e.objects.prev.unbind("click"),e.cache.action="prev",e.objects.nav.data("items").prev.click(),e.isSlideshowEnabled()&&e._stopTimeout())}),e.objects.next.click(function(t){t.preventDefault(),!0!==e.settings.navigateEndless&&e.item.isLast()||(e.objects.next.unbind("click"),e.cache.action="next",e.objects.nav.data("items").next.click(),e.isSlideshowEnabled()&&e._stopTimeout())}),e.isSlideshowEnabled()&&(e.objects.play.click(function(t){t.preventDefault(),e._startTimeout()}),e.objects.pause.click(function(t){t.preventDefault(),e._stopTimeout()})),!0===e.settings.swipe&&(t.isPlainObject(t.event.special.swipeleft)&&e.objects["case"].on("swipeleft",function(t){t.preventDefault(),e.objects.next.click(),e.isSlideshowEnabled()&&e._stopTimeout()}),t.isPlainObject(t.event.special.swiperight)&&e.objects["case"].on("swiperight",function(t){t.preventDefault(),e.objects.prev.click(),e.isSlideshowEnabled()&&e._stopTimeout()})))},_addKeyEvents:function(){t(document).bind("keyup.lightcase",function(t){if(!e.isBusy)switch(t.keyCode){case 27:e.objects.close.click();break;case 37:e.objectData.isPartOfSequence&&e.objects.prev.click();break;case 39:e.objectData.isPartOfSequence&&e.objects.next.click()}})},_startTimeout:function(){e.isSlideshowStarted=!0,e.objects.play.hide(),e.objects.pause.show(),e.cache.action="next",e.objects.nav.removeClass(e.settings.classPrefix+"paused"),e.timeout=setTimeout(function(){e.objects.nav.data("items").next.click()},e.settings.timeout)},_stopTimeout:function(){e.objects.play.show(),e.objects.pause.hide(),e.objects.nav.addClass(e.settings.classPrefix+"paused"),clearTimeout(e.timeout)},_setNavigation:function(){var i=t(e.cache.selector||e.settings.attr),s=e.objectData.sequenceLength-1,n={prev:i.eq(e.objectData.prevIndex),next:i.eq(e.objectData.nextIndex)};return e.objectData.currentIndex>0?e.objects.prev.show():n.prevItem=i.eq(s),e.objectData.nextIndex<=s?e.objects.next.show():n.next=i.eq(0),!0===e.settings.navigateEndless&&(e.objects.prev.show(),e.objects.next.show()),n},item:{isFirst:function(){return 0===e.objectData.currentIndex},isFirstOpened:function(){return e.objectData["this"].is(e.cache.firstOpened)},isLast:function(){return e.objectData.currentIndex===e.objectData.sequenceLength-1}},_cloneObject:function(t){var i=t.clone(),s=t.attr("id");return t.is(":hidden")?(e._cacheObjectData(t),t.attr("id",e.settings.idPrefix+"temp-"+s).empty()):i.removeAttr("id"),i.show()},isMobileDevice:function(){return!!navigator.userAgent.toLowerCase().match(e.settings.mobileMatchExpression)},isTransitionSupported:function(){var t=e.objects.body.get(0),i=!1,s={transition:"",WebkitTransition:"-webkit-",MozTransition:"-moz-",OTransition:"-o-",MsTransition:"-ms-"};for(var n in s)s.hasOwnProperty(n)&&n in t.style&&(e.support.transition=s[n],i=!0);return i},transition:{"in":function(){return e.settings.transitionOpen&&!e.cache.firstOpened?e.settings.transitionOpen:e.settings.transitionIn},fade:function(t,i,s,n,a){var o="in"===i,c={},r=t.css("opacity"),l={},d=n||(o?1:0);!e.isOpen&&o||(c.opacity=r,l.opacity=d,t.css(c).show(),e.support.transitions?(l[e.support.transition+"transition"]=s+"ms ease",setTimeout(function(){t.css(l),setTimeout(function(){t.css(e.support.transition+"transition",""),!a||!e.isOpen&&o||a()},s)},15)):(t.stop(),t.animate(l,s,a)))},scroll:function(t,i,s,n){var a="in"===i,o=a?e.settings.transitionIn:e.settings.transitionOut,c="left",r={},l=a?0:1,d=a?"-50%":"50%",u={},h=a?1:0,f=a?"50%":"-50%";if(e.isOpen||!a){switch(o){case"scrollTop":c="top";break;case"scrollRight":d=a?"150%":"50%",f=a?"50%":"150%";break;case"scrollBottom":c="top",d=a?"150%":"50%",f=a?"50%":"150%";break;case"scrollHorizontal":d=a?"150%":"50%",f=a?"50%":"-50%";break;case"scrollVertical":c="top",d=a?"-50%":"50%",f=a?"50%":"150%"}if("prev"===e.cache.action)switch(o){case"scrollHorizontal":d=a?"-50%":"50%",f=a?"50%":"150%";break;case"scrollVertical":d=a?"150%":"50%",f=a?"50%":"-50%"}r.opacity=l,r[c]=d,u.opacity=h,u[c]=f,t.css(r).show(),e.support.transitions?(u[e.support.transition+"transition"]=s+"ms ease",setTimeout(function(){t.css(u),setTimeout(function(){t.css(e.support.transition+"transition",""),!n||!e.isOpen&&a||n()},s)},15)):(t.stop(),t.animate(u,s,n))}},zoom:function(t,i,s,n){var a="in"===i,o={},c=t.css("opacity"),r=a?"scale(0.75)":"scale(1)",l={},d=a?1:0,u=a?"scale(1)":"scale(0.75)";!e.isOpen&&a||(o.opacity=c,o[e.support.transition+"transform"]=r,l.opacity=d,t.css(o).show(),e.support.transitions?(l[e.support.transition+"transform"]=u,l[e.support.transition+"transition"]=s+"ms ease",setTimeout(function(){t.css(l),setTimeout(function(){t.css(e.support.transition+"transform",""),t.css(e.support.transition+"transition",""),!n||!e.isOpen&&a||n()},s)},15)):(t.stop(),t.animate(l,s,n)))}},_callHooks:function(i){"object"==typeof i&&t.each(i,function(t,i){"function"==typeof i&&i.call(e.origin)})},_cacheObjectData:function(i){t.data(i,"cache",{id:i.attr("id"),content:i.html()}),e.cache.originalObject=i},_restoreObject:function(){var i=t('[id^="'+e.settings.idPrefix+'temp-"]');i.attr("id",t.data(e.cache.originalObject,"cache").id),i.html(t.data(e.cache.originalObject,"cache").content)},resize:function(){e.isOpen&&(e.isSlideshowEnabled()&&e._stopTimeout(),e.dimensions=e.getViewportDimensions(),e._calculateDimensions(e.cache.object),e._callHooks(e.settings.onResize))},_watchResizeInteraction:function(){t(window).resize(e.resize)},_unwatchResizeInteraction:function(){t(window).off("resize",e.resize)},_switchToFullScreenMode:function(){e.settings.shrinkFactor=1,e.settings.overlayOpacity=1,t("html").addClass(e.settings.classPrefix+"fullScreenMode")},_open:function(){switch(e.isOpen=!0,e.support.transitions=!!e.settings.cssTransitions&&e.isTransitionSupported(),e.support.mobileDevice=e.isMobileDevice(),e.support.mobileDevice&&(t("html").addClass(e.settings.classPrefix+"isMobileDevice"),e.settings.fullScreenModeForMobile&&e._switchToFullScreenMode()),e.settings.transitionIn||(e.settings.transitionIn=e.settings.transition),e.settings.transitionOut||(e.settings.transitionOut=e.settings.transition),e.transition["in"]()){case"fade":case"fadeInline":case"elastic":case"scrollTop":case"scrollRight":case"scrollBottom":case"scrollLeft":case"scrollVertical":case"scrollHorizontal":e.objects["case"].is(":hidden")&&(e.objects.close.css("opacity",0),e.objects.overlay.css("opacity",0),e.objects["case"].css("opacity",0),e.objects.contentInner.css("opacity",0)),e.transition.fade(e.objects.overlay,"in",e.settings.speedIn,e.settings.overlayOpacity,function(){e.transition.fade(e.objects.close,"in",e.settings.speedIn),e._handleEvents(),e._processContent()});break;default:e.transition.fade(e.objects.overlay,"in",0,e.settings.overlayOpacity,function(){e.transition.fade(e.objects.close,"in",0),e._handleEvents(),e._processContent()})}e.objects.document.addClass(e.settings.classPrefix+"open"),e.objects["case"].attr("aria-hidden","false")},close:function(){switch(e.isOpen=!1,e.isSlideshowEnabled()&&(e._stopTimeout(),e.isSlideshowStarted=!1,e.objects.nav.removeClass(e.settings.classPrefix+"paused")),e.objects.loading.hide(),e._unbindEvents(),e._unwatchResizeInteraction(),t("html").removeClass(e.settings.classPrefix+"open"),e.objects["case"].attr("aria-hidden","true"),e.objects.nav.children().hide(),e.objects.close.hide(),e._callHooks(e.settings.onClose),e.transition.fade(e.objects.info,"out",0),e.settings.transitionClose||e.settings.transitionOut){case"fade":case"fadeInline":case"scrollTop":case"scrollRight":case"scrollBottom":case"scrollLeft":case"scrollHorizontal":case"scrollVertical":e.transition.fade(e.objects["case"],"out",e.settings.speedOut,0,function(){e.transition.fade(e.objects.overlay,"out",e.settings.speedOut,0,function(){e.cleanup()})});break;case"elastic":e.transition.zoom(e.objects["case"],"out",e.settings.speedOut,function(){e.transition.fade(e.objects.overlay,"out",e.settings.speedOut,0,function(){e.cleanup()})});break;default:e.cleanup()}},_unbindEvents:function(){e.objects.overlay.unbind("click"),t(document).unbind("keyup.lightcase"),e.objects["case"].unbind("swipeleft").unbind("swiperight"),e.objects.prev.unbind("click"),e.objects.next.unbind("click"),e.objects.play.unbind("click"),e.objects.pause.unbind("click"),e.objects.close.unbind("click")},_cleanupDimensions:function(){var t=e.objects.contentInner.css("opacity");e.objects["case"].css({width:"",height:"",top:"",left:"","margin-top":"","margin-left":""}),e.objects.contentInner.removeAttr("style").css("opacity",t),e.objects.contentInner.children().removeAttr("style")},cleanup:function(){e._cleanupDimensions(),e.objects.loading.hide(),e.objects.overlay.hide(),e.objects["case"].hide(),e.objects.prev.hide(),e.objects.next.hide(),e.objects.play.hide(),e.objects.pause.hide(),e.objects.document.removeAttr(e._prefixAttributeName("type")),e.objects.nav.removeAttr(e._prefixAttributeName("ispartofsequence")),e.objects.contentInner.empty().hide(),e.objects.info.children().empty(),e.cache.originalObject&&e._restoreObject(),e._callHooks(e.settings.onCleanup),e.cache={}},_matchMedia:function(){return window.matchMedia||window.msMatchMedia},_devicePixelRatio:function(){return window.devicePixelRatio||1},_isPublicMethod:function(t){return"function"==typeof e[t]&&"_"!==t.charAt(0)},_export:function(){window.lightcase={},t.each(e,function(t){e._isPublicMethod(t)&&(lightcase[t]=e[t])})}};e._export(),t.fn.lightcase=function(i){return e._isPublicMethod(i)?e[i].apply(this,Array.prototype.slice.call(arguments,1)):"object"!=typeof i&&i?void t.error("Method "+i+" does not exist on jQuery.lightcase"):e.init.apply(this,arguments)}}(jQuery);
+
+;(function ($) {
+
+	'use strict';
+
+	var _self = {
+		cache: {},
+
+		support: {},
+
+		objects: {},
+
+		/**
+		 * Initializes the plugin
+		 *
+		 * @param	{object}	options
+		 * @return	{object}
+		 */
+		init: function (options) {
+			return this.each(function () {
+				$(this).unbind('click.lightcase').bind('click.lightcase', function (event) {
+					event.preventDefault();
+					$(this).lightcase('start', options);
+				});
+			});
+		},
+
+		/**
+		 * Starts the plugin
+		 *
+		 * @param	{object}	options
+		 * @return	{void}
+		 */
+		start: function (options) {
+			_self.origin = lightcase.origin = this;
+
+			_self.settings = lightcase.settings = $.extend(true, {
+				idPrefix: 'lightcase-',
+				classPrefix: 'lightcase-',
+				attrPrefix: 'lc-',
+				transition: 'elastic',
+				transitionOpen: null,
+				transitionClose: null,
+				transitionIn: null,
+				transitionOut: null,
+				cssTransitions: true,
+				speedIn: 250,
+				speedOut: 250,
+				width: null,
+				height: null,
+				maxWidth: 800,
+				maxHeight: 500,
+				forceWidth: false,
+				forceHeight: false,
+				liveResize: true,
+				fullScreenModeForMobile: true,
+				mobileMatchExpression: /(iphone|ipod|ipad|android|blackberry|symbian)/,
+				disableShrink: false,
+				fixedRatio: true,
+				shrinkFactor: .75,
+				overlayOpacity: .9,
+				slideshow: false,
+				slideshowAutoStart: true,
+				timeout: 5000,
+				swipe: true,
+				useKeys: true,
+				useCategories: true,
+				useAsCollection: false,
+				navigateEndless: true,
+				closeOnOverlayClick: true,
+				title: null,
+				caption: null,
+				showTitle: true,
+				showCaption: true,
+				showSequenceInfo: true,
+				inline: {
+					width: 'auto',
+					height: 'auto'
+				},
+				ajax: {
+					width: 'auto',
+					height: 'auto',
+					type: 'get',
+					dataType: 'html',
+					data: {}
+				},
+				iframe: {
+					width: 800,
+					height: 500,
+					frameborder: 0
+				},
+				flash: {
+					width: 400,
+					height: 205,
+					wmode: 'transparent'
+				},
+				video: {
+					width: 400,
+					height: 225,
+					poster: '',
+					preload: 'auto',
+					controls: true,
+					autobuffer: true,
+					autoplay: true,
+					loop: false
+				},
+				attr: 'data-rel',
+				href: null,
+				type: null,
+				typeMapping: {
+					'image': 'jpg,jpeg,gif,png,bmp',
+					'flash': 'swf',
+					'video': 'mp4,mov,ogv,ogg,webm',
+					'iframe': 'html,php',
+					'ajax': 'json,txt',
+					'inline': '#'
+				},
+				errorMessage: function () {
+					return '<p class="' + _self.settings.classPrefix + 'error">' + _self.settings.labels['errorMessage'] + '</p>';
+				},
+				labels: {
+					'errorMessage': 'Source could not be found...',
+					'sequenceInfo.of': ' of ',
+					'close': 'Close',
+					'navigator.prev': 'Prev',
+					'navigator.next': 'Next',
+ 					'navigator.play': 'Play',
+					'navigator.pause': 'Pause'
+				},
+				markup: function () {
+					_self.objects.body.append(
+						_self.objects.overlay = $('<div id="' + _self.settings.idPrefix + 'overlay"></div>'),
+						_self.objects.loading = $('<div id="' + _self.settings.idPrefix + 'loading" class="' + _self.settings.classPrefix + 'icon-spin"></div>'),
+						_self.objects.case = $('<div id="' + _self.settings.idPrefix + 'case" aria-hidden="true" role="dialog"></div>')
+					);
+					_self.objects.case.after(
+						_self.objects.close = $('<a href="#" class="' + _self.settings.classPrefix + 'icon-close"><span>' + _self.settings.labels['close'] + '</span></a>'),
+						_self.objects.nav = $('<div id="' + _self.settings.idPrefix + 'nav"></div>')
+					);
+					_self.objects.nav.append(
+						_self.objects.prev = $('<a href="#" class="' + _self.settings.classPrefix + 'icon-prev"><span>' + _self.settings.labels['navigator.prev'] + '</span></a>').hide(),
+						_self.objects.next = $('<a href="#" class="' + _self.settings.classPrefix + 'icon-next"><span>' + _self.settings.labels['navigator.next'] + '</span></a>').hide(),
+						_self.objects.play = $('<a href="#" class="' + _self.settings.classPrefix + 'icon-play"><span>' + _self.settings.labels['navigator.play'] + '</span></a>').hide(),
+						_self.objects.pause = $('<a href="#" class="' + _self.settings.classPrefix + 'icon-pause"><span>' + _self.settings.labels['navigator.pause'] + '</span></a>').hide()
+					);
+					_self.objects.case.append(
+						_self.objects.content = $('<div id="' + _self.settings.idPrefix + 'content"></div>'),
+						_self.objects.info = $('<div id="' + _self.settings.idPrefix + 'info"></div>')
+					);
+					_self.objects.content.append(
+						_self.objects.contentInner = $('<div class="' + _self.settings.classPrefix + 'contentInner"></div>')
+					);
+					_self.objects.info.append(
+						_self.objects.sequenceInfo = $('<div id="' + _self.settings.idPrefix + 'sequenceInfo"></div>'),
+						_self.objects.title = $('<h4 id="' + _self.settings.idPrefix + 'title"></h4>'),
+						_self.objects.caption = $('<p id="' + _self.settings.idPrefix + 'caption"></p>')
+					);
+				},
+				onInit: {},
+				onStart: {},
+				onFinish: {},
+				onResize: {},
+				onClose: {},
+				onCleanup: {}
+			}, 
+			options,
+			// Load options from data-lc-options attribute
+			_self.origin.data ? _self.origin.data('lc-options') : {});
+
+			_self.objects.document = $('html');
+			_self.objects.body = $('body');
+
+			// Call onInit hook functions
+			_self._callHooks(_self.settings.onInit);
+
+			_self.objectData = _self._setObjectData(this);
+
+			_self._addElements();
+			_self._open();
+
+			_self.dimensions = _self.getViewportDimensions();
+		},
+
+		/**
+		 * Getter method for objects
+		 *
+		 * @param	{string}	name
+		 * @return	{object}
+		 */
+		get: function (name) {
+			return _self.objects[name];
+		},
+
+		/**
+		 * Getter method for objectData
+		 *
+		 * @return	{object}
+		 */
+		getObjectData: function () {
+			return _self.objectData;
+		},
+
+		/**
+		 * Sets the object data
+		 *
+		 * @param	{object}	object
+		 * @return	{object}	objectData
+		 */
+		_setObjectData: function (object) {
+		 	var $object = $(object),
+				objectData = {
+				this: $(object),
+				title: _self.settings.title || $object.attr(_self._prefixAttributeName('title')) || $object.attr('title'),
+				caption: _self.settings.caption || $object.attr(_self._prefixAttributeName('caption')) || $object.children('img').attr('alt'),
+				url: _self._determineUrl(),
+				requestType: _self.settings.ajax.type,
+				requestData: _self.settings.ajax.data,
+				requestDataType: _self.settings.ajax.dataType,
+				rel: $object.attr(_self._determineAttributeSelector()),
+				type: _self.settings.type || _self._verifyDataType(_self._determineUrl()),
+				isPartOfSequence: _self.settings.useAsCollection || _self._isPartOfSequence($object.attr(_self.settings.attr), ':'),
+				isPartOfSequenceWithSlideshow: _self._isPartOfSequence($object.attr(_self.settings.attr), ':slideshow'),
+				currentIndex: $(_self._determineAttributeSelector()).index($object),
+				sequenceLength: $(_self._determineAttributeSelector()).length
+			};
+
+			// Add sequence info to objectData
+			objectData.sequenceInfo = (objectData.currentIndex + 1) + _self.settings.labels['sequenceInfo.of'] + objectData.sequenceLength;
+
+			// Add next/prev index
+			objectData.prevIndex = objectData.currentIndex - 1;
+			objectData.nextIndex = objectData.currentIndex + 1;
+
+			return objectData;
+		},
+
+		/**
+		 * Prefixes a data attribute name with defined name from 'settings.attrPrefix'
+		 * to ensure more uniqueness for all lightcase related/used attributes.
+		 *
+		 * @param	{string}	name
+		 * @return	{string}
+		 */
+		_prefixAttributeName: function (name) {
+			return 'data-' + _self.settings.attrPrefix + name;
+		},
+
+		/**
+		 * Determines the link target considering 'settings.href' and data attributes
+		 * but also with a fallback to the default 'href' value.
+		 *
+		 * @return	{string}
+		 */
+		_determineLinkTarget: function () {
+			return _self.settings.href || $(_self.origin).attr(_self._prefixAttributeName('href')) || $(_self.origin).attr('href');
+		},
+
+		/**
+		 * Determines the attribute selector to use, depending on
+		 * whether categorized collections are beeing used or not.
+		 *
+		 * @return	{string}	selector
+		 */
+		_determineAttributeSelector: function () {
+			var	$origin = $(_self.origin),
+				selector = '';
+
+			if (typeof _self.cache.selector !== 'undefined') {
+				selector = _self.cache.selector;
+			} else if (_self.settings.useCategories === true && $origin.attr(_self._prefixAttributeName('categories'))) {
+				var	categories = $origin.attr(_self._prefixAttributeName('categories')).split(' ');
+
+				$.each(categories, function (index, category) {
+					if (index > 0) {
+						selector += ',';
+					}
+					selector += '[' + _self._prefixAttributeName('categories') + '~="' + category + '"]';
+				});
+			} else {
+				selector = '[' + _self.settings.attr + '="' + $origin.attr(_self.settings.attr) + '"]';
+			}
+
+			_self.cache.selector = selector;
+
+			return selector;
+		},
+
+		/**
+		 * Determines the correct resource according to the
+		 * current viewport and density.
+		 *
+		 * @return	{string}	url
+		 */
+		_determineUrl: function () {
+			var	dataUrl = _self._verifyDataUrl(_self._determineLinkTarget()),
+				width = 0,
+				density = 0,
+				supportLevel = '',
+				url;
+
+			$.each(dataUrl, function (index, src) {
+				switch (_self._verifyDataType(src.url)) {
+					case 'video':
+						var	video = document.createElement('video'),
+							videoType = _self._verifyDataType(src.url) + '/' + _self._getFileUrlSuffix(src.url);
+
+						// Check if browser can play this type of video format
+						if (supportLevel !== 'probably' && supportLevel !== video.canPlayType(videoType) && video.canPlayType(videoType) !== '') {
+							supportLevel = video.canPlayType(videoType);
+							url = src.url;
+						}
+						break;
+					default:
+						if (
+							// Check density
+							_self._devicePixelRatio() >= src.density &&
+							src.density >= density &&
+							// Check viewport width
+							_self._matchMedia()('screen and (min-width:' + src.width + 'px)').matches &&
+							src.width >= width
+						) {
+							width = src.width;
+							density = src.density;
+							url = src.url;
+						}
+						break;
+				}
+			});
+
+			return url;
+		},
+
+		/**
+		 * Normalizes an url and returns information about the resource path,
+		 * the viewport width as well as density if defined.
+		 *
+		 * @param	{string}	url	Path to resource in format of an url or srcset
+		 * @return	{object}
+		 */
+		_normalizeUrl: function (url) {
+			var srcExp = /^\d+$/;
+
+			return url.split(',').map(function (str) {
+				var src = {
+					width: 0,
+					density: 0
+				};
+
+				str.trim().split(/\s+/).forEach(function (url, i) {
+					if (i === 0) {
+						return src.url = url;
+					}
+
+					var value = url.substring(0, url.length - 1),
+						lastChar = url[url.length - 1],
+						intVal = parseInt(value, 10),
+						floatVal = parseFloat(value);
+					if (lastChar === 'w' && srcExp.test(value)) {
+						src.width = intVal;
+					} else if (lastChar === 'h' && srcExp.test(value)) {
+						src.height = intVal;
+					} else if (lastChar === 'x' && !isNaN(floatVal)) {
+						src.density = floatVal;
+					}
+				});
+
+				return src;
+			});
+		},
+
+		/**
+		 * Verifies if the link is part of a sequence
+		 *
+		 * @param	{string}	rel
+		 * @param	{string}	expression
+		 * @return	{boolean}
+		 */
+		_isPartOfSequence: function (rel, expression) {
+			var getSimilarLinks = $('[' + _self.settings.attr + '="' + rel + '"]'),
+				regexp = new RegExp(expression);
+
+			return (regexp.test(rel) && getSimilarLinks.length > 1);
+		},
+
+		/**
+		 * Verifies if the slideshow should be enabled
+		 *
+		 * @return	{boolean}
+		 */
+		isSlideshowEnabled: function () {
+			return (_self.objectData.isPartOfSequence && (_self.settings.slideshow === true || _self.objectData.isPartOfSequenceWithSlideshow === true));
+		},
+
+		/**
+		 * Loads the new content to show
+		 *
+		 * @return	{void}
+		 */
+		_loadContent: function () {
+			if (_self.cache.originalObject) {
+				_self._restoreObject();
+			}
+
+			_self._createObject();
+		},
+
+		/**
+		 * Creates a new object
+		 *
+		 * @return	{void}
+		 */
+		_createObject: function () {
+			var $object;
+
+			// Create object
+			switch (_self.objectData.type) {
+				case 'image':
+					$object = $(new Image());
+					$object.attr({
+						// The time expression is required to prevent the binding of an image load
+						'src': _self.objectData.url,
+						'alt': _self.objectData.title
+					});
+					break;
+				case 'inline':
+					$object = $('<div class="' + _self.settings.classPrefix + 'inlineWrap"></div>');
+					$object.html(_self._cloneObject($(_self.objectData.url)));
+
+					// Add custom attributes from _self.settings
+					$.each(_self.settings.inline, function (name, value) {
+						$object.attr(_self._prefixAttributeName(name), value);
+					});
+					break;
+				case 'ajax':
+					$object = $('<div class="' + _self.settings.classPrefix + 'inlineWrap"></div>');
+
+					// Add custom attributes from _self.settings
+					$.each(_self.settings.ajax, function (name, value) {
+						if (name !== 'data') {
+							$object.attr(_self._prefixAttributeName(name), value);
+						}
+					});
+					break;
+				case 'flash':
+					$object = $('<embed src="' + _self.objectData.url + '" type="application/x-shockwave-flash"></embed>');
+
+					// Add custom attributes from _self.settings
+					$.each(_self.settings.flash, function (name, value) {
+						$object.attr(name, value);
+					});
+					break;
+				case 'video':
+					$object = $('<video></video>');
+					$object.attr('src', _self.objectData.url);
+
+					// Add custom attributes from _self.settings
+					$.each(_self.settings.video, function (name, value) {
+						$object.attr(name, value);
+					});
+					break;
+				default:
+					$object = $('<iframe></iframe>');
+					$object.attr({
+						'src': _self.objectData.url
+					});
+
+					// Add custom attributes from _self.settings
+					$.each(_self.settings.iframe, function (name, value) {
+						$object.attr(name, value);
+					});
+					break;
+			}
+
+			_self._addObject($object);
+			_self._loadObject($object);
+		},
+
+		/**
+		 * Adds the new object to the markup
+		 *
+		 * @param	{object}	$object
+		 * @return	{void}
+		 */
+		_addObject: function ($object) {
+			// Add object to content holder
+			_self.objects.contentInner.html($object);
+
+			// Start loading
+			_self._loading('start');
+
+			// Call onStart hook functions
+			_self._callHooks(_self.settings.onStart);
+
+			// Add sequenceInfo to the content holder or hide if its empty
+			if (_self.settings.showSequenceInfo === true && _self.objectData.isPartOfSequence) {
+				_self.objects.sequenceInfo.html(_self.objectData.sequenceInfo);
+				_self.objects.sequenceInfo.show();
+			} else {
+				_self.objects.sequenceInfo.empty();
+				_self.objects.sequenceInfo.hide();
+			}
+			// Add title to the content holder or hide if its empty
+			if (_self.settings.showTitle === true && _self.objectData.title !== undefined && _self.objectData.title !== '') {
+				_self.objects.title.html(_self.objectData.title);
+				_self.objects.title.show();
+			} else {
+				_self.objects.title.empty();
+				_self.objects.title.hide();
+			}
+			// Add caption to the content holder or hide if its empty
+			if (_self.settings.showCaption === true && _self.objectData.caption !== undefined && _self.objectData.caption !== '') {
+				_self.objects.caption.html(_self.objectData.caption);
+				_self.objects.caption.show();
+			} else {
+				_self.objects.caption.empty();
+				_self.objects.caption.hide();
+			}
+		},
+
+		/**
+		 * Loads the new object
+		 *
+		 * @param	{object}	$object
+		 * @return	{void}
+		 */
+		_loadObject: function ($object) {
+			// Load the object
+			switch (_self.objectData.type) {
+				case 'inline':
+					if ($(_self.objectData.url)) {
+						_self._showContent($object);
+					} else {
+						_self.error();
+					}
+					break;
+				case 'ajax':
+					$.ajax(
+						$.extend({}, _self.settings.ajax, {
+							url: _self.objectData.url,
+							type: _self.objectData.requestType,
+							dataType: _self.objectData.requestDataType,
+							data: _self.objectData.requestData,
+							success: function (data, textStatus, jqXHR) {
+								// Unserialize if data is transferred as json
+								if (_self.objectData.requestDataType === 'json') {
+									_self.objectData.data = data;
+								} else {
+									$object.html(data);
+								}
+								_self._showContent($object);
+							},
+							error: function (jqXHR, textStatus, errorThrown) {
+								_self.error();
+							}
+						})
+					);
+					break;
+				case 'flash':
+					_self._showContent($object);
+					break;
+				case 'video':
+					if (typeof($object.get(0).canPlayType) === 'function' || _self.objects.case.find('video').length === 0) {
+						_self._showContent($object);
+					} else {
+						_self.error();
+					}
+					break;
+				default:
+					if (_self.objectData.url) {
+						$object.on('load', function () {
+							_self._showContent($object);
+						});
+						$object.on('error', function () {
+							_self.error();
+						});
+					} else {
+						_self.error();
+					}
+					break;
+			}
+		},
+
+		/**
+		 * Throws an error message if something went wrong
+		 *
+		 * @return	{void}
+		 */
+		error: function () {
+			_self.objectData.type = 'error';
+			var $object = $('<div class="' + _self.settings.classPrefix + 'inlineWrap"></div>');
+
+			$object.html(_self.settings.errorMessage);
+			_self.objects.contentInner.html($object);
+
+			_self._showContent(_self.objects.contentInner);
+		},
+
+		/**
+		 * Calculates the dimensions to fit content
+		 *
+		 * @param	{object}	$object
+		 * @return	{void}
+		 */
+		_calculateDimensions: function ($object) {
+			_self._cleanupDimensions();
+
+			// Set default dimensions
+			var dimensions = {
+				ratio: 1,
+				objectWidth: $object.attr('width') ? $object.attr('width') : $object.attr(_self._prefixAttributeName('width')),
+				objectHeight: $object.attr('height') ? $object.attr('height') : $object.attr(_self._prefixAttributeName('height'))
+			};
+
+			if (!_self.settings.disableShrink) {
+				// Add calculated maximum width/height to dimensions
+				dimensions.maxWidth = parseInt(_self.dimensions.windowWidth * _self.settings.shrinkFactor);
+				dimensions.maxHeight = parseInt(_self.dimensions.windowHeight * _self.settings.shrinkFactor);
+
+				// If the auto calculated maxWidth/maxHeight greather than the user-defined one, use that.
+				if (dimensions.maxWidth > _self.settings.maxWidth) {
+					dimensions.maxWidth = _self.settings.maxWidth;
+				}
+				if (dimensions.maxHeight > _self.settings.maxHeight) {
+					dimensions.maxHeight = _self.settings.maxHeight;
+				}
+
+				// Calculate the difference between screen width/height and image width/height
+				dimensions.differenceWidthAsPercent = parseInt(100 / dimensions.maxWidth * dimensions.objectWidth);
+				dimensions.differenceHeightAsPercent = parseInt(100 / dimensions.maxHeight * dimensions.objectHeight);
+
+				switch (_self.objectData.type) {
+					case 'image':
+					case 'flash':
+					case 'video':
+					case 'iframe':
+					case 'ajax':
+					case 'inline':
+						if (_self.objectData.type === 'image' || _self.settings.fixedRatio === true) {
+							if (dimensions.differenceWidthAsPercent > 100 && dimensions.differenceWidthAsPercent > dimensions.differenceHeightAsPercent) {
+								dimensions.objectWidth = dimensions.maxWidth;
+								dimensions.objectHeight = parseInt(dimensions.objectHeight / dimensions.differenceWidthAsPercent * 100);
+							}
+							if (dimensions.differenceHeightAsPercent > 100 && dimensions.differenceHeightAsPercent > dimensions.differenceWidthAsPercent) {
+								dimensions.objectWidth = parseInt(dimensions.objectWidth / dimensions.differenceHeightAsPercent * 100);
+								dimensions.objectHeight = dimensions.maxHeight;
+							}
+							if (dimensions.differenceHeightAsPercent > 100 && dimensions.differenceWidthAsPercent < dimensions.differenceHeightAsPercent) {
+								dimensions.objectWidth = parseInt(dimensions.maxWidth / dimensions.differenceHeightAsPercent * dimensions.differenceWidthAsPercent);
+								dimensions.objectHeight = dimensions.maxHeight;
+							}
+							break;
+						}
+					case 'error':
+						if (!isNaN(dimensions.objectWidth) && dimensions.objectWidth > dimensions.maxWidth) {
+							dimensions.objectWidth = dimensions.maxWidth;
+						}
+						break;
+					default:
+						if ((isNaN(dimensions.objectWidth) || dimensions.objectWidth > dimensions.maxWidth) && !_self.settings.forceWidth) {
+							dimensions.objectWidth = dimensions.maxWidth;
+						}
+						if (((isNaN(dimensions.objectHeight) && dimensions.objectHeight !== 'auto') || dimensions.objectHeight > dimensions.maxHeight) && !_self.settings.forceHeight) {
+							dimensions.objectHeight = dimensions.maxHeight;
+						}
+						break;
+				}
+			}
+
+			if (_self.settings.forceWidth) {
+				try {
+					dimensions.objectWidth = _self.settings[_self.objectData.type].width;
+				} catch (e) {
+					dimensions.objectWidth = _self.settings.width || dimensions.objectWidth;
+				}
+
+				dimensions.maxWidth = null;
+			}
+			if ($object.attr(_self._prefixAttributeName('max-width'))) {
+				dimensions.maxWidth = $object.attr(_self._prefixAttributeName('max-width'));
+			}
+
+			if (_self.settings.forceHeight) {
+				try {
+					dimensions.objectHeight = _self.settings[_self.objectData.type].height;
+				} catch (e) {
+					dimensions.objectHeight = _self.settings.height || dimensions.objectHeight;
+				}
+
+				dimensions.maxHeight = null;
+			}
+			if ($object.attr(_self._prefixAttributeName('max-height'))) {
+				dimensions.maxHeight = $object.attr(_self._prefixAttributeName('max-height'));
+			}
+			_self._adjustDimensions($object, dimensions);
+		},
+
+		/**
+		 * Adjusts the dimensions
+		 *
+		 * @param	{object}	$object
+		 * @param	{object}	dimensions
+		 * @return	{void}
+		 */
+		_adjustDimensions: function ($object, dimensions) {
+			// Adjust width and height
+			$object.css({
+				'width': dimensions.objectWidth,
+				'height': dimensions.objectHeight,
+				'max-width': dimensions.maxWidth,
+				'max-height': dimensions.maxHeight
+			});
+
+			_self.objects.contentInner.css({
+				'width': $object.outerWidth(),
+				'height': $object.outerHeight(),
+				'max-width': '100%'
+			});
+
+			_self.objects.case.css({
+				'width': _self.objects.contentInner.outerWidth()
+			});
+
+			// Adjust margin
+			_self.objects.case.css({
+				'margin-top': parseInt(-(_self.objects.case.outerHeight() / 2)),
+				'margin-left': parseInt(-(_self.objects.case.outerWidth() / 2))
+			});
+		},
+
+		/**
+		 * Handles the _loading
+		 *
+		 * @param	{string}	process
+		 * @return	{void}
+		 */
+		_loading: function (process) {
+			if (process === 'start') {
+				_self.objects.case.addClass(_self.settings.classPrefix + 'loading');
+				_self.objects.loading.show();
+			} else if (process === 'end') {
+				_self.objects.case.removeClass(_self.settings.classPrefix + 'loading');
+				_self.objects.loading.hide();
+			}
+		},
+
+
+		/**
+		 * Gets the client screen dimensions
+		 *
+		 * @return	{object}	dimensions
+		 */
+		getViewportDimensions: function () {
+			return {
+				windowWidth: $(window).innerWidth(),
+				windowHeight: $(window).innerHeight()
+			};
+		},
+
+		/**
+		 * Verifies the url
+		 *
+		 * @param	{string}	dataUrl
+		 * @return	{object}	dataUrl	Clean url for processing content
+		 */
+		_verifyDataUrl: function (dataUrl) {
+			if (!dataUrl || dataUrl === undefined || dataUrl === '') {
+				return false;
+			}
+
+			if (dataUrl.indexOf('#') > -1) {
+				dataUrl = dataUrl.split('#');
+				dataUrl = '#' + dataUrl[dataUrl.length - 1];
+			}
+
+			return _self._normalizeUrl(dataUrl.toString());
+		},
+
+			// 
+		/**
+		 * Tries to get the (file) suffix of an url
+		 *
+		 * @param	{string}	url
+		 * @return	{string}
+		 */
+		_getFileUrlSuffix: function (url) {
+			return url.toLowerCase().split('?')[0].split('.')[1];
+		},
+
+		/**
+		 * Verifies the data type of the content to load
+		 *
+		 * @param	{string}			url
+		 * @return	{string|boolean}	Array key if expression matched, else false
+		 */
+		_verifyDataType: function (url) {
+			var typeMapping = _self.settings.typeMapping;
+
+			// Early abort if dataUrl couldn't be verified
+			if (!url) {
+				return false;
+			}
+
+			// Verify the dataType of url according to typeMapping which
+			// has been defined in settings.
+			for (var key in typeMapping) {
+				if (typeMapping.hasOwnProperty(key)) {
+					var suffixArr = typeMapping[key].split(',');
+
+					for (var i = 0; i < suffixArr.length; i++) {
+						var suffix = suffixArr[i].toLowerCase(),
+							regexp = new RegExp('\.(' + suffix + ')$', 'i'),
+							str = url.toLowerCase().split('?')[0].substr(-5);
+
+						if (regexp.test(str) === true || (key === 'inline' && (url.indexOf(suffix) > -1))) {
+							return key;
+						}
+					}
+				}
+			}
+
+			// If no expression matched, return 'iframe'.
+			return 'iframe';
+		},
+
+		/**
+		 * Extends html markup with the essential tags
+		 *
+		 * @return	{void}
+		 */
+		_addElements: function () {
+			if (typeof _self.objects.case !== 'undefined' && $('#' + _self.objects.case.attr('id')).length) {
+				return;
+			}
+
+			_self.settings.markup();
+		},
+
+		/**
+		 * Shows the loaded content
+		 *
+		 * @param	{object}	$object
+		 * @return	{void}
+		 */
+		_showContent: function ($object) {
+			// Add data attribute with the object type
+			_self.objects.document.attr(_self._prefixAttributeName('type'), _self.objectData.type);
+
+			_self.cache.object = $object;
+			_self._calculateDimensions($object);
+
+			// Call onFinish hook functions
+			_self._callHooks(_self.settings.onFinish);
+
+			switch (_self.transition.in()) {
+				case 'scrollTop':
+				case 'scrollRight':
+				case 'scrollBottom':
+				case 'scrollLeft':
+				case 'scrollHorizontal':
+				case 'scrollVertical':
+					_self.transition.scroll(_self.objects.case, 'in', _self.settings.speedIn);
+					_self.transition.fade(_self.objects.contentInner, 'in', _self.settings.speedIn);
+					break;
+				case 'elastic':
+					if (_self.objects.case.css('opacity') < 1) {
+						_self.transition.zoom(_self.objects.case, 'in', _self.settings.speedIn);
+						_self.transition.fade(_self.objects.contentInner, 'in', _self.settings.speedIn);
+					}
+				case 'fade':
+				case 'fadeInline':
+					_self.transition.fade(_self.objects.case, 'in', _self.settings.speedIn);
+					_self.transition.fade(_self.objects.contentInner, 'in', _self.settings.speedIn);
+					break;
+				default:
+					_self.transition.fade(_self.objects.case, 'in', 0);
+					break;
+			}
+
+			// End loading.
+			_self._loading('end');
+			_self.isBusy = false;
+			
+			// Set index of the first item opened
+			if (!_self.cache.firstOpened) {
+				_self.cache.firstOpened = _self.objectData.this;
+			}
+
+			// Fade in the info with delay
+			_self.objects.info.hide();
+			setTimeout(function () {
+			  _self.transition.fade(_self.objects.info, 'in', _self.settings.speedIn);
+			}, _self.settings.speedIn);
+		},
+
+		/**
+		 * Processes the content to show
+		 *
+		 * @return	{void}
+		 */
+		_processContent: function () {
+			_self.isBusy = true;
+
+			// Fade out the info at first
+			_self.transition.fade(_self.objects.info, 'out', 0);
+
+			switch (_self.settings.transitionOut) {
+				case 'scrollTop':
+				case 'scrollRight':
+				case 'scrollBottom':
+				case 'scrollLeft':
+				case 'scrollVertical':
+				case 'scrollHorizontal':
+					if (_self.objects.case.is(':hidden')) {
+						_self.transition.fade(_self.objects.contentInner, 'out', 0);
+						_self.transition.fade(_self.objects.case, 'out', 0, 0, function () {
+							_self._loadContent();
+						});
+					} else {
+						_self.transition.scroll(_self.objects.case, 'out', _self.settings.speedOut, function () {
+							_self._loadContent();
+						});
+					}
+					break;
+				case 'fade':
+					if (_self.objects.case.is(':hidden')) {
+						_self.transition.fade(_self.objects.case, 'out', 0, 0, function () {
+							_self._loadContent();
+						});
+					} else {
+						_self.transition.fade(_self.objects.case, 'out', _self.settings.speedOut, 0, function () {
+							_self._loadContent();
+						});
+					}
+					break;
+				case 'fadeInline':
+				case 'elastic':
+					if (_self.objects.case.is(':hidden')) {
+						_self.transition.fade(_self.objects.case, 'out', 0, 0, function () {
+							_self._loadContent();
+						});
+					} else {
+						_self.transition.fade(_self.objects.contentInner, 'out', _self.settings.speedOut, 0, function () {
+							_self._loadContent();
+						});
+					}
+					break;
+				default:
+					_self.transition.fade(_self.objects.case, 'out', 0, 0, function () {
+						_self._loadContent();
+					});
+					break;
+			}
+		},
+
+		/**
+		 * Handles events for gallery buttons
+		 *
+		 * @return	{void}
+		 */
+		_handleEvents: function () {
+			_self._unbindEvents();
+
+			_self.objects.nav.children().not(_self.objects.close).hide();
+
+			// If slideshow is enabled, show play/pause and start timeout.
+			if (_self.isSlideshowEnabled()) {
+				// Only start the timeout if slideshow autostart is enabled and slideshow is not pausing
+				if (
+					(_self.settings.slideshowAutoStart === true || _self.isSlideshowStarted) &&
+					!_self.objects.nav.hasClass(_self.settings.classPrefix + 'paused')
+				) {
+					_self._startTimeout();
+				} else {
+					_self._stopTimeout();
+				}
+			}
+
+			if (_self.settings.liveResize) {
+				_self._watchResizeInteraction();
+			}
+
+			_self.objects.close.click(function (event) {
+				event.preventDefault();
+				_self.close();
+			});
+
+			if (_self.settings.closeOnOverlayClick === true) {
+				_self.objects.overlay.css('cursor', 'pointer').click(function (event) {
+					event.preventDefault();
+
+					_self.close();
+				});
+			}
+
+			if (_self.settings.useKeys === true) {
+				_self._addKeyEvents();
+			}
+
+			if (_self.objectData.isPartOfSequence) {
+				_self.objects.nav.attr(_self._prefixAttributeName('ispartofsequence'), true);
+				_self.objects.nav.data('items', _self._setNavigation());
+
+				_self.objects.prev.click(function (event) {
+					event.preventDefault();
+
+					if (_self.settings.navigateEndless === true || !_self.item.isFirst()) {
+						_self.objects.prev.unbind('click');
+						_self.cache.action = 'prev';
+						_self.objects.nav.data('items').prev.click();
+
+						if (_self.isSlideshowEnabled()) {
+							_self._stopTimeout();
+						}
+					}
+				});
+
+				_self.objects.next.click(function (event) {
+					event.preventDefault();
+
+					if (_self.settings.navigateEndless === true || !_self.item.isLast()) {
+						_self.objects.next.unbind('click');
+						_self.cache.action = 'next';
+						_self.objects.nav.data('items').next.click();
+
+						if (_self.isSlideshowEnabled()) {
+							_self._stopTimeout();
+						}
+					}
+				});
+
+				if (_self.isSlideshowEnabled()) {
+					_self.objects.play.click(function (event) {
+						event.preventDefault();
+						_self._startTimeout();
+					});
+					_self.objects.pause.click(function (event) {
+						event.preventDefault();
+						_self._stopTimeout();
+					});
+				}
+
+				// Enable swiping if activated
+				if (_self.settings.swipe === true) {
+					if ($.isPlainObject($.event.special.swipeleft)) {
+						_self.objects.case.on('swipeleft', function (event) {
+							event.preventDefault();
+							_self.objects.next.click();
+							if (_self.isSlideshowEnabled()) {
+								_self._stopTimeout();
+							}
+						});
+					}
+					if ($.isPlainObject($.event.special.swiperight)) {
+						_self.objects.case.on('swiperight', function (event) {
+							event.preventDefault();
+							_self.objects.prev.click();
+							if (_self.isSlideshowEnabled()) {
+								_self._stopTimeout();
+							}
+						});
+					}
+				}
+			}
+		},
+
+		/**
+		 * Adds the key events
+		 *
+		 * @return	{void}
+		 */
+		_addKeyEvents: function () {
+			$(document).bind('keyup.lightcase', function (event) {
+				// Do nothing if lightcase is in process
+				if (_self.isBusy) {
+					return;
+				}
+
+				switch (event.keyCode) {
+					// Escape key
+					case 27:
+						_self.objects.close.click();
+						break;
+					// Backward key
+					case 37:
+						if (_self.objectData.isPartOfSequence) {
+							_self.objects.prev.click();
+						}
+						break;
+					// Forward key
+					case 39:
+						if (_self.objectData.isPartOfSequence) {
+							_self.objects.next.click();
+						}
+						break;
+				}
+			});
+		},
+
+		/**
+		 * Starts the slideshow timeout
+		 *
+		 * @return	{void}
+		 */
+		_startTimeout: function () {
+			_self.isSlideshowStarted = true;
+
+			_self.objects.play.hide();
+			_self.objects.pause.show();
+
+			_self.cache.action = 'next';
+			_self.objects.nav.removeClass(_self.settings.classPrefix + 'paused');
+
+			_self.timeout = setTimeout(function () {
+				_self.objects.nav.data('items').next.click();
+			}, _self.settings.timeout);
+		},
+
+		/**
+		 * Stops the slideshow timeout
+		 *
+		 * @return	{void}
+		 */
+		_stopTimeout: function () {
+			_self.objects.play.show();
+			_self.objects.pause.hide();
+
+			_self.objects.nav.addClass(_self.settings.classPrefix + 'paused');
+
+			clearTimeout(_self.timeout);
+		},
+
+		/**
+		 * Sets the navigator buttons (prev/next)
+		 *
+		 * @return	{object}	items
+		 */
+		_setNavigation: function () {
+			var $links = $((_self.cache.selector || _self.settings.attr)),
+				sequenceLength = _self.objectData.sequenceLength - 1,
+				items = {
+					prev: $links.eq(_self.objectData.prevIndex),
+					next: $links.eq(_self.objectData.nextIndex)
+				};
+
+			if (_self.objectData.currentIndex > 0) {
+				_self.objects.prev.show();
+			} else {
+				items.prevItem = $links.eq(sequenceLength);
+			}
+			if (_self.objectData.nextIndex <= sequenceLength) {
+				_self.objects.next.show();
+			} else {
+				items.next = $links.eq(0);
+			}
+
+			if (_self.settings.navigateEndless === true) {
+				_self.objects.prev.show();
+				_self.objects.next.show();
+			}
+
+			return items;
+		},
+
+		/**
+		 * Item information/status
+		 *
+		 */
+		item: {
+			/**
+			 * Verifies if the current item is first item.
+			 *
+			 * @return	{boolean}
+			 */
+			isFirst: function () {
+				return (_self.objectData.currentIndex === 0);
+			},
+
+			/**
+			 * Verifies if the current item is first item opened.
+			 *
+			 * @return	{boolean}
+			 */
+			isFirstOpened: function () {
+				return _self.objectData.this.is(_self.cache.firstOpened);
+			},
+
+			/**
+			 * Verifies if the current item is last item.
+			 *
+			 * @return	{boolean}
+			 */
+			isLast: function () {
+				return (_self.objectData.currentIndex === (_self.objectData.sequenceLength - 1));
+			}
+		},
+
+		/**
+		 * Clones the object for inline elements
+		 *
+		 * @param	{object}	$object
+		 * @return	{object}	$clone
+		 */
+		_cloneObject: function ($object) {
+			var $clone = $object.clone(),
+				objectId = $object.attr('id');
+
+			// If element is hidden, cache the object and remove
+			if ($object.is(':hidden')) {
+				_self._cacheObjectData($object);
+				$object.attr('id', _self.settings.idPrefix + 'temp-' + objectId).empty();
+			} else {
+				// Prevent duplicated id's
+				$clone.removeAttr('id');
+			}
+
+			return $clone.show();
+		},
+
+		/**
+		 * Verifies if it is a mobile device
+		 *
+		 * @return	{boolean}
+		 */
+		isMobileDevice: function () {
+			var deviceAgent = navigator.userAgent.toLowerCase(),
+				agentId = deviceAgent.match(_self.settings.mobileMatchExpression);
+
+			return agentId ? true : false;
+		},
+
+		/**
+		 * Verifies if css transitions are supported
+		 *
+		 * @return	{string|boolean}	The transition prefix if supported, else false.
+		 */
+		isTransitionSupported: function () {
+			var body = _self.objects.body.get(0),
+				isTransitionSupported = false,
+				transitionMapping = {
+					'transition': '',
+					'WebkitTransition': '-webkit-',
+					'MozTransition': '-moz-',
+					'OTransition': '-o-',
+					'MsTransition': '-ms-'
+				};
+
+			for (var key in transitionMapping) {
+				if (transitionMapping.hasOwnProperty(key) && key in body.style) {
+					_self.support.transition = transitionMapping[key];
+					isTransitionSupported = true;
+				}
+			}
+
+			return isTransitionSupported;
+		},
+
+		/**
+		 * Transition types
+		 *
+		 */
+		transition: {
+			/**
+			 * Returns the correct transition type according to the status of interaction.
+			 *
+			 * @return	{string}	Transition type
+			 */
+			in: function () {
+				if (_self.settings.transitionOpen && !_self.cache.firstOpened) {
+					return _self.settings.transitionOpen;
+				}
+				return _self.settings.transitionIn;
+			},
+
+			/**
+			 * Fades in/out the object
+			 *
+			 * @param	{object}	$object
+			 * @param	{string}	type
+			 * @param	{number}	speed
+			 * @param	{number}	opacity
+			 * @param	{function}	callback
+			 * @return	{void}		Animates an object
+			 */
+			fade: function ($object, type, speed, opacity, callback) {
+				var isInTransition = type === 'in',
+					startTransition = {},
+					startOpacity = $object.css('opacity'),
+					endTransition = {},
+					endOpacity = opacity ? opacity: isInTransition ? 1 : 0;
+
+				if (!_self.isOpen && isInTransition) return;
+
+				startTransition['opacity'] = startOpacity;
+				endTransition['opacity'] = endOpacity;
+
+				$object.css(startTransition).show();
+
+				// Css transition
+				if (_self.support.transitions) {
+					endTransition[_self.support.transition + 'transition'] = speed + 'ms ease';
+
+					setTimeout(function () {
+						$object.css(endTransition);
+
+						setTimeout(function () {
+							$object.css(_self.support.transition + 'transition', '');
+
+							if (callback && (_self.isOpen || !isInTransition)) {
+								callback();
+							}
+						}, speed);
+					}, 15);
+				} else {
+					// Fallback to js transition
+					$object.stop();
+					$object.animate(endTransition, speed, callback);
+				}
+			},
+
+			/**
+			 * Scrolls in/out the object
+			 *
+			 * @param	{object}	$object
+			 * @param	{string}	type
+			 * @param	{number}	speed
+			 * @param	{function}	callback
+			 * @return	{void}		Animates an object
+			 */
+			scroll: function ($object, type, speed, callback) {
+				var isInTransition = type === 'in',
+					transition = isInTransition ? _self.settings.transitionIn : _self.settings.transitionOut,
+					direction = 'left',
+					startTransition = {},
+					startOpacity = isInTransition ? 0 : 1,
+					startOffset = isInTransition ? '-50%' : '50%',
+					endTransition = {},
+					endOpacity = isInTransition ? 1 : 0,
+					endOffset = isInTransition ? '50%' : '-50%';
+
+				if (!_self.isOpen && isInTransition) return;
+
+				switch (transition) {
+					case 'scrollTop':
+						direction = 'top';
+						break;
+					case 'scrollRight':
+						startOffset = isInTransition ? '150%' : '50%';
+						endOffset = isInTransition ? '50%' : '150%';
+						break;
+					case 'scrollBottom':
+						direction = 'top';
+						startOffset = isInTransition ? '150%' : '50%';
+						endOffset = isInTransition ? '50%' : '150%';
+						break;
+					case 'scrollHorizontal':
+						startOffset = isInTransition ? '150%' : '50%';
+						endOffset = isInTransition ? '50%' : '-50%';
+						break;
+					case 'scrollVertical':
+						direction = 'top';
+						startOffset = isInTransition ? '-50%' : '50%';
+						endOffset = isInTransition ? '50%' : '150%';
+						break;
+				}
+
+				if (_self.cache.action === 'prev') {
+					switch (transition) {
+						case 'scrollHorizontal':
+							startOffset = isInTransition ? '-50%' : '50%';
+							endOffset = isInTransition ? '50%' : '150%';
+							break;
+						case 'scrollVertical':
+							startOffset = isInTransition ? '150%' : '50%';
+							endOffset = isInTransition ? '50%' : '-50%';
+							break;
+					}
+				}
+
+				startTransition['opacity'] = startOpacity;
+				startTransition[direction] = startOffset;
+
+				endTransition['opacity'] = endOpacity;
+				endTransition[direction] = endOffset;
+
+				$object.css(startTransition).show();
+
+				// Css transition
+				if (_self.support.transitions) {
+					endTransition[_self.support.transition + 'transition'] = speed + 'ms ease';
+
+					setTimeout(function () {
+						$object.css(endTransition);
+
+						setTimeout(function () {
+							$object.css(_self.support.transition + 'transition', '');
+
+							if (callback && (_self.isOpen || !isInTransition)) {
+								callback();
+							}
+						}, speed);
+					}, 15);
+				} else {
+					// Fallback to js transition
+					$object.stop();
+					$object.animate(endTransition, speed, callback);
+				}
+			},
+
+			/**
+			 * Zooms in/out the object
+			 *
+			 * @param	{object}	$object
+			 * @param	{string}	type
+			 * @param	{number}	speed
+			 * @param	{function}	callback
+			 * @return	{void}		Animates an object
+			 */
+			zoom: function ($object, type, speed, callback) {
+				var isInTransition = type === 'in',
+					startTransition = {},
+					startOpacity = $object.css('opacity'),
+					startScale = isInTransition ? 'scale(0.75)' : 'scale(1)',
+					endTransition = {},
+					endOpacity = isInTransition ? 1 : 0,
+					endScale = isInTransition ? 'scale(1)' : 'scale(0.75)';
+
+				if (!_self.isOpen && isInTransition) return;
+
+				startTransition['opacity'] = startOpacity;
+				startTransition[_self.support.transition + 'transform'] = startScale;
+
+				endTransition['opacity'] = endOpacity;
+
+				$object.css(startTransition).show();
+
+				// Css transition
+				if (_self.support.transitions) {
+					endTransition[_self.support.transition + 'transform'] = endScale;
+					endTransition[_self.support.transition + 'transition'] = speed + 'ms ease';
+
+					setTimeout(function () {
+						$object.css(endTransition);
+
+						setTimeout(function () {
+							$object.css(_self.support.transition + 'transform', '');
+							$object.css(_self.support.transition + 'transition', '');
+
+							if (callback && (_self.isOpen || !isInTransition)) {
+								callback();
+							}
+						}, speed);
+					}, 15);
+				} else {
+					// Fallback to js transition
+					$object.stop();
+					$object.animate(endTransition, speed, callback);
+				}
+			}
+		},
+
+		/**
+		 * Calls all the registered functions of a specific hook
+		 *
+		 * @param	{object}	hooks
+		 * @return	{void}
+		 */
+		_callHooks: function (hooks) {
+			if (typeof(hooks) === 'object') {
+				$.each(hooks, function(index, hook) {
+					if (typeof(hook) === 'function') {
+						hook.call(_self.origin);
+					}
+				});
+			}
+		},
+
+		/**
+		 * Caches the object data
+		 *
+		 * @param	{object}	$object
+		 * @return	{void}
+		 */
+		_cacheObjectData: function ($object) {
+			$.data($object, 'cache', {
+				id: $object.attr('id'),
+				content: $object.html()
+			});
+
+			_self.cache.originalObject = $object;
+		},
+
+		/**
+		 * Restores the object from cache
+		 *
+		 * @return	void
+		 */
+		_restoreObject: function () {
+			var $object = $('[id^="' + _self.settings.idPrefix + 'temp-"]');
+
+			$object.attr('id', $.data(_self.cache.originalObject, 'cache').id);
+			$object.html($.data(_self.cache.originalObject, 'cache').content);
+		},
+
+		/**
+		 * Executes functions for a window resize.
+		 * It stops an eventual timeout and recalculates dimenstions.
+		 *
+		 * @return	{void}
+		 */
+		resize: function () {
+			if (!_self.isOpen) return;
+
+			if (_self.isSlideshowEnabled()) {
+				_self._stopTimeout();
+			}
+
+			_self.dimensions = _self.getViewportDimensions();
+			_self._calculateDimensions(_self.cache.object);
+
+			// Call onResize hook functions
+			_self._callHooks(_self.settings.onResize);
+		},
+
+		/**
+		 * Watches for any resize interaction and caches the new sizes.
+		 *
+		 * @return	{void}
+		 */
+		_watchResizeInteraction: function () {
+			$(window).resize(_self.resize);
+		},
+
+		/**
+		 * Stop watching any resize interaction related to _self.
+		 *
+		 * @return	{void}
+		 */
+		_unwatchResizeInteraction: function () {
+			$(window).off('resize', _self.resize);
+		},
+
+		/**
+		 * Switches to the fullscreen mode
+		 *
+		 * @return	{void}
+		 */
+		_switchToFullScreenMode: function () {
+			_self.settings.shrinkFactor = 1;
+			_self.settings.overlayOpacity = 1;
+
+			$('html').addClass(_self.settings.classPrefix + 'fullScreenMode');
+		},
+
+		/**
+		 * Enters into the lightcase view
+		 *
+		 * @return	{void}
+		 */
+		_open: function () {
+			_self.isOpen = true;
+
+			_self.support.transitions = _self.settings.cssTransitions ? _self.isTransitionSupported() : false;
+			_self.support.mobileDevice = _self.isMobileDevice();
+
+			if (_self.support.mobileDevice) {
+				$('html').addClass(_self.settings.classPrefix + 'isMobileDevice');
+
+				if (_self.settings.fullScreenModeForMobile) {
+					_self._switchToFullScreenMode();
+				}
+			}
+
+			if (!_self.settings.transitionIn) {
+				_self.settings.transitionIn = _self.settings.transition;
+			}
+			if (!_self.settings.transitionOut) {
+				_self.settings.transitionOut = _self.settings.transition;
+			}
+
+			switch (_self.transition.in()) {
+				case 'fade':
+				case 'fadeInline':
+				case 'elastic':
+				case 'scrollTop':
+				case 'scrollRight':
+				case 'scrollBottom':
+				case 'scrollLeft':
+				case 'scrollVertical':
+				case 'scrollHorizontal':
+					if (_self.objects.case.is(':hidden')) {
+						_self.objects.close.css('opacity', 0);
+						_self.objects.overlay.css('opacity', 0);
+						_self.objects.case.css('opacity', 0);
+						_self.objects.contentInner.css('opacity', 0);
+					}
+					_self.transition.fade(_self.objects.overlay, 'in', _self.settings.speedIn, _self.settings.overlayOpacity, function () {
+						_self.transition.fade(_self.objects.close, 'in', _self.settings.speedIn);
+						_self._handleEvents();
+						_self._processContent();
+					});
+					break;
+				default:
+					_self.transition.fade(_self.objects.overlay, 'in', 0, _self.settings.overlayOpacity, function () {
+						_self.transition.fade(_self.objects.close, 'in', 0);
+						_self._handleEvents();
+						_self._processContent();
+					});
+					break;
+			}
+
+			_self.objects.document.addClass(_self.settings.classPrefix + 'open');
+			_self.objects.case.attr('aria-hidden', 'false');
+		},
+
+		/**
+		 * Escapes from the lightcase view
+		 *
+		 * @return	{void}
+		 */
+		close: function () {
+			_self.isOpen = false;
+
+			if (_self.isSlideshowEnabled()) {
+				_self._stopTimeout();
+				_self.isSlideshowStarted = false;
+				_self.objects.nav.removeClass(_self.settings.classPrefix + 'paused');
+			}
+
+			_self.objects.loading.hide();
+
+			_self._unbindEvents();
+
+			_self._unwatchResizeInteraction();
+
+			$('html').removeClass(_self.settings.classPrefix + 'open');
+			_self.objects.case.attr('aria-hidden', 'true');
+
+			_self.objects.nav.children().hide();
+			_self.objects.close.hide();
+
+			// Call onClose hook functions
+			_self._callHooks(_self.settings.onClose);
+
+			// Fade out the info at first
+			_self.transition.fade(_self.objects.info, 'out', 0);
+
+			switch (_self.settings.transitionClose || _self.settings.transitionOut) {
+				case 'fade':
+				case 'fadeInline':
+				case 'scrollTop':
+				case 'scrollRight':
+				case 'scrollBottom':
+				case 'scrollLeft':
+				case 'scrollHorizontal':
+				case 'scrollVertical':
+					_self.transition.fade(_self.objects.case, 'out', _self.settings.speedOut, 0, function () {
+						_self.transition.fade(_self.objects.overlay, 'out', _self.settings.speedOut, 0, function () {
+							_self.cleanup();
+						});
+					});
+					break;
+				case 'elastic':
+					_self.transition.zoom(_self.objects.case, 'out', _self.settings.speedOut, function () {
+						_self.transition.fade(_self.objects.overlay, 'out', _self.settings.speedOut, 0, function () {
+							_self.cleanup();
+						});
+					});
+					break;
+				default:
+					_self.cleanup();
+					break;
+			}
+		},
+
+		/**
+		 * Unbinds all given events
+		 *
+		 * @return	{void}
+		 */
+		_unbindEvents: function () {
+			// Unbind overlay event
+			_self.objects.overlay.unbind('click');
+
+			// Unbind key events
+			$(document).unbind('keyup.lightcase');
+
+			// Unbind swipe events
+			_self.objects.case.unbind('swipeleft').unbind('swiperight');
+
+			// Unbind navigator events
+			_self.objects.prev.unbind('click');
+			_self.objects.next.unbind('click');
+			_self.objects.play.unbind('click');
+			_self.objects.pause.unbind('click');
+
+			// Unbind close event
+			_self.objects.close.unbind('click');
+		},
+
+		/**
+		 * Cleans up the dimensions
+		 *
+		 * @return	{void}
+		 */
+		_cleanupDimensions: function () {
+			var opacity = _self.objects.contentInner.css('opacity');
+
+			_self.objects.case.css({
+				'width': '',
+				'height': '',
+				'top': '',
+				'left': '',
+				'margin-top': '',
+				'margin-left': ''
+			});
+
+			_self.objects.contentInner.removeAttr('style').css('opacity', opacity);
+			_self.objects.contentInner.children().removeAttr('style');
+		},
+
+		/**
+		 * Cleanup after aborting lightcase
+		 *
+		 * @return	{void}
+		 */
+		cleanup: function () {
+			_self._cleanupDimensions();
+
+			_self.objects.loading.hide();
+			_self.objects.overlay.hide();
+			_self.objects.case.hide();
+			_self.objects.prev.hide();
+			_self.objects.next.hide();
+			_self.objects.play.hide();
+			_self.objects.pause.hide();
+
+			_self.objects.document.removeAttr(_self._prefixAttributeName('type'));
+			_self.objects.nav.removeAttr(_self._prefixAttributeName('ispartofsequence'));
+
+			_self.objects.contentInner.empty().hide();
+			_self.objects.info.children().empty();
+
+			if (_self.cache.originalObject) {
+				_self._restoreObject();
+			}
+
+			// Call onCleanup hook functions
+			_self._callHooks(_self.settings.onCleanup);
+
+			// Restore cache
+			_self.cache = {};
+		},
+
+		/**
+		 * Returns the supported match media or undefined if the browser
+		 * doesn't support match media.
+		 *
+		 * @return	{mixed}
+		 */
+		_matchMedia: function () {
+			return window.matchMedia || window.msMatchMedia;
+		},
+
+		/**
+		 * Returns the devicePixelRatio if supported. Else, it simply returns
+		 * 1 as the default.
+		 *
+		 * @return	{number}
+		 */
+		_devicePixelRatio: function () {
+			return window.devicePixelRatio || 1;
+		},
+
+		/**
+		 * Checks if method is public
+		 *
+		 * @return	{boolean}
+		 */
+		_isPublicMethod: function (method) {
+			return (typeof _self[method] === 'function' && method.charAt(0) !== '_');
+		},
+
+		/**
+		 * Exports all public methods to be accessible, callable
+		 * from global scope.
+		 *
+		 * @return	{void}
+		 */
+		_export: function () {
+			window.lightcase = {};
+
+			$.each(_self, function (property) {
+				if (_self._isPublicMethod(property)) {
+					lightcase[property] = _self[property];
+				}
+			});
+		}
+	};
+
+	_self._export();
+
+	$.fn.lightcase = function (method) {
+		// Method calling logic (only public methods are applied)
+		if (_self._isPublicMethod(method)) {
+			return _self[method].apply(this, Array.prototype.slice.call(arguments, 1));
+		} else if (typeof method === 'object' || !method) {
+			return _self.init.apply(this, arguments);
+		} else {
+			$.error('Method ' + method + ' does not exist on jQuery.lightcase');
+		}
+	};
+})(jQuery);

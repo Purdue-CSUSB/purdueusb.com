@@ -1,1 +1,0 @@
-suite("lunr.Vector",function(){for(var t,n=new lunr.Vector,o=new lunr.Vector,r=0;r<1e3;r++)Math.floor(r+100*Math.random()),t=100*Math.random(),n.insert(r,t);for(r=0;r<1e3;r++)Math.floor(r+100*Math.random()),t=100*Math.random(),o.insert(r,t);this.add("magnitude",function(){n.magnitude()}),this.add("dot",function(){n.dot(o)}),this.add("similarity",function(){n.similarity(o)})});

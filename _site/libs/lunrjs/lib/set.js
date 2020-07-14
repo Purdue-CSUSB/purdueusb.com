@@ -1,5 +1,0 @@
-/*!
- * lunr.Set
- * Copyright (C) @YEAR Oliver Nightingale
- */
-lunr.Set=function(t){if(this.elements=Object.create(null),t){this.length=t.length;for(var e=0;e<this.length;e++)this.elements[t[e]]=!0}else this.length=0},lunr.Set.complete={intersect:function(t){return t},union:function(t){return t},contains:function(){return!0}},lunr.Set.empty={intersect:function(){return this},union:function(t){return t},contains:function(){return!1}},lunr.Set.prototype.contains=function(t){return!!this.elements[t]},lunr.Set.prototype.intersect=function(t){var e,n,r,u=[];if(t===lunr.Set.complete)return this;if(t===lunr.Set.empty)return t;this.length<t.length?(e=this,n=t):(e=t,n=this),r=Object.keys(e.elements);for(var i=0;i<r.length;i++){var l=r[i];l in n.elements&&u.push(l)}return new lunr.Set(u)},lunr.Set.prototype.union=function(t){return t===lunr.Set.complete?lunr.Set.complete:t===lunr.Set.empty?this:new lunr.Set(Object.keys(this.elements).concat(Object.keys(t.elements)))};
