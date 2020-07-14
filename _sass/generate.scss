@@ -164,6 +164,12 @@ $flex-wraps: ();
         hidden: hidden,
     );
     @include generate-subclass($overflows, 'overflow');
+    &-x {
+        @include generate-subclass($overflows, 'overflow-x');
+    }
+    &-y {
+        @include generate-subclass($overflows, 'overflow-y');
+    }
 }
 
 .bg {

@@ -153,11 +153,11 @@
 
 .clickable, a, button, .button {
     &:focus {
-        outline: $border-width double initial;
+        //outline: $border-width double initial;
         @extend .shadow;
     }
     &:focus:not(:focus-visible) { 
-        outline: none; 
+        //outline: none; 
     }
     &:active {
         @extend .flat;
