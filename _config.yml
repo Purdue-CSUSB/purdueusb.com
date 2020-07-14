@@ -52,7 +52,7 @@ jekyll-minifier:
 plugins:
   - jekyll-seo-tag
   - jemoji
-#  - jekyll-purgecss
+  - jekyll-purgecss
 #  - jekyll-minifier
 #  - jekyll-target-blank
   - jekyll-redirect-from
