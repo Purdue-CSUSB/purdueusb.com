@@ -461,7 +461,7 @@ pre {
 *:not(pre) {
     > code.hljs, > code, > .hljs {
         @include pa(spacing-group(4/3));
-        @extend .rounded, .inline, .text-nowrap;
+        @extend .rounded, .inline;
     }
  }
 /* purgecss end ignore */
