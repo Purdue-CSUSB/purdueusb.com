@@ -53,6 +53,6 @@ plugins:
   - jekyll-seo-tag
   - jemoji
   - jekyll-purgecss
-#  - jekyll-minifier
+  - jekyll-minifier
 #  - jekyll-target-blank
   - jekyll-redirect-from

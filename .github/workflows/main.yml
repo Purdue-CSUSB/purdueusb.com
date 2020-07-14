@@ -17,11 +17,11 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-
-      - name: Use Node.js 12.14.1
+      - name: ⬢ Use Node.js 12.14.1
         uses: actions/setup-node@v1
         with:
           node-version: '12.14.1'
-      - name: Install dependencies
+      - name: 🔨 Install dependencies
         run: |
           npm install
           npm install --only=dev
@@ -30,11 +30,11 @@ jobs:
         with:
           ruby-version: 2.7
 
-      - name: 🔨 install dependencies & build site
+      - name: 🔨 install gems & build site
         uses: limjh16/jekyll-action-ts@v2
         with:
           enable_cache: true
-      - name: Prepare tag
+      - name: 🏷 Prepare tag
         run: |
           git_hash=$(git rev-parse --short "$GITHUB_SHA")
           echo "::set-output name=tag_name::master/${git_hash}"
