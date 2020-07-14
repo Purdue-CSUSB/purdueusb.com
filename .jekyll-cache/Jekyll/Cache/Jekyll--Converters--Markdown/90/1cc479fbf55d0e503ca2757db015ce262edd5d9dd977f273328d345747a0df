@@ -1,0 +1,68 @@
+I"�<h3 id="introduction">Introduction</h3>
+
+<p>Sometimes there comes a need where you need to transfer a files between your personal computer and one of Purdue’s servers (like data.cs.purdue.edu).  The tutorial will show you how to transfer files between your computer and a remote server (and vice versa) using SCP via command line and FileZilla.  These methods will work on Windows, Mac, and Linux.</p>
+
+<h3 id="solution-1-command-line">Solution 1: Command Line</h3>
+
+<h4 id="step-1">Step 1</h4>
+
+<p>On Windows open “Windows PowerShell.” On Mac or Linux, open your respective Terminal.</p>
+
+<p><img src="/assets/images/wiki/file-transfer/image1.png" alt="Windows Powershell" /></p>
+
+<h4 id="step-2">Step 2</h4>
+
+<p>In order to transfer your files, we are going to use SCP. SCP works the same regardless of operating system. The SCP program takes the following parameters:</p>
+
+<p><code>scp &lt;source_directory&gt; &lt;destination_directory&gt;</code></p>
+
+<p>For our purposes of transferring homework from data, we are going to use the following command:</p>
+
+<pre><code class="language-bash">scp &lt;purdue_username&gt;@data.cs.purdue.edu:&lt;homework_directory&gt; &lt;personal_machine_directory&gt;
+</code></pre>
+
+<p>For example, if I wanted to transfer my hw2.c file to my current directory on my PC, I would run:</p>
+
+<pre><code class="language-bash">scp nalderto@data.cs.purdue.edu:~/cs240/hw2/hw2.c .
+</code></pre>
+
+<p><img src="/assets/images/wiki/file-transfer/image2.png" alt="Windows Powershell" /></p>
+
+<h4 id="step-3">Step 3</h4>
+
+<p>If everything ran properly, you should be able to access your homework on your personal machine. Keep in mind that this is a <strong><em>copy</em></strong> of your homework, so any changes you make on your personal machine will not be reflected on data and vice versa. If we want to transfer a file from our personal machine to data, we would need to run SCP again, flipping the source and destination directories.</p>
+
+<p>For example, if I wanted to transfer my hw2.c file from my personal machine to data, I would run:</p>
+
+<pre><code class="language-bash">scp hw2.c nalderto@data.cs.purdue.edu:~/cs240/hw2/
+</code></pre>
+
+<h3 id="solution-2-filezilla">Solution 2: FileZilla</h3>
+
+<h4 id="step-1-1">Step 1</h4>
+
+<p>If you are not comfortable with the command line, there are several graphical user interface programs that are available which provide the same functionality. In this tutorial we are covering FileZilla, as it is compatible with Windows, Mac, and Linux.</p>
+
+<p>You can download FileZilla <a href="https://filezilla-project.org/download.php?show_all=1">here</a>.</p>
+
+<h4 id="step-2-1">Step 2</h4>
+
+<p>Once you have finished installing FileZilla, open it up. On the top, there should be 4 input boxes. Put in the following information:</p>
+
+<ul>
+  <li>Host: <code>sftp://data.cs.purdue.edu</code></li>
+  <li>Username: Purdue Username</li>
+  <li>Password: Purdue Career Account Password (same password used to SSH into data)</li>
+  <li>Port: 22</li>
+</ul>
+
+<h4 id="step-3-1">Step 3</h4>
+
+<p>Once the appropriate information is entered, click “Quickconnect”. A dialog might appear about trusting the connect. Go ahead and trust the connection.</p>
+
+<h4 id="step-4">Step 4</h4>
+
+<p>You should now be connected to data! Your data filesystem is on the right part of the screen, while your personal computer’s files are on the left. You can drag and drop the files between the machines as you wish!</p>
+
+<p><img src="/assets/images/wiki/file-transfer/image3.png" alt="Filezilla example" /></p>
+:ET

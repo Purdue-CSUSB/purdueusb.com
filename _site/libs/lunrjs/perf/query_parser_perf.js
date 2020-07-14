@@ -1,0 +1,1 @@
+suite("lunr.QueryParser",function(){var i=function(i){var r=new lunr.Query(["title","body"]);new lunr.QueryParser(i,r).parse()};this.add("simple",function(){i("foo bar")}),this.add("field",function(){i("title:foo bar")}),this.add("modifier",function(){i("foo~2 bar")}),this.add("complex",function(){i("title:foo~2^6 bar")})});

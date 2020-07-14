@@ -1,0 +1,28 @@
+I";<p>It can be tedious to type <code>ssh &lt;username&gt;@&lt;machine&gt;.cs.purdue.edu</code> over and over again whenever you need to login to a CS machine.</p>
+
+<p>Here’s a little shell function which shortens this command to just <username> with an optional argument of the machine you wish to connect to.</username></p>
+
+<h3 id="installation">Installation</h3>
+<p>Copy and paste the following code into your shell rc file. This may be <code>~/.bashrc</code> or <code>~/.zshrc</code>.</p>
+
+<pre><code class="language-bash">&lt;username&gt; () {
+    ssh &lt;username&gt;@${1:-&lt;default_machine&gt;}.cs.purdue.edu
+}
+</code></pre>
+
+<p>Make sure to replace any information in between the <code>&lt;</code> and <code>&gt;</code> symbols. For example, my function looks like this:</p>
+
+<pre><code class="language-bash">hankinsj () {
+    ssh hankinsj@${1:-data}.cs.purdue.edu
+}
+</code></pre>
+<p>My username is <code>hankinsj</code> and my default machine is <code>data</code> in this example.</p>
+
+<h3 id="usage">Usage</h3>
+<p><code>$ &lt;username&gt;</code>
+You can include an optional argument which specifies the machine to connect to. Otherwise, it will connect to your chosen default machine.</p>
+
+<h3 id="example">Example</h3>
+<p><code>$ hankinsj mc04</code>
+This will connect me automatically to <code>mc04.cs.purdue.edu</code>.</p>
+:ET

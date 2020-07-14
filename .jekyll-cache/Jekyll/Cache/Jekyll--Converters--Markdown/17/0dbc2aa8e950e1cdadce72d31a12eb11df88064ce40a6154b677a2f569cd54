@@ -1,0 +1,29 @@
+I"9
+<p>Our wiki is built with tools make your searches more powerful and precise. You can use any combination of the operators explained below:</p>
+
+<h3 id="wildcards">Wildcards</h3>
+<p>Wildcards let you match any text and are represented by asterisks (*). For example, <code>C* S*</code> matches words starting with <em>C</em> or <em>S</em>. Together they match phrases like <em>Computer Science</em> or <em>Canadian Studies</em>, among other things.</p>
+
+<h3 id="fields">Fields</h3>
+<p>Fields relate to meta-information about our articles, such as the date or author. You can use them to search only titles, for example, instead of searching the entire wiki.</p>
+
+<p>Available fields: <code>title</code>, <code>description</code>, <code>content</code>, <code>author</code>, <code>category</code>, and <code>date</code>.</p>
+
+<h3 id="boosts">Boosts</h3>
+<p>You can use boosts to prioritize certain search terms over others. For example, <code>foo^10 bar</code> tells the website you’re 10x more interested in the search term <em>foo</em> than <em>bar</em>. Articles containing <em>foo</em> would then be higher in the search results.</p>
+
+<h3 id="fuzzy-matches">Fuzzy Matches</h3>
+<p>Fuzzy matching allows for some grace if you misspell a term or are off by a few letters. For example, <code>foo~1</code> matches anything 1 letter away from <em>foo</em>, like <em>boo</em> or <em>food</em>. It will not match words like <em>boot</em> because it has a difference of two letters.</p>
+
+<h3 id="term-presence">Term Presence</h3>
+<p>Term presence allows you to explicitly include or exclude phrases in your search query with the symbols <code>+</code> and <code>-</code>, respectively. For example, <code>+foo -bar baz</code> matches only content with <em>foo</em> and without <em>bar</em>, that also may contain <em>baz</em>.</p>
+
+<p>By default, a result comes back if any word separated by a space matches some content. This is a limitation of the code our website uses. Searching for <code>+author:Purdue Pete</code> is seen as two separate terms, <code>+author:Purdue</code> and <code>Pete</code>.</p>
+
+<p>Nothing’s perfect.</p>
+
+<h3 id="bringing-it-all-together">Bringing It All Together</h3>
+<p>You can make your search as simple or as complex as you’d like. As an example, if I wanted to search for meta-articles I’ve authored in June, containing the mis-spelled phrase <em>crakato-uh</em>, I could type <code>category:meta +author:Zach +Bryant +date:June -crakatoa~1</code>. Except at this time, my <em>only</em> article contains the phrase <em>krakatoa</em>.</p>
+
+<p>Thank you for coming to my TED talk.</p>
+:ET

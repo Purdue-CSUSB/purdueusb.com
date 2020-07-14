@@ -1,0 +1,44 @@
+I"�
+<h3 id="introduction">Introduction</h3>
+
+<p>A Virtual Private Networking (VPN) is a method that allows users to securely access an organization’s internal network resources. By using Purdue’s VPN service, you can access resources that are only available on campus anywhere, e.g. printing to any campus printer, remotely accessing Purdue’s servers/UNIX machines (like <code>mc19.cs.purdue.edu</code>) through remote desktop, etc.</p>
+
+<p>This tutorial will show you how to connect to Purdue’s VPN using Cisco AnyConnect.</p>
+
+<h4 id="step-1">Step 1</h4>
+
+<p>To download Cisco AnyConnect, go to the <strong><a href="https://communityhub.purdue.edu/storefront/overview">Purdue Community Hub</a></strong>. After login in, you would want to go to “Antivirus and Security Software”.</p>
+
+<p><img src="/assets/images/wiki/connect-vpn/step1.png" alt="Community Hub Homepage" /></p>
+
+<h4 id="step-2">Step 2</h4>
+
+<p>Select Cisco AnyConnect for Personally Owned Computers and select the appropriate settings for your computer. After adding the software to your cart, download Cisco AnyConnect.</p>
+
+<p><img src="/assets/images/wiki/connect-vpn/step2.png" alt="Downloading Cisco AnyConnect" /></p>
+
+<h4 id="step-3">Step 3</h4>
+
+<p>Once you finished installing Cisco AnyConnect, open it up. You will see that Cisco AnyConnect is ready to connect to the VPN server: <code>webvpn.purdue.edu</code>.</p>
+
+<p>There are a couple options you can choose. Due to COVID-19, more people are utilizing Purdue’s VPN services. Purdue has created another VPN server: <code>webvpn2.purdue.edu/</code> for people to connect to. Whichever VPN server you choose to connect to will work.</p>
+
+<p><img src="/assets/images/wiki/connect-vpn/step3.png" alt="AnyConnect" /></p>
+
+<h4 id="step-4">Step 4</h4>
+
+<p>After you click “Connect”, a prompt for login in will pop up. Your username is your Purdue username and the password is your BoilerKey password (pin,push).</p>
+
+<h4 id="step-5">Step 5</h4>
+
+<p>You should be able to connect to Purdue’s VPN server! A pop-up will notify you that you are connected. Another way to tell is to check is on the task/menu bar. From the picture below, the lock symbol signifies that you are connected.</p>
+
+<p><img src="/assets/images/wiki/connect-vpn/step5.png" alt="Menu" /></p>
+
+<h4 id="step-6">Step 6</h4>
+
+<p>After using Purdue’s VPN, you want to disconnect. On Windows, right click on the Cisco AnyConnect icon, and click “Disconnect”. On Mac, to disconnect, click on the Cisco AnyConnect icon from the menu bar and select “Disconnect”.</p>
+
+<p><img src="/assets/images/wiki/connect-vpn/step6_windows.png" alt="Windows Disconnect" />
+<img src="/assets/images/wiki/connect-vpn/step6_mac.png" alt="Mac Disconnect" /></p>
+:ET

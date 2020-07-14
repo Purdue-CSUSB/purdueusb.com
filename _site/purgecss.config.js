@@ -1,0 +1,1 @@
+module.exports={content:["./_site/**/*.md","./_site/**/*.html","./_sass/**/*"],css:["./_site/assets/main.css"],defaultExtractor:s=>s.match(/[\w-/:@]+(?<!:)/g)||[],whitelistPatterns:[/.*\[\w+\W?=.*\]/g,/\.bg-.*/g]};

@@ -1,0 +1,1 @@
+lunr.idf=function(n,r){var a=0;for(var t in n)"_index"!=t&&(a+=Object.keys(n[t]).length);var e=(r-a+.5)/(a+.5);return Math.log(1+Math.abs(e))};

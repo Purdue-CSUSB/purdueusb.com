@@ -1,0 +1,1 @@
+lunr.Token=function(t,n){this.str=t||"",this.metadata=n||{}},lunr.Token.prototype.toString=function(){return this.str},lunr.Token.prototype.update=function(t){return this.str=t(this.str,this.metadata),this},lunr.Token.prototype.clone=function(t){return t=t||function(t){return t},new lunr.Token(t(this.str,this.metadata),this.metadata)};

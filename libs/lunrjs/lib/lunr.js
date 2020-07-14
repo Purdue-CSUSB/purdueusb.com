@@ -1,0 +1,1 @@
+var lunr=function(r){var e=new lunr.Builder;return e.pipeline.add(lunr.trimmer,lunr.stopWordFilter,lunr.stemmer),e.searchPipeline.add(lunr.stemmer),r.call(e,e),e.build()};lunr.version="@VERSION";
