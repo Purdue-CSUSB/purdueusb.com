@@ -334,7 +334,14 @@ $spacing-directions:       (top: "-top", bottom: "-bottom", left: "-left", right
         @include generate-subclass($percentages, $property);
         @include generate-subclass($spacings, ($property, 'min-#{$property}', 'max-#{$property}'));
     }
-    
+    .#{str-slice($property, 1, 1)}-max {
+        @include generate-subclass($percentages, $property);
+        @include generate-subclass($spacings, ('max-#{$property}'));
+    }
+    .#{str-slice($property, 1, 1)}-min {
+        @include generate-subclass($percentages, $property);
+        @include generate-subclass($spacings, ('min-#{$property}'));
+    }
 }
 
 

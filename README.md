@@ -39,7 +39,7 @@ You can also use emojis seen on this [cheat sheet](https://www.webfx.com/tools/e
 
 **A note about images**: Please only use images hosted by USB - not from an outside source. In addition, use descriptive and readable captions for wiki images, as they will be displayed to the user and read aloud via screen readers.
 
-The filename will be the URL slug, so `lawson-fob.md` becomes `/resources/lawson-fob`. Be sure to include the following [front matter](https://jekyllrb.com/docs/front-matter/) attributes:
+The filename will be the URL slug, so `lawson-fob.md` becomes `/wiki/lawson-fob`. Be sure to include the following [front matter](https://jekyllrb.com/docs/front-matter/) attributes:
 
 - title: Title of the article
 - description: Describe what the article is about. Keep this down to one sentence.

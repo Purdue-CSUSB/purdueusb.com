@@ -23,13 +23,12 @@ function loadSearchIndex() {
 function sanitizeQuery(query) {
     if (!query.match(/[\\^:~+-]/g)) {
         query = `${query}*`;
-        console.log(query);
     }
     return query;
 }
 
-function onSearchChange() {
-    let query = this.value.trim();
+function onSearchChange(v) {
+    let query = (this.value || v).trim();
     window.history.pushState(null, null, `?s=${encodeURIComponent(query)}`);
     let queryChanged = lastQuery === undefined || lastQuery != query;
     if (queryChanged) 
@@ -44,6 +43,14 @@ function onSearchChange() {
     if (query.length == 0 || !(!!query)) {
         hideSearchResults();
     }
+}
+
+function onSearchChangeDebounce() {
+    let value = this.value;
+    clearTimeout(lastQueryTimer);
+    lastQueryTimer = setTimeout(() => {
+        onSearchChange(value);
+    }, 120);
 }
 
 function getSearchResultIndices(results) {
@@ -112,8 +119,8 @@ function createPostElements(posts) {
     https://stackoverflow.com/questions/7380226/find-word-in-html/7380697#7380697 
 */
 function walkHTML(e, query) {
-    var expr = new RegExp(`([^a-zA-Z]?)(${query})`, "i");
-    var partMatchExpr = new RegExp(`([^a-zA-Z]?)(${query})`, "i");
+    var expr = new RegExp(`([^a-zA-Z]?)(${escapeRegex(query)})`, "i");
+    var partMatchExpr = new RegExp(`([^a-zA-Z]?)(${escapeRegex(query)})`, "i");
     e.childNodes.forEach(node => {
         if (node.nodeType == Node.TEXT_NODE) {
             if (node.nodeValue) {
@@ -142,6 +149,11 @@ function walkHTML(e, query) {
     })
 }
 
+// Source: https://stackoverflow.com/questions/3561493/is-there-a-regexp-escape-function-in-javascript/3561711#3561711
+function escapeRegex(string) {
+    return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+}
+
 function highlightSearchResults(query) {
     document.querySelectorAll('#search-results, article > section:not(:last-child)').forEach(section => {
         walkHTML(section, query);
@@ -149,6 +161,7 @@ function highlightSearchResults(query) {
 }
 
 var lastQuery = undefined;
+var lastQueryTimer = undefined;
 var searchIndex = loadSearchIndex();
 
 function onLoadWithSearch() {
@@ -159,7 +172,7 @@ function onLoadWithSearch() {
         'paste',
         'blur',
     ].forEach(e => {
-        search.addEventListener(e, onSearchChange);
+        search.addEventListener(e, onSearchChangeDebounce);
     });
     let startQuery = getSearchQuery();
     if (!!startQuery) {

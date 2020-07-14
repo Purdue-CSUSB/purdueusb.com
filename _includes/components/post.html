@@ -35,7 +35,7 @@
         {% if categories_size > 0 %}
             <small class="mb-0">{% if categories_size > 1 %}Categories{% else %}Category{% endif %}: 
                 {% for category in page.categories %}
-                    <a href="/resources?s=category:{{category}}" class="caption" target="_self">{{category}}</a>
+                    <a href="/wiki?s=category:{{category}}" class="caption" target="_self">{{category}}</a>
                 {% endfor %}
             </small>
         {% endif %}

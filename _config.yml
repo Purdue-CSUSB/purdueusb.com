@@ -12,7 +12,7 @@ collections:
     permalink: /:name/
   wiki:
     output: true
-    permalink: /resources/:title
+    permalink: /wiki/:title
 
 defaults:
   -
