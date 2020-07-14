@@ -1,60 +1,13 @@
 ---
-
+layout: default
+title: Purdue USB
 ---
 
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
-{%- include head.html -%}
-
-<body>
-
-  {%- include header.html -%}
-
-  <main class="home">
-    <div class="banner">
-      <!-- <div class="row" style="justify-content: center;">
-        <div class="column banner-image">
-          <img src="/assets/images/group.png">
-        </div>
-        <div class="column banner-text">
-          <h1>Hello from USB!</h1>
-          <h5>
-            The Computer Science Undergraduate Board is dedicated to improving student experience for CS and DS students at Purdue- whether by
-            managing CS193, hosting forums for student advocacy, or maintaining a collection of undergrad-tailored resources, USB is continually 
-            creating initiatives that will uphold our values.
-          </h5>
-          <button onclick="location.href='/resources'" type="button">Read Student Resources</button>
-        </div>
-      </div> -->
-
-      <div class="banner-grid">
-        <div class="banner-image">
-          <img src="/assets/images/group.png">
-        </div>
-        <div class="banner-text">
-          <h1>Hello from USB!</h1>
-          <h5>
-            The Computer Science Undergraduate Board is dedicated to improving student experience for CS and DS students at Purdue- whether by
-            managing CS193, hosting forums for student advocacy, or maintaining a collection of undergrad-tailored resources, USB is continually 
-            creating initiatives that will uphold our values.
-          </h5>
-          <button onclick="location.href='/resources'" type="button">Read Student Resources</button>
-        </div>
-      </div>
-      
-
-
-    </div>
-    {%- include aboutus.html -%}
-
-    <br/>
-    
-    {%- include members.html -%}
-  </main>
-
-  {%- include footer.html -%}
-
-</body>
-
-</html>
+<div class="pb-10 mb-10 flex-container">
+    {%- include components/banner.html -%}
+    {%- include components/aboutus.html -%}
+    {%- include components/member/members.html -%}
+    <div class="divider--horizontal mt-5"></div>
+    {%- include components/initiative/initiatives.html -%}
+    <!-- Jank af purgecss hack -->
+</div>

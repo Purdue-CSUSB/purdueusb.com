@@ -1,64 +1,89 @@
-.side-by-side {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas: "head head head head"
-                         "side main main main" 
-                         "footer footer footer footer";
-    height: 100%;
-}
-
-.side-by-side aside {
-    grid-area: side;
-    padding: 10px;
-    padding-left: 15px;
-    background-color: rgb(250, 250, 250);
-    border-right-color: rgba(0, 0, 0, 0.07);
-    border-right-style: solid;
-    border-right-width: 1px;
-}
-
-.side-by-side .post {
-    grid-area: main;
-    padding: 10px;
-    max-width: 800px;
-}
-
-.post-list h4 {
-    margin-bottom: 0px;
-}
-
-.post-list a {
-    color: black;
-    font-weight: 500;
-}
-
-.post-list li {
-    margin-bottom: 10px;
-    padding-right: 5px;
-}
-
-.post-list p {
-    font-size: 14px;
-}
-
-@media (max-width: 915px) {
-    .side-by-side {
-        display: block;
+article {
+    p img {
+        &:not(.emoji) {
+            margin: 0 auto;
+            margin-bottom: spacing-group(4);
+            @extend .block, .rounded;
+        }
+        &.emoji {
+            @extend .-mt-2;
+        }
     }
-    .side-by-side aside {
-        display: none;
+
+    p {
+        @extend .justify-around, .align-items-center;
+    }
+
+    section:nth-of-type(2) p, li {
+        @extend .font--height-high;
+    }
+
+    code {
+        @extend .text-left;
+    }
+
+    h1, h2, h3, h4, h5, h6, .heading {
+        @extend .mb-2, .mt-8;
     }
 }
 
-#active {
-    background-color: rgba(138,201,254,0.3);
-    border-radius: 10px;
-    padding-left: 10px;
-    margin-left: -10px;
-    
+label[for="rate-good"], label[for="rate-bad"] {
+    @extend .grey;
 }
 
-.post-header {
-    margin-bottom: 10px;
+#rate-bad {
+    & + label[for="rate-bad"] {
+        &:hover {
+            @extend .red;
+        }
+    }
+
+    &:checked + label[for="rate-bad"] {
+        @extend .red;
+    }
+}
+
+#rate-good {
+    & + label[for="rate-good"] {
+        &:hover {
+            @extend .green-dark;
+        }
+    }
+
+    &:checked + label[for="rate-good"] {
+        @extend .green-dark;
+    }
+}
+
+.lightcase-img {
+    @extend .clickable;
+}
+
+#lightcase-info #lightcase-caption {
+    @extend .light;
+}
+
+#lightcase-overlay {
+    background: #000;
+}
+
+.lightcase-icon-close {
+    &:before{
+        content: '×';
+    }
+    @extend .no-decoration, .flat;
+    color: $accent-grey !important;
+    &:hover {
+        color: $text-color-light !important;
+    }
+}
+
+.wiki-shim {
+    width: 100%;
+    max-width: 35rem;
+    min-width: 20rem;
+}
+
+#post {
+    min-width: 40rem;
 }

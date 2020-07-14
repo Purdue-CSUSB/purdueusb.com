@@ -1,0 +1,23 @@
+---
+permalink: /404
+---
+
+<div class="column justify-center align-items-center ma-10">
+        <h1 class="mb-10 text-justify">It's deserted here</h1>
+        <img src="/assets/images/deserted.webp" alt="tumbleweed" class="textwidth--force shadow-drop--center--soft"/>
+        <div class="mb-10 mt-5">
+            <h4 class="font-normal textwidth text-justify mb-2">We're not sure if the page you're looking for exists, or if it ever existed for that matter.</h4>
+            <small>Let us know if you need help.</small>
+        </div>
+        <button id="goback" href="/" target="_self" class="text-wrap-nowrap mb-3">Go Home</button>
+        <script>
+            let backButton = document.querySelector("#goback");
+            if (document.referrer.startsWith(window.location.origin)) {
+                backButton.setAttribute("href", document.referrer);
+                console.log(backButton.href);
+                backButton.innerHTML = "Go Back";
+            }
+            backButton.scrollIntoView(false);
+            window.scrollBy(0, backButton.style.marginBottom);
+        </script>
+</div>

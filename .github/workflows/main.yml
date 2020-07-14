@@ -1,0 +1,50 @@
+name: Publish to Github Pages
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          submodules: recursive
+      - uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: ⬢ Use Node.js 12.14.1
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.14.1'
+      - name: 🔨 Install dependencies
+        run: |
+          npm install
+          npm install --only=dev
+      - name: 💎 setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+
+      - name: 🔨 install gems & build site
+        uses: limjh16/jekyll-action-ts@v2
+        with:
+          enable_cache: true
+      - name: 🏷 Prepare tag
+        run: |
+          git_hash=$(git rev-parse --short "$GITHUB_SHA")
+          echo "::set-output name=tag_name::master/${git_hash}"
+          echo "::set-output name=deploy_tag_name::deploy-master/${git_hash}"
+      - name: 🚀 deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          keep_files: false
+          tag_name: ${{ steps.prepare_tag.outputs.deploy_tag_name }}
+          tag_message: 'Deployment ${{ steps.prepare_tag.outputs.tag_name }}'

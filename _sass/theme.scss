@@ -1,0 +1,117 @@
+/* CSS customization for base theme */
+@charset "utf-8";
+
+/** 
+Define defaults for each variable. Be sure to include !default on the end of each line.
+*/
+
+
+/* Fonts */
+@import "mixins";
+@include google-font("Raleway", "400;500;600;700");
+@include google-font("Montserrat", "400;500;600;700");
+$font-family-backup: sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-families: (
+    body:    ("Raleway", $font-family-backup),
+    header:  ("Montserrat", $font-family-backup)
+) !default;
+$font-sizes: (
+    h1:        1rem * 56 / 18,
+    h2:        1rem * 48 / 18,
+    h3:        1rem * 36 / 18,
+    h4:        1rem * 24 / 18,
+    button:    1rem * 24 / 18,
+    listitem:  1rem * 24 / 18,
+    body:      1rem,
+    caption:   1rem * 14 / 18,
+) !default;
+$line-height-base:  1.2 !default;
+$line-height-high:  2 !default;
+
+
+/* Colors */
+$percentage-lighten:  50% !default;
+$percentage-darken:   10% !default;
+$primary-color:       #FFCA44 !default;
+
+$accent-blue:       #8AC9FE !default;
+$accent-red:        #FE646F !default;
+$accent-purple:     #BC78C2 !default;
+$accent-green:      #67EA9B !default;
+$accent-orange:     #FEA465 !default;
+$accent-grey:       #6B6A6A !default;
+$accent-grey-light: #E5E5E5 !default;
+$profile-overlay:   rgba(0, 0, 0, 0.35);
+
+$text-color:        #333 !default;
+$text-color-hint:   $accent-grey !default;
+$text-color-light:  #FFF !default;
+$background-light:  $text-color-light !default;
+$background-dark:   $text-color-light !default;
+$background-color:  $background-light !default;
+$focus-color:       tint($primary-color, $percentage-lighten) !default;
+$accent-color:      $accent-blue !default;
+
+/* Spacing & Alignment */
+$dimension-sizing-groups:  2, 3, 4, 5, 6, 10, 100 !default;
+$table-text-align:         left !default;
+$spacing-max-group:        72 !default;
+$spacing-base:             1.35914091423 !default;
+$spacing-multiple:         0.25rem !default;
+$spacing-unit:             1.9rem !default;
+$margin-bottom-default:    spacing-group(4) !default;
+$padding-button-x:         spacing-group(4) !default;
+$padding-button-y:         spacing-group(4) !default;
+
+
+// Width of the content area
+$content-width:  800px !default;
+$text-width:     53rem !default;
+$screens: (
+    'xs': ('min': '0px',  'max': '639px'),
+    'sm': ('min': '640px',  'max': '767px'),
+    'md': ('min': '768px',  'max': '1023px'),
+    'lg': ('min': '1024px', 'max': '1279px'),
+    'xl': ('min': '1280px', 'max': '10000000000px' /* such hack */),
+) !default;
+// For convenience in css
+$screen-xsmall:     map-get(map-get($screens, "sm"), "max");
+$screen-small:      map-get(map-get($screens, "sm"), "max");
+$screen-medium:     map-get(map-get($screens, "md"), "max");
+$screen-large:      map-get(map-get($screens, "lg"), "max");
+$screen-xlarge:     map-get(map-get($screens, "xl"), "max");
+$screen-xsmall-min: map-get(map-get($screens, "sm"), "min");
+$screen-small-min:  map-get(map-get($screens, "sm"), "min");
+$screen-medium-min: map-get(map-get($screens, "md"), "min");
+$screen-large-min:  map-get(map-get($screens, "lg"), "min");
+$screen-xlarge-min: map-get(map-get($screens, "xl"), "min");
+
+/* Effects */
+$border-width:          4px !default;
+$border-radius:         10px !default;
+$border-radius-slight:  $border-radius / pow(2, 1) !default;
+$border-radius-more:    $border-radius * pow(2, 2) !default;
+
+$shadow-color-default:  rgba(0, 0, 0, 0.25) !default;
+$shadow-color-dark:     rgba(0, 0, 0, 0.95) !default;
+$shadow-color-soft:     rgba(0, 0, 0, 0.15) !default;
+$shadow-default:        4px 4px 4px !default;
+$shadow-dark:           4px 4px 4px !default;
+$shadow-nooffset:       0px 0px 4px !default;
+$shadow-nooffset-soft:  0px 0px 12px !default;
+
+$animation-delay:   200ms !default;
+
+$bg-angle-mobile:   2rem !default;
+$bg-angle:          400% !default;
+$bg-angle-color:    $primary-color !default;
+
+$scrollbar-background: white !default;
+$scrollbar-foreground: $accent-grey !default;
+
+
+// Import partials. DO NOT REORDER
+@import "generate";
+@import "utils";
+@import "theme/base";
+@import "theme/layout";

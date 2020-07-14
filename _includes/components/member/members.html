@@ -1,0 +1,42 @@
+<div class="column px-5/100 pt-8 text-center">
+    <h3 class="mb-4">Meet the Board</h3>
+    {%- assign year = 'now' | date: "%Y" -%}
+    <p class="mb-8">{{ year }} &ndash; {{ year | plus:1 }} Members</p>
+
+    {% assign current_members = site.data.people.members | where_exp: "member", "member.class contains '' or member.class == nil" %}
+    {% assign former_members_years = site.data.people.alumni | group_by: "class" | sort: "name" | reverse %}
+    {% assign former_members = '' | split: ',' %}
+    {% for year in former_members_years %}
+        {% assign year_members = year.items | sort_natural: "name" %}
+        {% for member in year_members %}
+            {% assign former_members = former_members | push: member %}
+        {% endfor %}
+    {% endfor %}
+    <div class="flex--wrap align-content-center justify-around animate">
+        {% include components/member/list.html members=current_members size="icon-square-10@md-below icon-square-14@lg icon-square-18@xl" spacing="mx-1@xs-below mx-4@sm mx-6@md mx-8@lg-above my-6@md-above my-3@md-below" overlay=true %}
+    </div>
+
+    {% if former_members | size %}
+        <div class="column mt-8 justify-center align-items-center">
+            <div class="column mb-1">
+                <h3 class="mb-4">Former Members</h3>
+                <p class="mb-0">A best-effort record of our {{former_members | size}} former members</p>
+            </div>
+            <input type="checkbox" href="#" class="menu-check w-0 h-0 ma-0" name="alumnus-open" id="alumnus-open"/>
+            <label class="clickable py-4 px-32" for="alumnus-open" title="Show/hide USB Alumni">
+                <span class="text-nowrap"><span class="font-bold collapse">Collapse</span><span class="font-bold expand">Expand</span> <i class="fas fa-chevron-down menu-button-rotate180 animate"></i></span>
+            </label>
+            <div class="flex-break mb-4"></div>
+            <div class="menu-item">
+                <div class="flex--wrap align-content-center justify-around mb-1 animate">
+                    {% include components/member/list.html members=former_members size="icon-square-10@md-below icon-square-14@lg icon-square-18@xl" spacing="mx-1@xs-below mx-4@sm mx-6@md mx-8@lg-above my-6@md-above my-3@md-below" overlay=true %}
+                </div>
+                
+                <input type="checkbox" href="#" class="menu-check w-0" name="alumnus-open" id="alumnus-open"/>
+                <label class="clickable py-4 px-32" for="alumnus-open" title="collapse USB Alumni">
+                    <span class="text-nowrap"><span class="font-bold">Collapse</span> <i class="fas fa-chevron-up"></i></span>
+                </label>
+            </div>
+        </div>
+    {% endif %}
+</div>

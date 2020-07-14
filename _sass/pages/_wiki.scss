@@ -1,0 +1,22 @@
+/* CSS for /wiki */
+#sidebar {
+    .post-title, .post-description {
+        text-overflow: ellipsis;
+        display: block;
+        -webkit-line-clamp: 2;
+        max-height: 2rem * $line-height-base;
+        overflow: hidden;
+    }
+}
+
+#wiki-list {
+    //max-height: 35vh;
+    @include media-query($above: $screen-medium-min, $below: $screen-medium) {
+        max-height: 44vh;
+    }
+    
+    @include media-query($below: $screen-small) {
+        max-height: 55vh;
+    }
+    min-height: 200px;
+}

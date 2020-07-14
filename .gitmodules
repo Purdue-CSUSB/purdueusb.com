@@ -1,0 +1,3 @@
+[submodule "libs/lunr.js"]
+	path = libs/lunr.js
+	url = https://github.com/olivernn/lunr.js.git

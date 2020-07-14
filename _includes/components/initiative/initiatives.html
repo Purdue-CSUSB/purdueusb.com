@@ -1,0 +1,13 @@
+<div class="column px-5/100 align-items-center w-full">
+    <div class="justify-center textwidth section-title">
+        <h1 class="text-center mb-4">Our Initiatives</h1>
+        <p class="text-justify mb-2">We take pride in the freedom our members have to pursue impactful initiatives both immediately and in the long term.
+            Some initiatives have been around for a decade or more, while others come and go as our goals evolve.</p>
+        <p class="text-justify">Check out what we've been working on!</p>        
+    </div>
+    <div id="initiative-container" class="w-full">
+        {%- for initiative in site.data.initiatives -%}
+            {% include components/initiative/card.html data=initiative %}
+        {%- endfor -%}
+    </div>
+</div>

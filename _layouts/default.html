@@ -1,27 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
-  {%- include head.html -%}
-
-  <body>
-
-    {%- include header.html -%}
-
-    <main class="page-content" aria-label="Content">
-
-      <header class="title">
-        <h1 class="post-title">{{ page.title | escape }}</h1>
-    
-        <h3 class="post-subtitle" style="margin-top: -10px;">{{ page.description | escape }}</h3>
-      </header>
-
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
-
-    {%- include footer.html -%}
-
-  </body>
-
+    {%- include head.html -%}
+    <body class="flex-container animate-fast">
+        {%- include nav/header.html -%}
+        <main class="flex-container column">
+            {%- include nav/navmenu_mobile.html -%}
+            {{content}}
+        </main>
+        {%- include nav/footer.html -%}
+    </body>
 </html>

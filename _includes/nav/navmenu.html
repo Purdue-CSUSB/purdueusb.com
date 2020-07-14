@@ -1,0 +1,17 @@
+{% assign color = "light" %}
+{% if include.light == nil or include.light == false or include.dark == true %}
+    {% assign color = "dark" %}
+{% endif %}
+
+<nav class="animate column grow-0 align-content-center align-items-end">
+    <div class="row--nowrap justify-end align-items-center">
+        <div class="none@md-below trigger row--nowrap justify-end margin-list">
+            {%- include nav/header_links.html classes=include.classes color=color -%}
+        </div>
+        {% if include.social == true %}
+            <div class="row--nowrap w-auto {{color}} ml-8 justify-end grow-0 none@xs">
+                {%- include components/social.html color=color -%}
+            </div>
+        {% endif %}
+    </div>
+</nav>

@@ -1,0 +1,264 @@
+.font {
+    &--height {
+        &-normal {
+            line-height: $line-height-base;
+        }
+        &-high {
+            line-height: $line-height-high;
+        }
+    }
+}
+
+
+.flex {
+    display: flex;
+    display: -webkit-flex;
+    @extend .row, .border-box;
+
+    &--wrap {
+        &-reverse {
+            flex-wrap: wrap-reverse !important;
+        }
+
+        flex-wrap: wrap !important;
+        @extend .flex;
+    }
+
+    &--nowrap {
+        @extend .flex;
+        flex-wrap: nowrap !important;
+    }
+}
+
+.flex {
+    &-container {
+        @extend .border-box;
+    }
+
+    &-even {
+        @include flex-even;
+    }
+    
+    &-break {
+        @extend .block, .w-full;
+        height: 1px;
+    }
+}
+
+// why the absolute fuck does this break footer & fab placement in production?
+.column, .column--wrap, .column\@md-below {
+    @include flex-even;
+}
+
+.row, .row--wrap, .row--nowrap {
+    @extend .w-full;
+    @include flex-even;
+}
+
+.row, .row--wrap {
+    flex-wrap: wrap;
+}
+
+.border-box, .border-box * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.margin-list > * {
+    &:not(:last-child) {
+        @extend .mr-4;
+    }
+
+    &:not(:first-child) {
+        @extend .ml-4;
+    }
+}
+
+.margin-list--wrap > * {
+    @extend .mx-4;
+}
+
+.no{
+    &-underline {
+        text-decoration: none !important;
+    }
+    &-list-style {
+        list-style: none !important;
+    }
+    &-decoration {
+        @extend .no-underline, .no-list-style;
+    }
+}
+
+.hover {
+    &--underline:hover {
+        text-decoration: underline;
+    }
+    &--bold:hover {
+        @extend .font-bold;
+    }
+}
+
+.animate {
+    &, & > * {
+        -moz-transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
+        -webkit-transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
+        -ms-transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
+        transition: all $animation-delay ease-in-out $animation-delay / 3 !important;
+    }
+    
+
+    &-off, &-off > * {
+        -moz-transition: none !important;
+        -webkit-transition: none !important;
+        -ms-transition: none !important;
+        transition: none !important;
+    }
+
+    &-fast, &-fast > * {
+        $fast-delay: $animation-delay / 2;
+        -moz-transition: all $fast-delay ease-in-out $fast-delay / 3 !important;
+        -webkit-transition: all $fast-delay ease-in-out $fast-delay / 3 !important;
+        -ms-transition: all $fast-delay ease-in-out $fast-delay / 3 !important;
+        transition: all $fast-delay ease-in-out $fast-delay / 3 !important;
+    }
+}
+
+.fade-in-out {
+    opacity: 0;
+    @extend .animate;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.img-cover {
+    object-fit: cover;
+}
+
+.clickable {
+    @include clickable;
+}
+
+.not-clickable {
+    cursor: default;
+    @extend .flat;
+}
+
+.clickable, a, button, .button {
+    &:focus {
+        //outline: $border-width double initial;
+        @extend .shadow;
+    }
+    &:focus:not(:focus-visible) { 
+        //outline: none; 
+    }
+    &:active {
+        @extend .flat;
+    }
+}
+
+.textwidth {
+    @include screen-variant() {
+        max-width: $text-width;
+    }
+    
+    &--force {
+        @include screen-variant() {
+            width: $text-width;
+        }
+        
+    }
+
+}
+
+.flat {
+    @include shadow-none;
+}
+
+.shadow {
+    &, &-drop {
+        @include shadow-drop;
+        &--center {
+            @include shadow('drop', $shadow-nooffset);
+            &--soft {
+                @include generate-pseudo-helper(true) {
+                    @include shadow('drop', $shadow-nooffset-soft, $shadow-color-soft);
+                }
+            }
+        }
+    }
+
+    &-box {
+        @include shadow-box;
+        &--center {
+            @include shadow('box-shadow', $shadow-nooffset);
+            &--soft {
+                @include shadow('box-shadow', $shadow-nooffset-soft, $shadow-color-soft);
+            }
+        }
+    }
+
+    &-text {
+        @include shadow-text;
+        &-dark {
+            @include shadow('text-shadow', $shadow-default, $shadow-color-dark);
+        }
+        &--center {
+            @include shadow('text-shadow', $shadow-nooffset);
+            &--soft {
+                @include shadow('text-shadow', $shadow-nooffset-soft, $shadow-color-soft);
+            }
+        }
+    }
+}
+
+.active, #active, .highlight {
+    @extend .bg-focus-color;
+    &--hover {
+        &:hover {
+            @extend .bg-focus-color-light;
+        }
+    }
+}
+
+.highlight {
+    @extend .rounded;
+}
+
+.card {
+    @extend .bg-light, .shadow-drop, .rounded, .overflow-hidden;
+    transition: 0.3s;
+
+    @extend .shadow-drop--center--soft\:hover;
+
+    &--initiative {
+        @extend .card;
+        @include media-query($above: $screen-small-min) {
+            min-width: 20rem;
+        }
+        @include media-query($below: $screen-xsmall) {
+            min-width: 80%;
+        }
+        width: 40%;
+        max-width: 35rem;
+    }
+}
+
+.w-px {
+    width: 1px;
+}
+
+.h-px {
+    height: 1px;
+}
+
+.absolute {
+    position: absolute;
+}

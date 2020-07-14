@@ -1,37 +1,39 @@
 - title: CS 191 Panel
-  image: CS191_Panel_Logo.png
+  image: CS191_Panel_Logo.webp
   description: Q&A panel of upperclass CS/DS students
+  members:
 
 - title: CS 193
-  image: CS193_Logo.png
+  image: CS193_Logo.webp
   description: Tools course taught by USB members
 
 - title: Virtual Office Hours
-  image: Virtual_Office_Hours_Logo.png
+  image: Virtual_Office_Hours_Logo.webp
   description: Innovative new way to hold office hours
 
 - title: Help Room
-  image: Help_Room_Logo.png
+  image: Help_Room_Logo.webp
   description: CS 193, CS 180, CS 182, and CS 240 Help
   buttonText: View Times
-  buttonLink: https://www.purdueusb.com/helproom/
+  buttonLink: /helproom
+  buttonTarget: _self
 
 - title: Office Hours
-  image: Office_Hours_Logo.png
+  image: Office_Hours_Logo.webp
   description: Come talk with us!
   buttonText: View Times
-  buttonLink: https://www.purdueusb.com/officehours/index.html
+  buttonLink: /officehours
 
 - title: Undergraduate Student Forum
-  image: Student_Forum_Logo.png
+  image: Student_Forum_Logo.webp
   description: Forum for undergrads to discuss their experiences
 
 - title: USB Tutor List
-  image: Tutor_List.png
+  image: Tutor_List.webp
   description: Tutor list maintained by USB for students looking for extra help
-  buttonText: View List
-  buttonLink: https://www.purdueusb.com/tutors/
+  buttonText: View Tutors
+  buttonLink: /tutors/
 
 - title: Mentorship
-  image: Mentorship.png
+  image: Mentorship.webp
   description: Working on creating a supportive community between upperclassmen and underclassmen

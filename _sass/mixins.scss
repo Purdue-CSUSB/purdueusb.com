@@ -1,0 +1,316 @@
+@mixin google-font($family, $variants) {
+    @import url('https://fonts.googleapis.com/css2?family=#{$family}:wght@#{$variants}&display=swap');
+}
+  
+/* Credit: https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/ */
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+@mixin rem-fallback($property, $values...) {
+    $max: length($values);
+    $pxValues: '';
+    $remValues: '';
+
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+        $pxValues: #{$pxValues + $value*16}px;
+
+        @if $i < $max {
+            $pxValues: #{$pxValues + " "};
+        }
+    }
+
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+        $remValues: #{$remValues + $value}rem;
+
+        @if $i < $max {
+            $remValues: #{$remValues + " "};
+        }
+    }
+
+    #{$property}: $pxValues;
+    #{$property}: $remValues;
+}
+
+/* Credit: https://css-tricks.com/snippets/sass/power-function/
+  Modified by Zach Bryant
+*/
+@function pow($number, $exponent) {
+    $value: 1;
+
+    @if $exponent>0 {
+        @for $i from 1 through $exponent {
+            $value: $value * $number;
+        }
+    }
+
+    @else if $exponent < 0 {
+        @for $i from $exponent through -1 {
+            $value: $value * $number;
+        }
+
+        $value: 1 / $value;
+    }
+
+    @return $value;
+}
+
+/// Slightly lighten a color
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+/* Font Mixins */
+@mixin font-size($arg) {
+    font-size: map-get($font-sizes, $arg);
+}
+@mixin font-family($arg) {
+    font-family: map-get($font-families, $arg);
+}
+@mixin font-weight($arg) {
+    font-weight: map-get($font-weights, $arg);
+}
+@mixin font-base {
+    color: $text-color;
+}
+
+@mixin font-body {
+    @include font-base;
+    @include font-family("body");
+}
+
+@mixin font-header {
+    @include font-base;
+    @include font-family("header");
+}
+
+@mixin font-normal {
+    @include font-weight("base");
+}
+
+@mixin font-medium {
+    @include font-weight("medium");
+}
+
+@mixin font-semibold {
+    @include font-weight("semibold");
+}
+
+@mixin font-bold {
+    @include font-weight("bold");
+}
+
+@mixin font-button {
+    @include font-bold;
+    @include font-header;
+    @include font-size("button");
+}
+
+@mixin rounded($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+}
+
+@mixin border($color, $width) {
+    border: $width solid $color;
+}
+
+@mixin shadow($type: 'drop', $size: $shadow-default, $color: $shadow-color-default) {
+    @if $type == 'drop' or $type == 'drop-shadow' {
+        -webkit-filter: drop-shadow(#{$size} #{$color});
+        filter: drop-shadow(#{$size} #{$color});
+        transition: filter $animation-delay ease-in-out;
+    }
+    @else  {
+        #{$type}: #{$size} #{$color};
+        transition: #{$type} $animation-delay ease-in-out;
+    }
+}
+
+@mixin shadow-box {
+    @include shadow('box-shadow');
+}
+
+@mixin shadow-text {
+    @include shadow('text-shadow');
+}
+
+@mixin shadow-drop {
+    @include shadow('drop-shadow');
+}
+
+@mixin shadow-none {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+@mixin justify($arg) {
+    justify-content: $arg;
+}
+
+@mixin clickable {
+    cursor: pointer;
+    @include shadow-drop;
+    @extend .shadow-drop--center--soft\:hover;
+}
+
+@mixin flex-even {
+    display: flex;
+    display: -webkit-flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+}
+
+
+/* Sizing mixins */
+@mixin media-query($above: null, $below: null) {
+    @if $above and $below {
+        @media screen and (min-width: $above) and (max-width: $below) {
+            @content;
+        }
+    }
+    @else {
+        @if $above { 
+            @media screen and (min-width: $above) {
+                @content;
+            } 
+        }
+        @if $below { 
+            @media screen and (max-width: $below) {
+                @content;
+            }
+         }
+    }
+}
+
+
+/* Spacing Mixins */
+@function spacing-group($index) {
+    //$num: pow($spacing-base, $index - 2);
+    @return #{$index * $spacing-multiple};
+}
+
+// Paddings
+@mixin p-bottom($size) {
+    padding-bottom: $size;
+}
+
+@mixin p-top($size) {
+    padding-top: $size;
+}
+
+@mixin py($size) {
+    @include p-top($size);
+    @include p-bottom($size);
+}
+
+@mixin p-left($size) {
+    padding-left: $size;
+}
+
+@mixin p-right($size) {
+    padding-right: $size;
+}
+
+@mixin px($size) {
+    @include p-left($size);
+    @include p-right($size);
+}
+
+@mixin pa($size) {
+    @include px($size);
+    @include py($size);
+    padding: $size;
+}
+
+// Margins
+@mixin m-bottom($size) {
+    margin-bottom: $size;
+}
+
+@mixin m-top($size) {
+    margin-top: $size;
+}
+
+@mixin my($size) {
+    @include m-top($size);
+    @include m-bottom($size);
+}
+
+@mixin m-left($size) {
+    margin-left: $size;
+}
+
+@mixin m-right($size) {
+    margin-right: $size;
+}
+
+@mixin mx($size) {
+    @include m-left($size);
+    @include m-right($size);
+}
+
+@mixin ma($size) {
+    @include mx($size);
+    @include my($size);
+    margin: $size;
+}
+
+@mixin screen-variant($prefix:"\\@", $variant-only: false) {
+
+    @each $name, $vals in $screens {
+        #{if(&, '&', '.')}#{$prefix}#{$name} {
+            @include screen-variant-helper($vals) {
+                @content;
+            }
+        }
+    }
+    @if not $variant-only {
+        @content;
+    }
+}
+
+@mixin screen-variant-helper($vals) {
+    $min: map-get($vals, "min");
+    $max: map-get($vals, "max");
+
+    @if $min {
+        &-above { @include media-query($above: $min) { @content; } }
+    }
+    @if $max {
+        &-below { @include media-query($below: $max) { @content; } }
+    }
+
+    @if $min and $max {
+        @include media-query($below: $max, $above: $min) { @content; }
+    }
+}
+
+@mixin screen-variant-force($attribute, $value) {
+    @if type-of($attribute) == 'list' {
+        @each $attr in $attribute {
+            #{$attr}: #{$value};
+        }
+    }
+    @else {
+        #{$attribute}: #{$value};
+    }
+}
+
+@mixin pseudo-variant($pseudo) {
+    &\:#{$pseudo} {
+        &:#{$pseudo} {
+            @content;
+        }
+    }
+    @content;
+}

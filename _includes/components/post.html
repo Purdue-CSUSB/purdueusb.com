@@ -1,0 +1,45 @@
+<article id="post" class="w-full@md-below textwidth@lg-above h-full">
+    <script src="/assets/scripts/ratings.js"></script>
+    <section id="meta">
+        <h2 class="mb-3 inline-block post-title" data-anchor-id="title">{{ page.title }}</h2>
+        <div class="column--nowrap grow-0 justify-between align-items-baseline">
+            <p id="description" class="hint mb-6 font-italic">{{ page.description }}</p>
+            <div class="row--nowrap align-items-top justify-between">
+                <div class="column align-items-top">
+                    <small class="font-medium hint mb-2">Authored by</small>
+                    <div class="row align-items-center">
+                        {% assign author_count = page.author | size %}
+                        {% for author in page.author %}
+                            <div class="inline-block">
+                                {% if forloop.index <= author_count and forloop.index > 1 and author_count > 2 %}<span class="hint text-pre">,  </span>{% endif %}
+                                {% if forloop.index == author_count and forloop.index > 1 %}<span class="hint">and</span>{% endif %}
+                                <span class="{% if author_count > 1 and forloop.index > 1 %} mr-3 {% endif %}"></span>
+                            </div>
+                            {% include components/member/avatar.html member=author name=true size="icon-3" show_name=true overlay=false %}
+                        {% endfor %}
+                    </div>
+                </div>
+                {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+                <small class="font-medium hint mb-0 ml-4">{{ page.date | date: site.date_format }}</small>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider--horizontal mt-4 mb-5 bg-grey-light"></div>
+
+    <section id="content" class="text-justify">
+        {{ content }}
+    </section>
+    <section class="row justify-between@md-above justify-center@md-below align-items-baseline">
+        {% assign categories_size = page.categories | size %}
+        {% if categories_size > 0 %}
+            <small class="mb-0">{% if categories_size > 1 %}Categories{% else %}Category{% endif %}: 
+                {% for category in page.categories %}
+                    <a href="/wiki?s=category:{{category}}" class="caption" target="_self">{{category}}</a>
+                {% endfor %}
+            </small>
+        {% endif %}
+        <div class="flex-break none@sm-above"></div>
+        {% include components/rating.html slug=page.slug %}
+    </section>
+</article>
