@@ -24,7 +24,7 @@ done
 
 echo Running in $JENV mode.
 $OPEN && echo "Opening site in browser" && ./opensite.sh &
-OPTS="--host 0.0.0.0 --baseurl ''"
+OPTS="--host 0.0.0.0"
 
 if [ $LIVE = true ]; then
     OPTS="${OPTS} --incremental --livereload"  
