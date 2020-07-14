@@ -80,6 +80,10 @@ label[for="rate-good"], label[for="rate-bad"] {
 
 .wiki-shim {
     width: 100%;
-    max-width: 40rem;
+    max-width: 35rem;
     min-width: 20rem;
+}
+
+#post {
+    min-width: 40rem;
 }
