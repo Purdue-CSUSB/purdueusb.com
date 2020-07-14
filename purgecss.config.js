@@ -1,17 +1,1 @@
-module.exports = {
-    // These are the files that Purgecss will search through
-    content: ["./**/*.md", "./**/*.html", "./_sass/**/*"],
-  
-    // These are the stylesheets that will be subjected to the purge
-    css: ["./_site/assets/main.css"],
-
-    // For media queries, pseudo-classes, etc
-    defaultExtractor: content => content.match(/[\w-/:@]+(?<!:)/g) || [],
-    
-    // wow, looks like this is broken what a surprise
-    whitelistPatterns: [
-        /.*\[\w+\W?=.*\]/g,  // Matches selectors like [class*="..."]
-        /bg-(red|blue)-light/g,
-        /rounded.*/g,
-    ],
-  };
+module.exports={content:["./**/*.md","./**/*.html","./_sass/**/*"],css:["./_site/assets/main.css"],defaultExtractor:t=>t.match(/[\w-/:@]+(?<!:)/g)||[],whitelistPatterns:[/.*\[\w+\W?=.*\]/g,/bg-(red|blue)-light/g,/rounded.*/g]};

@@ -1,7 +1,1 @@
-suite('lunr.stemmer', function () {
-  this.add('#call', function () {
-    for (var i = 0; i < words.length; i++) {
-      lunr.stemmer(new lunr.Token (words[i]))
-    }
-  })
-})
+suite("lunr.stemmer",function(){this.add("#call",function(){for(var n=0;n<words.length;n++)lunr.stemmer(new lunr.Token(words[n]))})});
