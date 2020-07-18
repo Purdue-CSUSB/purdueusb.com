@@ -48,3 +48,10 @@ jobs:
           keep_files: false
           tag_name: ${{ steps.prepare_tag.outputs.deploy_tag_name }}
           tag_message: 'Deployment ${{ steps.prepare_tag.outputs.tag_name }}'
+      - name: PR Status Notification
+        uses: unsplash/comment-on-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          msg: "Deploy finished"
+          check_for_duplicate_msg: false  # OPTIONAL 
