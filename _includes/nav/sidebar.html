@@ -1,17 +1,17 @@
-<aside id="sidebar" class="card pt-4 pb-2 px-6">
+<aside id="sidebar" class="card pt-4 pb-2 px-6 column h-full">
     <h4 class="text-center mb-2">Student Wiki</h4>
-    <div class="row justify-center">
-        <p class="caption mb-6 w-3/4">Contains locally sourced, organic wisdom. Shared by the student body, curated by USB.</p>
+    <div class="row justify-center grow-0">
+        <p class="caption mb-6 w-3/4">Contgit staains locally sourced, organic wisdom. Shared by the student body, curated by USB.</p>
     </div>
     
-    <div class="input row--nowrap align-items-baseline">
+    <div class="input row--nowrap grow-0 align-items-baseline">
         <i class="fa fa-search" aria-hidden="true"></i>
         <input type="text" name="Search" id="search" placeholder="Search..." class="border-none w-full pa-1">
     </div>
 
-    <div class="row">
+    <div id="wiki-list" class="overflow-y-scroll overflow-x-visible">
         {%- if site.wiki.size > 0 -%}
-            <div id="wiki-list" class="column overflow-y-scroll overflow-x-visible {% if include.limit_height %} h-max-72@xs {% else %} h-full {% endif %}">
+            <div class="column{% if include.limit_height %} h-max-72@xs {% else %} h-full {% endif %}">
                 {%- for post in site.wiki -%}
                     {% unless forloop.last or forloop.first %}
                         <div class="divider--horizontal bg-grey-light"></div>
