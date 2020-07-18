@@ -3,29 +3,29 @@
 /*! purgecss start ignore */
 .bg {
     &--angled {
-        @include media-query($above: $screen-large-min) {
+        @include media-query($above: $screen-xlarge-min) {
             background: linear-gradient(to top right, $bg-angle-color 69%, transparent 0%) no-repeat top,
             linear-gradient(0deg, $bg-angle-color, $bg-angle-color) no-repeat bottom;
             background-size: 100% $bg-angle, 100% calc(100% - calc(#{$bg-angle} - 2px));
         }
     }
     &--angled-mobile {
-        @include media-query($below: $screen-medium) {
+        @include media-query($below: $screen-large) {
             background: linear-gradient(to bottom right, $bg-angle-color 50%, transparent 0%) no-repeat bottom,
             linear-gradient(30deg, $bg-angle-color, $bg-angle-color) no-repeat top;
             background-size: 100% $bg-angle-mobile, 100% calc(100% - calc(#{$bg-angle-mobile} - 2px));
             @include p-bottom(spacing-group(12));
-            @include m-bottom(spacing-group(6));
+            @include m-bottom(spacing-group(8));
         }
     }
 }
 
 .objective {
-    @include media-query($below: $screen-medium) {
+    @include media-query($below: $screen-small) {
         max-width: 100%;
     }
 
-    @include media-query($above: $screen-large) {
+    @include media-query($above: $screen-medium-min) {
         max-width: 45%;
     }
 }
@@ -42,7 +42,7 @@
         max-width: $objectives-width;
     }
     &objectives, &mission {
-        @include media-query($below: $screen-medium) {
+        @include media-query($below: $screen-large) {
             width: 100%;
             max-width: 100%;
         }

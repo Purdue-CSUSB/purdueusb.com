@@ -12,7 +12,7 @@ Our wiki is built with tools make your searches more powerful and precise. You c
 Wildcards let you match any text and are represented by asterisks (\*). For example, `C* S*` matches words starting with *C* or *S*. Together they match phrases like *Computer Science* or *Canadian Studies*, among other things.
 
 ### Fields
-Fields relate to meta-information about our articles, such as the date or author. You can use them to search only titles, for example, instead of searching the entire wiki.
+Fields relate to meta-information about our articles, such as the date or author. You can use them to search only titles, for example, instead of searching the entire wiki. Search for this article with `title:optimize`.
 
 Available fields: `title`, `description`, `content`, `author`, `category`, and `date`.
 
@@ -30,6 +30,6 @@ By default, a result comes back if any word separated by a space matches some co
 Nothing's perfect. 
 
 ### Bringing It All Together
-You can make your search as simple or as complex as you'd like. As an example, if I wanted to search for meta-articles I've authored in June, containing the mis-spelled phrase *crakato-uh*, I could type `category:meta +author:Zach +Bryant +date:June -crakatoa~1`. Except at this time, my *only* article contains the phrase *krakatoa*.
+You can make your search as simple or as complex as you'd like. As an example, if I wanted to search for meta-articles I've authored in June, containing the mis-spelled phrase *crakatoa*, I could type `category:meta +author:Zach +Bryant +date:June -crakatoa~1`. Except at this time, my *only* article contains the phrase *krakatoa*.
 
 Thank you for coming to my TED talk.
