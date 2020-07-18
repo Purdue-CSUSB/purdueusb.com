@@ -86,6 +86,6 @@ label[for="rate-good"], label[for="rate-bad"] {
 
 #post {
     @include media-query($above: $screen-medium-min) {
-        min-width: 40rem;
+        min-width: 40%;
     }
 }
