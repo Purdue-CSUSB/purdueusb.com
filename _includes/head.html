@@ -3,37 +3,37 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logos/apple-touch-icon.webp">
-    <link rel="icon" type="image/x-icon" sizes="48x48" href="/assets/images/logos/favicon.ico">
-    <link rel="icon" type="image/webp" sizes="32x32" href="/assets/images/logos/favicon-32x32.webp">
-    <link rel="icon" type="image/webp" sizes="16x16" href="/assets/images/logos/favicon-16x16.webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/logos/apple-touch-icon.webp?cache={{ site.cache_key }}">
+    <link rel="icon" type="image/x-icon" sizes="48x48" href="/assets/images/logos/favicon.ico?cache={{ site.cache_key }}">
+    <link rel="icon" type="image/webp" sizes="32x32" href="/assets/images/logos/favicon-32x32.webp?cache={{ site.cache_key }}">
+    <link rel="icon" type="image/webp" sizes="16x16" href="/assets/images/logos/favicon-16x16.webp?cache={{ site.cache_key }}">
     <link rel="manifest" href="/site.webmanifest">
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{{ site.description }}">
 
-    <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+    <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js?cache={{ site.cache_key }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js?cache={{ site.cache_key }}"></script>
 
-    <script src="/libs/highlight/highlight.pack.js"></script>
+    <script src="/libs/highlight/highlight.pack.js?cache={{ site.cache_key }}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/libs/lightcase/src/css/lightcase.css">
-    <script type="text/javascript" src="/libs/lightcase/src/js/lightcase.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js?cache={{ site.cache_key }}"></script>
+    <link rel="stylesheet" type="text/css" href="/libs/lightcase/src/css/lightcase.css?cache={{ site.cache_key }}">
+    <script type="text/javascript" src="/libs/lightcase/src/js/lightcase.js?cache={{ site.cache_key }}"></script>
 
-    <script type="text/javascript" src="/libs/lunr.js/lunr.js"></script>
+    <script type="text/javascript" src="/libs/lunr.js/lunr.js?cache={{ site.cache_key }}"></script>
 
-    <script src="/assets/searchData.js?cache={{ site.time | date: '%s%N' }}"></script>
-    <script src="/assets/scripts/utils.js?cache={{ site.time | date: '%s%N' }}"></script>
-    <script src="/assets/scripts/events.js?cache={{ site.time | date: '%s%N' }}"></script>
+    <script src="/assets/searchData.js?cache={{ site.cache_key }}"></script>
+    <script src="/assets/scripts/utils.js?cache={{ site.cache_key }}"></script>
+    <script src="/assets/scripts/events.js?cache={{ site.cache_key }}}"></script>
 
-    <link rel="stylesheet" href="/assets/main.css?cache={{ site.time | date: '%s%N' }}">
+    <link rel="stylesheet" href="/assets/main.css?cache={{ site.cache_key }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
 
     <!-- Accessibility -->
     <!-- Requires some dependencies: ally.js <script src="https://cdnjs.cloudflare.com/ajax/libs/ally.js/1.4.1/ally.min.js"></script> -->
     {% if jekyll.environment == "development" %}
-        <script src="/assets/scripts/accessibility_check.js"></script>
+        <script src="/assets/scripts/accessibility_check.js?cache={{ site.cache_key }}"></script>
     {% endif %}
 
     {% seo %}
