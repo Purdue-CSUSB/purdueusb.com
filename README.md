@@ -7,7 +7,7 @@ This is a static site built using [Jekyll](https://jekyllrb.com), designed on [F
 ## **Contribution**
 
 ### **Editing Site Information**
-Directly editing the main branch is forbidden. To make updates, edit another branch and submit a pull request. Netlify bot will comment on your PR with a link to a deployed preview of your changes. When you complete the PR a build will commence under the Actions tab.
+Directly editing the main branch is forbidden. To make updates, edit another branch and submit a pull request. Netlify bot will comment on your PR with a link to a deployed preview of your changes. When you merge into main a build will commence under the Actions tab.
 
 *Please take a moment to familiarize yourself with [YAML](https://learnxinyminutes.com/docs/yaml/) and [Markdown](https://learnxinyminutes.com/docs/markdown/) formats.*
 
