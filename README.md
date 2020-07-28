@@ -17,7 +17,7 @@ Please use an [obfuscation technique](https://mothereff.in/html-entities) to pre
 #### **Images**
 Please run `webp-convert` on any directories of images you add that are not in webp format.
 
-### **Pages & Redirects***
+#### **Pages & Redirects**
 To add a new page, create an html file in the `_pages` directory. You can access it at `purdueusb.com/filename`. You can use the `redirect_to` and `redirect_from` frontmatter attributes to add appropriate redirects or page aliases. Example:
 ```
 ---
