@@ -7,7 +7,7 @@ This is a static site built using [Jekyll](https://jekyllrb.com), designed on [F
 ## **Contribution**
 
 ### **Editing Site Information**
-~~Currently with automatic GH pages builds, information can be edited directly on github.~~ Editing site information on github may be automatically deployed by netlify [*confirmation needed*].
+Directly editing the main branch is forbidden. To make updates, edit another branch and submit a pull request. Netlify bot will comment on your PR with a link to a deployed preview of your changes. When you complete the PR a build will commence under the Actions tab.
 
 *Please take a moment to familiarize yourself with [YAML](https://learnxinyminutes.com/docs/yaml/) and [Markdown](https://learnxinyminutes.com/docs/markdown/) formats.*
 
@@ -116,7 +116,7 @@ Note: Jekyll does not parse changes to `_config.yml` in watch mode. You must res
     /*! purgecss end ignore */
     ```
   - Purgecss doesn't like to obey ignore statements ¯\\_(ツ)\_/¯
-- Live reload can cause **major** cache buildup and freeze your computer.
+- Live reload can cause **major** cache buildup and exhaust your ram.
 - An error seems to cause intermittent failure to load live changes:
     ```ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf```
 - Build time is `s l o w` because of css class generation, while production builds are even slower to purge most of those classes. This is more or less a `wontfix` issue because it gives css writers major flexibility.
@@ -140,6 +140,7 @@ Plugins currently in use:
 - ~~Jekyll target-blank (opens markdown links in new window)~~ *randomly breaks build and/or contact page*
 - Jekyll minifier *Netlify also handles minification*
 - jekyll-redirect-from
+- jekyll-autoprefixer
 
 Local Dependencies:
 - Highlight.js: Syntax highlighting
@@ -148,6 +149,7 @@ Local Dependencies:
 
 NPM Dependencies:
 - Purgecss: Remove unused css classes
+- Autoprefixer: Add browser-specific css attributes.
 
 CDN Dependencies:
 - Anchorjs: Provide anchor link support
