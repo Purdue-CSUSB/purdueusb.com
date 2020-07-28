@@ -121,7 +121,8 @@ Note: Jekyll does not parse changes to `_config.yml` in watch mode. You must res
     ```ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf```
 - Build time is `s l o w` because of css class generation, while production builds are even slower to purge most of those classes. This is more or less a `wontfix` issue because it gives css writers major flexibility.
 - Don't use tab characters in `_config.yml`
-- `warning: Using the last argument as keyword parameters is deprecated` -> run `bundle update jekyll` to get to `4.0.1`.
+- `warning: Using the last argument as keyword parameters is deprecated` -> fix by running `bundle update jekyll` to get to `4.0.1`.
+- `webp` is shamefully not supported by popular safari versions
 
 ### Testing
 You can access your changes from another device on your local network through your computer's local IP (e.g. `192.168.1.1:4000`).
