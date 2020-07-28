@@ -17,6 +17,17 @@ Please use an [obfuscation technique](https://mothereff.in/html-entities) to pre
 #### **Images**
 Please run `webp-convert` on any directories of images you add that are not in webp format.
 
+### **Pages & Redirects***
+To add a new page, create an html file in the `_pages` directory. You can access it at `purdueusb.com/filename`. You can use the `redirect_to` and `redirect_from` frontmatter attributes to add appropriate redirects or page aliases. Example:
+```
+---
+title: USB Office Hours
+redirect_from:
+    - /oh/
+redirect_to: https://www.notion.so/0bb4e5da1b154b258d8bb00793117526?v=3aa761f5611f4e788d6b9855a6c20dd0
+---
+```
+
 #### **USB Members**
 1. Edit either `_data/members.yml` or `_data/alumni.yml` with their name, title, class rank, and (optionally) an appropriate personal website.
 2. If necessary, add their photograph in `assets/images/members`. Make sure the image file name matches their name in their yml entry, the images are square, and 300x300.
