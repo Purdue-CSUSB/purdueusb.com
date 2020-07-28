@@ -77,7 +77,7 @@ NPM is required ([version here](.node-version)) to run `purgecss` in production.
 
 You can get Jekyll running by following the [installation tutorial](https://jekyllrb.com/docs/installation/). There are instructions for Windows, macOS, and Linux. Once Jekyll is properly installed, run `bundle exec jekyll serve` in the repository's root directory.
 
-  - **Linux users**: you can use `run.sh [-hilpt]` to run the jekyll build server conveniently.
+  - **Linux users**: you can use `run.sh [-chilpt]` to run the jekyll build server conveniently.
     - -c) Clean jekyll cache files.
     - -h) Headless mode (don't open your browser automatically).
     - -i) Run `bundle install` at start.
