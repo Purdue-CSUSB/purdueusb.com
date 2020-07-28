@@ -367,7 +367,7 @@ $max-icon-multiple: 21;
         $map: map-merge($map, ($factor: $ratio));
     }
 
-    @include generate-subclass($map, ('max-width', 'max-height'));
+    @include generate-subclass($map, ('width', 'max-width', 'max-height'));
     &-square {
         @include generate-subclass($map, ('width', 'height'));
     }
