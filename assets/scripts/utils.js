@@ -78,11 +78,13 @@ function scrollToPost() {
     let post = document.querySelector("#active");
     // janky hack to tell if we're on a screen worth scrolling
     let verticalSeparator = document.querySelector("#postVerticalSeparator");
-    let style = window.getComputedStyle(verticalSeparator);
-    if (post && style && style.display != 'none') {
-        post.scrollIntoView(true);
-    } else {
-        scrollTop();
+    if (post && verticalSeparator) {
+        let style = window.getComputedStyle(verticalSeparator);
+        if (style && style.display != 'none') {
+            post.scrollIntoView(true);
+        } else {
+            scrollTop();
+        }
     }
 }
 
