@@ -5,7 +5,6 @@ author:
 description: The Computer Science Undergraduate Student Board (USB) at Purdue University is the liaison between undergraduate CS/DS students and the CS department.
 show_excerpts: false # set to true to show excerpts on the homepage
 include: ["_pages", "_assets/searchData.js"]
-cache_key: {{ site.time | date: '%s%N' }}
 
 collections:
   pages:
@@ -50,6 +49,14 @@ jekyll-minifier:
   uglifier_args:
     harmony: true
 
+autoprefixer:
+  only_production: false
+  browsers: 
+    - last 8 versions
+    - Edge >= 14
+    - Safari >= 5
+    - not dead
+
 plugins:
   - jekyll-seo-tag
   - jemoji
@@ -57,3 +64,4 @@ plugins:
   - jekyll-minifier
 #  - jekyll-target-blank
   - jekyll-redirect-from
+  - jekyll-autoprefixer
