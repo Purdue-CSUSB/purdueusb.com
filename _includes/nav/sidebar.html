@@ -11,7 +11,7 @@
 
     <div id="wiki-list" class="overflow-y-scroll overflow-x-visible">
         {%- if site.wiki.size > 0 -%}
-            <div class="column{% if include.limit_height %} h-max-72@xs {% else %} h-full {% endif %}">
+            <div id="wiki-items" class="column{% if include.limit_height %} h-max-72@xs {% else %} h-full {% endif %}">
                 {%- for post in site.wiki -%}
                     {% unless forloop.last or forloop.first %}
                         <div class="divider--horizontal bg-grey-light"></div>
@@ -25,14 +25,16 @@
                     </a>
                 {%- endfor -%}
             </div>
+            <div id="search-results" class="column overflow-scroll {% if include.limit_height %} h-max-72@xs {% else %} h-full {% endif %} none">
+                <!-- To be filled by JS -->
+            </div>
+            <div id="no-search-results" class="none column align-items-center mb-2 mt-4">
+                <h4 class="font-medium text-center">No results found for <q id="search-query-term" class="font-semibold font-italic"></q></h4>
+                <small><b>Tip:</b> Read about how to <a href="/wiki/searching-our-wiki">optimize your search</a>.</small>
+            </div>
+        {% else %}
+            <h4 class="font-medium text-center">There's nothing here</h4>
         {%- endif -%}
-        <div id="search-results" class="column overflow-scroll {% if include.limit_height %} h-max-72@xs {% else %} h-full {% endif %} none">
-            <!-- To be filled by JS -->
-        </div>
-        <div id="no-search-results" class="none column align-items-center mb-2 mt-4">
-            <h4 class="font-medium text-center">No results found for <q id="search-query-term" class="font-semibold font-italic"></q></h4>
-            <small><b>Tip:</b> Read about how to <a href="/wiki/searching-our-wiki">optimize your search</a>.</small>
-        </div>
     </div>
 </aside>
 

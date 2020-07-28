@@ -58,7 +58,7 @@ function getSearchResultIndices(results) {
 }
 
 function hideSearchResults() {
-    let wikiList = document.querySelector("#wiki-list");
+    let wikiList = document.querySelector("#wiki-items");
     let resultsContainer = document.querySelector("#search-results");
     let noResults = document.querySelector("#no-search-results");
     wikiList.classList.remove("none");
@@ -76,7 +76,7 @@ function removeHighlight() {
 }
 
 function showSearchResults(results) {
-    let wikiList = document.querySelector("#wiki-list");
+    let wikiList = document.querySelector("#wiki-items");
     let resultsContainer = document.querySelector("#search-results");
     let noResults = document.querySelector("#no-search-results");
     if (!results || results.length == 0) {
@@ -98,7 +98,7 @@ function showSearchResults(results) {
 }
 
 function createPostElements(posts) {
-    let wikiList = document.querySelector("#wiki-list");
+    let wikiList = document.querySelector("#wiki-items");
     let clonable = wikiList.firstElementChild;
     return posts.map(p => {
         let clone = clonable.cloneNode(true);
