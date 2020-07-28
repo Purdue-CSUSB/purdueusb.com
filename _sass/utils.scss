@@ -259,6 +259,12 @@
     height: 1px;
 }
 
+.h-max-72 {
+    @include screen-variant() {
+        max-height: spacing-group(72);
+    }
+}
+
 .absolute {
     position: absolute;
 }
