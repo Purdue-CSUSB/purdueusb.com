@@ -6,9 +6,13 @@
 {% if initiative and initiative != nil %}
     <div class="card--initiative my-4 animate">
         <div class="row align-content-start justify-between mb-0">
-            <img src="/assets/images/initiatives/{{ initiative.image }}" class="icon-17@{{mobile-breakpoint-above}} rounded@{{mobile-breakpoint-above}} w-full@{{mobile-breakpoint-below}} img-cover" aria-hidden="true">
+            <picture>
+                <source srcset="/assets/images/initiatives/webp/{{ initiative.image }}.webp" type="image/webp" class="icon-17@{{mobile-breakpoint-above}} rounded@{{mobile-breakpoint-above}} w-full@{{mobile-breakpoint-below}} img-cover" aria-hidden="true">
+                <source srcset="/assets/images/initiatives/png/{{ initiative.image }}.png" type="image/png" class="icon-17@{{mobile-breakpoint-above}} rounded@{{mobile-breakpoint-above}} w-full@{{mobile-breakpoint-below}} img-cover" aria-hidden="true"> 
+                <img src="/assets/images/initiatives/png/{{ initiative.image }}.png" alt="{{ initiative.title | escape }}" class="icon-17@{{mobile-breakpoint-above}} rounded@{{mobile-breakpoint-above}} w-full@{{mobile-breakpoint-below}} img-cover" aria-hidden="true">
+              </picture>
             <div class="flex-break none@{{mobile-breakpoint-above}}"></div>
-            <div class="column mx-4 pt-4">
+            <div class="column mx-4 pt-4" style="flex-basis: 50px;">
                 <div class="row grow-0 justify-between align-items-baseline">
                     <h4 class="mb-5 inline">{{ initiative.title | escape }}</h4>
                     {% if initiative.inactive == true %}

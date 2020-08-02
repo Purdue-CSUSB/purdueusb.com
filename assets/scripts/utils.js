@@ -11,7 +11,7 @@ function finalizeButtons() {
 }
 
 function onMissingMemberPhoto() {
-    let default_image = '/assets/images/members/None.webp';
+    let default_image = '/assets/images/members/png/None.png';
     document.querySelectorAll(".member-color img").forEach(img => {
         img.onerror = function() {
             img.onerror = null;
@@ -28,7 +28,7 @@ function colorImage(img) {
     let colors = ['none', 'red', 'blue', 'primary'];
     var parent = img.parentNode;
     if (!parent.className.includes("member-color"))
-        parent = parent.parentNode;
+        parent = parent.parentNode.parentNode;
     parent.classList.add(`bg-${colors[colors.length * Math.random() | 0]}-light`);
     img.style = "mix-blend-mode: multiply;"
 }
@@ -78,11 +78,13 @@ function scrollToPost() {
     let post = document.querySelector("#active");
     // janky hack to tell if we're on a screen worth scrolling
     let verticalSeparator = document.querySelector("#postVerticalSeparator");
-    let style = window.getComputedStyle(verticalSeparator);
-    if (post && style && style.display != 'none') {
-        post.scrollIntoView(true);
-    } else {
-        scrollTop();
+    if (verticalSeparator) {
+        let style = window.getComputedStyle(verticalSeparator);
+        if (post && style && style.display != 'none') {
+            post.scrollIntoView(true);
+        } else {
+            scrollTop();
+        }
     }
 }
 

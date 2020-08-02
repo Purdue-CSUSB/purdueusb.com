@@ -1,39 +1,39 @@
 - title: CS 191 Panel
-  image: CS191_Panel_Logo.webp
+  image: CS191_Panel_Logo
   description: Q&A panel of upperclass CS/DS students
   members:
 
 - title: CS 193
-  image: CS193_Logo.webp
+  image: CS193_Logo
   description: Tools course taught by USB members
 
 - title: Virtual Office Hours
-  image: Virtual_Office_Hours_Logo.webp
+  image: Virtual_Office_Hours_Logo
   description: Innovative new way to hold office hours
 
 - title: Help Room
-  image: Help_Room_Logo.webp
+  image: Help_Room_Logo
   description: CS 193, CS 180, CS 182, and CS 240 Help
   buttonText: View Times
   buttonLink: /helproom
   buttonTarget: _self
 
 - title: Office Hours
-  image: Office_Hours_Logo.webp
+  image: Office_Hours_Logo
   description: Come talk with us!
   buttonText: View Times
   buttonLink: /officehours
 
 - title: Undergraduate Student Forum
-  image: Student_Forum_Logo.webp
+  image: Student_Forum_Logo
   description: Forum for undergrads to discuss their experiences
 
 - title: USB Tutor List
-  image: Tutor_List.webp
+  image: Tutor_List
   description: Tutor list maintained by USB for students looking for extra help
   buttonText: View Tutors
   buttonLink: /tutors/
 
 - title: Mentorship
-  image: Mentorship.webp
+  image: Mentorship
   description: Working on creating a supportive community between upperclassmen and underclassmen
