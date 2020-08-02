@@ -5,7 +5,6 @@ const events = {
         scrollToPost,
         fixTitleCase,
         setLinkTargetBlank,
-        anchors,
     ],
     "load": [
         setupInitiativeGrid,
