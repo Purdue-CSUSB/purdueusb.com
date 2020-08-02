@@ -124,6 +124,9 @@
 
 @mixin shadow($type: 'drop', $size: $shadow-default, $color: $shadow-color-default) {
     @if $type == 'drop' or $type == 'drop-shadow' {
+        -webkit-transform: translateZ(0);
+        -webkit-perspective: 1000;
+        -webkit-backface-visibility: hidden;
         -webkit-filter: drop-shadow(#{$size} #{$color});
         filter: drop-shadow(#{$size} #{$color});
         transition: filter $animation-delay ease-in-out;
