@@ -137,7 +137,6 @@ Plugins currently in use:
 - Jekyll SEO tag
 - Jemoji (github emoji support)
 - Jekyll purgecss
-- ~~Jekyll target-blank (opens markdown links in new window)~~ *randomly breaks build and/or contact page*
 - Jekyll minifier *Netlify also handles minification*
 - jekyll-redirect-from
 
