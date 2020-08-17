@@ -12,7 +12,7 @@
                 <img src="/assets/images/initiatives/png/{{ initiative.image }}.png" alt="{{ initiative.title | escape }}" class="icon-17@{{mobile-breakpoint-above}} rounded@{{mobile-breakpoint-above}} w-full@{{mobile-breakpoint-below}} img-cover" aria-hidden="true">
               </picture>
             <div class="flex-break none@{{mobile-breakpoint-above}}"></div>
-            <div class="column mx-4 pt-4" style="flex-basis: 50px;">
+            <div class="column mx-4 pt-4 safari-flexbasis-fix">
                 <div class="row grow-0 justify-between align-items-baseline">
                     <h4 class="mb-5 inline">{{ initiative.title | escape }}</h4>
                     {% if initiative.inactive == true %}
