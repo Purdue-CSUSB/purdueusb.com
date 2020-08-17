@@ -12,9 +12,17 @@
             <div class="{% if include.overlay %} member-color rounded--circle {%endif%} row--nowrap align-items-center">
                 <a {% if member_obj.site != "" and member_obj.site != nil %} href="{{member_obj.site}}" class="clickable no-decoration" {% else %} class="not-clickable no-decoration" {% endif %} 
                         title="{{ member_obj.name }}" class="no-decoration" target="_blank" {% if include.overlay %} tabindex="-1" {% endif %}>
-                    {% assign image = site.static_files | where: "basename", member_obj.name | first %}
-                    {% assign image_path = image.path | default: "/assets/images/members/None.webp" %}
-                    <img src="{{image_path}}" class="{{size}} rounded--circle" aria-hidden="true">
+                    {% assign image_png_name = member_obj.name | replace: " ", "-" | append: ".png" %}
+                    {% assign image_webp_name = member_obj.name | replace: " ", "-" | append: ".webp" %}
+                    {% assign image_png = site.static_files | where: "name", image_png_name | first %}
+                    {% assign image_webp = site.static_files | where: "name", image_webp_name | first %}
+                    {% assign image_png_path = image_png.path | default: "/assets/images/members/png/None.png" %}
+                    {% assign image_webp_path = image_webp.path | default: "/assets/images/members/webp/None.webp" %}
+                    <picture>
+                        <source srcset="{{image_webp_path}}" type="image/webp" class="{{size}} rounded--circle" aria-hidden="true">
+                        <source srcset="{{image_png_path}}" type="image/png" class="{{size}} rounded--circle" aria-hidden="true"> 
+                        <img src="{{image_png_path}}" alt="Picture of {{ member_obj.name }}" class="{{size}} rounded--circle" aria-hidden="true">
+                      </picture>
                     {% if include.show_name %}
                         <span class="ml-2">{{ member_obj.name }}</span>
                     {% endif %}

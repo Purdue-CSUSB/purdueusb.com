@@ -11,7 +11,7 @@ function finalizeButtons() {
 }
 
 function onMissingMemberPhoto() {
-    let default_image = '/assets/images/members/None.webp';
+    let default_image = '/assets/images/members/png/None.png';
     document.querySelectorAll(".member-color img").forEach(img => {
         img.onerror = function() {
             img.onerror = null;
@@ -28,7 +28,7 @@ function colorImage(img) {
     let colors = ['none', 'red', 'blue', 'primary'];
     var parent = img.parentNode;
     if (!parent.className.includes("member-color"))
-        parent = parent.parentNode;
+        parent = parent.parentNode.parentNode;
     parent.classList.add(`bg-${colors[colors.length * Math.random() | 0]}-light`);
     img.style = "mix-blend-mode: multiply;"
 }

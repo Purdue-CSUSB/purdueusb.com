@@ -106,10 +106,6 @@ h1, h2, h3, .header, button, .button {
     @extend .font--height-normal;
 }
 
-h1, h2, h3 {
-    @include shadow-text;
-}
-
 h1, h3, h4, button, .button, input[type="submit"] {
     @extend .font-bold;
 }

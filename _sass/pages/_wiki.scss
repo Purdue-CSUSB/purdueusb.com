@@ -4,8 +4,6 @@
         text-overflow: ellipsis;
         display: block;
         -webkit-line-clamp: 2;
-        max-height: 2rem * $line-height-base;
-        overflow: hidden;
     }
     max-height: 75vh;
     min-height: 300px;

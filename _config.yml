@@ -62,6 +62,5 @@ plugins:
   - jemoji
   - jekyll-purgecss
   - jekyll-minifier
-#  - jekyll-target-blank
   - jekyll-redirect-from
   - jekyll-autoprefixer
