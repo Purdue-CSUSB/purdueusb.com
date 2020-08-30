@@ -13,7 +13,7 @@
         {%- if site.wiki.size > 0 -%}
             <div id="wiki-items" class="column{% if include.limit_height %} h-max-72@xs {% else %} h-full {% endif %}">
                 {%- for post in site.wiki -%}
-                    {% unless forloop.last or forloop.first %}
+                    {% unless forloop.first %}
                         <div class="divider--horizontal bg-grey-light"></div>
                     {% endunless %}
                     <a href="{{ post.url | relative_url }}" class="no-decoration" target="_self">

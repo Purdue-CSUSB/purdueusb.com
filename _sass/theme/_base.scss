@@ -89,6 +89,8 @@ figcaption {
  */
 ul, ol {
     @extend .ml-2;
+    text-indent: -1.5em;
+    padding-left: 1em;
 }
 
 li {
@@ -156,8 +158,6 @@ button, .button, input[type="submit"] {
 
 li, ul, ol {
     @extend .font-listitem;
-    text-indent: -1.2em;
-    padding-left: 1em;
 }
 
 ul, ol, .list {
