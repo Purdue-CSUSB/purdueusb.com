@@ -30,3 +30,7 @@ gem 'jemoji'
 gem 'jekyll-purgecss'
 gem 'jekyll-minifier'
 gem 'jekyll-redirect-from'
+
+group :jekyll_plugins do
+  gem 'jekyll-commonmark-ghpages'
+end

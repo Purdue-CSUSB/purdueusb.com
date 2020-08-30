@@ -156,6 +156,8 @@ button, .button, input[type="submit"] {
 
 li, ul, ol {
     @extend .font-listitem;
+    text-indent: -1.2em;
+    padding-left: 1em;
 }
 
 ul, ol, .list {
@@ -312,7 +314,8 @@ table {
     @extend .mb-3, .w-full;
     text-align: $table-text-align;
     border-collapse: collapse;
-    border: 1px solid $accent-grey-light;
+    display: block;
+    overflow-x: auto;
 
     tr {
         &:nth-child(even) {
