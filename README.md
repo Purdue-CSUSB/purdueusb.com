@@ -7,7 +7,7 @@ This is a static site built using [Jekyll](https://jekyllrb.com), designed on [F
 ## **Contribution**
 
 ### **Editing Site Information**
-~~Currently with automatic GH pages builds, information can be edited directly on github.~~ Editing site information on github may be automatically deployed by netlify [*confirmation needed*].
+Directly editing the main branch is forbidden. To make updates, edit another branch and submit a pull request. Netlify bot will comment on your PR with a link to a deployed preview of your changes. When you merge into main a build will commence under the Actions tab.
 
 *Please take a moment to familiarize yourself with [YAML](https://learnxinyminutes.com/docs/yaml/) and [Markdown](https://learnxinyminutes.com/docs/markdown/) formats.*
 
@@ -16,6 +16,17 @@ Please use an [obfuscation technique](https://mothereff.in/html-entities) to pre
 
 #### **Images**
 Please run `webp-convert` on any directories of images you add that are not in webp format.
+
+#### **Pages & Redirects**
+To add a new page, create an html file in the `_pages` directory. You can access it at `purdueusb.com/filename`. You can use the `redirect_to` and `redirect_from` frontmatter attributes to add appropriate redirects or page aliases. Example:
+```
+---
+title: USB Office Hours
+redirect_from:
+    - /oh/
+redirect_to: https://www.notion.so/0bb4e5da1b154b258d8bb00793117526?v=3aa761f5611f4e788d6b9855a6c20dd0
+---
+```
 
 #### **USB Members**
 1. Edit either `_data/members.yml` or `_data/alumni.yml` with their name, title, class rank, and (optionally) an appropriate personal website.
@@ -77,7 +88,7 @@ NPM is required ([version here](.node-version)) to run `purgecss` in production.
 
 You can get Jekyll running by following the [installation tutorial](https://jekyllrb.com/docs/installation/). There are instructions for Windows, macOS, and Linux. Once Jekyll is properly installed, run `bundle exec jekyll serve` in the repository's root directory.
 
-  - **Linux users**: you can use `run.sh [-hilpt]` to run the jekyll build server conveniently.
+  - **Linux users**: you can use `run.sh [-chilpt]` to run the jekyll build server conveniently.
     - -c) Clean jekyll cache files.
     - -h) Headless mode (don't open your browser automatically).
     - -i) Run `bundle install` at start.
@@ -116,12 +127,13 @@ Note: Jekyll does not parse changes to `_config.yml` in watch mode. You must res
     /*! purgecss end ignore */
     ```
   - Purgecss doesn't like to obey ignore statements ¯\\_(ツ)\_/¯
-- Live reload can cause **major** cache buildup and freeze your computer.
+- Live reload can cause **major** cache buildup and exhaust your ram.
 - An error seems to cause intermittent failure to load live changes:
     ```ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf```
 - Build time is `s l o w` because of css class generation, while production builds are even slower to purge most of those classes. This is more or less a `wontfix` issue because it gives css writers major flexibility.
 - Don't use tab characters in `_config.yml`
-- `warning: Using the last argument as keyword parameters is deprecated` -> run `bundle update jekyll` to get to `4.0.1`.
+- `warning: Using the last argument as keyword parameters is deprecated` -> fix by running `bundle update jekyll` to get to `4.0.1`.
+- `webp` is shamefully not supported by popular safari versions
 
 ### Testing
 You can access your changes from another device on your local network through your computer's local IP (e.g. `192.168.1.1:4000`).
@@ -139,6 +151,7 @@ Plugins currently in use:
 - Jekyll purgecss
 - Jekyll minifier *Netlify also handles minification*
 - jekyll-redirect-from
+- jekyll-autoprefixer
 
 Local Dependencies:
 - Highlight.js: Syntax highlighting
@@ -147,6 +160,7 @@ Local Dependencies:
 
 NPM Dependencies:
 - Purgecss: Remove unused css classes
+- Autoprefixer: Add browser-specific css attributes.
 
 CDN Dependencies:
 - Anchorjs: Provide anchor link support
