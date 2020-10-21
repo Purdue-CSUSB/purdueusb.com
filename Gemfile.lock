@@ -12,6 +12,8 @@ GEM
     autoprefixer-rails (9.8.5)
       execjs
     colorator (1.1.0)
+    commonmarker (0.17.13)
+      ruby-enum (~> 0.5)
     concurrent-ruby (1.1.6)
     cssminify2 (2.0.1)
     em-websocket (0.5.1)
@@ -46,8 +48,13 @@ GEM
       rouge (~> 3.0)
       safe_yaml (~> 1.0)
       terminal-table (~> 1.8)
-    jekyll-autoprefixer (1.0.2)
-      autoprefixer-rails (~> 9.3)
+    jekyll-commonmark (1.3.1)
+      commonmarker (~> 0.14)
+      jekyll (>= 3.7, < 5.0)
+    jekyll-commonmark-ghpages (0.1.6)
+      commonmarker (~> 0.17.6)
+      jekyll-commonmark (~> 1.2)
+      rouge (>= 2.0, < 4.0)
     jekyll-feed (0.13.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-minifier (0.1.10)
@@ -95,6 +102,8 @@ GEM
       ffi (~> 1.0)
     rexml (3.2.4)
     rouge (3.20.0)
+    ruby-enum (0.8.0)
+      i18n
     safe_yaml (1.0.5)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -119,7 +128,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.0.1)
-  jekyll-autoprefixer
+  jekyll-commonmark-ghpages
   jekyll-feed (~> 0.12)
   jekyll-minifier
   jekyll-purgecss

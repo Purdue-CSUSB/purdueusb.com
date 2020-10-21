@@ -30,4 +30,7 @@ gem 'jemoji'
 gem 'jekyll-purgecss'
 gem 'jekyll-minifier'
 gem 'jekyll-redirect-from'
-gem 'jekyll-autoprefixer'
+
+group :jekyll_plugins do
+  gem 'jekyll-commonmark-ghpages'
+end

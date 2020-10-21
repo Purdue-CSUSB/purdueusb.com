@@ -89,6 +89,8 @@ figcaption {
  */
 ul, ol {
     @extend .ml-2;
+    text-indent: -1.5em;
+    padding-left: 1em;
 }
 
 li {
@@ -312,7 +314,8 @@ table {
     @extend .mb-3, .w-full;
     text-align: $table-text-align;
     border-collapse: collapse;
-    border: 1px solid $accent-grey-light;
+    display: block;
+    overflow-x: auto;
 
     tr {
         &:nth-child(even) {
