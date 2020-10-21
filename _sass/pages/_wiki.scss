@@ -22,5 +22,8 @@
     @include media-query($below: $screen-small) {
         max-height: 55vh;
     }
+}
+
+#wiki-items, #search-results {
     min-height: 200px;
 }

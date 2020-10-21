@@ -77,15 +77,7 @@ $spacings-negative: range-space-map(-$spacing-max-group, -1);
 
 $pseudo-classes: (
     'hover', 
-    'focus', 
-    'invalid', 
-    'active', 
-    'visited', 
-    'link', 
-    'checked', 
-    'disabled', 
-    'empty', 
-    'enabled',
+    'focus',
 );
 
 $colors: (
@@ -338,7 +330,7 @@ $spacing-directions:       (top: "-top", bottom: "-bottom", left: "-left", right
 @each $property in ("height", "width") {
     .#{str-slice($property, 1, 1)} {
         @include generate-subclass($percentages, $property);
-        @include generate-subclass($spacings, ($property, 'min-#{$property}', 'max-#{$property}'));
+        @include generate-subclass($spacings, ($property));
     }
     .#{str-slice($property, 1, 1)}-max {
         @include generate-subclass($percentages, $property);
@@ -375,9 +367,9 @@ $max-icon-multiple: 21;
         $map: map-merge($map, ($factor: $ratio));
     }
 
-    @include generate-subclass($map, ('width', 'max-width', 'min-width', 'max-height'));
+    @include generate-subclass($map, ('width', 'max-width', 'max-height'));
     &-square {
-        @include generate-subclass($map, ('width', 'max-width', 'min-width', 'height'));
+        @include generate-subclass($map, ('width', 'height'));
     }
 }
 

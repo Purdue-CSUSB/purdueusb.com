@@ -48,9 +48,18 @@ jekyll-minifier:
   uglifier_args:
     harmony: true
 
+autoprefixer:
+  only_production: false
+  browsers: 
+    - last 8 versions
+    - Edge >= 14
+    - Safari >= 5
+    - not dead
+
 plugins:
   - jekyll-seo-tag
   - jemoji
   - jekyll-purgecss
   - jekyll-minifier
   - jekyll-redirect-from
+  - jekyll-autoprefixer

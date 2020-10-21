@@ -1,0 +1,14 @@
+current directory: /home/noah/Documents/purdueusb.com/vendor/bundle/ruby/2.7.0/gems/json-2.3.0/ext/json
+/usr/bin/ruby -I /usr/share/rubygems -r ./siteconf20201021-60862-1y6vo87.rb extconf.rb
+creating Makefile
+
+current directory: /home/noah/Documents/purdueusb.com/vendor/bundle/ruby/2.7.0/gems/json-2.3.0/ext/json
+make "DESTDIR=" clean
+rm -f  *.o  *.bak mkmf.log .*.time
+
+current directory: /home/noah/Documents/purdueusb.com/vendor/bundle/ruby/2.7.0/gems/json-2.3.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for 'all'.
+
+current directory: /home/noah/Documents/purdueusb.com/vendor/bundle/ruby/2.7.0/gems/json-2.3.0/ext/json
+make "DESTDIR=" install
