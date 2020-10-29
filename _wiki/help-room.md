@@ -19,7 +19,7 @@ Below are the times tutors are available to help:
 | 1:00pm - 3:00pm | Abhishek Gunasekar | | | Samantha Coe |
 | 3:00pm - 5:00pm | | Youngsik Yoon | Jasmine Singh |  |
 | 5:00pm - 7:00pm | | | Alice Gontijo| |
-| 7:00pm - 9:00pm |<ul><li>Hajera Zemy</li><li>Rewati Shitole</li><li>Aditya Subramaniam</li></ul> | <ul><li>Aditya Subramaniam</li><li>Jacky Zheng</li><li>Jasmine Singh</li></ul>| <ul><li>Rewati Shitole</li><li>Samantha Coe</li></ul>| <ul><li>Hajera Zemy</li><li>Prasha Bora</li><li>Youngsik Yoon</li></ul> |
+| 7:00pm - 9:00pm |<ul><li>Hajera Zemy</li><li>Rewati Shitole</li><li>Aditya Subramaniam</li></ul> | <ul><li>Aditya Subramaniam</li><li>Jacky Zheng</li><li>Jasmine Singh</li></ul>| <ul><li>Rewati Shitole</li><li>Samantha Coe</li></ul>| |
 
 In order to sign up to get help please fill out this form during one of the appropriate times: [https://bit.ly/34P0emD](https://bit.ly/34P0emD)
 
