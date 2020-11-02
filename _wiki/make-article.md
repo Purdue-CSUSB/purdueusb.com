@@ -15,7 +15,7 @@ The Student Wiki is designed to be a source of information that is useful for th
 #### Step 1
 First, you need to fork the purdueusb.com website repository.  This can be done by going to the [GitHub repository page](https://github.com/Purdue-CSUSB/purdueusb.com), and click the "Fork" button on the top right.
 
-![Fork Repo](https://user-images.githubusercontent.com/25762130/97835755-e3fca180-1ca8-11eb-9427-32db9f041fc3.png)
+![Fork Repo](https://user-images.githubusercontent.com/25762130/97838214-b8c88100-1cad-11eb-9cd1-8a96f732c233.png)
 
 #### Step 2
 Once you are in your fork of the Purdue USB website repository, navigate to the `_wiki` directory.
