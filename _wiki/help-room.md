@@ -15,9 +15,9 @@ Below are the times tutors are available to help:
 | | Monday | Tuesday | Wednesday | Thursday |
 | ---- | ---- | ---- | ---- | ---- |
 | 9:00am - 11:00am | Prasha Bora | | |
-| 11:00am - 1:00pm | | | | Gowri Harish |
-| 1:00pm - 3:00pm | Abhishek Gunasekar | | Jasmine Singh | Samantha Coe |
-| 3:00pm - 5:00pm | | Youngsik Yoon |  |  |
+| 11:00am - 1:00pm | | | | |
+| 1:00pm - 3:00pm | Abhishek Gunasekar | |  | Samantha Coe |
+| 3:00pm - 5:00pm | | Youngsik Yoon | Jasmine Singh |  |
 | 5:00pm - 7:00pm | | | Alice Gontijo| |
 | 7:00pm - 9:00pm |<ul><li>Hajera Zemy</li><li>Rewati Shitole</li><li>Aditya Subramaniam</li></ul> | <ul><li>Aditya Subramaniam</li><li>Jacky Zheng</li><li>Jasmine Singh</li></ul>| <ul><li>Rewati Shitole</li><li>Samantha Coe</li></ul>| <ul><li>Hajera Zemy</li><li>Youngsik Yoon</li></ul> |
 
