@@ -59,5 +59,11 @@ EPICS is a service-learning design program in which teams of students partner wi
 ##### HIST 371: Society & Rock & Roll
 Examines post-WWII America and its relation to music, specifically rock and roll. 
 
+#### Honors Courses
+There is a misconception that you need to be in the Honors College to take HONR courses. All you need is to have a minimum of a 3.0 GPA in order to enroll in HONR courses. There are some (i.e. HONR 19901 and HONR 19902 that are restricted to first-year honors students). 
+
+##### HONR 19903: Interdisciplinary Approach to Writing
+This course meets the university core requirement for written communication and *may* be used as a substitute for English 106 or 108 (check with your primary advisor). This course is taught by different professors with each section revolving around a specific theme (i.e. James Bond, political and legal space, etc.) that c.
+
 ### Grade Options
 Want to take a course you’re interested in but don’t want it to count towards your GPA? Students also have the opportunity to change the grade mode for some classes to Pass/No Pass. In this grade mode, your final grade will be either P (Pass) or NP (No Pass). This grade will not impact your GPA. Note that if you change a grade mode for a certain class, this class will not count toward your degree requirements even if you get a P. The amount of credits of a P/NP class, however, counts towards your overall credit rank- for example, if you’re taking five classes that are each three credits and one class has the P/NP grade mode, you are still a 15 credit student. To fully understand if you can change a course to P/NP and how it will impact your progression in your degree, discuss this option more with your advisor. 
