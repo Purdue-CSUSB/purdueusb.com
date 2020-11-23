@@ -33,7 +33,7 @@ After changing these settings, your options page should look like this:
 
 Enter your Purdue username (without "@purdue.edu") and password (regular password, NOT BoilerKey), then click "Connect."
 
-![PAL3.0 Completed settings](/assets/images/wiki/connect-vpn/step3.png)
+![PAL3.0 Completed settings](/assets/images/wiki/connect-pal3.0-linux/step3.png)
 
 #### Step 4
 

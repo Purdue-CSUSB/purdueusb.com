@@ -44,4 +44,38 @@
             {% endif %}
         </div>
     </div>
+{% else %}
+{% assign size = include.size | default: "icon-10" %}
+<div class="{{include.spacing}} animate">
+<div class="{% if include.overlay %} overlay-container shadow-drop shadow--center--soft:hover {%endif%} member border-box {% if member_obj.site != nil and member_obj.site != '' %} clickable {%endif%} {% if include.shadow == false %} flat {% endif %}   ">
+        <div class="{% if include.overlay %} member-color rounded--circle {%endif%} row--nowrap align-items-center">
+            <span class="not-clickable no-decoration" title="{{ include.member }}" class="no-decoration" target="_blank" {% if include.overlay %} tabindex="-1" {% endif %}>
+                {% assign image_png_path = "/assets/images/members/png/None.png" %}
+                {% assign image_webp_path = "/assets/images/members/webp/None.webp" %}
+                <picture>
+                    <source srcset="{{image_webp_path}}" type="image/webp" class="{{size}} rounded--circle" aria-hidden="true">
+                    <source srcset="{{image_png_path}}" type="image/png" class="{{size}} rounded--circle" aria-hidden="true"> 
+                    <img src="{{image_png_path}}" alt="Picture of {{ member_obj.name }}" class="{{size}} rounded--circle" aria-hidden="true">
+                  </picture>
+                {% if include.show_name %}
+                    <span class="ml-2">{{ include.member }}</span>
+                {% endif %}
+            </a>
+        </div>
+        {% if include.overlay %}
+            <div class="overlay fade-in-out rounded--circle">
+                <a class="not-clickable no-decoration" title="{{ include.member }}" class="no-decoration" target="_blank">
+                    <div class="column shadow-text-dark h-full w-full justify-center align-content-center align-items-center">
+                        <h4 class="light font-height-normal text-center my-2@md-above my-1@sm-below mx-4 font-body@md-below">{{ member_obj.name }}</h4>
+                        <div class="mx-2 my-2@md-above my-1@sm-below">
+                            <p class="font-bold ma-0 light font-caption@md-below">{{ member_obj.title }}</p>
+                            <small class="font-bold@lg-above font-semibold@md-below font-italic light">{{ member_obj.class }}</small>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
 {% endif %}
