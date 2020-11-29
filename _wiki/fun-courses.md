@@ -59,5 +59,14 @@ EPICS is a service-learning design program in which teams of students partner wi
 ##### HIST 371: Society & Rock & Roll
 Examines post-WWII America and its relation to music, specifically rock and roll. 
 
+#### Honors Courses
+There is a misconception that you need to be in the Honors College to take HONR courses. All you need is to have a minimum of a 3.0 GPA in order to enroll in HONR courses, check with your primary advisor about how to sign up for HONR courses. There are some (i.e. HONR 19901 and HONR 19902 that are restricted to first-year honors students). 
+
+##### HONR 29900: Visiting Scholars Seminar
+One credit course where students attend events (currently virtual due to COVID-19) with visiting scholars and engage with their work. Every semester, the Honors College hosts a range of visitors from across disciplines.
+
+##### HONR 29900: Honors College Study Away Programs
+Study Away programs are a great way to learn about different communities, cultures, and socio-economic and technical issues in a variety of settings. They are offered during October break, spring break, Maymesters, and over the summer. Study Away programs are a great way to gain some experience abroad in a busy schedule. Some Study Away programs may also be a great way to fulfill your Great Issues requirement, check with your primary advisor about which ones. Learn more [here](https://honors.purdue.edu/current-students/study-away/index.php)!
+
 ### Grade Options
 Want to take a course you’re interested in but don’t want it to count towards your GPA? Students also have the opportunity to change the grade mode for some classes to Pass/No Pass. In this grade mode, your final grade will be either P (Pass) or NP (No Pass). This grade will not impact your GPA. Note that if you change a grade mode for a certain class, this class will not count toward your degree requirements even if you get a P. The amount of credits of a P/NP class, however, counts towards your overall credit rank- for example, if you’re taking five classes that are each three credits and one class has the P/NP grade mode, you are still a 15 credit student. To fully understand if you can change a course to P/NP and how it will impact your progression in your degree, discuss this option more with your advisor. 
