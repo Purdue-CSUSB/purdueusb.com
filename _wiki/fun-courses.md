@@ -59,7 +59,6 @@ EPICS is a service-learning design program in which teams of students partner wi
 ##### HIST 371: Society & Rock & Roll
 Examines post-WWII America and its relation to music, specifically rock and roll. 
 
-=======
 #### Honors Courses
 There is a misconception that you need to be in the Honors College to take HONR courses. All you need is to have a minimum of a 3.0 GPA in order to enroll in HONR courses, check with your primary advisor about how to sign up for HONR courses. There are some (i.e. HONR 19901 and HONR 19902 that are restricted to first-year honors students). 
 
