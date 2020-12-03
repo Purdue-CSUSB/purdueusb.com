@@ -52,7 +52,7 @@ categories: campus
 - description: Describe what the article is about. Keep this down to one sentence.
 - author: List of author names exactly as they appear in membership data files.
 - date: Date of most recent edit
-- categories: Category this fits the article, like `technical` or `campus`. Multiple categories can be included, as long as they are comma separated, an between square brackets.
+- categories: Category this fits the article, like `technical` or `campus`. Multiple categories can be included, as long as they are comma separated and between square brackets.
 
 **A note about images**: Please only use images hosted by USB - not from an outside source. In addition, use descriptive and readable captions for wiki images, as they will be displayed to the user and read aloud via screen readers.  Add images to a directory in `/assets/images/wiki/<article-name>`.  From there, will be able to reference local images in your article like so:
 
