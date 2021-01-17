@@ -12,7 +12,7 @@ GEM
     autoprefixer-rails (9.8.6.5)
       execjs
     colorator (1.1.0)
-    commonmarker (0.17.13)
+    commonmarker (0.21.0)
       ruby-enum (~> 0.5)
     concurrent-ruby (1.1.7)
     cssminify2 (2.0.1)
@@ -110,6 +110,8 @@ GEM
       i18n
     safe_yaml (1.0.5)
     sassc (2.1.0)
+      ffi (~> 1.9)
+    sassc (2.1.0-x64-mingw32)
       ffi (~> 1.9)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
