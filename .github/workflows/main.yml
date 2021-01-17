@@ -33,7 +33,7 @@ jobs:
       - name: 🔨 Install gems & build site
         uses: limjh16/jekyll-action-ts@v2
         with:
-          enable_cache: false
+          enable_cache: true
       - name: 🏷 Prepare tag
         run: |
           git_hash=$(git rev-parse --short "$GITHUB_SHA")
