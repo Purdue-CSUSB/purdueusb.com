@@ -19,7 +19,7 @@ Below are the times tutors are available to help:
 | 1:00pm - 3:00pm | | | | |
 | 3:00pm - 5:00pm | | <ul><li>Prasha Bora</li></ul> | <ul><li>Jasmine Singh</li></ul> |  |
 | 5:00pm - 7:00pm | | | | |
-| 7:00pm - 9:00pm |<ul><li>Aakarshit Pandey</li></ul> | <ul><li>Aryan Wadhwani</li><li>Jasmine Singh</li></ul>| <ul><li>Hajera Zemy</li></ul>| <ul><li>Hajera Zemy</li></ul> |
+| 7:00pm - 9:00pm |<ul><li>Aakarshit Pandey</li></ul> | <ul><li>Aryan Wadhwani\n</li><li>Jasmine Singh</li></ul>| <ul><li>Hajera Zemy</li></ul>| <ul><li>Hajera Zemy</li></ul> |
 
 In order to sign up to get help please fill out this form during one of the appropriate times: [https://bit.ly/34P0emD](https://bit.ly/34P0emD)
 
