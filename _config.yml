@@ -38,7 +38,7 @@ sass:
 highlighter: none
 markdown: CommonMark
 commonmark:
-  options: ["SMART", "FOOTNOTES"]
+  options: ["SMART", "FOOTNOTES", "UNSAFE"]
   extensions: ["strikethrough", "autolink", "table", "tagfilter"]
 
 css_dir: "assets"
