@@ -33,5 +33,5 @@ gem 'jekyll-redirect-from'
 gem 'jekyll-autoprefixer'
 
 group :jekyll_plugins do
-  gem 'jekyll-commonmark-ghpages'
+  gem 'jekyll-commonmark'
 end
