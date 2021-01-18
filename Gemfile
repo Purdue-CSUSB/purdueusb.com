@@ -32,6 +32,8 @@ gem 'jekyll-minifier'
 gem 'jekyll-redirect-from'
 gem 'jekyll-autoprefixer'
 
+gem 'sassc', '2.1.0'
+
 group :jekyll_plugins do
   gem 'jekyll-commonmark'
 end
