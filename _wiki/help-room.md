@@ -16,7 +16,7 @@ Below are the times tutors are available to help:
 | ---- | ---- | ---- | ---- | ---- |
 | 9:00am - 11:00am | | | |
 | 11:00am - 1:00pm | | | | <ul><li>Gowri Harish</li></ul> |
-| 1:00pm - 3:00pm | | <ul><li>Youngsik Yoon</li></ul>| | <ul><li>Youngsik Yoon</li></ul> |
+| 1:00pm - 3:00pm | <ul><li>Youngsik Yoon</li></ul> | | | |
 | 3:00pm - 5:00pm | | <ul><li>Prasha Bora</li></ul> | |  |
 | 5:00pm - 7:00pm | | <ul><li>Abhishek Gunasekar</li></ul> | <ul><li>Aakarshit Pandey</li></ul> | <ul><li>Jasmine Singh</li></ul> |
 | 7:00pm - 9:00pm | <ul><li>Aakarshit Pandey</li><li>Rewati Shitole</li></ul> | <ul><li>Jasmine Singh</li></ul> | <ul><li>Hajera Zemy</li><li>Rewati Shitole</li></ul> | <ul><li>Hajera Zemy</li></ul> |
