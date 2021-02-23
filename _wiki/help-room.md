@@ -14,11 +14,11 @@ Below are the times tutors are available to help:
 
 | | Monday | Tuesday | Wednesday | Thursday |
 | ---- | ---- | ---- | ---- | ---- |
-| 9:00am - 11:00am | <ul><li>Hao Wu</li><li>Abhishek Gunasekar</li></ul> | | |
+| 9:00am - 11:00am | <ul><li>Hao Wu</li></ul> | | |
 | 11:00am - 1:00pm | | | | <ul><li>Gowri Harish</li></ul> |
 | 1:00pm - 3:00pm | <ul><li>Youngsik Yoon</li><li>Chirayu Garg</li></ul> | | | |
 | 3:00pm - 5:00pm | | <ul><li>Prasha Bora</li></ul> | |  |
-| 5:00pm - 7:00pm | |  | <ul><li>Chandiran Dhukkaran</li></ul> | <ul><li>Jasmine Singh</li></ul> |
+| 5:00pm - 7:00pm | | <ul><li>Abhishek Gunasekar</li></ul> | <ul><li>Chandiran Dhukkaran</li></ul> | <ul><li>Jasmine Singh</li></ul> |
 | 7:00pm - 9:00pm | <ul><li>Aakarshit Pandey</li><li>Rewati Shitole</li></ul> | <ul><li>Aryan Wadhwani</li></ul> | <ul><li>Arianna Smith</li></ul> | <ul><li>Hajera Zemy</li></ul> |
 
 In order to sign up to get help please fill out this form during one of the appropriate times: [https://bit.ly/34P0emD](https://bit.ly/34P0emD)
