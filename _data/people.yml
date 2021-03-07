@@ -23,17 +23,9 @@ members: &members
     class: Senior
     site: https://www.linkedin.com/in/albert-zhong-695961149/
 
-  - name: CJ Enright
-    class: Senior
-    site: https://www.linkedin.com/in/cjenright/
-
   - name: Sagar Nattuvetty
     class: Senior
     site: 
-
-  - name: Sera Savaş
-    class: Senior
-    site: https://www.linkedin.com/in/sera-savas-179968148/
 
   - name: Christopher Lehman
     class: Junior
@@ -83,11 +75,45 @@ members: &members
     class: Sophomore
     site: 
 
+  - name: Anushka Sharma
+    class: First-Year
+    site:
+  
+  - name: Blisha Molin Mohan Das
+    class: First-Year
+    site: 
+
+  - name: Eddie Kim
+    class: First-Year
+    site: 
+
+  - name: Elijah Colwill
+    class: First-Year
+    site: 
+    
+  - name: Grace Keeton
+    class: First-Year
+    site: 
+    
+  - name: Rohan Purandare
+    class: First-Year
+    site: 
+  
+  - name: Vindhya Banda
+    class: First-Year
+    site: 
+
   - name: Sean Flannery
     title: GSB Honorary Member
     site: https://www.linkedin.com/in/sflanner/
 
 alumni: &alumni
+  - name: Sera Savaş
+    class: Senior
+    site: https://www.linkedin.com/in/sera-savas-179968148/
+  - name: CJ Enright
+    class: Senior
+    site: https://www.linkedin.com/in/cjenright/
   - name: Zach Bryant
     title: Former President
     class: 2020
