@@ -89,7 +89,7 @@ members: &members
 
   - name: Elijah Colwill
     class: First-Year
-    site: 
+    site: https://www.linkedin.com/in/elijahcolwill/
     
   - name: Grace Keeton
     class: First-Year
@@ -100,8 +100,8 @@ members: &members
     site: https://www.linkedin.com/in/rohanpurandare/
   
   - name: Vindhya Banda
-    class: First-Year
-    site: 
+    class: Sophomore
+    site: https://www.linkedin.com/in/vindhya-banda/
 
   - name: Sean Flannery
     title: GSB Honorary Member
