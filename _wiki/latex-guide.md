@@ -223,20 +223,6 @@ Symbol | Command
 ![bar](https://wikimedia.org/api/rest_v1/media/math/render/svg/f97909a575e8300e0a8afecfdca4d7417de9241a) | `\bar{a}`
 ![vec](https://wikimedia.org/api/rest_v1/media/math/render/svg/1d68eda50bd748cf4c65dacf137d34d1de6aaadd) | `\vec{a}`
 
-### Greek Letters
-Simply type the name of the Greek letter after a backslash.  If the first letter of the letter name is lowercase, then the lower case Greek letter will be shown.  Likewise, if the first letter is capital, then the capital Greek letter will be used.
-
-Letter | Command
------ | -----
-α | `\alpha`
-β | `\beta`
-θ | `\theta`
-λ | `\gamma`
-π | `\pi`
-μ | `\mu`
-Σ | `\Sigma`
-Φ | `\Phi`
-
 ### Other Symbols
 Symbol | Command
 ----- | -----
