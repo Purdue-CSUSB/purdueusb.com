@@ -14,7 +14,7 @@ Below are the times tutors are available to help:
 
 | | Monday | Tuesday | Wednesday | Thursday |
 | ---- | ---- | ---- | ---- | ---- |
-| 9:00am - 11:00am | <ul><li>Hao Wu</li></ul> | <ul><li>Abhishek Gunasekar</li></ul> | |
+| 9:00am - 11:00am | <ul><li>Hao Wu</li></ul> | | <ul><li>Abhishek Gunasekar</li></ul> |
 | 11:00am - 1:00pm | | | | <ul><li>Gowri Harish</li></ul> |
 | 1:00pm - 3:00pm | <ul><li>Youngsik Yoon</li><li>Chirayu Garg</li></ul> | | |
 | 3:00pm - 5:00pm | | <ul><li>Prasha Bora</li></ul> | |  |
