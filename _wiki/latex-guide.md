@@ -79,22 +79,6 @@ Double Closing Quote  | ` ' ` (Two Apostrophes)
 ## Ellipsis
 To create an ellipsis in LaTeX, you can use the `\ldots` command.  This prints the dots closer together compared to if you were to just use three periods.  
 
-## Reserved Characters
-There are numerous reserved characters in LaTeX.  These characters are used for other functions in LaTeX, it is still possible to type them as regular characters if you type the following commands in their place.
-
-Character | Command
------------- | -------------
-\# | `\#`
-$ | `\$`
-% | `\%`
-& | `\&`
-^ | `\^{}`
-_ | `\_`
-{ | `\{`
-} | `\}`
-~ | `\~{}`
-\ | `$\backslash$`
-
 ## Lists
 
 ### Bulleted Lists
@@ -156,12 +140,6 @@ Typing code in LaTeX can be as simple or as complex as you want.  You can simply
 ```
 
 Alternatively, if you want to get more complex with displaying code, like syntax highlighting for specific languages, you can use the *listings*.  You can find more information on how to use this package on [Overleaf's website](https://www.overleaf.com/learn/latex/code_listing#Using_listings_to_highlight_code).
-
-## Mathematics
-
-**All mathematical expressions must be contained in one of two ways**
-* To display an expression inline, use `\(...\)`<br>
-* To display an expression on a new line, use `\[...\]`
 
 ### Fractions
 
