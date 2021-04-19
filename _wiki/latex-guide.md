@@ -34,36 +34,3 @@ There are several types of section headers to choose from.  Replace the "..." wi
 * `\paragraph{...}`
 * `\subparagraph{...}`
 <img src="https://user-images.githubusercontent.com/25762130/55272391-52d67500-5292-11e9-8417-0283b656a58f.png" alt="Section Types">
-
-## Font Effects
-
-Effect | Command
---------- | ---------
-*italics* | `\textit{...}`
-**bold**  | `\textbf{...}`
-underline | `\underline{...}`
-
-## Font Size
-
-**The font size applies to  all the text that follows the command, until another font size command is called**
-
-Size | Command
------ | -----
-5     | `\tiny ...`
-7     | `\scriptsize ...`
-8     | `\footnotesize ...`
-9     | `\small ...`
-10    | `\normalsize ...`
-12    | `\large ...`
-14.4  | `\Large ...`
-17.28 | `\LARGE ...`
-20.74 | `\huge ...`
-24.88 | `\Huge ...`
-
-## Alignment
-
-Alignment | Command
------------- | -------------
-Left | `\begin{flushleft}...\end{flushleft}`
-Center | `\begin{center}...\end{center}`
-Right | `\begin{flushright}...\end{flushright}`
