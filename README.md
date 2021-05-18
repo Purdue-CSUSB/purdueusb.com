@@ -151,7 +151,6 @@ Plugins currently in use:
 - Jekyll purgecss
 - Jekyll minifier *Netlify also handles minification*
 - jekyll-redirect-from
-- jekyll-autoprefixer
 
 Local Dependencies:
 - Highlight.js: Syntax highlighting
@@ -160,7 +159,6 @@ Local Dependencies:
 
 NPM Dependencies:
 - Purgecss: Remove unused css classes
-- Autoprefixer: Add browser-specific css attributes.
 
 CDN Dependencies:
 - Anchorjs: Provide anchor link support
