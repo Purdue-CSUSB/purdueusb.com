@@ -4,8 +4,8 @@
   "description": "This repository is created for Purdue's CS Undergraduate Student Board website. Our main consideration is the ease of maintenance and content updates. Information that frequently changes, like members, initiatives, and Student Wiki, can all be updated through YAML and Markdown files.",
   "main": "",
   "dependencies": {
-    "es5-shim": "^4.5.15",
-    "purgecss": "^2.3.0"
+    "es5-shim": "4.5.15",
+    "purgecss": "4.0.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
