@@ -23,4 +23,4 @@ The following devices are available to rent for 1 week at a time:
 
 Additionally, Purdue Libraries has cameras, camcorders, tripods, and hard drives available to rent for 3 days.
 
-To learn more, see the [Purdue Libraries Equipment](https://web07d.lib.purdue.edu/?q=services/equipment) page.
+To learn more, see the [Purdue Libraries Equipment](https://calendar.lib.purdue.edu/reserve/equipment/equipment) page.
