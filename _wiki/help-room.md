@@ -21,7 +21,7 @@ Below are the times tutors are available to help:
 | | Monday | Tuesday | Wednesday | Thursday |
 | ---- | ---- | ---- | ---- | ---- |
 | 6:00pm - 8:00pm (In-Person) | {::nomarkdown}<ul><li>Aryan Wadwhani</li><li>Hajera Zemy</li></ul>{:/} | {::nomarkdown}<ul><li>Rewati Shitole</li><li>Chandiran Dhukkaram</li></ul>{:/} | {::nomarkdown}<ul><li>Grace Keeton</li><li>Arianna Smith</li></ul>{:/} | {::nomarkdown}<ul><li>Chirayu Garg</li><li>Hajera Zemy</li></ul>{:/} |
-| 8:00pm - 10:00pm (Virtual) | {::nomarkdown}<ul><li>Aakarshit Pandey</li><li>Rewati Shitole</li></ul>{:/} | | {::nomarkdown}<ul><li>Arianna Smith</li></ul>{:/} | {::nomarkdown}<ul><li>Hajera Zemy</li></ul>{:/} |
+| 8:00pm - 10:00pm (Virtual) | {::nomarkdown}<ul><li>Aakarshit Pandey</li><li>Rewati Shitole</li></ul>{:/} | {::nomarkdown}<ul><li>Aakarshit Pandey</li><li>Arianna Smith</li></ul>{:/} | {::nomarkdown}<ul><li>Chandiran Dhukkaram</li><li>Aakarshit Pandey</li></ul>{:/} | {::nomarkdown}<ul><li>Aryan Wadwhani</li><li>Arianna Smith</li></ul>{:/} |
 
 ## In-Person Tutoring
 
