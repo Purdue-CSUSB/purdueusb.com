@@ -16,6 +16,15 @@ Below are the times tutors are available to help:
 | 6:00pm - 8:00pm (In-Person) | <ul><li>Aryan Wadwhani</li><li>Hajera Zemy</li></ul> | <ul><li>Rewati Shitole</li><li>Chandiran Dhukkaram</li></ul> | <ul><li>Grace Keeton</li><li>Arianna Smith</li></ul> | <ul><li>Chirayu Garg</li><li>Hajera Zemy</li></ul> |
 | 8:00pm - 10:00pm (Virtual) | <ul><li>Aakarshit Pandey</li><li>Rewati Shitole</li></ul> | <ul><li>Aakarshit Pandey</li><li>Arianna Smith</li></ul> | <ul><li>Chandiran Dhukkaram</li><li>Aakarshit Pandey</li></ul> | <ul><li>Aryan Wadwhani</li><li>Arianna Smith</li></ul> |
 
+| | Monday | Tuesday | Wednesday | Thursday |
+| ---- | ---- | ---- | ---- | ---- |
+| 9:00am - 11:00am | {::nomarkdown}<ul><li>Hao Wu</li></ul>{:/} | | |
+| 11:00am - 1:00pm | | | | {::nomarkdown}<ul><li>Gowri Harish</li></ul>{:/} |
+| 1:00pm - 3:00pm | {::nomarkdown}<ul><li>Youngsik Yoon</li><li>Chirayu Garg</li></ul>{:/} | | |
+| 3:00pm - 5:00pm | | {::nomarkdown}<ul><li>Prasha Bora</li></ul>{:/} | |  |
+| 5:00pm - 7:00pm | | {::nomarkdown}<ul><li>Abhishek Gunasekar</li></ul>{:/} | {::nomarkdown}<ul><li>Chandiran Dhukkaran</li></ul>{:/} | {::nomarkdown}<ul><li>Jasmine Singh</li></ul>{:/} |
+| 7:00pm - 9:00pm | {::nomarkdown}<ul><li>Aakarshit Pandey</li><li>Rewati Shitole</li></ul>{:/} | | {::nomarkdown}<ul><li>Arianna Smith</li></ul>{:/} | {::nomarkdown}<ul><li>Hajera Zemy</li></ul>{:/} |
+
 ## In-Person Tutoring
 
 In-Person Tutoring will take place in LWSN B134. All students are required to follow Protect Purdue guidelines.
