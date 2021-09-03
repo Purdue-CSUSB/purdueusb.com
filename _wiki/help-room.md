@@ -22,4 +22,4 @@ In-Person Tutoring will take place in LWSN B134. All students are required to fo
 
 ## Virtual Tutoring 
 
-When you are ready for help add your name to the USB Helproom BoilerQ https://courses.cs.purdue.edu/queue. When a tutor is ready, you will be instructed to join their Zoom lobby for assistance. The time limit on each call will be around 15-20 mins, but this limit is subject to change based on the traffic of the help room.
+Add your name to the USB Helproom BoilerQ https://courses.cs.purdue.edu/queue. When a tutor is ready, you will be instructed to join their Zoom lobby for assistance. The time limit on each call will be around 15-20 mins, but this limit is subject to change based on the traffic of the help room.
