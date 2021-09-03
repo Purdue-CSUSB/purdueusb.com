@@ -13,8 +13,8 @@ redirect_from:
 Below are the times tutors are available to help:
 | | Monday | Tuesday | Wednesday | Thursday |
 | ---- | ---- | ---- | ---- | ---- |
-| 6:00pm - 8:00pm (In-Person) | <ul><li>Aryan Wadwhani</li><li>Hajera Zemy</li></ul> | <ul><li>Rewait Shitole</li><li>Chandiran Dhukkaram</li></ul> | <ul><li>Grace Keeton</li><li>Arianna Smith</li></ul> | <ul><li>Chirayu Garg</li><li>Hajera Zemy</li></ul> |
-| 8:00pm - 10:00pm (Virtual) | <ul><li>Aakarshit Pandey</li><li>Rewati Shitole</li></ul> | <ul><li>Aakarshit Pandey</li><li>Arianna Smith</li></ul> | <ul><li>Chandiran Dhukkaram</li><li>Aakarshit Pandey</li></ul> | <ul><li>Aryan Wadwhani</li><li>Arianna Smith</li></ul> 
+| 6:00pm - 8:00pm (In-Person) | <ul><li>Aryan Wadwhani</li><li>Hajera Zemy</li></ul> | <ul><li>Rewati Shitole</li><li>Chandiran Dhukkaram</li></ul> | <ul><li>Grace Keeton</li><li>Arianna Smith</li></ul> | <ul><li>Chirayu Garg</li><li>Hajera Zemy</li></ul> |
+| 8:00pm - 10:00pm (Virtual) | <ul><li>Aakarshit Pandey</li><li>Rewati Shitole</li></ul> | <ul><li>Aakarshit Pandey</li><li>Arianna Smith</li></ul> | <ul><li>Chandiran Dhukkaram</li><li>Aakarshit Pandey</li></ul> | <ul><li>Aryan Wadwhani</li><li>Arianna Smith</li></ul> |
 
 ## In-Person Tutoring
 
