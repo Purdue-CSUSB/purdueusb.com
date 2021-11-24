@@ -91,6 +91,7 @@ members: &members
 alumni: &alumni
   - name: Sean Flannery
     title: Former GSB Honorary Member
+    class: 2021
     site: https://www.linkedin.com/in/sflanner/
   - name: Noah Alderton
     class: 2021
