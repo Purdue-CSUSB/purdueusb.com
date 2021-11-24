@@ -4,26 +4,28 @@ members: &members
     class: Senior
     site: https://www.linkedin.com/in/arianna-smith-32229816a/
 
+  - name: Vindhya Banda
+    title: Vice President
+    class: Junior
+    site: https://www.linkedin.com/in/vindhya-banda/
+
   - name: Cindy Ding
     title: Treasurer
     class: Senior
     site: https://www.linkedin.com/in/cindydhy/
 
+  - name: Anushka Sharma
+    title: Secretary
+    class: Sophomore
+    site:
+
   - name: Christopher Lehman
     class: Senior
     site: https://www.linkedin.com/in/christopher-lehman/
 
-  - name: Noah Alderton
-    class: Senior
-    site: https://www.linkedin.com/in/noahalderton/
-
   - name: Pallav Agarwal
     class: Senior
     site: https://www.linkedin.com/in/pallav-agarwal/
-
-  - name: Pinaki Mohanty
-    class: GSB Honorary Member
-    site: https://www.linkedin.com/in/pinakim98/
 
   - name: Riley McKeever
     class: Senior
@@ -34,6 +36,10 @@ members: &members
     site: 
 
   - name: Caleb Ahn
+    class: Junior
+    site: 
+
+  - name: Anisha Bhat
     class: Junior
     site: 
 
@@ -57,15 +63,6 @@ members: &members
   - name: Arya Sharma
     class: Junior
     site: 
-
-  - name: Anisha Bhat
-    class: Junior
-    site: 
-
-  - name: Anushka Sharma
-    title: Secretary
-    class: Sophomore
-    site:
   
   - name: Blisha Molin Mohan Das
     class: Sophomore
@@ -87,26 +84,27 @@ members: &members
     class: Sophomore
     site: https://www.linkedin.com/in/rohanpurandare/
   
-  - name: Vindhya Banda
-    title: Vice President
-    class: Junior
-    site: https://www.linkedin.com/in/vindhya-banda/
-
+  - name: Pinaki Mohanty
+    class: GSB Honorary Member
+    site: https://www.linkedin.com/in/pinakim98/
 
 alumni: &alumni
   - name: Sean Flannery
     title: Former GSB Honorary Member
     site: https://www.linkedin.com/in/sflanner/
+  - name: Noah Alderton
+    class: 2021
+    site: https://www.linkedin.com/in/noahalderton/
+  - name: Lauren Lum
+    title: Former President
+    class: 2021
+    site: https://www.linkedin.com/in/lumlauren/
   - name: Albert Zhong
     class: 2021
     site: https://www.linkedin.com/in/albert-zhong-695961149/
   - name: Sagar Nattuvetty
     class: 2021
-    site: 
-  - name: Lauren Lum
-    title: Former President
-    class: 2021
-    site: https://www.linkedin.com/in/lumlauren/
+    site:
   - name: Sera Savaş
     class: 2021
     site: https://www.linkedin.com/in/sera-savas-179968148/
