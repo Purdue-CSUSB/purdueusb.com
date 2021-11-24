@@ -1,9 +1,4 @@
 members: &members
-  - name: Arianna Smith
-    title: President
-    class: Senior
-    site: https://www.linkedin.com/in/arianna-smith-32229816a/
-    
   - name: Vindhya Banda
     title: Vice President
     class: Junior
