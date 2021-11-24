@@ -9,11 +9,6 @@ members: &members
     class: Senior
     site: https://www.linkedin.com/in/cindydhy/
 
-  - name: Neerali Shah
-    title: Former Vice President
-    class: Junior
-    site: https://www.linkedin.com/in/neerali-shah/
-
   - name: Christopher Lehman
     class: Senior
     site: https://www.linkedin.com/in/christopher-lehman/
@@ -38,21 +33,26 @@ members: &members
     class: Senior
     site: 
 
-  - name: Sweta Saravanan
-    class: Junior
-    site: https://www.linkedin.com/in/sweta-saravanan-aa3937191/
-
-  - name: Simran Kadadi
+  - name: Caleb Ahn
     class: Junior
     site: 
 
+  - name: Simran Kadadi
+    class: Junior
+    site:
+    
   - name: Shashank Kumar
     class: Junior
     site: 
 
-  - name: Caleb Ahn
+  - name: Sweta Saravanan
     class: Junior
-    site: 
+    site: https://www.linkedin.com/in/sweta-saravanan-aa3937191/
+
+  - name: Neerali Shah
+    title: Former Vice President
+    class: Junior
+    site: https://www.linkedin.com/in/neerali-shah/
 
   - name: Arya Sharma
     class: Junior
