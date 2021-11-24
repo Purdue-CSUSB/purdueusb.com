@@ -1,26 +1,42 @@
 members: &members
-  - name: Vindhya Banda
-    title: Vice President
-    class: Junior
-    site: https://www.linkedin.com/in/vindhya-banda/
+  - name: Arianna Smith
+    title: President
+    class: Senior
+    site: https://www.linkedin.com/in/arianna-smith-32229816a/
 
   - name: Cindy Ding
     title: Treasurer
     class: Senior
     site: https://www.linkedin.com/in/cindydhy/
-    
-  - name: Anushka Sharma
+
+  - name: Neerali Shah
     title: Secretary
-    class: Sophomore
-    site:
+    class: Junior
+    site: https://www.linkedin.com/in/neerali-shah/
+
+  - name: Albert Zhong
+    class: Senior
+    site: https://www.linkedin.com/in/albert-zhong-695961149/
+
+  - name: Sagar Nattuvetty
+    class: Senior
+    site: 
 
   - name: Christopher Lehman
     class: Senior
     site: https://www.linkedin.com/in/christopher-lehman/
 
+  - name: Noah Alderton
+    class: Senior
+    site: https://www.linkedin.com/in/noahalderton/
+
   - name: Pallav Agarwal
     class: Senior
     site: https://www.linkedin.com/in/pallav-agarwal/
+
+  - name: Pinaki Mohanty
+    class: GSB Honorary Member
+    site: https://www.linkedin.com/in/pinakim98/
 
   - name: Riley McKeever
     class: Senior
@@ -29,34 +45,34 @@ members: &members
   - name: Sarah Thomas
     class: Senior
     site: 
-    
-  - name: Caleb Ahn
-    class: Junior
-    site:     
 
-   - name: Anisha Bhat
-    class: Junior
-    site: 
-    
-  - name: Simran Kadadi
-    class: Junior
-    site: 
-    
-  - name: Shashank Kumar
-    class: Junior
-    site: 
-    
   - name: Sweta Saravanan
     class: Junior
     site: https://www.linkedin.com/in/sweta-saravanan-aa3937191/
 
-  - name: Neerali Shah
-    title: Former Vice President
+  - name: Simran Kadadi
     class: Junior
-    site: https://www.linkedin.com/in/neerali-shah/
+    site: 
+
+  - name: Shashank Kumar
+    class: Junior
+    site: 
+
+  - name: Caleb Ahn
+    class: Junior
+    site: 
 
   - name: Arya Sharma
     class: Junior
+    site: 
+
+  - name: Anisha Bhat
+    class: Junior
+    site: 
+
+  - name: Anushka Sharma
+    title: Secretary
+    class: Sophomore
     site:
   
   - name: Blisha Molin Mohan Das
@@ -79,38 +95,30 @@ members: &members
     class: Sophomore
     site: https://www.linkedin.com/in/rohanpurandare/
   
-  - name: Pinaki Mohanty
-    class: GSB Honorary Member
-    site: https://www.linkedin.com/in/pinakim98/
+  - name: Vindhya Banda
+    title: Vice President
+    class: Junior
+    site: https://www.linkedin.com/in/vindhya-banda/
+
 
 alumni: &alumni
-  - name: Noah Alderton
-    class: 2021
-    site: https://www.linkedin.com/in/noahalderton/
   - name: Sean Flannery
     title: Former GSB Honorary Member
-    class: 2021
     site: https://www.linkedin.com/in/sflanner/
   - name: Lauren Lum
     title: Former President
     class: 2021
     site: https://www.linkedin.com/in/lumlauren/
-  - name: Sagar Nattuvetty
-    class: 2021
-    site: 
   - name: Sera Savaş
     class: 2021
     site: https://www.linkedin.com/in/sera-savas-179968148/
-  - name: Albert Zhong
-    class: 2021
-    site: https://www.linkedin.com/in/albert-zhong-695961149/
+  - name: CJ Enright
+    class: 2020
+    site: https://www.linkedin.com/in/cjenright/
   - name: Zach Bryant
     title: Former President
     class: 2020
     site: https://www.linkedin.com/in/zachdbryant/
-  - name: CJ Enright
-    class: 2020
-    site: https://www.linkedin.com/in/cjenright/
   - name: Nirali Rai
     title: Former Treasurer
     class: 2020
