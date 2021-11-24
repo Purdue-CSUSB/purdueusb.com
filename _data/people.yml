@@ -1,9 +1,4 @@
 members: &members
-  - name: Lauren Lum
-    title: President
-    class: Senior
-    site: https://www.linkedin.com/in/lumlauren/
-
   - name: Arianna Smith
     title: Vice President
     class: Junior
@@ -108,11 +103,15 @@ members: &members
     site: https://www.linkedin.com/in/sflanner/
 
 alumni: &alumni
+  - name: Lauren Lum
+    title: Former President
+    class: 2021
+    site: https://www.linkedin.com/in/lumlauren/
   - name: Sera Savaş
-    class: Senior
+    class: 2021
     site: https://www.linkedin.com/in/sera-savas-179968148/
   - name: CJ Enright
-    class: Senior
+    class: 2021
     site: https://www.linkedin.com/in/cjenright/
   - name: Zach Bryant
     title: Former President
