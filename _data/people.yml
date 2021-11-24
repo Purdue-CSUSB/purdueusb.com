@@ -1,17 +1,17 @@
 members: &members
   - name: Arianna Smith
-    title: Vice President
-    class: Junior
+    title: President
+    class: Senior
     site: https://www.linkedin.com/in/arianna-smith-32229816a/
 
   - name: Cindy Ding
     title: Treasurer
-    class: Junior
+    class: Senior
     site: https://www.linkedin.com/in/cindydhy/
 
   - name: Neerali Shah
     title: Secretary
-    class: Sophomore
+    class: Junior
     site: https://www.linkedin.com/in/neerali-shah/
 
   - name: Albert Zhong
@@ -23,7 +23,7 @@ members: &members
     site: 
 
   - name: Christopher Lehman
-    class: Junior
+    class: Senior
     site: https://www.linkedin.com/in/christopher-lehman/
 
   - name: Noah Alderton
@@ -31,78 +31,80 @@ members: &members
     site: https://www.linkedin.com/in/noahalderton/
 
   - name: Pallav Agarwal
-    class: Junior
+    class: Senior
     site: https://www.linkedin.com/in/pallav-agarwal/
 
   - name: Pinaki Mohanty
-    class: Senior
+    class: GSB Honorary Member
     site: https://www.linkedin.com/in/pinakim98/
 
   - name: Riley McKeever
-    class: Junior
+    class: Senior
     site: 
 
   - name: Sarah Thomas
-    class: Junior
+    class: Senior
     site: 
 
   - name: Sweta Saravanan
-    class: Sophomore
+    class: Junior
     site: https://www.linkedin.com/in/sweta-saravanan-aa3937191/
 
   - name: Simran Kadadi
-    class: Sophomore
+    class: Junior
     site: 
 
   - name: Shashank Kumar
-    class: Sophomore
+    class: Junior
     site: 
 
   - name: Caleb Ahn
-    class: Sophomore
+    class: Junior
     site: 
 
   - name: Arya Sharma
-    class: Sophomore
+    class: Junior
     site: 
 
   - name: Anisha Bhat
-    class: Sophomore
+    class: Junior
     site: 
 
   - name: Anushka Sharma
-    class: First-Year
+    title: Secretary
+    class: Sophomore
     site:
   
   - name: Blisha Molin Mohan Das
-    class: First-Year
+    class: Sophomore
     site: 
 
   - name: Eddie Kim
-    class: First-Year
+    class: Sophomore
     site: https://www.linkedin.com/in/tae-woo-kim-95148b192/
 
   - name: Elijah Colwill
-    class: First-Year
+    class: Sophomore
     site: https://www.linkedin.com/in/elijahcolwill/
     
   - name: Grace Keeton
-    class: First-Year
+    class: Sophomore
     site: 
     
   - name: Rohan Purandare
-    class: First-Year
+    class: Sophomore
     site: https://www.linkedin.com/in/rohanpurandare/
   
   - name: Vindhya Banda
-    class: Sophomore
+    title: Vice President
+    class: Junior
     site: https://www.linkedin.com/in/vindhya-banda/
 
-  - name: Sean Flannery
-    title: GSB Honorary Member
-    site: https://www.linkedin.com/in/sflanner/
 
 alumni: &alumni
+  - name: Sean Flannery
+    title: Former GSB Honorary Member
+    site: https://www.linkedin.com/in/sflanner/
   - name: Lauren Lum
     title: Former President
     class: 2021
@@ -111,7 +113,7 @@ alumni: &alumni
     class: 2021
     site: https://www.linkedin.com/in/sera-savas-179968148/
   - name: CJ Enright
-    class: 2021
+    class: 2020
     site: https://www.linkedin.com/in/cjenright/
   - name: Zach Bryant
     title: Former President
