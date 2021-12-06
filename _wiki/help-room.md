@@ -8,7 +8,7 @@ redirect_from:
     - /helproom/
 ---
 
-### USB Help Room will begin Tuesday, September 7th
+### USB Help Room has ended for the Fall 2021 semester. We will resume in the Spring.
 
 Below are the times tutors are available to help:
 
