@@ -2,7 +2,7 @@
 title:  "Learning Regex"
 description: "Utilize pattern matching to comb through texts"
 author: Shriansh Chari
-date:   2021-12-26T04:08:40.756Z
+date:   2021-12-25
 categories: technical
 ---
 
