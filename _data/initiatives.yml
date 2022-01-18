@@ -6,6 +6,12 @@
 - title: CS 193
   image: CS193_Logo
   description: Tools course taught by USB members
+  
+- title: Response to 2022 Open Letter
+  image: letter_image
+  description: The USB wrote a response to President Daniels 2022 Open Letter
+  buttonText: View Response
+  buttonLink: /openletter/
 
 - title: Virtual Office Hours
   image: Virtual_Office_Hours_Logo
