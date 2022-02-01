@@ -14,8 +14,8 @@ Below are the times tutors are available to help:
 
 | | Monday | Tuesday | Wednesday | Thursday |
 | ---- | ---- | ---- | ---- | ---- |
-| 6:00pm - 8:00pm (In-Person) | {::nomarkdown}<ul><li>Arianna Smith</li><li>Rashmi Dahiya</li></ul>{:/} | {::nomarkdown}<ul><li>Chun Wang</li></ul>{:/} | {::nomarkdown}<ul><li>Abhay Singh Thakur</li></ul>{:/} | {::nomarkdown}<ul><li>Arya Sharma</li></ul>{:/} |
-| 8:00pm - 10:00pm (Virtual) | {::nomarkdown}<ul><li>Abhay Singh Thakur</li><li>Satabdiya Roy</li></ul>{:/} | {::nomarkdown}<ul><li>Mohana Chandiran Dhukkaram</li></ul>{:/} | {::nomarkdown}<ul><li>Abhay Singh Thakur</li><li>Chun Wang</li></ul>{:/} | {::nomarkdown}<ul><li>Satabdiya Roy</li><li>Arianna Smith</li></ul>{:/} |
+| 6:00pm - 8:00pm (In-Person) | {::nomarkdown}<ul><li>Arianna Smith</li><li>Rashmi Dahiya</li><li>Sarah Thomas</li></ul>{:/} | {::nomarkdown}<ul><li>Chun Wang</li></ul>{:/} | {::nomarkdown}<ul><li>Abhay Singh Thakur</li></ul>{:/} | {::nomarkdown}<ul><li>Sarah Thomas</li></ul>{:/} |
+| 8:00pm - 10:00pm (Virtual) | {::nomarkdown}<ul><li>Abhay Singh Thakur</li><li>Satabdiya Roy</li></ul>{:/} | {::nomarkdown}<ul><li>Mohana Chandiran Dhukkaram</li></ul>{:/} | {::nomarkdown}<ul><li>Abhay Singh Thakur</li><li>Chun Wang</li><li>Sarah Thomas</li></ul>{:/} | {::nomarkdown}<ul><li>Satabdiya Roy</li><li>Arianna Smith</li></ul>{:/} |
 
 ## In-Person Tutoring
 
@@ -29,6 +29,6 @@ While we wait to get BoilerQ set up, we will post the tutor's individual zoom li
   <li>[Satabdiya Roy] (https://purdue-edu.zoom.us/j/4461449971)</li>
   <li>[Chun Wang] (https://purdue-edu.zoom.us/j/2155527451)</li>
   <li>[Arianna Smith] </li>
-  <li>[Mohana Chandiran Dhukkaram]</li>
+  <li>[Mohana Chandiran Dhukkaram] (https://purdue-edu.zoom.us/j/9564241816?pwd=aGJxQlFNMWZVRHpMZjZ1K0lhUjJPZz09)</li>
   <li>[Sarah Thomas]</li>
 </ul>
