@@ -21,7 +21,7 @@ Below are the times tutors are available to help:
 
 In-Person Tutoring will take place in LWSN B160. All students are required to follow Protect Purdue guidelines.
 
-UPDATE: All in person tutoring will be virtual on 2/2/21 due to the weather warming put out by Purdue.
+UPDATE: All in-person tutoring will be virtual going forward until further notice in accordance with the Purdue severe weather warning.
 
 ## Virtual Tutoring 
 
@@ -32,5 +32,5 @@ While we wait to get BoilerQ set up, we will post the tutor's individual zoom li
   <li>[Chun Wang] (https://purdue-edu.zoom.us/j/2155527451)</li>
   <li>[Arianna Smith] </li>
   <li>[Mohana Chandiran Dhukkaram] (https://purdue-edu.zoom.us/j/9564241816?pwd=aGJxQlFNMWZVRHpMZjZ1K0lhUjJPZz09)</li>
-  <li>[Sarah Thomas]</li>
+  <li>[Sarah Thomas] (https://purdue-edu.zoom.us/j/96403158840?pwd=dkw5eXI5WW45Um42NTE5azBIbnVYQT09)</li>
 </ul>
