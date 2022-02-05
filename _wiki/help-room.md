@@ -26,14 +26,14 @@ UPDATE: All in-person tutoring will be virtual going forward until further notic
 ## Virtual Tutoring 
 
 While we wait to get BoilerQ set up, we will post the tutor's individual zoom links below. Please join during their desginated tutoring times.
-<ul>
-  <li>[Abhay Singh Thakur] [1]</li>
-  <li>[Satabdiya Roy] [2]</li>
-  <li>[Chun Wang] [3]</li>
-  <li>[Arianna Smith] [4]</li>
-  <li>[Mohana Chandiran Dhukkaram] [5]</li>
-  <li>[Sarah Thomas] [6]</li>
-</ul>
+
+- [Abhay Singh Thakur] [1]
+- [Satabdiya Roy] [2]
+- [Chun Wang] [3]
+- [Arianna Smith] [4]
+- [Mohana Chandiran Dhukkaram] [5]
+- [Sarah Thomas] [6]
+
 
 
 [1]: https://purdue-edu.zoom.us/j/4319336987
