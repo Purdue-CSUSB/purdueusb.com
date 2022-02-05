@@ -34,3 +34,11 @@ While we wait to get BoilerQ set up, we will post the tutor's individual zoom li
   <li>[Mohana Chandiran Dhukkaram] (https://purdue-edu.zoom.us/j/9564241816?pwd=aGJxQlFNMWZVRHpMZjZ1K0lhUjJPZz09)</li>
   <li>[Sarah Thomas] (https://purdue-edu.zoom.us/j/96403158840?pwd=dkw5eXI5WW45Um42NTE5azBIbnVYQT09)</li>
 </ul>
+
+- [RStudio Devtools][1]
+- [testthat][2]
+- [More unit test examples][3]
+
+[1]: https://stackoverflow.com/users/214446/mb21
+[2]: https://github.com/hadley/testthat
+[3]: http://r-pkgs.had.co.nz/tests.html
