@@ -28,7 +28,6 @@ UPDATE: All in-person tutoring will be virtual going forward until further notic
 While we wait to get BoilerQ set up, we will post the tutor's individual zoom links below. Please join during their desginated tutoring times.
 <ul>
   <li>[Abhay Singh Thakur] (https://purdue-edu.zoom.us/j/4319336987)</li>
-  <li>[temp] ({% google.com %}) </li>
   <li>[Satabdiya Roy] (https://purdue-edu.zoom.us/j/4461449971)</li>
   <li>[Chun Wang] (https://purdue-edu.zoom.us/j/2155527451)</li>
   <li>[Arianna Smith] (https://purdue-edu.zoom.us/j/8950644250?pwd=THcvYVVJaldCV1ViaENvc0lvRmpnZz09)</li>
