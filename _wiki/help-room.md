@@ -27,18 +27,19 @@ UPDATE: All in-person tutoring will be virtual going forward until further notic
 
 While we wait to get BoilerQ set up, we will post the tutor's individual zoom links below. Please join during their desginated tutoring times.
 <ul>
-  <li>[Abhay Singh Thakur] (https://purdue-edu.zoom.us/j/4319336987)</li>
-  <li>[Satabdiya Roy] (https://purdue-edu.zoom.us/j/4461449971)</li>
-  <li>[Chun Wang] (https://purdue-edu.zoom.us/j/2155527451)</li>
-  <li>[Arianna Smith] (https://purdue-edu.zoom.us/j/8950644250?pwd=THcvYVVJaldCV1ViaENvc0lvRmpnZz09)</li>
-  <li>[Mohana Chandiran Dhukkaram] (https://purdue-edu.zoom.us/j/9564241816?pwd=aGJxQlFNMWZVRHpMZjZ1K0lhUjJPZz09)</li>
-  <li>[Sarah Thomas] (https://purdue-edu.zoom.us/j/96403158840?pwd=dkw5eXI5WW45Um42NTE5azBIbnVYQT09)</li>
+  <li>[Abhay Singh Thakur] [1]</li>
+  <li>[Satabdiya Roy] [2]</li>
+  <li>[Chun Wang] [3]</li>
+  <li>[Arianna Smith] [4]</li>
+  <li>[Mohana Chandiran Dhukkaram] [5]</li>
+  <li>[Sarah Thomas] [6]</li>
 </ul>
 
-- [RStudio Devtools][1]
-- [testthat][2]
-- [More unit test examples][3]
 
-[1]: https://stackoverflow.com/users/214446/mb21
-[2]: https://github.com/hadley/testthat
-[3]: http://r-pkgs.had.co.nz/tests.html
+[1]: https://purdue-edu.zoom.us/j/4319336987
+[2]: https://purdue-edu.zoom.us/j/4461449971
+[3]: https://purdue-edu.zoom.us/j/2155527451
+[4]: https://purdue-edu.zoom.us/j/8950644250?pwd=THcvYVVJaldCV1ViaENvc0lvRmpnZz09
+[5]: https://purdue-edu.zoom.us/j/9564241816?pwd=aGJxQlFNMWZVRHpMZjZ1K0lhUjJPZz09
+[6]: https://purdue-edu.zoom.us/j/96403158840?pwd=dkw5eXI5WW45Um42NTE5azBIbnVYQT09
+
