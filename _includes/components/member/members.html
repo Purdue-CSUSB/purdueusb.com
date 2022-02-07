@@ -1,9 +1,12 @@
 <div class="column px-5/100 pt-8 text-center">
     <h3 class="mb-4">Meet the Board</h3>
-    {%- assign year = 'now' | date: "%Y" -%}
+<!--  Trying 'page.date'    -->
+    {%- assign year = page.date | date: "%Y" -%}
+<!--     {%- assign year = 'now' | date: "%Y" -%} -->
 <!--  For some reason, Jekyll is displaying current year + 1    -->
-<!--     <p class="mb-8">{{ year }} &ndash; {{ year | plus:1 }} Members</p> -->
-    <p class="mb-8">{{ year | minus:1 }} &ndash; {{ year }} Members</p>
+    <p class="mb-8">{{ year }} &ndash; {{ year | plus:1 }} Members</p>
+<!--     <p class="mb-8">{{ year | minus:1 }} &ndash; {{ year }} Members</p> -->
+    
 
     {% assign current_members = site.data.people.members | where_exp: "member", "member.class contains '' or member.class == nil" %}
     {% assign former_members_years = site.data.people.alumni | group_by: "class" | sort: "name" | reverse %}
