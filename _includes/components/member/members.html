@@ -3,7 +3,7 @@
     {% assign year = 'now' | date: "%Y" %}
 <!--     Month of the year 01 - 12 -->
     {% assign month = 'now' | date: "%m" %}
-    {% if month >= 01 and month <= 05 %}
+    {% if month == '01' or month == '02' or month == '03' or month == '04' or month == '05' %}
 <!--        {%- assign year = 'now' | date: "%Y" -%} -->
         <p class="mb-8">{{ year | minus:1}} &ndash; {{ year }} Members</p>
     {% else %}
