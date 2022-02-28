@@ -1,43 +1,45 @@
-
-<h1 class="mb-5 justify">Want to write for our blog?</h1>
-<p class="mb-2">Please fill out the form below.</p>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<form id="fs-frm" name="simple-contact-form" class="column mt-3" action="https://formspree.io/xrgyypqw" accept-charset="utf-8" method="post">
-    <fieldset id="fs-frm-inputs">
-        <div id="contactForm">
-            <div class="row grow-0 justify-between@md-above justify-around@sm-below mb-3">
-                <div class="column">
-                    <label for="name" class="required">Your Name<span>*</span></label>
-                    <input type="text" name="Name" id="name" placeholder="Purdue Pete" required>
+<article id="post" class="w-full@md-below textwidth@lg-above h-full">
+    <script src="{{ '/assets/scripts/ratings.js' | cachetag }}"></script>
+    <section id="meta">
+        <h2 class="mb-3 inline-block post-title" data-anchor-id="title">{{ page.title }}</h2>
+        <div class="column--nowrap grow-0 justify-between align-items-baseline">
+            <p id="description" class="hint mb-6 font-italic">{{ page.description }}</p>
+            <div class="row--nowrap align-items-top justify-between">
+                <div class="column align-items-top">
+                    <small class="font-medium hint mb-2">Authored by</small>
+                    <div class="row align-items-center">
+                        {% assign author_count = page.author | size %}
+                        {% for author in page.author %}
+                            <div class="inline-block">
+                                {% if forloop.index <= author_count and forloop.index > 1 and author_count > 2 %}<span class="hint text-pre">,  </span>{% endif %}
+                                {% if forloop.index == author_count and forloop.index > 1 %}<span class="hint">and</span>{% endif %}
+                                <span class="{% if author_count > 1 and forloop.index > 1 %} mr-3 {% endif %}"></span>
+                            </div>
+                            {% include components/member/avatar.html member=author name=true size="icon-3" show_name=true overlay=false %}
+                        {% endfor %}
+                    </div>
                 </div>
-                <div class="mx-5 none@md-below"></div>
-                <div class="flex-break mb-3 none@lg-above"></div>
-                <div class="column">
-                    <label for="email" class="required">Email Address<span>*</span></label>
-                    <input type="email" name="_replyto" id="email" placeholder="&#112;&#101;&#116;&#101;&#64;&#112;&#117;&#114;&#100;&#117;&#101;&#46;&#101;&#100;&#117;" required>
-                </div>
+                {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
+                <small class="font-medium hint mb-0 ml-4">{{ page.date | date: site.date_format }}</small>
             </div>
+        </div>
+    </section>
 
-            <div class="column grow-0 justify-center mb-3">
-                <label for="subject" class="required">Subject<span>*</span></label>
-                <input type="text" name="_subject" id="subject" placeholder="What do you want to write about?" required autocomplete="off">
-            </div>
+    <div class="divider--horizontal mt-4 mb-5 bg-grey-light"></div>
 
-            <div class="column grow-0 justify-center mb-3">
-                <label for="message" class="required">Message<span>*</span></label>
-                <textarea rows="5" name="Message" id="message" placeholder="Questions, comments, concerns, suggestions &mdash; put 'em here!"
-                required autocomplete="off"></textarea>
-            </div>
-            <div class="row grow-0 justify-start@md-above justify-center@sm-below mb-3">
-                <div class="row--nowrap mr-8@md-above justify-center@sm-below">
-                    <input type="checkbox" name="acknowledge" id="acknowledge" placeholder="" required autocomplete="off">
-                    <label for="acknowledge" class="required clickable flat ml-2">I acknowledge that my message is not guaranteed to be private and may be subject to Indiana mandatory reporting laws.<span>*</span></label>
-                </div>
-                <div class="flex-break none@md-above mb-3"></div>
-                <div class="g-recaptcha row justify-center@sm-below grow-0 mb-3@sm-below" required data-sitekey="6LfbS60ZAAAAAKxxH0OHgi7840WtuGmHxoO8y_HU"></div>
-            </div>
-    </fieldset>
-    <div class="row justify-center">
-        <input id="submitButton" type="submit" value="Send" class="button--outline-dark w-full">
-    </div>
-</form>
+    <section id="content">
+        {{ content }}
+    </section>
+    <section class="row justify-between@md-above justify-center@md-below align-items-baseline">
+        {% assign categories_size = page.categories | size %}
+        {% if categories_size > 0 %}
+            <small class="mb-0">{% if categories_size > 1 %}Categories{% else %}Category{% endif %}: 
+                {% for category in page.categories %}
+                    <a href="/wiki?s=category:{{category}}" class="caption" target="_self">{{category}}</a>
+                {% endfor %}
+            </small>
+        {% endif %}
+        <div class="flex-break none@sm-above"></div>
+        {% include components/rating.html slug=page.slug %}
+    </section>
+</article>
