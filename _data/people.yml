@@ -59,6 +59,14 @@ members: &members
   - name: Arya Sharma
     class: Junior
     site: 
+    
+  - name: Ishika Kamchetty
+    class: Junior
+    site:
+    
+  - name: Gowri Harish
+    class: Junior
+    site: 
   
   - name: Blisha Molin Mohan Das
     class: Sophomore
@@ -79,6 +87,46 @@ members: &members
   - name: Rohan Purandare
     class: Sophomore
     site: https://www.linkedin.com/in/rohanpurandare/
+    
+  - name: Riya Verma
+    class: Sophomore
+    site: 
+    
+  - name: Mason Adams
+    class: Sophomore
+    site: 
+    
+  - name: Wei Yi Tan
+    class: Sophomore
+    site:
+    
+  - name: Tiffany Kuang
+    class: Freshman
+    site:
+    
+  - name: Brayden Brackett
+    class: Freshman
+    site:
+    
+  - name: Emily Hao
+    class: Freshman
+    site:
+    
+  - name: Jillian Urgello
+    class: Freshman
+    site:
+    
+  - name: Pooja Mathi
+    class: Freshman
+    site:
+    
+  - name: Sarah Pushparaj
+    class: Freshman
+    site:
+    
+  - name: Theo Park
+    class: Freshman
+    site:
   
   - name: Pinaki Mohanty
     class: GSB Honorary Member
