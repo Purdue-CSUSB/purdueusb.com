@@ -23,10 +23,6 @@ members: &members
     class: Senior
     site: https://www.linkedin.com/in/christopher-lehman/
 
-  - name: Pallav Agarwal
-    class: Senior
-    site: https://www.linkedin.com/in/pallav-agarwal/
-
   - name: Riley McKeever
     class: Senior
     site: 
@@ -89,6 +85,9 @@ members: &members
     site: https://www.linkedin.com/in/pinakim98/
 
 alumni: &alumni
+  - name: Pallav Agarwal
+    class: 2021
+    site: https://www.linkedin.com/in/pallav-agarwal/
   - name: Sean Flannery
     title: Former GSB Honorary Member
     class: 2021
