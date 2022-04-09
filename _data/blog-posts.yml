@@ -3,6 +3,7 @@
   description: Hello there
   tags: code, jobs, tracks
   date: 04-09-2022
+  image: Blog-Image
   content: 
   buttonLink: purdueusb.com/wiki
   
@@ -11,5 +12,6 @@
   description: Hello world
   tags: internships, jobs, minors
   date: 03-20-2022
+  image: Blog-Image-2
   content: 
   buttonLink: purdueusb.com
