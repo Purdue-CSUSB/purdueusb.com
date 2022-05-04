@@ -12,7 +12,7 @@ Important note – a "productive" summer doesn't have to involve an internship 
 
 ### Finding a Summer Internship
 
-#### The myCCO (Center for Career Opportunities) Website
+#### The myCCO (Center for Career Opportunities) Website [(link)](https://www.cco.purdue.edu/Home/myCCO)
 The CCO doesn't always have CS/DS specific resources and opportunities, but it is the best place to find centralized job listings. 
 
 Tips for optimal job search using the myCCO job search tool:
@@ -22,13 +22,13 @@ Tips for optimal job search using the myCCO job search tool:
 #### Spring Career Fairs & Company Days
 Every spring semester, Purdue has a "Just In Time" career fair. These companies are looking to fill positions right away, and many are looking for CS/DS students. The CCO also hosts career fairs in the spring. 
 
-Attend as many spring company days as possible. Company days have lower attendance in spring semesters than in fall semesters.–– attending them is a great opportunity to get more 1-on-1 time with recruiters or company representatives. Look out for notifications about company days in the Opportunity Update that is sent out to CS/DS majors!
+Attend as many spring company days as possible. Company days have lower attendance in spring semesters than in fall semesters –– attending them is a great opportunity to get more 1-on-1 time with recruiters or company representatives. Look out for notifications about company days in the Opportunity Update that is sent out to CS/DS majors!
 
 ### Research Opportunities
 Many students are interested in research, but are unsure about how to get started. The summer is a great time to explore research.
 
 #### 390 Research Courses
-390s are course numbers for research work. Once you have contacted a professor or lab and been invited to do research work, you can arrange to enroll in a 390 course during the summer term. More on finding labs with open positions below.
+Some 390s are course numbers for research work. Once you have contacted a professor or lab and been invited to do research work, you can arrange to enroll in a 390 course during the summer term. More on finding labs with open positions below.
 
 
 ##### CS 390s
@@ -38,7 +38,7 @@ If talking with professors in person sounds daunting, the CS Department Website 
 
 
 ##### Other Department 390s
-You don't have to limit your research search to the CS department. Many other departments are looking for CS/DS students, and even if they have not specifically posted openinsg for a CS student, it is likely that they could benefit from taking on somone with technical skills.
+You don't have to limit your research search to the CS department. Many other departments are looking for CS/DS students, and even if they have not specifically posted an opening for a CS student, it is likely that they could benefit from taking on someone with technical skills.
 
 The Pyschology Department, for example, has research opportunities listed on [this website](https://www.purdue.edu/hhs/psy/undergraduate/beyond_the_classroom/research.html).
 
@@ -58,4 +58,7 @@ VIP is a program that provides opportunities to do research and design projects 
 You can enroll in VIP as a summer term course For more information on the current teams and information on enrolling in the VIP program, visit the [VIP website](https://engineering.purdue.edu/VIP).
 
 
+##### REUS (Research Experience for Undergraduates) in Computer and Information Science and Engineering
+REUs are summer research programs for undergraduates studying science, engineering, or mathematics. The programs are sponsored by the National Science Foundation, and are hosted in various universities.
 
+See the full list of programs on the [NSF website](https://www.nsf.gov/crssprgm/reu/list_result.jsp?unitid=5049).
