@@ -1,6 +1,6 @@
 ---
 title:  "USB's Current Constitution"
-description: "Testing 1, 2, 3..."
+description: "USB's Constitution"
 author: Cindy Ding
 date:   2022-05-25 12:00:00 -0400
 categories: campus
