@@ -2,7 +2,7 @@
 title:  "USB's Current Constitution"
 description: "Testing 1, 2, 3..."
 author: Cindy Ding
-date:   2000 02-02 12:00:00 -0400
+date:   2000-05-25 12:00:00 -0400
 categories: campus
 ---
 
