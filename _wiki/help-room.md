@@ -1,28 +1,43 @@
 ---
 title: Help Room Information
 description: Extra help for CS 193, CS 180, CS 182, CS 240
-author: Sera Savaş
-date: 2020-08-29
+author: Arya Sharma
+date: 2021-01-31
 categories: [tutor]
 redirect_from:
     - /helproom/
 ---
 
-### All help room sessions are now held virtually through Zoom
+### USB Help Room has started up for the spring semester!
 
 Below are the times tutors are available to help:
 
 | | Monday | Tuesday | Wednesday | Thursday |
 | ---- | ---- | ---- | ---- | ---- |
-| 9:00am - 11:00am | {::nomarkdown}<ul><li>Hao Wu</li></ul>{:/} | | |
-| 11:00am - 1:00pm | | | | {::nomarkdown}<ul><li>Gowri Harish</li></ul>{:/} |
-| 1:00pm - 3:00pm | {::nomarkdown}<ul><li>Youngsik Yoon</li><li>Chirayu Garg</li></ul>{:/} | | |
-| 3:00pm - 5:00pm | | {::nomarkdown}<ul><li>Prasha Bora</li></ul>{:/} | |  |
-| 5:00pm - 7:00pm | | {::nomarkdown}<ul><li>Abhishek Gunasekar</li></ul>{:/} | {::nomarkdown}<ul><li>Chandiran Dhukkaran</li></ul>{:/} | {::nomarkdown}<ul><li>Jasmine Singh</li></ul>{:/} |
-| 7:00pm - 9:00pm | {::nomarkdown}<ul><li>Aakarshit Pandey</li><li>Rewati Shitole</li></ul>{:/} | | {::nomarkdown}<ul><li>Arianna Smith</li></ul>{:/} | {::nomarkdown}<ul><li>Hajera Zemy</li></ul>{:/} |
+| 6:00pm - 8:00pm (In-Person) | {::nomarkdown}<ul><li>Arianna Smith</li><li>Rashmi Dahiya</li><li>Sarah Thomas</li></ul>{:/} | {::nomarkdown}<ul><li>Chun Wang</li></ul>{:/} | {::nomarkdown}<ul><li>Abhay Singh Thakur</li></ul>{:/} | {::nomarkdown}<ul><li>Sarah Thomas</li></ul>{:/} |
+| 8:00pm - 10:00pm (Virtual) | {::nomarkdown}<ul><li>Abhay Singh Thakur</li><li>Satabdiya Roy</li></ul>{:/} | {::nomarkdown}<ul><li>Mohana Chandiran Dhukkaram</li></ul>{:/} | {::nomarkdown}<ul><li>Abhay Singh Thakur</li><li>Chun Wang</li><li>Sarah Thomas</li></ul>{:/} | {::nomarkdown}<ul><li>Satabdiya Roy</li><li>Arianna Smith</li></ul>{:/} |
 
-In order to sign up to get help please fill out this form during one of the appropriate times: [https://bit.ly/34P0emD](https://bit.ly/34P0emD)
+## In-Person Tutoring
 
-After you fill out the form, a tutor will email you with their Zoom meeting link. Once you fill the form out please keep your email open so you know when you receive the link and you are ready to enter the Zoom meeting. 
+In-Person Tutoring will take place in LWSN B160. All students are required to follow Protect Purdue guidelines.
 
-The time limit on each call will be around 15-20 mins, but this limit is subject to change based on the popularity of the help room.
+## Virtual Tutoring 
+
+While we wait to get BoilerQ set up, we will post the tutor's individual zoom links below. Please join during their desginated tutoring times.
+
+- [Abhay Singh Thakur] [1]
+- [Satabdiya Roy] [2]
+- [Chun Wang] [3]
+- [Arianna Smith] [4]
+- [Mohana Chandiran Dhukkaram] [5]
+- [Sarah Thomas] [6]
+
+
+
+[1]: https://purdue-edu.zoom.us/j/4319336987
+[2]: https://purdue-edu.zoom.us/j/4461449971
+[3]: https://purdue-edu.zoom.us/j/2155527451
+[4]: https://purdue-edu.zoom.us/j/8950644250?pwd=THcvYVVJaldCV1ViaENvc0lvRmpnZz09
+[5]: https://purdue-edu.zoom.us/j/9564241816?pwd=aGJxQlFNMWZVRHpMZjZ1K0lhUjJPZz09
+[6]: https://purdue-edu.zoom.us/j/96403158840?pwd=dkw5eXI5WW45Um42NTE5azBIbnVYQT09
+

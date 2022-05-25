@@ -1,0 +1,30 @@
+{% assign mobile-breakpoint-above = "xl-above" %}
+{% assign mobile-breakpoint-below = "lg-below" %}
+
+{% assign post = include.data %}
+
+{% if post and post != nil %}
+    <div class="card--initiative my-4 animate">
+        <div class="row align-content-start justify-between mb-0">
+            <picture class="w-full@lg-below">
+                <source srcset="/assets/images/blog-posts/webp/{{ post.image }}.webp" type="image/webp" class="icon-17@{{mobile-breakpoint-above}} rounded@{{mobile-breakpoint-above}} w-full@{{mobile-breakpoint-below}} img-cover" aria-hidden="true">
+                <source srcset="/assets/images/blog-posts/png/{{ post.image }}.png" type="image/png" class="icon-17@{{mobile-breakpoint-above}} rounded@{{mobile-breakpoint-above}} w-full@{{mobile-breakpoint-below}} img-cover" aria-hidden="true"> 
+                <img src="/assets/images/blog-posts/png/{{ post.image }}.png" alt="{{ post.title | escape }}" class="icon-17@{{mobile-breakpoint-above}} rounded@{{mobile-breakpoint-above}} w-full@{{mobile-breakpoint-below}} img-cover" aria-hidden="true">
+              </picture>
+            <div class="flex-break none@{{mobile-breakpoint-above}}"></div>
+            <div class="column mx-4 pt-4 safari-flexbasis-fix">
+                <div class="row grow-0 justify-between align-items-baseline">
+                    <h4 class="mb-5 inline">{{ post.title | escape }}</h4>
+                    <h4 class="mb-5 inline">{{ post.author | escape }}</h4>
+                    <h4 class="mb-5 inline">{{ post.date | escape }}</h4>
+                </div>
+                <p class="mb-4">{{ post.description }}</p>
+            </div>
+        </div>
+        <div class="row align-content-center justify-center">
+            <a class="py-3 w-full text-center no-underline clickable" href="{{ post.buttonLink }}">
+                <h4 class="mb-0">See Full Post</h4>
+            </a>
+        </div>           
+    </div>
+{% endif %}

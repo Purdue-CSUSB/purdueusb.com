@@ -1,118 +1,158 @@
 members: &members
-  - name: Lauren Lum
+  - name: Vindhya Banda
     title: President
     class: Senior
-    site: https://www.linkedin.com/in/lumlauren/
-
-  - name: Arianna Smith
+    site: https://www.linkedin.com/in/vindhya-banda/
+    
+  - name: Rohan Purandare
     title: Vice President
     class: Junior
-    site: https://www.linkedin.com/in/arianna-smith-32229816a/
-
-  - name: Cindy Ding
+    site: https://www.linkedin.com/in/rohanpurandare/
+    
+  - name: Grace Keeton
     title: Treasurer
     class: Junior
-    site: https://www.linkedin.com/in/cindydhy/
-
-  - name: Neerali Shah
+    site:
+  
+  - name: Wei Yi Tan
     title: Secretary
-    class: Sophomore
-    site: https://www.linkedin.com/in/neerali-shah/
-
-  - name: Albert Zhong
-    class: Senior
-    site: https://www.linkedin.com/in/albert-zhong-695961149/
-
-  - name: Sagar Nattuvetty
-    class: Senior
-    site: 
-
-  - name: Christopher Lehman
     class: Junior
-    site: https://www.linkedin.com/in/christopher-lehman/
-
-  - name: Noah Alderton
-    class: Senior
-    site: https://www.linkedin.com/in/noahalderton/
-
-  - name: Pallav Agarwal
+    site:
+    
+  - name: Anushka Sharma
+    title: Chief People Officer
     class: Junior
-    site: https://www.linkedin.com/in/pallav-agarwal/
-
-  - name: Pinaki Mohanty
-    class: Senior
-    site: https://www.linkedin.com/in/pinakim98/
-
-  - name: Riley McKeever
-    class: Junior
-    site: 
-
-  - name: Sarah Thomas
-    class: Junior
-    site: 
-
-  - name: Sweta Saravanan
-    class: Sophomore
-    site: https://www.linkedin.com/in/sweta-saravanan-aa3937191/
-
+    site:
+    
   - name: Simran Kadadi
-    class: Sophomore
-    site: 
-
-  - name: Shashank Kumar
-    class: Sophomore
-    site: 
+    title: GSB Liaison
+    class: Senior
+    site:
 
   - name: Caleb Ahn
-    class: Sophomore
-    site: 
-
-  - name: Arya Sharma
-    class: Sophomore
+    class: Senior
     site: 
 
   - name: Anisha Bhat
-    class: Sophomore
+    class: Senior
+    site: 
+    
+  - name: Shashank Kumar
+    class: Senior
     site: 
 
-  - name: Anushka Sharma
-    class: First-Year
+  - name: Sweta Saravanan
+    class: Senior
+    site: https://www.linkedin.com/in/sweta-saravanan-aa3937191/
+
+  - name: Neerali Shah
+    class: Senior
+    site: https://www.linkedin.com/in/neerali-shah/
+
+  - name: Arya Sharma
+    class: Senior
+    site: 
+    
+  - name: Ishika Kamchetty
+    class: Senior
     site:
-  
-  - name: Blisha Molin Mohan Das
-    class: First-Year
+    
+  - name: Gowri Harish
+    class: Senior
     site: 
 
   - name: Eddie Kim
-    class: First-Year
+    class: Junior
     site: https://www.linkedin.com/in/tae-woo-kim-95148b192/
 
   - name: Elijah Colwill
-    class: First-Year
+    class: Junior
     site: https://www.linkedin.com/in/elijahcolwill/
     
-  - name: Grace Keeton
-    class: First-Year
+  - name: Riya Verma
+    class: Junior
     site: 
     
-  - name: Rohan Purandare
-    class: First-Year
-    site: https://www.linkedin.com/in/rohanpurandare/
-  
-  - name: Vindhya Banda
+  - name: Mason Adams
+    class: Junior
+    site: 
+    
+  - name: Tiffany Kuang
     class: Sophomore
-    site: https://www.linkedin.com/in/vindhya-banda/
-
-  - name: Sean Flannery
-    title: GSB Honorary Member
-    site: https://www.linkedin.com/in/sflanner/
+    site:
+    
+  - name: Brayden Brackett
+    class: Sophomore
+    site:
+    
+  - name: Emily Hao
+    class: Sophomore
+    site:
+    
+  - name: Jillian Urgello
+    class: Sophomore
+    site:
+    
+  - name: Pooja Mathi
+    class: Sophomore
+    site:
+    
+  - name: Sarah Pushparaj
+    class: Sophomore
+    site:
+    
+  - name: Theo Park
+    class: Sophomore
+    site:
+  
+  - name: Pinaki Mohanty
+    class: GSB Honorary Member
+    site: https://www.linkedin.com/in/pinakim98/
 
 alumni: &alumni
+  - name: Arianna Smith
+    title: Former President
+    class: 2022
+    site: https://www.linkedin.com/in/arianna-smith-32229816a/
+  - name: Cindy Ding
+    title: Former Treasurer
+    class: 2022
+    site: https://www.linkedin.com/in/cindydhy/
+  - name: Christopher Lehman
+    title: Former Secretary
+    class: 2022
+    site: https://www.linkedin.com/in/christopher-lehman/
+  - name: Riley McKeever
+    class: 2022
+    site: 
+  - name: Sarah Thomas
+    class: 2022
+    site: 
+  - name: Pallav Agarwal
+    class: 2021
+    site: https://www.linkedin.com/in/pallav-agarwal/
+  - name: Sean Flannery
+    title: Former GSB Honorary Member
+    class: 2021
+    site: https://www.linkedin.com/in/sflanner/
+  - name: Noah Alderton
+    class: 2021
+    site: https://www.linkedin.com/in/noahalderton/
+  - name: Lauren Lum
+    title: Former President
+    class: 2021
+    site: https://www.linkedin.com/in/lumlauren/
+  - name: Albert Zhong
+    class: 2021
+    site: https://www.linkedin.com/in/albert-zhong-695961149/
+  - name: Sagar Nattuvetty
+    class: 2021
+    site:
   - name: Sera Savaş
-    class: Senior
+    class: 2021
     site: https://www.linkedin.com/in/sera-savas-179968148/
   - name: CJ Enright
-    class: Senior
+    class: 2020
     site: https://www.linkedin.com/in/cjenright/
   - name: Zach Bryant
     title: Former President
