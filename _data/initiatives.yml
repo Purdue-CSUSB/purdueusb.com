@@ -13,22 +13,12 @@
   buttonText: View Response
   buttonLink: /openletter/
 
-- title: Virtual Office Hours
-  image: Virtual_Office_Hours_Logo
-  description: Innovative new way to hold office hours
-
 - title: Help Room
   image: Help_Room_Logo
   description: CS 193, CS 180, CS 182, and CS 240 Help
   buttonText: View Times
   buttonLink: /helproom
   buttonTarget: _self
-
-- title: Office Hours
-  image: Office_Hours_Logo
-  description: Come talk with us!
-  buttonText: View Times
-  buttonLink: /officehours
 
 - title: Undergraduate Student Forum
   image: Student_Forum_Logo
@@ -43,3 +33,11 @@
 - title: Mentorship
   image: Mentorship
   description: Working on creating a supportive community between upperclassmen and underclassmen
+  
+- title: USB Blog
+  image: 
+  description:
+  
+- title: International Student Resources
+  image: 
+  description: Providing international students with resources and guidance as they navigate their time at Purdue.
