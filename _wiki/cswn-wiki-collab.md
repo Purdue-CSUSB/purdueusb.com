@@ -2,12 +2,11 @@
 title:  "CS Course Reflections"
 description: "Past students' feedback on CS courses at Purdue"
 author: Caleb Ahn
-date:   2022-06-01 18:51:00 -0000
+date:   2022-06-01 12:00:00 -0400
 categories: campus
 ---
 
 <!-- Using object -->
-
 <!-- <object data="https://docs.google.com/document/d/1a8xOtaS9FsY6WCecytx1Pf6zdAr3fUdJC71bun_JFbo/edit?usp=sharing" width="600" height="600">
     <embed src="https://docs.google.com/document/d/1a8xOtaS9FsY6WCecytx1Pf6zdAr3fUdJC71bun_JFbo/edit?usp=sharing" width="600" height="600"> </embed>
     Error: Embedded data could not be displayed.
