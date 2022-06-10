@@ -33,5 +33,7 @@ height: 100%;
 </style>
 
 <figure class="video-container">
-<iframe src="https://docs.google.com/document/d/1a8xOtaS9FsY6WCecytx1Pf6zdAr3fUdJC71bun_JFbo/edit?usp=sharing"></iframe>
+<iframe src="https://docs.google.com/document/d/e/2PACX-1vQd-7-nJSGSPMiallH4Wqk7iQiGnUnFTkeEQudXUayfjGfI54mDe3Ofa75kKcg1yLXGnT_1RmeqdnS3/pub?embedded=true"></iframe>
 </figure>
+
+Here's the [link to the our document](https://docs.google.com/document/d/e/2PACX-1vQd-7-nJSGSPMiallH4Wqk7iQiGnUnFTkeEQudXUayfjGfI54mDe3Ofa75kKcg1yLXGnT_1RmeqdnS3/pub)
