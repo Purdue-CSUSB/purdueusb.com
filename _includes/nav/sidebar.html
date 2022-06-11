@@ -11,11 +11,8 @@
 
     <div id="wiki-list" class="overflow-y-scroll overflow-x-visible">
         {%- if site.wiki.size > 0 -%}
-<!--             {% assign sorted_posts = site.wiki | sort: "title" %} -->
             <div id="wiki-items" class="column{% if include.limit_height %} h-max-72@xs {% else %} h-full {% endif %}">
-            <!--      Tried adding keyword 'reversed' to reverse the loop but doesn't work            -->
                 {%- for post in site.wiki -%}
-<!--                 {% for post in sorted_posts %} -->
                     {% unless forloop.first %}
                         <div class="divider--horizontal bg-grey-light"></div>
                     {% endunless %}
