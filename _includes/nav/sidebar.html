@@ -12,12 +12,16 @@
     <div id="wiki-list" class="overflow-y-scroll overflow-x-visible">
         {%- if site.wiki.size > 0 -%}
             <div id="wiki-items" class="column{% if include.limit_height %} h-max-72@xs {% else %} h-full {% endif %}">
-                {%- for post in site.wiki -%}
+                <!--     Sort posts alphabetically             -->
+                {% assign sorted_posts = site.wiki | sort:'title' %}
+<!--                 {%- for post in site.wiki -%} -->
+                {%- for post in sorted_posts -%}
                     {% unless forloop.first %}
                         <div class="divider--horizontal bg-grey-light"></div>
                     {% endunless %}
                     <a href="{{ post.url | relative_url }}" class="no-decoration" target="_self">
                         {% assign active_slug = page.url | split:'/' | last %}
+                        
                         <div {% if post.slug == active_slug %}id="active" {% endif %} class="py-4 px-2 rounded active--hover animate-fast">
                             <p class="font-bold mb-1 post-title">{{ post.title }}</p>
                             <p class="dark font-normal mb-0 post-description">{{ post.description }}</p>
