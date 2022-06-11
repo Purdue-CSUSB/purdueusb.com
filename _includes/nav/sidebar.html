@@ -11,6 +11,7 @@
 
     <div id="wiki-list" class="overflow-y-scroll overflow-x-visible">
         {%- if site.wiki.size > 0 -%}
+            {% assign my_variable = false %}
             <div id="wiki-items" class="column{% if include.limit_height %} h-max-72@xs {% else %} h-full {% endif %}">
                 {%- for post in site.wiki -%}
                     {% unless forloop.first %}
