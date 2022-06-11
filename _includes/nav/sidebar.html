@@ -12,7 +12,7 @@
     <div id="wiki-list" class="overflow-y-scroll overflow-x-visible">
         {%- if site.wiki.size > 0 -%}
             <div id="wiki-items" class="column{% if include.limit_height %} h-max-72@xs {% else %} h-full {% endif %}">
-            {% assign sortedPosts = site.wiki | sort: 'title' %}
+                {% assign sortedPosts = site.wiki | sort: 'title' %}
 <!--                 {%- for post in site.wiki -%} -->
                 {%- for post in sortedPosts -%}
                     {% unless forloop.first %}
