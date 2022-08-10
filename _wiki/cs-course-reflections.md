@@ -37,3 +37,5 @@ height: 100%;
 </figure>
 
 Here's the [link to the document](https://docs.google.com/document/d/e/2PACX-1vQd-7-nJSGSPMiallH4Wqk7iQiGnUnFTkeEQudXUayfjGfI54mDe3Ofa75kKcg1yLXGnT_1RmeqdnS3/pub)
+
+Want to contribute to our wiki? Fill out this [form](sharelinkhere.com)
