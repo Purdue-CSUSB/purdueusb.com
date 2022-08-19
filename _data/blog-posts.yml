@@ -1,17 +1,17 @@
-- title: Temp
-  author: Temp Author
-  description: Hello there
-  tags: code, jobs, tracks
-  date: 04-09-2022
+- title: Balancing CS & Exercise
+  author: Weiyi Tan
+  description: 
+  tags: Exercise
+  date: 08-18-2022
   image: Blog_Initiative
   content: 
-  buttonLink: purdueusb.com/wiki
+  buttonLink: purdueusb.com/blog/cs-exercise
   
-- title: Temp 2 
-  author: Fake Author
-  description: Hello world
-  tags: internships, jobs, minors
+- title: 
+  author: Arianna Smith
+  description: First-Gen College Student
+  tags: first-gen
   date: 03-20-2022
   image: Blog_Initiative
   content: 
-  buttonLink: purdueusb.com
+  buttonLink: purdueusb.com/blog/first-gen
