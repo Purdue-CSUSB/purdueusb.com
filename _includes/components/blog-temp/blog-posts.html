@@ -3,7 +3,7 @@
         <h1 class="text-center mb-4">All Posts</h1>      
     </div>
     <div id="blog-post-container" class="w-full">
-        {%- for post in site.posts -%}
+        {%- for post in site.data.blog-posts -%}
             {% include components/blog-temp/card.html data=post %}
         {%- endfor -%}
     </div>
