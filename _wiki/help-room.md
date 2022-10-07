@@ -14,8 +14,8 @@ Below are the times tutors are available to help:
 
 | | Monday | Tuesday | Wednesday | Thursday |
 | ---- | ---- | ---- | ---- | ---- |
-| 6:00pm - 8:00pm | | {::nomarkdown}<ul><li>[Chun Wang] [1]</li><li>[Rashmi Dahiya] [2]</li></ul>{:/} | ::nomarkdown}<ul><li>[Chun Wang] [1]</li><li>[Rashmi Dahiya] [2]</li></ul>{:/} | ::nomarkdown}<ul><li>[Chun Wang] [1]</li><li>[Rashmi Dahiya] [2]</li></ul>{:/} |
-| 8:00pm - 10:00pm | {::nomarkdown}<ul><li>[Sanya Gangwani] [3]</li></ul>{:/} | {::nomarkdown}<ul><li>[Sanya Gangwani] [3]</li></ul>{:/} | ::nomarkdown}<ul><li>[Chun Wang] [1]</li><li>[Rashmi Dahiya] [2]</li></ul>{:/} | {::nomarkdown}<ul><li>[Chun Wang] [1]</li></ul>{:/} |
+| 6:00pm - 8:00pm | | {::nomarkdown}<ul><li>Chun Wang</li><li>Rashmi Dahiya</li></ul>{:/} | {::nomarkdown}<ul><li>Chun Wang</li><li>Rashmi Dahiya</li></ul>{:/} | {::nomarkdown}<ul><li>Chun Wang</li><li>Rashmi Dahiya</li></ul>{:/} |
+| 8:00pm - 10:00pm | {::nomarkdown}<ul><li>Sanya Gangwani</li></ul>{:/} | {::nomarkdown}<ul><li>Sanya Gangwani</li></ul>{:/} | {::nomarkdown}<ul><li>Chun Wang</li><li>Rashmi Dahiya</li></ul>{:/} | {::nomarkdown}<ul><li>Chun Wang</li></ul>{:/} |
 
 ## In-Person Tutoring
 
