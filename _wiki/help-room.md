@@ -2,42 +2,37 @@
 title: Help Room Information
 description: Extra help for CS 193, CS 180, CS 182, CS 240
 author: Arya Sharma
-date: 2021-01-31
+date: 2022-10-07
 categories: [tutor]
 redirect_from:
     - /helproom/
 ---
 
-### USB Help Room has started up for the spring semester!
+### USB Help Room has started up for the Fall 2022 semester!
 
 Below are the times tutors are available to help:
 
 | | Monday | Tuesday | Wednesday | Thursday |
 | ---- | ---- | ---- | ---- | ---- |
-| 6:00pm - 8:00pm (In-Person) | {::nomarkdown}<ul><li>Arianna Smith</li><li>Rashmi Dahiya</li><li>Sarah Thomas</li></ul>{:/} | {::nomarkdown}<ul><li>Chun Wang</li></ul>{:/} | {::nomarkdown}<ul><li>Abhay Singh Thakur</li></ul>{:/} | {::nomarkdown}<ul><li>Sarah Thomas</li></ul>{:/} |
-| 8:00pm - 10:00pm (Virtual) | {::nomarkdown}<ul><li>Abhay Singh Thakur</li><li>Satabdiya Roy</li></ul>{:/} | {::nomarkdown}<ul><li>Mohana Chandiran Dhukkaram</li></ul>{:/} | {::nomarkdown}<ul><li>Abhay Singh Thakur</li><li>Chun Wang</li><li>Sarah Thomas</li></ul>{:/} | {::nomarkdown}<ul><li>Satabdiya Roy</li><li>Arianna Smith</li></ul>{:/} |
+| 6:00pm - 8:00pm | | {::nomarkdown}<ul><li>[Chun Wang] [1]</li><li>[Rashmi Dahiya] [2]</li></ul>{:/} | ::nomarkdown}<ul><li>[Chun Wang] [1]</li><li>[Rashmi Dahiya] [2]</li></ul>{:/} | ::nomarkdown}<ul><li>[Chun Wang] [1]</li><li>[Rashmi Dahiya] [2]</li></ul>{:/} |
+| 8:00pm - 10:00pm | {::nomarkdown}<ul><li>[Sanya Gangwani] [3]</li></ul>{:/} | {::nomarkdown}<ul><li>[Sanya Gangwani] [3]</li></ul>{:/} | ::nomarkdown}<ul><li>[Chun Wang] [1]</li><li>[Rashmi Dahiya] [2]</li></ul>{:/} | {::nomarkdown}<ul><li>[Chun Wang] [1]</li></ul>{:/} |
 
 ## In-Person Tutoring
 
 In-Person Tutoring will take place in LWSN B160. All students are required to follow Protect Purdue guidelines.
+There are currently no in-person tutoring times.
 
 ## Virtual Tutoring 
 
-While we wait to get BoilerQ set up, we will post the tutor's individual zoom links below. Please join during their desginated tutoring times.
+Tutors' individual zoom links are below. Please join during their desginated tutoring times.
 
-- [Abhay Singh Thakur] [1]
-- [Satabdiya Roy] [2]
-- [Chun Wang] [3]
-- [Arianna Smith] [4]
-- [Mohana Chandiran Dhukkaram] [5]
-- [Sarah Thomas] [6]
+- [Chun Wang] [1]
+- [Rashmi Dahiya] [2]
+- [Sanya Gangwani] [3]
 
 
 
-[1]: https://purdue-edu.zoom.us/j/4319336987
-[2]: https://purdue-edu.zoom.us/j/4461449971
-[3]: https://purdue-edu.zoom.us/j/2155527451
-[4]: https://purdue-edu.zoom.us/j/8950644250?pwd=THcvYVVJaldCV1ViaENvc0lvRmpnZz09
-[5]: https://purdue-edu.zoom.us/j/9564241816?pwd=aGJxQlFNMWZVRHpMZjZ1K0lhUjJPZz09
-[6]: https://purdue-edu.zoom.us/j/96403158840?pwd=dkw5eXI5WW45Um42NTE5azBIbnVYQT09
+[1]: https://purdue-edu.zoom.us/j/2155527451
+[2]: www.google.com
+[3]: https://us04web.zoom.us/j/8163112392?pwd=1OgaORUIAbHqstWrpbkcFlc8mQBPmy.1
 
