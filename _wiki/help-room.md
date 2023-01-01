@@ -8,6 +8,9 @@ redirect_from:
     - /helproom/
 ---
 
+### The USB Help Room is currently closed! Thank you for your patience while we set up for Spring 2023!
+
+<!---
 ### USB Help Room has started up for the Fall 2022 semester!
 
 Below are the times tutors are available to help:
@@ -30,3 +33,4 @@ Tutors' individual zoom links are below. Please join during their desginated tut
 [1]: https://purdue-edu.zoom.us/j/2155527451
 [3]: https://us04web.zoom.us/j/8163112392?pwd=1OgaORUIAbHqstWrpbkcFlc8mQBPmy.1
 [4]: https://purdue-edu.zoom.us/j/4461449971
+--->
