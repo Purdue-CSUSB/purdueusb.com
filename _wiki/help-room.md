@@ -8,7 +8,7 @@ redirect_from:
     - /helproom/
 ---
 
-### The USB Help Room is currently closed! Thank you for your patience while we set up for Spring 2023!
+### The USB Help Room is currently closed, and will open the week of March 6th! Thank you for your patience while we set up for Spring 2023!
 
 <!---
 ### USB Help Room has started up for the Fall 2022 semester!
