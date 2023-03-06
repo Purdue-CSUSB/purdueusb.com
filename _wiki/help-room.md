@@ -30,6 +30,7 @@ View the schedule below:
     width: 100%;
     height: 100%; 
     }
+ </style>
 
 <figure class="video-container">
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTaaiz1y0E5k9ZWGEb65eTiraH5wCyRp6lyBjkabtozkCyBPReUQXvXYn3ZdFLnFS2OMYkfaDTG164/pubhtml?widget=true&amp;headers=false"></iframe>
