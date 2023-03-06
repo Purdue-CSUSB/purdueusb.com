@@ -8,29 +8,32 @@ redirect_from:
     - /helproom/
 ---
 
-### The USB Help Room is currently closed, and will open the week of March 6th! Thank you for your patience while we set up for Spring 2023!
-
 <!---
-### USB Help Room has started up for the Fall 2022 semester!
-
-Below are the times tutors are available to help:
-
-| | Monday | Tuesday | Wednesday | Thursday |
-| ---- | ---- | ---- | ---- | ---- |
-| 6:00pm - 8:00pm | | {::nomarkdown}<ul><li>Chun Wang</li></ul>{:/} | {::nomarkdown}<ul><li>Chun Wang</li></ul>{:/} | {::nomarkdown}<ul><li>Chun Wang</li></ul>{:/} |
-| 8:00pm - 10:00pm | {::nomarkdown}<ul><li>Sanya Gangwani</li></ul>{:/} | {::nomarkdown}<ul><li>Sanya Gangwani</li></ul>{:/} | {::nomarkdown}<ul><li>Chun Wang</li></ul>{:/} | {::nomarkdown}<ul><li>Chun Wang</li></ul>{:/} |
-
-
-## Virtual Tutoring 
-
-Tutors' individual zoom links are below. Please join during their desginated tutoring times.
-
-- [Chun Wang] [1]
-- [Sanya Gangwani] [3]
-- [Satabdiya Roy] [4]
-
-
-[1]: https://purdue-edu.zoom.us/j/2155527451
-[3]: https://us04web.zoom.us/j/8163112392?pwd=1OgaORUIAbHqstWrpbkcFlc8mQBPmy.1
-[4]: https://purdue-edu.zoom.us/j/4461449971
+### The USB Help Room is currently closed, and will open the week of March 6th! Thank you for your patience while we set up for Spring 2023!
 --->
+### USB Hel pRoom has started for the Spring 2023 semester!
+
+View the schedule below:
+
+<style>
+    .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+    } 
+    .video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0; 
+    width: 100%;
+    height: 100%; 
+    }
+
+<figure class="video-container">
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTaaiz1y0E5k9ZWGEb65eTiraH5wCyRp6lyBjkabtozkCyBPReUQXvXYn3ZdFLnFS2OMYkfaDTG164/pubhtml?widget=true&amp;headers=false"></iframe>
+</figure>
+
+The Help Room schedule for 2023 can also be found [here](https://docs.google.com/spreadsheets/d/e/2PACX-1vQTaaiz1y0E5k9ZWGEb65eTiraH5wCyRp6lyBjkabtozkCyBPReUQXvXYn3ZdFLnFS2OMYkfaDTG164/pubhtml). Use the different sheets to view tutors by course and links to each tutor's individual Zoom meeting room.
+
