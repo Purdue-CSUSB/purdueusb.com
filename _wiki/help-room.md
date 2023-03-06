@@ -13,7 +13,9 @@ redirect_from:
 --->
 ### USB Help Room has started for the Spring 2023 semester!
 
-View the schedule below:
+The Help Room schedule for 2023 can be found [here](https://docs.google.com/spreadsheets/d/e/2PACX-1vQTaaiz1y0E5k9ZWGEb65eTiraH5wCyRp6lyBjkabtozkCyBPReUQXvXYn3ZdFLnFS2OMYkfaDTG164/pubhtml). Use the different sheets to view tutors by course and links to each tutor's individual Zoom meeting room.
+
+You can also view the schedule below:
 
 <style>
     .video-container {
@@ -35,6 +37,4 @@ View the schedule below:
 <figure class="video-container">
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQTaaiz1y0E5k9ZWGEb65eTiraH5wCyRp6lyBjkabtozkCyBPReUQXvXYn3ZdFLnFS2OMYkfaDTG164/pubhtml?widget=true&amp;headers=false"></iframe>
 </figure>
-
-The Help Room schedule for 2023 can also be found [here](https://docs.google.com/spreadsheets/d/e/2PACX-1vQTaaiz1y0E5k9ZWGEb65eTiraH5wCyRp6lyBjkabtozkCyBPReUQXvXYn3ZdFLnFS2OMYkfaDTG164/pubhtml). Use the different sheets to view tutors by course and links to each tutor's individual Zoom meeting room.
 
