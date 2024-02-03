@@ -88,6 +88,26 @@ members: &members
     site:
 
 alumni: &alumni
+  - name: Vindhya Banda
+    title: Former President
+    class: 2023
+    site: https://www.linkedin.com/in/vindhya-banda/
+  - name: Simran Kadadi
+    title: Former GSB Chair
+    class: 2023
+    site: 
+  - name: Mason Adams 
+    class: 2023
+    site: https://www.linkedin.com/in/mason-adams-184a71220/
+  - name: Ishika Kamchetty
+    class: 2023
+    site: 
+  - name: Blisha Molin
+    class: 2023
+    site:
+  - name: Sweta Saravanan
+    class: 2023
+    site: https://www.linkedin.com/in/sweta-saravanan-aa3937191/
   - name: Arianna Smith
     title: Former President
     class: 2022
