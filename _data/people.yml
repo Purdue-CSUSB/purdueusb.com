@@ -1,113 +1,91 @@
 members: &members
-  - name: Vindhya Banda
+  - name: Anushka Sharma
     title: President
     class: Senior
-    site: https://www.linkedin.com/in/vindhya-banda/
-    
-  - name: Rohan Purandare
-    title: Vice President
-    class: Junior
-    site: https://www.linkedin.com/in/rohanpurandare/
+    site: 
     
   - name: Grace Keeton
-    title: Treasurer
-    class: Junior
-    site:
-  
-  - name: Wei Yi Tan
+    title: Vice President
+    class: Senior
+    site: https://www.linkedin.com/in/grace-butler-cs/
+    
+  - name: Emily Hao
     title: Secretary
     class: Junior
     site:
-    
-  - name: Anushka Sharma
-    title: Chief People Officer
+  
+  - name: Brayden Brackett
+    title: Treasurer
     class: Junior
-    site:
+    site: https://www.linkedin.com/in/brayden-brackett/
     
-  - name: Simran Kadadi
-    title: GSB Liaison
+  - name: Rohan Purandare
     class: Senior
-    site:
-
-  - name: Caleb Ahn
-    class: Senior
-    site: 
-
-  - name: Anisha Bhat
-    class: Senior
-    site: 
+    site: https://www.linkedin.com/in/rohanpurandare
     
-  - name: Shashank Kumar
-    class: Senior
-    site: 
-
-  - name: Sweta Saravanan
-    class: Senior
-    site: https://www.linkedin.com/in/sweta-saravanan-aa3937191/
-
-  - name: Neerali Shah
-    class: Senior
-    site: https://www.linkedin.com/in/neerali-shah/
-
-  - name: Arya Sharma
-    class: Senior
-    site: 
-    
-  - name: Ishika Kamchetty
+  - name: Wei Yan Tan
     class: Senior
     site:
-    
-  - name: Gowri Harish
+
+  - name: Riya Verma
     class: Senior
-    site: 
+    site: https://www.linkedin.com/in/riyaverma11/
 
   - name: Eddie Kim
+    class: Senior
+    site: 
+    
+  - name: Amritraj Binuraj
     class: Junior
-    site: https://www.linkedin.com/in/tae-woo-kim-95148b192/
+    site: https://www.linkedin.com/in/amritraj-binuraj/
 
-  - name: Elijah Colwill
-    class: Junior
-    site: https://www.linkedin.com/in/elijahcolwill/
-    
-  - name: Riya Verma
-    class: Junior
-    site: 
-    
-  - name: Mason Adams
-    class: Junior
-    site: 
-    
-  - name: Tiffany Kuang
-    class: Sophomore
-    site:
-    
-  - name: Brayden Brackett
-    class: Sophomore
-    site:
-    
-  - name: Emily Hao
-    class: Sophomore
-    site:
-    
   - name: Jillian Urgello
-    class: Sophomore
-    site:
+    class: Junior
+    site: https://www.linkedin.com/in/jillian-mae-urgello/
+
+  - name: Khoa Raisr
+    class: Junior
+    site: 
+
+  - name: Lakshmi Talapaneni
+    class: Junior
+    site: https://www.linkedin.com/in/lakshmitalapaneni/
     
-  - name: Pooja Mathi
-    class: Sophomore
+  - name: Richard Silvester
+    class: Junior
     site:
     
   - name: Sarah Pushparaj
-    class: Sophomore
-    site:
-    
+    class: Junior
+    site: https://www.linkedin.com/in/sarah-pushparaj/
+
   - name: Theo Park
+    class: Junior
+    site: 
+
+  - name: Tiffany Kuang
+    class: Junior
+    site: https://www.linkedin.com/in/tiffanykuang/
+    
+  - name: Arielle Dong
+    class: Sophomore
+    site: https://www.linkedin.com/in/arielle-dong/
+    
+  - name: Arman Kumar
+    class: Sophomore
+    site: https://www.linkedin.com/in/arman-kumar
+    
+  - name: Jagannath Prabhakaran
+    class: Sophomore
+    site: https://www.linkedin.com/in/jag-prabhakaran/
+    
+  - name: Shruti Sharma
+    class: Sophomore
+    site: https://www.linkedin.com/in/shruti-sharma-08741223b/
+    
+  - name: Sravya Nagalakunta
     class: Sophomore
     site:
-  
-  - name: Pinaki Mohanty
-    class: GSB Honorary Member
-    site: https://www.linkedin.com/in/pinakim98/
 
 alumni: &alumni
   - name: Arianna Smith
