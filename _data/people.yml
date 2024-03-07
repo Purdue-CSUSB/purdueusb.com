@@ -77,11 +77,9 @@ members: &members
     
   - name: Christina Joslin
     class: Sophomore
-    site: https://www.linkedin.com/in/christina-joslin-580372241/
 
   - name: Ishita Shukla
     class: Sophomore
-    site: https://www.linkedin.com/in/ishita-shukla-21b808218/
     
   - name: Jagannath Prabhakaran
     class: Sophomore
@@ -89,7 +87,6 @@ members: &members
 
   - name: Pranav Konda
     class: Sophomore
-    site: https://www.linkedin.com/in/pranavkonda/
     
   - name: Shruti Sharma
     class: Sophomore
@@ -101,31 +98,24 @@ members: &members
 
   - name: Daniel Tian
     class: Freshman
-    site: https://www.linkedin.com/in/danieljtian/
 
   - name: Justin Kam
     class: Freshman
-    site: https://www.linkedin.com/in/ho-yuk-justin-k-78ab58266/
 
   - name: Maria Molina
     class: Freshman
-    site: https://www.linkedin.com/in/maria-molina-27a397252/
 
   - name: Netra Joshi
     class: Freshman
-    site: https://www.linkedin.com/in/netra-joshi-7845671a8/
 
   - name: Paula Perez
     class: Freshman
-    site: https://www.linkedin.com/in/ramosperezp/
 
   - name: Philip Liu
     class: Freshman
-    site: https://www.linkedin.com/in/philip-liu-25306a280/
 
   - name: Tristan Sze
     class: Freshman
-    site: https://www.linkedin.com/in/tristan-sze-57583926b/
 
 alumni: &alumni
   - name: Vindhya Banda
