@@ -11,9 +11,9 @@ redirect_from:
 ### The USB Help Room is now closed for the semester!
 --->
 
-## USB Help Room has started for the Spring 2024 semester!
+### USB Help Room has started for the Spring 2024 semester!
 
-### If you have been waiting for over 15 minutes for help with no response OR if you have general concerns or recommendations, please fill out this [feedback form](https://forms.gle/QCF6DxvABH4ttHVK6) so that we can continue to improve.
+#### If you have been waiting for over 15 minutes for help with no response OR if you have general concerns or recommendations, please fill out this [feedback form](https://forms.gle/QCF6DxvABH4ttHVK6) so that we can continue to improve.
 
 
 The Help Room schedule for Fall 2023 can be found [here](https://docs.google.com/spreadsheets/d/e/2PACX-1vRK2Kng9TIBi1ra0j9-Jv-zJsAPObb_kg-AdnmDv_AjoC6NDeX1TnihpMhmedKkBVYP_HrFxKhPOzlm/pubhtml). Use the different sheets to view tutors by course and links to each tutor's individual Zoom meeting room.
