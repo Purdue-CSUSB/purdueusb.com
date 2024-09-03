@@ -18,7 +18,7 @@ If you have used the Help Room in the past and have general concerns or recommen
 #### If you have been waiting for over 15 minutes for help with no response OR if you have general concerns or recommendations, please fill out this [feedback form](https://forms.gle/QCF6DxvABH4ttHVK6) so that we can continue to improve.
 
 
-The Help Room schedule for Fall 2023 can be found [here](https://docs.google.com/spreadsheets/d/1EW0nFlXFiB5W8d35MutigJuFRrII8i3LKpNGd0-yeUI/pubhtml). Use the different sheets to view tutors by course and links to each tutor's individual Zoom meeting room.
+The Help Room schedule for Fall 2024 can be found [here](https://docs.google.com/spreadsheets/d/1EW0nFlXFiB5W8d35MutigJuFRrII8i3LKpNGd0-yeUI/pubhtml). Use the different sheets to view tutors by course and links to each tutor's individual Zoom meeting room. There's no need to sign up or make a reservation! Just drop by and feel free to ask any of your CS-related questions.
 
 You can also view the schedule below:
 
