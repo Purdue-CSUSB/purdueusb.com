@@ -13,8 +13,6 @@ redirect_from:
 --->
 ### The USB Help Room has started for the Fall 2024 semester!
 
-If you have used the Help Room in the past and have general concerns or recommendations, please fill out this [feedback form](https://forms.gle/QCF6DxvABH4ttHVK6) so that we can continue to improve.
-
 #### If you have been waiting for over 15 minutes for help with no response OR if you have general concerns or recommendations, please fill out this [feedback form](https://forms.gle/QCF6DxvABH4ttHVK6) so that we can continue to improve.
 
 
