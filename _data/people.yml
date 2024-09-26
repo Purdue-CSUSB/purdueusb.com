@@ -1,62 +1,37 @@
 members: &members
-  - name: Anushka Sharma
+  - name: Emily Hao
     title: President
     class: Senior
-    site: 
-    
-  - name: Grace Keeton
+    site:
+
+  - name: Lakshmi Talapaneni
     title: Vice President
     class: Senior
-    site: https://www.linkedin.com/in/grace-butler-cs/
-    
-  - name: Emily Hao
-    title: Secretary
-    class: Junior
-    site:
+    site: https://www.linkedin.com/in/lakshmitalapaneni/
   
   - name: Brayden Brackett
     title: Treasurer
-    class: Junior
+    class: Senior
     site: https://www.linkedin.com/in/brayden-brackett/
-    
-  - name: Rohan Purandare
-    class: Senior
-    site: https://www.linkedin.com/in/rohanpurandare
-    
-  - name: Weiyi Tan
-    class: Senior
-    site:
 
-  - name: Riya Verma
-    class: Senior
-    site: https://www.linkedin.com/in/riyaverma11/
-
-  - name: Eddie Kim
-    class: Senior
-    site: 
+  - name: Maria Molina
+    title: Secretary
+    class: Sophomore
     
   - name: Amritraj Binuraj
-    class: Junior
+    class: Senior
     site: https://www.linkedin.com/in/amritraj-binuraj/
 
   - name: Jillian Urgello
-    class: Junior
+    class: Senior
     site: https://www.linkedin.com/in/jillian-mae-urgello/
-
-  - name: Khoa Raisr
-    class: Junior
-    site: 
-
-  - name: Lakshmi Talapaneni
-    class: Junior
-    site: https://www.linkedin.com/in/lakshmitalapaneni/
     
   - name: Richard Silvester
-    class: Junior
+    class: Senior
     site:
     
   - name: Sarah Pushparaj
-    class: Junior
+    class: Senior
     site: https://www.linkedin.com/in/sarah-pushparaj/
 
   - name: Theo Park
@@ -64,60 +39,79 @@ members: &members
     site: 
 
   - name: Tiffany Kuang
-    class: Junior
+    class: Senior
     site: https://www.linkedin.com/in/tiffanykuang/
     
   - name: Arielle Dong
-    class: Sophomore
+    class: Junior
     site: https://www.linkedin.com/in/arielle-dong/
     
   - name: Arman Kumar
-    class: Sophomore
+    class: Junior
     site: https://www.linkedin.com/in/arman-kumar
-    
-  - name: Christina Joslin
-    class: Sophomore
 
   - name: Ishita Shukla
-    class: Sophomore
+    class: Junior
     
   - name: Jagannath Prabhakaran
-    class: Sophomore
+    class: Junior
     site: https://www.linkedin.com/in/jag-prabhakaran/
 
   - name: Pranav Konda
-    class: Sophomore
+    class: Junior
     
   - name: Shruti Sharma
-    class: Sophomore
+    class: Junior
     site: https://www.linkedin.com/in/shruti-sharma-08741223b/
     
   - name: Sravya Nagalakunta
-    class: Sophomore
+    class: Junior
     site:
 
   - name: Daniel Tian
-    class: Freshman
+    class: Sophomore
 
   - name: Justin Kam
-    class: Freshman
-
-  - name: Maria Molina
-    class: Freshman
+    class: Sophomore
 
   - name: Netra Joshi
-    class: Freshman
+    class: Sophomore
 
   - name: Paula Perez
-    class: Freshman
+    class: Sophomore
 
   - name: Philip Liu
-    class: Freshman
+    class: Sophomore
 
   - name: Tristan Sze
-    class: Freshman
+    class: Sophomore
 
 alumni: &alumni
+  - name: Khoa Raisr
+    class: 2025
+    site: 
+  - name: Christina Joslin
+    class: 2025
+  - name: Anushka Sharma
+    title: Former President
+    class: 2024
+    site: 
+  - name: Grace Keeton
+    title: Former Vice President
+    class: 2024
+    site: https://www.linkedin.com/in/grace-butler-cs/
+  - name: Rohan Purandare
+    class: 2024
+    site: https://www.linkedin.com/in/rohanpurandare
+  - name: Weiyi Tan
+    class: 2024
+    site:
+  - name: Riya Verma
+    class: 2024
+    site: https://www.linkedin.com/in/riyaverma11/
+  - name: Eddie Kim
+    class: 2024
+    site: 
   - name: Vindhya Banda
     title: Former President
     class: 2023
