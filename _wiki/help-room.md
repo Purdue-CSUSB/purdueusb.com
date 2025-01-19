@@ -2,7 +2,7 @@
 title: Help Room Information
 description: Extra help for CS 180, CS 182, CS 240
 author: Emily Hao
-date: 2024-09-02
+date: 2025-01-19
 categories: [tutor]
 redirect_from:
     - /helproom/
