@@ -1,7 +1,7 @@
 ---
 title: Help Room Information
 description: Extra help for CS 180, CS 182, CS 240
-author: Emily Hao
+author: Philip Liu
 date: 2025-09-09
 categories: [tutor]
 redirect_from:
