@@ -54,6 +54,33 @@ members: &members
 
   - name: Philip Liu
     class: Junior
+    
+  - name: Pranavi Chaganti
+    class: Junior
+
+  - name: Anokhi Matta
+    class: Junior
+
+  - name: Madhav Valiaparambil
+    class: Junior
+    
+  - name: Hanako Keney
+    class: Sophomore
+
+  - name: Charlotte Liu
+    class: Sophomore
+
+  - name: Chris McLoughlin
+    class: Sophomore
+
+  - name: Kevin Qu
+    class: Sophomore
+
+  - name: Anika Thapar
+    class: Sophomore
+
+  - name: Ryan Sierra
+    class: Sophomore
 
 alumni: &alumni
   - name: Emily Hao
