@@ -1,97 +1,95 @@
 members: &members
-  - name: Emily Hao
+  - name: Maria Molina
     title: President
-    class: Senior
+    class: Junior
     site:
 
-  - name: Lakshmi Talapaneni
+  - name: Shruti Sharma
     title: Vice President
     class: Senior
-    site: https://www.linkedin.com/in/lakshmitalapaneni/
+    site: https://www.linkedin.com/in/shruti-sharma-08741223b/
   
-  - name: Brayden Brackett
+  - name: Tristan Sze
     title: Treasurer
     class: Senior
     site: https://www.linkedin.com/in/brayden-brackett/
 
-  - name: Maria Molina
+  - name: Chris McLoughlin
     title: Secretary
     class: Sophomore
-    
-  - name: Amritraj Binuraj
-    class: Senior
-    site: https://www.linkedin.com/in/amritraj-binuraj/
-
-  - name: Jillian Urgello
-    class: Senior
-    site: https://www.linkedin.com/in/jillian-mae-urgello/
-    
-  - name: Richard Silvester
-    class: Senior
-    site:
-    
-  - name: Sarah Pushparaj
-    class: Senior
-    site: https://www.linkedin.com/in/sarah-pushparaj/
 
   - name: Theo Park
     class: Junior
     site: 
-
-  - name: Tiffany Kuang
-    class: Senior
-    site: https://www.linkedin.com/in/tiffanykuang/
-    
-  - name: Arielle Dong
-    class: Junior
-    site: https://www.linkedin.com/in/arielle-dong/
     
   - name: Arman Kumar
-    class: Junior
+    class: Senior
     site: https://www.linkedin.com/in/arman-kumar
 
   - name: Ishita Shukla
-    class: Junior
+    class: Senior
     
   - name: Jagannath Prabhakaran
-    class: Junior
+    class: Senior
     site: https://www.linkedin.com/in/jag-prabhakaran/
 
   - name: Pranav Konda
-    class: Junior
-    
-  - name: Shruti Sharma
-    class: Junior
-    site: https://www.linkedin.com/in/shruti-sharma-08741223b/
+    class: Senior
     
   - name: Sravya Nagalakunta
     class: Junior
     site:
 
   - name: Daniel Tian
-    class: Sophomore
+    class: Junior
 
   - name: Justin Kam
-    class: Sophomore
+    class: Junior
 
   - name: Netra Joshi
-    class: Sophomore
+    class: Junior
 
   - name: Paula Perez
-    class: Sophomore
+    class: Junior
 
   - name: Philip Liu
-    class: Sophomore
+    class: Junior
 
   - name: Tristan Sze
-    class: Sophomore
+    class: Junior
 
 alumni: &alumni
+-name: Brayden Brackett
+  title: Former Treasurer
+  class: 2025
+  site:
+ - name: Lakshmi Talapaneni
+    title: Former Vice President
+    class: 2025
+    site: https://www.linkedin.com/in/lakshmitalapaneni/
+- name: Tiffany Kuang
+    class: 2025
+    site: https://www.linkedin.com/in/tiffanykuang/
+- name: Richard Silvester
+    class: 2025
+    site:
+- name: Jillian Urgello
+    class: 2025
+    site: https://www.linkedin.com/in/jillian-mae-urgello/
   - name: Khoa Raisr
     class: 2025
     site: 
   - name: Christina Joslin
     class: 2025
+  - name: Amritraj Binuraj
+    class: 2024
+    site: https://www.linkedin.com/in/amritraj-binuraj/
+  - name: Sarah Pushparaj
+    class: 2024
+    site: https://www.linkedin.com/in/sarah-pushparaj/
+ - name: Arielle Dong
+    class: 2026
+    site: https://www.linkedin.com/in/arielle-dong/
   - name: Anushka Sharma
     title: Former President
     class: 2024
