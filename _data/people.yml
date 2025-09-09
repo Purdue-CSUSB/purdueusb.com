@@ -59,25 +59,25 @@ members: &members
     class: Junior
 
 alumni: &alumni
-- name: Emily Hao
+  - name: Emily Hao
     title: Former President
     class: 2025
     site:
-- name: Brayden Brackett
-  title: Former Treasurer
-  class: 2025
-  site:
- - name: Lakshmi Talapaneni
+  - name: Brayden Brackett
+    title: Former Treasurer
+    class: 2025
+    site:
+   - name: Lakshmi Talapaneni
     title: Former Vice President
     class: 2025
     site: https://www.linkedin.com/in/lakshmitalapaneni/
-- name: Tiffany Kuang
+  - name: Tiffany Kuang
     class: 2025
     site: https://www.linkedin.com/in/tiffanykuang/
-- name: Richard Silvester
+  - name: Richard Silvester
     class: 2025
     site:
-- name: Jillian Urgello
+  - name: Jillian Urgello
     class: 2025
     site: https://www.linkedin.com/in/jillian-mae-urgello/
   - name: Khoa Raisr
