@@ -59,6 +59,10 @@ members: &members
     class: Junior
 
 alumni: &alumni
+- name: Emily Hao
+    title: Former President
+    class: 2025
+    site:
 -name: Brayden Brackett
   title: Former Treasurer
   class: 2025
