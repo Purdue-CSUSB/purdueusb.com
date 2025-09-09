@@ -12,7 +12,7 @@ members: &members
   - name: Tristan Sze
     title: Treasurer
     class: Senior
-    site: https://www.linkedin.com/in/brayden-brackett/
+    site:
 
   - name: Chris McLoughlin
     title: Secretary
@@ -53,9 +53,6 @@ members: &members
     class: Junior
 
   - name: Philip Liu
-    class: Junior
-
-  - name: Tristan Sze
     class: Junior
 
 alumni: &alumni
