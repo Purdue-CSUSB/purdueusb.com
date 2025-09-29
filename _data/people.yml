@@ -175,7 +175,10 @@ alumni: &alumni
     site: 
   - name: Sarah Thomas
     class: 2022
-    site: 
+    site:
+  - name: Pinaki Mohanty
+    class: 2021
+    site: https://www.linkedin.com/in/pinakim98/
   - name: Pallav Agarwal
     class: 2021
     site: https://www.linkedin.com/in/pallav-agarwal/
